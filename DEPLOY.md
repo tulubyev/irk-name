@@ -17,16 +17,17 @@
 ## 2. Настройка
 
 ```bash
-git clone https://github.com/tulubyev/irk-name.git && cd irk-name
+mkdir -p /var/www/irk-name && cd /var/www/irk-name   # путь по конвенции сервера
+git clone https://github.com/tulubyev/irk-name.git .
 cp .env.example .env
 $EDITOR .env
 ```
 
-Что менять в `.env` под ваш сервер (по умолчанию стоят типовые значения):
+Значения по умолчанию уже соответствуют серверу (см. `tulubyev/vps-server-infra`: Traefik v2.11, сеть `traefik-public`, entrypoints `web`/`websecure`, certresolver `letsencrypt`, глобальный редирект http→https). Менять нужно только S3:
 
 | Переменная | По умолчанию | Что это |
 | --- | --- | --- |
-| `TRAEFIK_NETWORK` | `traefik` | имя внешней docker-сети Traefik (`docker network ls`) |
+| `TRAEFIK_NETWORK` | `traefik-public` | внешняя docker-сеть Traefik (уже есть на VPS) |
 | `TRAEFIK_ENTRYPOINT_HTTP` | `web` | entrypoint :80 |
 | `TRAEFIK_ENTRYPOINT_HTTPS` | `websecure` | entrypoint :443 |
 | `TRAEFIK_CERTRESOLVER` | `letsencrypt` | certresolver Let's Encrypt в конфиге Traefik |
