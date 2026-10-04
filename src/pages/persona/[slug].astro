@@ -1,0 +1,68 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPersons, lifespan, SITE } from '../../lib/persons';
+import { SPHERES, ERAS, CONNECTIONS, STATUS } from '../../lib/taxonomy';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const persons = await getPersons();
+  return persons.map((p) => ({ params: { slug: p.id }, props: { person: p } }));
+}
+const { person } = Astro.props;
+const d = person.data;
+const { Content } = await render(person);
+const url = `${SITE}/persona/${person.id}/`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${url}#person`,
+  name: d.name,
+  url,
+  description: d.summary,
+  ...(d.birthYear ? { birthDate: String(d.birthYear) } : {}),
+  ...(d.deathYear ? { deathDate: String(d.deathYear) } : {}),
+  ...(d.photo ? { image: new URL(d.photo.src, SITE).href } : {}),
+  knowsAbout: d.spheres.map((s) => SPHERES[s]),
+  sameAs: d.sources.map((s) => s.url),
+  subjectOf: { '@type': 'WebPage', url },
+};
+---
+<Base title={d.name} description={d.summary} type="profile" jsonLd={jsonLd}>
+  <nav class="breadcrumbs"><a href="/">Все имена</a> › {d.name}</nav>
+  <article class="prose">
+    <h1>{d.name}</h1>
+    <p class="lead">{lifespan(d)} · {ERAS[d.era]}</p>
+    {d.status === 'needs-check' && (
+      <p class="notice">Статус: <strong>{STATUS['needs-check']}</strong>. Данные приведены по общедоступным источникам и ещё не сверены полностью.</p>
+    )}
+    {d.photo && (
+      <figure class="photo">
+        <img src={d.photo.src} alt={d.photo.alt} loading="lazy" />
+        <figcaption>
+          Автор: {d.photo.author}. Лицензия:
+          {d.photo.licenseUrl ? <a href={d.photo.licenseUrl}>{d.photo.license}</a> : d.photo.license}.
+          <a href={d.photo.sourceUrl}> Источник</a>
+        </figcaption>
+      </figure>
+    )}
+    <p>{d.summary}</p>
+    <Content />
+    <h2>Связь с Иркутском</h2>
+    <dl class="facts">
+      <dt>Связь</dt>
+      <dd>{d.connection.map((c) => CONNECTIONS[c]).join('; ')}</dd>
+      {d.connectionNote && (<><dt>Комментарий</dt><dd>{d.connectionNote}</dd></>)}
+      {d.places.length > 0 && (<><dt>Места</dt><dd>{d.places.map((p) => p.name).join('; ')}</dd></>)}
+      <dt>Сферы</dt>
+      <dd>{d.spheres.map((s, i) => <>{i > 0 && ', '}<a href={`/sfera/${s}/`}>{SPHERES[s]}</a></>)}</dd>
+      <dt>Эпоха</dt>
+      <dd><a href={`/epoha/${d.era}/`}>{ERAS[d.era]}</a></dd>
+      <dt>Проверка</dt>
+      <dd>{d.status === 'verified' ? <span class="badge ok">{STATUS.verified}</span> : <span class="badge warn">{STATUS['needs-check']}</span>}</dd>
+    </dl>
+    <h2>Источники</h2>
+    <ul>
+      {d.sources.map((s) => <li><a href={s.url} rel="noopener">{s.title}</a></li>)}
+    </ul>
+  </article>
+</Base>

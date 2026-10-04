@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPersons } from '../../lib/persons';
+import { ERAS, type EraKey } from '../../lib/taxonomy';
+const persons = await getPersons();
+const counts = (Object.keys(ERAS) as EraKey[])
+  .map((k) => ({ k, n: persons.filter((p) => p.data.era === k).length }))
+  .filter((x) => x.n > 0);
+---
+<Base title="Эпохи" description="Знаменитые имена Иркутска по векам.">
+  <h1>Эпохи</h1>
+  <ul class="chips">
+    {counts.map(({ k, n }) => <li><a class="chip" href={`/epoha/${k}/`}>{ERAS[k]} · {n}</a></li>)}
+  </ul>
+</Base>
