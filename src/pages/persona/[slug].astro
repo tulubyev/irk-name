@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { getPersons, lifespan, SITE } from '../../lib/persons';
 import { SPHERES, ERAS, CONNECTIONS, STATUS } from '../../lib/taxonomy';
 import { render } from 'astro:content';
+import { mediaUrl, mediaSrcset } from '../../lib/media';
 
 export async function getStaticPaths() {
   const persons = await getPersons();
@@ -21,13 +22,13 @@ const jsonLd = {
   description: d.summary,
   ...(d.birthYear ? { birthDate: String(d.birthYear) } : {}),
   ...(d.deathYear ? { deathDate: String(d.deathYear) } : {}),
-  ...(d.photo ? { image: new URL(d.photo.src, SITE).href } : {}),
+  ...(d.photo ? { image: mediaUrl(d.photo.key) } : {}),
   knowsAbout: d.spheres.map((s) => SPHERES[s]),
   sameAs: d.sources.map((s) => s.url),
   subjectOf: { '@type': 'WebPage', url },
 };
 ---
-<Base title={d.name} description={d.summary} type="profile" jsonLd={jsonLd}>
+<Base title={d.name} description={d.summary} type="profile" image={d.photo ? mediaUrl(d.photo.key) : undefined} jsonLd={jsonLd}>
   <nav class="breadcrumbs"><a href="/">Все имена</a> › {d.name}</nav>
   <article class="prose">
     <h1>{d.name}</h1>
@@ -37,7 +38,7 @@ const jsonLd = {
     )}
     {d.photo && (
       <figure class="photo">
-        <img src={d.photo.src} alt={d.photo.alt} loading="lazy" />
+        <img src={mediaUrl(d.photo.key)} srcset={mediaSrcset(d.photo.key)} sizes="(max-width: 42rem) 100vw, 42rem" alt={d.photo.alt} loading="lazy" />
         <figcaption>
           Автор: {d.photo.author}. Лицензия:
           {d.photo.licenseUrl ? <a href={d.photo.licenseUrl}>{d.photo.license}</a> : d.photo.license}.

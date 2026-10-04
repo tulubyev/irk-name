@@ -23,7 +23,8 @@ const persons = defineCollection({
     // Только свободные лицензии (Wikimedia Commons и т.п.) с атрибуцией
     photo: z
       .object({
-        src: z.string(),
+        // относительный ключ в бакете, напр. persons/<slug>.webp (+ <slug>-640.webp)
+        key: z.string().regex(/^[a-z0-9][a-z0-9\-_/]*\.webp$/),
         alt: z.string(),
         author: z.string(),
         license: z.string(),
