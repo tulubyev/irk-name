@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import PersonCard from '../components/PersonCard.astro';
+import { getPersons, SITE } from '../lib/persons';
+const persons = await getPersons();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'irk.name',
+  url: SITE,
+  inLanguage: 'ru',
+  description: 'Справочник знаменитых имён Иркутска',
+};
+---
+<Base title="irk.name — знаменитые имена Иркутска" jsonLd={jsonLd}>
+  <h1>Знаменитые имена Иркутска</h1>
+  <p class="lead">Справочник людей, связанных с городом: уроженцев, жителей, учёных, писателей, декабристов, купцов и меценатов.</p>
+  <label for="q" class="sr-only" style="position:absolute;left:-9999px">Поиск по имени, сфере или месту</label>
+  <input id="q" class="search" type="search" placeholder="Поиск: имя, сфера деятельности, место…" autocomplete="off" />
+  <p id="count" class="empty" aria-live="polite">Всего записей: {persons.length}</p>
+  <ul class="cards" id="list">
+    {persons.map((p) => <PersonCard person={p} />)}
+  </ul>
+  <p id="none" class="empty" hidden>Ничего не найдено.</p>
+  <script is:inline>
+    (function () {
+      var q = document.getElementById('q');
+      var items = Array.prototype.slice.call(document.querySelectorAll('#list .card'));
+      var count = document.getElementById('count');
+      var none = document.getElementById('none');
+      q.addEventListener('input', function () {
+        var terms = q.value.toLowerCase().replace(/ё/g, 'е').split(/\s+/).filter(Boolean);
+        var shown = 0;
+        items.forEach(function (li) {
+          var hay = li.getAttribute('data-search');
+          var ok = terms.every(function (t) { return hay.indexOf(t) !== -1; });
+          li.hidden = !ok;
+          if (ok) shown++;
+        });
+        count.textContent = (terms.length ? 'Найдено: ' : 'Всего записей: ') + shown;
+        none.hidden = shown !== 0;
+      });
+    })();
+  </script>
+</Base>

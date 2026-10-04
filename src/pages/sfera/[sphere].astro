@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import { getPersons } from '../../lib/persons';
+import { SPHERES, type SphereKey } from '../../lib/taxonomy';
+export async function getStaticPaths() {
+  const persons = await getPersons();
+  return (Object.keys(SPHERES) as SphereKey[])
+    .map((k) => ({ params: { sphere: k }, props: { list: persons.filter((p) => p.data.spheres.includes(k)) } }))
+    .filter((x) => x.props.list.length > 0);
+}
+const { sphere } = Astro.params;
+const { list } = Astro.props;
+const label = SPHERES[sphere as SphereKey];
+---
+<Base title={label} description={`${label} — знаменитые имена Иркутска.`}>
+  <nav class="breadcrumbs"><a href="/sfera/">Сферы</a> › {label}</nav>
+  <h1>{label}</h1>
+  <ul class="cards">{list.map((p) => <PersonCard person={p} />)}</ul>
+</Base>

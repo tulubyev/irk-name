@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import { getPersons } from '../../lib/persons';
+import { ERAS, type EraKey } from '../../lib/taxonomy';
+export async function getStaticPaths() {
+  const persons = await getPersons();
+  return (Object.keys(ERAS) as EraKey[])
+    .map((k) => ({ params: { era: k }, props: { list: persons.filter((p) => p.data.era === k) } }))
+    .filter((x) => x.props.list.length > 0);
+}
+const { era } = Astro.params;
+const { list } = Astro.props;
+const label = ERAS[era as EraKey];
+---
+<Base title={label} description={`${label} — знаменитые имена Иркутска.`}>
+  <nav class="breadcrumbs"><a href="/epoha/">Эпохи</a> › {label}</nav>
+  <h1>{label}</h1>
+  <ul class="cards">{list.map((p) => <PersonCard person={p} />)}</ul>
+</Base>

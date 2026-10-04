@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import { SITE } from '../lib/persons';
+
+interface Props {
+  title: string;
+  description?: string;
+  type?: 'website' | 'profile' | 'article';
+  image?: string;
+  jsonLd?: object;
+}
+const {
+  title,
+  description = 'Справочник знаменитых имён Иркутска: люди, связанные с городом.',
+  type = 'website',
+  image,
+  jsonLd,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE).href;
+const fullTitle = Astro.url.pathname === '/' ? title : `${title} — irk.name`;
+const ogImage = image ?? new URL('/og.png', SITE).href;
+---
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:site_name" content="irk.name" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <a class="logo" href="/">irk<span>.name</span></a>
+        <nav class="main" aria-label="Основная навигация">
+          <a href="/">Все имена</a>
+          <a href="/sfera/">Сферы</a>
+          <a href="/epoha/">Эпохи</a>
+          <a href="/o-proekte/">О проекте</a>
+        </nav>
+        <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему">Тема</button>
+      </div>
+    </header>
+    <main class="wrap"><slot /></main>
+    <footer class="site">
+      <div class="wrap">
+        irk.name — справочник знаменитых имён Иркутска. Данные в открытом репозитории{" "}
+        <a href="https://github.com/tulubyev/irk-name">tulubyev/irk-name</a>.
+      </div>
+    </footer>
+    <script is:inline>
+      document.getElementById('theme-toggle').addEventListener('click', function () {
+        var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    </script>
+  </body>
+</html>

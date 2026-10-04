@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPersons } from '../../lib/persons';
+import { SPHERES, type SphereKey } from '../../lib/taxonomy';
+const persons = await getPersons();
+const counts = (Object.keys(SPHERES) as SphereKey[])
+  .map((k) => ({ k, n: persons.filter((p) => p.data.spheres.includes(k)).length }))
+  .filter((x) => x.n > 0);
+---
+<Base title="Сферы деятельности" description="Знаменитые имена Иркутска по сферам деятельности.">
+  <h1>Сферы деятельности</h1>
+  <ul class="chips">
+    {counts.map(({ k, n }) => <li><a class="chip" href={`/sfera/${k}/`}>{SPHERES[k]} · {n}</a></li>)}
+  </ul>
+</Base>

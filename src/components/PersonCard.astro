@@ -1,0 +1,19 @@
+---
+import { SPHERES } from '../lib/taxonomy';
+import { lifespan, type Person } from '../lib/persons';
+interface Props { person: Person }
+const { person } = Astro.props;
+const d = person.data;
+const search = [d.name, d.summary, ...d.spheres.map((s) => SPHERES[s]), ...d.places.map((p) => p.name)]
+  .join(' ')
+  .toLowerCase()
+  .replaceAll('ё', 'е');
+---
+<li class="card" data-search={search}>
+  <h3><a href={`/persona/${person.id}/`}>{d.name}</a></h3>
+  <div class="years">{lifespan(d)}</div>
+  <p>{d.summary}</p>
+  <ul class="chips" style="margin:0">
+    {d.spheres.map((s) => <li><a class="chip" href={`/sfera/${s}/`}>{SPHERES[s]}</a></li>)}
+  </ul>
+</li>

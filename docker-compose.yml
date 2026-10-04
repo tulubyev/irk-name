@@ -1,0 +1,65 @@
+# Запуск на сервере с готовым Traefik:  docker compose up -d --build
+# Порты наружу не публикуются; сервисы подключены к внешней сети Traefik (traefik-public).
+# HTTP→HTTPS редирект на сервере глобальный (entrypoint web), поэтому отдельных http-роутеров нет.
+services:
+  web:
+    build:
+      context: .
+      args:
+        PUBLIC_CDN_URL: ${PUBLIC_CDN_URL:-https://cdn.irk.name}
+    image: irk-name-web:latest
+    restart: unless-stopped
+    networks: [traefik]
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=${TRAEFIK_NETWORK:-traefik-public}
+      # HTTPS: apex
+      - traefik.http.routers.irkname.rule=Host(`${SITE_HOST:-irk.name}`)
+      - traefik.http.routers.irkname.entrypoints=${TRAEFIK_ENTRYPOINT_HTTPS:-websecure}
+      - traefik.http.routers.irkname.tls=true
+      - traefik.http.routers.irkname.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.routers.irkname.service=irkname
+      - traefik.http.services.irkname.loadbalancer.server.port=80
+      # HTTPS: www -> apex
+      - traefik.http.routers.irkname-www.rule=Host(`www.${SITE_HOST:-irk.name}`)
+      - traefik.http.routers.irkname-www.entrypoints=${TRAEFIK_ENTRYPOINT_HTTPS:-websecure}
+      - traefik.http.routers.irkname-www.tls=true
+      - traefik.http.routers.irkname-www.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.routers.irkname-www.middlewares=irkname-www-redirect
+      - traefik.http.routers.irkname-www.service=irkname
+      - traefik.http.middlewares.irkname-www-redirect.redirectregex.regex=^https?://www\.(.*)
+      - traefik.http.middlewares.irkname-www-redirect.redirectregex.replacement=https://$${1}
+      - traefik.http.middlewares.irkname-www-redirect.redirectregex.permanent=true
+
+  cdn:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    networks: [traefik]
+    environment:
+      S3_HOST: ${S3_HOST:?задайте S3_HOST в .env}
+      S3_BUCKET: ${S3_BUCKET:?задайте S3_BUCKET в .env}
+    volumes:
+      - ./deploy/cdn/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - cdn-cache:/var/cache/nginx
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=${TRAEFIK_NETWORK:-traefik-public}
+      - traefik.http.routers.irkname-cdn.rule=Host(`${CDN_HOST:-cdn.irk.name}`)
+      - traefik.http.routers.irkname-cdn.entrypoints=${TRAEFIK_ENTRYPOINT_HTTPS:-websecure}
+      - traefik.http.routers.irkname-cdn.tls=true
+      - traefik.http.routers.irkname-cdn.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.routers.irkname-cdn.service=irkname-cdn
+      - traefik.http.services.irkname-cdn.loadbalancer.server.port=80
+
+networks:
+  traefik:
+    name: ${TRAEFIK_NETWORK:-traefik-public}
+    external: true
+
+volumes:
+  cdn-cache:
