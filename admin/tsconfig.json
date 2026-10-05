@@ -6,9 +6,20 @@
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
+    "jsxImportSource": "hono/jsx",
+    "paths": {
+      "zod/v4": [
+        "./node_modules/zod/v4"
+      ]
+    }
   },
-  "include": ["src", "../src/lib/person-schema.ts", "../src/lib/taxonomy.ts"]
+  "include": [
+    "src",
+    "../src/lib/person-schema.ts",
+    "../src/lib/taxonomy.ts"
+  ]
 }
