@@ -12,9 +12,24 @@ export const SPHERES = {
   'arhitektor': 'Архитекторы и строители',
   'gradonachalnik': 'Градоначальники',
   'revolyucioner': 'Революционеры и политики',
-  'svyashchennik': 'Духовенство',
+  'svyashchennik': 'Религия',
+  'vrach': 'Врачи',
+  'muzykant': 'Музыканты',
+  'interesnye': 'Интересные люди',
 } as const;
 export type SphereKey = keyof typeof SPHERES;
+
+// Районы и городские округа Иркутской области. Добавляйте по мере появления записей.
+export const DISTRICTS = {
+  'g-irkutsk': 'г. Иркутск',
+  'irkutskij-rajon': 'Иркутский район',
+  'shelehovskij-rajon': 'Шелеховский район',
+  'alarskij-rajon': 'Аларский район',
+  'g-cheremhovo': 'г. Черемхово',
+  'ust-udinskij-rajon': 'Усть-Удинский район',
+  'nizhneilimskij-rajon': 'Нижнеилимский район',
+} as const;
+export type DistrictKey = keyof typeof DISTRICTS;
 
 export const ERAS = {
   'xvii': 'XVII век',
@@ -26,7 +41,7 @@ export const ERAS = {
 export type EraKey = keyof typeof ERAS;
 
 export const CONNECTIONS = {
-  birth: 'Родился в Иркутске / Иркутской губернии',
+  birth: 'Уроженец Иркутска или Иркутской области (губернии)',
   life: 'Жил в Иркутске',
   work: 'Работал в Иркутске',
   exile: 'Находился в ссылке',

@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import { getPersons, districtsOf } from '../../lib/persons';
+import { DISTRICTS, type DistrictKey } from '../../lib/taxonomy';
+export async function getStaticPaths() {
+  const persons = await getPersons();
+  return (Object.keys(DISTRICTS) as DistrictKey[])
+    .map((k) => ({ params: { district: k }, props: { list: persons.filter((p) => districtsOf(p.data).includes(k)) } }))
+    .filter((x) => x.props.list.length > 0);
+}
+const { district } = Astro.params;
+const { list } = Astro.props;
+const label = DISTRICTS[district as DistrictKey];
+const settlements = [
+  ...new Set(list.flatMap((p) => p.data.places.filter((pl) => pl.district === district && pl.settlement).map((pl) => pl.settlement as string))),
+];
+---
+<Base title={label} description={`${label}: знаменитые люди, связанные с этим местом.`}>
+  <nav class="breadcrumbs"><a href="/mesto/">Районы</a> › {label}</nav>
+  <h1>{label}</h1>
+  {settlements.length > 0 && <p class="lead">Населённые пункты: {settlements.join(', ')}</p>}
+  <ul class="cards">{list.map((p) => <PersonCard person={p} />)}</ul>
+</Base>

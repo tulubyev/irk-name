@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getPersons, lifespan, SITE } from '../../lib/persons';
-import { SPHERES, ERAS, CONNECTIONS, STATUS } from '../../lib/taxonomy';
+import { SPHERES, ERAS, CONNECTIONS, STATUS, DISTRICTS } from '../../lib/taxonomy';
 import { render } from 'astro:content';
 import { mediaUrl, mediaSrcset } from '../../lib/media';
 
@@ -53,7 +53,22 @@ const jsonLd = {
       <dt>Связь</dt>
       <dd>{d.connection.map((c) => CONNECTIONS[c]).join('; ')}</dd>
       {d.connectionNote && (<><dt>Комментарий</dt><dd>{d.connectionNote}</dd></>)}
-      {d.places.length > 0 && (<><dt>Места</dt><dd>{d.places.map((p) => p.name).join('; ')}</dd></>)}
+      {d.places.length > 0 && (
+        <>
+          <dt>Места</dt>
+          <dd>
+            <ul class="places">
+              {d.places.map((p) => (
+                <li>
+                  {p.name}
+                  {p.settlement && !p.name.includes(p.settlement) && <>, {p.settlement}</>}
+                  {p.district && <> — <a href={`/mesto/${p.district}/`}>{DISTRICTS[p.district]}</a></>}
+                </li>
+              ))}
+            </ul>
+          </dd>
+        </>
+      )}
       <dt>Сферы</dt>
       <dd>{d.spheres.map((s, i) => <>{i > 0 && ', '}<a href={`/sfera/${s}/`}>{SPHERES[s]}</a></>)}</dd>
       <dt>Эпоха</dt>
@@ -65,5 +80,6 @@ const jsonLd = {
     <ul>
       {d.sources.map((s) => <li><a href={s.url} rel="noopener">{s.title}</a></li>)}
     </ul>
+    <p class="empty">Нашли ошибку или знаете больше? <a href={`https://github.com/tulubyev/irk-name/issues/new?title=${encodeURIComponent('Исправление: ' + d.name)}`} rel="noopener">Сообщите нам</a>.</p>
   </article>
 </Base>

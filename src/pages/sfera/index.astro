@@ -4,12 +4,14 @@ import { getPersons } from '../../lib/persons';
 import { SPHERES, type SphereKey } from '../../lib/taxonomy';
 const persons = await getPersons();
 const counts = (Object.keys(SPHERES) as SphereKey[])
-  .map((k) => ({ k, n: persons.filter((p) => p.data.spheres.includes(k)).length }))
-  .filter((x) => x.n > 0);
+  .map((k) => ({ k, n: persons.filter((p) => p.data.spheres.includes(k)).length }));
 ---
 <Base title="Сферы деятельности" description="Знаменитые имена Иркутска по сферам деятельности.">
   <h1>Сферы деятельности</h1>
   <ul class="chips">
-    {counts.map(({ k, n }) => <li><a class="chip" href={`/sfera/${k}/`}>{SPHERES[k]} · {n}</a></li>)}
+    {counts.map(({ k, n }) =>
+      n > 0 ? <li><a class="chip" href={`/sfera/${k}/`}>{SPHERES[k]} · {n}</a></li> : <li><span class="chip muted">{SPHERES[k]} · 0</span></li>,
+    )}
   </ul>
+  <p class="empty">Знаете человека из пустой категории? <a href="/predlozhit/">Предложите персону</a>.</p>
 </Base>

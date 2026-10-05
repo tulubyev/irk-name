@@ -1,11 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import PersonCard from '../components/PersonCard.astro';
-import { getPersons, layersOf, SITE } from '../lib/persons';
-import { SPHERES, LAYERS, LAYER_RULE, type SphereKey, type LayerKey } from '../lib/taxonomy';
+import { getPersons, layersOf, districtsOf, SITE } from '../lib/persons';
+import { SPHERES, LAYERS, LAYER_RULE, DISTRICTS, type SphereKey, type LayerKey, type DistrictKey } from '../lib/taxonomy';
 const persons = await getPersons();
 const sphereCounts = (Object.keys(SPHERES) as SphereKey[])
-  .map((k) => ({ k, n: persons.filter((p) => p.data.spheres.includes(k)).length }))
+  .map((k) => ({ k, n: persons.filter((p) => p.data.spheres.includes(k)).length }));
+const districtCounts = (Object.keys(DISTRICTS) as DistrictKey[])
+  .map((k) => ({ k, n: persons.filter((p) => districtsOf(p.data).includes(k)).length }))
   .filter((x) => x.n > 0);
 const layerCounts = (Object.keys(LAYERS) as LayerKey[]).map((k) => ({
   k,
@@ -39,8 +41,16 @@ const jsonLd = {
     <div class="filter-group" role="group" aria-labelledby="f-sphere">
       <span id="f-sphere" class="filter-title">Вид деятельности</span>
       {sphereCounts.map(({ k, n }) => (
-        <button type="button" class="chip toggle" data-group="sphere" data-value={k} aria-pressed="false">
+        <button type="button" class="chip toggle" data-group="sphere" data-value={k} aria-pressed="false" disabled={n === 0} title={n === 0 ? 'Записей пока нет — предложите персону' : undefined}>
           {SPHERES[k]} <span class="n">{n}</span>
+        </button>
+      ))}
+    </div>
+    <div class="filter-group" role="group" aria-labelledby="f-district">
+      <span id="f-district" class="filter-title">Район</span>
+      {districtCounts.map(({ k, n }) => (
+        <button type="button" class="chip toggle" data-group="district" data-value={k} aria-pressed="false">
+          {DISTRICTS[k]} <span class="n">{n}</span>
         </button>
       ))}
     </div>
@@ -51,7 +61,7 @@ const jsonLd = {
   <ul class="cards" id="list">
     {persons.map((p) => <PersonCard person={p} />)}
   </ul>
-  <p id="none" class="empty" hidden>Ничего не найдено. Попробуйте убрать часть фильтров.</p>
+  <p id="none" class="empty" hidden>Ничего не найдено. Попробуйте убрать часть фильтров или <a href="/predlozhit/">предложите персону</a>.</p>
 
   <script is:inline>
     (function () {
@@ -62,7 +72,7 @@ const jsonLd = {
       var none = document.getElementById('none');
       var reset = document.getElementById('reset');
       var total = items.length;
-      var state = { layer: [], sphere: [] };
+      var state = { layer: [], sphere: [], district: [] };
 
       function has(attr, list) {
         if (!list.length) return true;
@@ -73,6 +83,7 @@ const jsonLd = {
         var p = new URLSearchParams();
         if (state.layer.length) p.set('period', state.layer.join(','));
         if (state.sphere.length) p.set('sfera', state.sphere.join(','));
+        if (state.district.length) p.set('rayon', state.district.join(','));
         if (q.value) p.set('q', q.value);
         var s = p.toString();
         try { history.replaceState(null, '', location.pathname + (s ? '?' + s : '')); } catch (e) {}
@@ -84,11 +95,12 @@ const jsonLd = {
           var hay = li.getAttribute('data-search');
           var ok = terms.every(function (t) { return hay.indexOf(t) !== -1; }) &&
             has(li.getAttribute('data-layers'), state.layer) &&
-            has(li.getAttribute('data-spheres'), state.sphere);
+            has(li.getAttribute('data-spheres'), state.sphere) &&
+            has(li.getAttribute('data-districts'), state.district);
           li.hidden = !ok;
           if (ok) shown++;
         });
-        var filtered = terms.length || state.layer.length || state.sphere.length;
+        var filtered = terms.length || state.layer.length || state.sphere.length || state.district.length;
         count.textContent = (filtered ? 'Найдено: ' : 'Всего записей: ') + shown;
         none.hidden = shown !== 0;
         reset.hidden = !filtered;
@@ -104,12 +116,13 @@ const jsonLd = {
           apply();
         });
       });
-      reset.addEventListener('click', function () { state.layer = []; state.sphere = []; q.value = ''; apply(); });
+      reset.addEventListener('click', function () { state.layer = []; state.sphere = []; state.district = []; q.value = ''; apply(); });
       q.addEventListener('input', apply);
 
       var params = new URLSearchParams(location.search);
       state.layer = (params.get('period') || '').split(',').filter(Boolean);
       state.sphere = (params.get('sfera') || '').split(',').filter(Boolean);
+      state.district = (params.get('rayon') || '').split(',').filter(Boolean);
       q.value = params.get('q') || '';
       apply();
     })();
