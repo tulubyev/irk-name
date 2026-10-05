@@ -95,3 +95,12 @@ footer.site { border-top: 1px solid var(--border); padding-block: 1.5rem; color:
   dl.facts { grid-template-columns: 1fr; }
   dl.facts dt { padding-top: 0.6rem; }
 }
+.filters { margin: 0 0 1rem; }
+.filter-group { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin-bottom: 0.7rem; }
+.filter-title { font-family: system-ui, sans-serif; font-size: 0.8rem; color: var(--muted); min-width: 8rem; }
+button.chip { font: inherit; font-family: system-ui, sans-serif; font-size: 0.78rem; cursor: pointer; }
+button.chip.toggle[aria-pressed='true'] { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+button.chip:hover { border-color: var(--accent); }
+.chip .n { opacity: 0.65; margin-left: 0.2rem; }
+.filter-group .hint { flex-basis: 100%; font-family: system-ui, sans-serif; font-size: 0.75rem; color: var(--muted); }
+@media (max-width: 36rem) { .filter-title { min-width: 100%; } }

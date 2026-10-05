@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { LAYERS, type LayerKey } from './taxonomy';
 
 export type Person = CollectionEntry<'persons'>;
 
@@ -14,3 +15,13 @@ export function lifespan(p: Person['data']): string {
 }
 
 export const SITE = 'https://irk.name';
+
+const ERA_START = { xvii: 1600, xviii: 1700, xix: 1800, xx: 1900, xxi: 2000 } as const;
+
+/** Временные слои, в которых человек жил и действовал. */
+export function layersOf(p: Person['data']): LayerKey[] {
+  const start = p.birthYear !== undefined ? p.birthYear + 18 : ERA_START[p.era];
+  const end =
+    p.deathYear ?? (p.birthYear !== undefined ? new Date().getFullYear() : ERA_START[p.era] + 99);
+  return (Object.keys(LAYERS) as LayerKey[]).filter((k) => start <= LAYERS[k].to && end >= LAYERS[k].from);
+}
