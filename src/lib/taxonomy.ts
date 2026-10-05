@@ -28,6 +28,21 @@ export const DISTRICTS = {
   'g-cheremhovo': 'г. Черемхово',
   'ust-udinskij-rajon': 'Усть-Удинский район',
   'nizhneilimskij-rajon': 'Нижнеилимский район',
+  'g-bratsk': 'г. Братск',
+  'kachugskij-rajon': 'Качугский район',
+  'ust-kutskij-rajon': 'Усть-Кутский район',
+  'slyudyanskij-rajon': 'Слюдянский район',
+  'g-zima': 'г. Зима',
+  'nizhneudinskij-rajon': 'Нижнеудинский район',
+  'ehirit-bulagatskij-rajon': 'Эхирит-Булагатский район',
+  'bohanskij-rajon': 'Боханский район',
+  'kirenskij-rajon': 'Киренский район',
+  'cheremhovskij-rajon': 'Черемховский район',
+  'g-angarsk': 'Ангарский городской округ',
+  'tajshetskij-rajon': 'Тайшетский район',
+  'g-usole-sibirskoe': 'г. Усолье-Сибирское',
+  'g-ust-ilimsk': 'г. Усть-Илимск',
+  'olhonskij-rajon': 'Ольхонский район',
 } as const;
 export type DistrictKey = keyof typeof DISTRICTS;
 
