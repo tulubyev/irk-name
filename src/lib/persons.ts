@@ -3,8 +3,13 @@ import { LAYERS, type LayerKey, type DistrictKey } from './taxonomy';
 
 export type Person = CollectionEntry<'persons'>;
 
+/** Опубликованные записи (без архива). Все публичные страницы берут данные отсюда. */
 export async function getPersons(): Promise<Person[]> {
-  const all = await getCollection('persons');
+  return getAllPersons({ includeArchived: false });
+}
+
+export async function getAllPersons({ includeArchived = false } = {}): Promise<Person[]> {
+  const all = await getCollection('persons', (p) => includeArchived || !p.data.archived);
   return all.sort((a, b) => a.data.name.localeCompare(b.data.name, 'ru'));
 }
 

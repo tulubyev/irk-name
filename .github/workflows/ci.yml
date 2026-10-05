@@ -1,8 +1,6 @@
 name: CI
 on:
   pull_request:
-  push:
-    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,8 +11,19 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run build
+  admin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: admin/package-lock.json }
+      - run: npm ci
+        working-directory: admin
+      - run: npm run typecheck && npm run build
+        working-directory: admin
   docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: docker build -t irk-name-web:ci .
+      - run: docker build -f admin/Dockerfile -t irk-name-admin:ci .
