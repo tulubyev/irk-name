@@ -31,6 +31,34 @@ services:
       - traefik.http.middlewares.irkname-www-redirect.redirectregex.replacement=https://$${1}
       - traefik.http.middlewares.irkname-www-redirect.redirectregex.permanent=true
 
+
+  # Админка /admin (включается: COMPOSE_PROFILES=admin в .env). Настройка — DEPLOY.md, раздел «Админка».
+  admin:
+    profiles: [admin]
+    build:
+      context: .
+      dockerfile: admin/Dockerfile
+    image: irk-name-admin:latest
+    restart: unless-stopped
+    networks: [traefik]
+    environment:
+      ADMIN_PASSWORD_HASH: ${ADMIN_PASSWORD_HASH:-}
+      ADMIN_SESSION_SECRET: ${ADMIN_SESSION_SECRET:-}
+      ADMIN_ORIGIN: https://${SITE_HOST:-irk.name}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      GITHUB_REPO: ${GITHUB_REPO:-tulubyev/irk-name}
+      GITHUB_BRANCH: ${GITHUB_BRANCH:-main}
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=${TRAEFIK_NETWORK:-traefik-public}
+      # приоритет выше, чем у основного сайта: /admin уходит в этот контейнер
+      - traefik.http.routers.irkname-admin.rule=Host(`${SITE_HOST:-irk.name}`) && PathPrefix(`/admin`)
+      - traefik.http.routers.irkname-admin.priority=100
+      - traefik.http.routers.irkname-admin.entrypoints=${TRAEFIK_ENTRYPOINT_HTTPS:-websecure}
+      - traefik.http.routers.irkname-admin.tls=true
+      - traefik.http.routers.irkname-admin.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.routers.irkname-admin.service=irkname-admin
+      - traefik.http.services.irkname-admin.loadbalancer.server.port=3000
   cdn:
     image: nginx:1.27-alpine
     restart: unless-stopped
