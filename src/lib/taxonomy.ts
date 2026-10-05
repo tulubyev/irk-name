@@ -40,6 +40,9 @@ export const DISTRICTS = {
   'cheremhovskij-rajon': 'Черемховский район',
   'g-angarsk': 'Ангарский городской округ',
   'tajshetskij-rajon': 'Тайшетский район',
+  'g-usole-sibirskoe': 'г. Усолье-Сибирское',
+  'g-ust-ilimsk': 'г. Усть-Илимск',
+  'olhonskij-rajon': 'Ольхонский район',
 } as const;
 export type DistrictKey = keyof typeof DISTRICTS;
 
