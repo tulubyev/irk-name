@@ -1,11 +1,20 @@
 # Шаблон: переменные S3_HOST и S3_BUCKET подставляются при старте контейнера (envsubst).
 proxy_cache_path /var/cache/nginx/cdn levels=1:2 keys_zone=cdn:20m max_size=5g inactive=30d use_temp_path=off;
 
+# Файлы с хэшем в имени (name-<8+ hex>.ext) неизменяемы — кешируем на год
+map $uri $cdn_cache_control {
+  default                                  "public, max-age=86400";
+  "~-[0-9a-f]{8,}\.[a-z0-9]+$"            "public, max-age=31536000, immutable";
+}
+
 server {
   listen 80;
   server_name _;
 
   gzip off;
+
+  # Docker DNS: нужен, т.к. proxy_pass содержит переменные
+  resolver 127.0.0.11 valid=30s ipv6=off;
 
   location = /healthz {
     access_log off;
@@ -13,12 +22,11 @@ server {
     return 200 "ok\n";
   }
 
-  # Без листинга бакета: корень, "каталоги" и любые query-параметры (list-type и т.п.) запрещены
-  location ~ /$ { return 404; }
-
-  location / {
+  # Отдаём только объекты под /persons/ (без листинга и без посторонних файлов бакета)
+  location ^~ /persons/ {
     limit_except GET HEAD { deny all; }
     if ($args != "") { return 404; }
+    if ($uri ~ "/$") { return 404; }
 
     proxy_pass https://${S3_HOST}/${S3_BUCKET}$uri;
     proxy_ssl_server_name on;
@@ -39,41 +47,12 @@ server {
     proxy_hide_header Cache-Control;
     proxy_hide_header Access-Control-Allow-Origin;
 
-    add_header Cache-Control "public, max-age=86400" always;
+    add_header Cache-Control $cdn_cache_control always;
     add_header Access-Control-Allow-Origin "https://irk.name" always;
     add_header Access-Control-Allow-Methods "GET, HEAD" always;
     add_header X-Content-Type-Options "nosniff" always;
     add_header X-Cache-Status $upstream_cache_status always;
   }
 
-  # Файлы с хэшем в имени (name-<8+ hex>.ext) неизменяемы
-  location ~ -[0-9a-f]{8,}\.[a-z0-9]+$ {
-    limit_except GET HEAD { deny all; }
-    if ($args != "") { return 404; }
-
-    proxy_pass https://${S3_HOST}/${S3_BUCKET}$uri;
-    proxy_ssl_server_name on;
-    proxy_set_header Host ${S3_HOST};
-    proxy_set_header Authorization "";
-    proxy_set_header Cookie "";
-
-    proxy_cache cdn;
-    proxy_cache_key $uri;
-    proxy_cache_valid 200 365d;
-    proxy_cache_valid 404 1m;
-    proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
-    proxy_cache_lock on;
-
-    proxy_hide_header x-amz-request-id;
-    proxy_hide_header x-amz-id-2;
-    proxy_hide_header Set-Cookie;
-    proxy_hide_header Cache-Control;
-    proxy_hide_header Access-Control-Allow-Origin;
-
-    add_header Cache-Control "public, max-age=31536000, immutable" always;
-    add_header Access-Control-Allow-Origin "https://irk.name" always;
-    add_header Access-Control-Allow-Methods "GET, HEAD" always;
-    add_header X-Content-Type-Options "nosniff" always;
-    add_header X-Cache-Status $upstream_cache_status always;
-  }
+  location / { return 404; }
 }
