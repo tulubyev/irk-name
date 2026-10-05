@@ -43,6 +43,8 @@ const persons = defineCollection({
       .optional(),
     sources: z.array(z.object({ title: z.string(), url: z.url() })).min(1),
     status: z.enum(['verified', 'needs-check']).default('needs-check'),
+    // В архиве: запись не публикуется на сайте (видна только администратору)
+    archived: z.boolean().default(false),
   }),
 });
 
