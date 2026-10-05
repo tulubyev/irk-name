@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { LAYERS, type LayerKey } from './taxonomy';
+import { LAYERS, type LayerKey, type DistrictKey } from './taxonomy';
 
 export type Person = CollectionEntry<'persons'>;
 
@@ -24,4 +24,14 @@ export function layersOf(p: Person['data']): LayerKey[] {
   const end =
     p.deathYear ?? (p.birthYear !== undefined ? new Date().getFullYear() : ERA_START[p.era] + 99);
   return (Object.keys(LAYERS) as LayerKey[]).filter((k) => start <= LAYERS[k].to && end >= LAYERS[k].from);
+}
+
+/** Районы, с которыми связан человек (по местам). */
+export function districtsOf(p: Person['data']): DistrictKey[] {
+  return [...new Set(p.places.flatMap((pl) => (pl.district ? [pl.district] : [])))];
+}
+
+/** Населённые пункты, с которыми связан человек (по местам). */
+export function settlementsOf(p: Person['data']): string[] {
+  return [...new Set(p.places.flatMap((pl) => (pl.settlement ? [pl.settlement] : [])))];
 }

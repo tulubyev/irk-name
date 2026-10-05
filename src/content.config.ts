@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { SPHERES, ERAS, CONNECTIONS } from './lib/taxonomy';
+import { SPHERES, ERAS, CONNECTIONS, DISTRICTS } from './lib/taxonomy';
 
 const persons = defineCollection({
   // slug = имя файла (транслит), напр. grigoriy-shelikhov.md
@@ -18,7 +18,16 @@ const persons = defineCollection({
     connection: z.array(z.enum(Object.keys(CONNECTIONS) as [keyof typeof CONNECTIONS, ...(keyof typeof CONNECTIONS)[]])).min(1),
     connectionNote: z.string().optional(),
     places: z
-      .array(z.object({ name: z.string(), lat: z.number().optional(), lon: z.number().optional() }))
+      .array(
+        z.object({
+          name: z.string(),
+          // населённый пункт (свободный текст) и район/городской округ (из справочника DISTRICTS)
+          settlement: z.string().optional(),
+          district: z.enum(Object.keys(DISTRICTS) as [keyof typeof DISTRICTS, ...(keyof typeof DISTRICTS)[]]).optional(),
+          lat: z.number().optional(),
+          lon: z.number().optional(),
+        }),
+      )
       .default([]),
     // Только свободные лицензии (Wikimedia Commons и т.п.) с атрибуцией
     photo: z

@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPersons, districtsOf } from '../../lib/persons';
+import { DISTRICTS, type DistrictKey } from '../../lib/taxonomy';
+const persons = await getPersons();
+const counts = (Object.keys(DISTRICTS) as DistrictKey[])
+  .map((k) => ({ k, n: persons.filter((p) => districtsOf(p.data).includes(k)).length }))
+  .filter((x) => x.n > 0);
+---
+<Base title="Районы" description="Знаменитые имена Иркутской области по районам и населённым пунктам.">
+  <h1>Районы</h1>
+  <p class="lead">Люди, связанные с районами и городами Иркутской области: по месту рождения, жизни, работы или ссылки.</p>
+  <ul class="chips">
+    {counts.map(({ k, n }) => <li><a class="chip" href={`/mesto/${k}/`}>{DISTRICTS[k]} · {n}</a></li>)}
+  </ul>
+  <p class="empty">Вашего района нет в списке? <a href="/predlozhit/">Предложите персону</a> — земляка, о котором стоит знать.</p>
+</Base>
