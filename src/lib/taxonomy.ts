@@ -43,6 +43,11 @@ export const DISTRICTS = {
   'g-usole-sibirskoe': 'г. Усолье-Сибирское',
   'g-ust-ilimsk': 'г. Усть-Илимск',
   'olhonskij-rajon': 'Ольхонский район',
+  'g-tulun': 'г. Тулун',
+  'bodajbinskij-rajon': 'Бодайбинский район',
+  'osinskij-rajon': 'Осинский район',
+  'nukutskij-rajon': 'Нукутский район',
+  'zalarinskij-rajon': 'Заларинский район',
 } as const;
 export type DistrictKey = keyof typeof DISTRICTS;
 
