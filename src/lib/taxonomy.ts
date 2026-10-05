@@ -12,7 +12,7 @@ export const SPHERES = {
   'arhitektor': 'Архитекторы и строители',
   'gradonachalnik': 'Градоначальники',
   'revolyucioner': 'Революционеры и политики',
-  'svyashchennik': 'Религия',
+  'svyashchennik': 'Духовенство',
   'vrach': 'Врачи',
   'muzykant': 'Музыканты',
   'interesnye': 'Интересные люди',
