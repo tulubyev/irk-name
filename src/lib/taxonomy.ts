@@ -32,6 +32,14 @@ export const DISTRICTS = {
   'kachugskij-rajon': 'Качугский район',
   'ust-kutskij-rajon': 'Усть-Кутский район',
   'slyudyanskij-rajon': 'Слюдянский район',
+  'g-zima': 'г. Зима',
+  'nizhneudinskij-rajon': 'Нижнеудинский район',
+  'ehirit-bulagatskij-rajon': 'Эхирит-Булагатский район',
+  'bohanskij-rajon': 'Боханский район',
+  'kirenskij-rajon': 'Киренский район',
+  'cheremhovskij-rajon': 'Черемховский район',
+  'g-angarsk': 'Ангарский городской округ',
+  'tajshetskij-rajon': 'Тайшетский район',
 } as const;
 export type DistrictKey = keyof typeof DISTRICTS;
 
