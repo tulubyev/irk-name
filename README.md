@@ -16,6 +16,10 @@
 
 Нужен Node.js 20+ (проверено на 22).
 
+## Админка
+
+Редактирование записей через браузер: `https://irk.name/admin` (пароль). Код — `admin/`, настройка — [DEPLOY.md](DEPLOY.md#админка-admin). Локально: `cd admin && npm i && npm run build`, затем запуск с `ADMIN_STORE=fs` (см. `admin/src/config.ts`).
+
 ## Как добавить персону
 
 Один файл на персону: `src/content/persons/<slug>.md`, где `slug` — транслит имени (`grigoriy-shelikhov.md`). Схема описана в `src/content.config.ts`, справочники сфер/эпох/типов связи — в `src/lib/taxonomy.ts`. Пример:
@@ -38,6 +42,7 @@ sources:                    # минимум один источник
   - title: "Название"
     url: "https://…"
 status: needs-check         # verified — только после сверки по источникам
+archived: true              # необязательно: скрыть с сайта (видно только в админке)
 ---
 Текст биографии (Markdown).
 ```

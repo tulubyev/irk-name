@@ -1,0 +1,42 @@
+name: Deploy
+# После каждого обновления main (в т. ч. правок из админки): проверка, сборка и деплой на VPS.
+# Деплой выполняется, только если заданы секреты DEPLOY_* (см. DEPLOY.md, «Автодеплой»).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      HAS_KEY: ${{ secrets.DEPLOY_SSH_KEY != '' }}
+    steps:
+      - name: Пропуск — автодеплой не настроен
+        if: env.HAS_KEY != 'true'
+        run: echo "Секреты DEPLOY_* не заданы — деплой пропущен. На сервере можно выполнить bash deploy.sh вручную."
+      - name: Деплой по SSH
+        if: env.HAS_KEY == 'true'
+        env:
+          KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # на сервере ключ ограничен командой command="cd /var/www/irk-name && bash deploy.sh"
+          ssh -T -i ~/.ssh/deploy -o StrictHostKeyChecking=yes "$DEPLOY_USER@$HOST"
