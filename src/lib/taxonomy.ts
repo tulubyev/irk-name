@@ -28,6 +28,10 @@ export const DISTRICTS = {
   'g-cheremhovo': 'г. Черемхово',
   'ust-udinskij-rajon': 'Усть-Удинский район',
   'nizhneilimskij-rajon': 'Нижнеилимский район',
+  'g-bratsk': 'г. Братск',
+  'kachugskij-rajon': 'Качугский район',
+  'ust-kutskij-rajon': 'Усть-Кутский район',
+  'slyudyanskij-rajon': 'Слюдянский район',
 } as const;
 export type DistrictKey = keyof typeof DISTRICTS;
 
