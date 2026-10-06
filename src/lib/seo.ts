@@ -10,7 +10,6 @@ export const BRAND = 'Иркутяне';
 export const VERIFICATION = {
   yandex: '', // Яндекс Вебмастер: <meta name="yandex-verification">
   google: '', // Google Search Console: <meta name="google-site-verification">
-  bing: '', //   Bing Webmaster: <meta name="msvalidate.01">
 };
 
 export function plural(n: number, forms: [string, string, string]): string {

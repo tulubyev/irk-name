@@ -26,9 +26,10 @@ test('findKey: ровно один ключ', () => {
 
 test('submit: тело запроса и учёт кодов ответа', async () => {
   const calls = [];
-  const fetchImpl = async (url, init) => { calls.push({ url, body: JSON.parse(init.body) }); return { status: url.includes('yandex') ? 202 : 500 }; };
+  const fetchImpl = async (url, init) => { calls.push({ url, body: JSON.parse(init.body) }); return { status: 202 }; };
   const ok = await submit(['https://irk.name/a/'], 'k'.repeat(32), { fetchImpl, log: () => {} });
   assert.equal(ok, 1);
-  assert.equal(calls.length, ENDPOINTS.length);
+  assert.deepEqual(ENDPOINTS, ['https://yandex.com/indexnow']);
+  assert.equal(calls.length, 1);
   assert.deepEqual(calls[0].body, { host: 'irk.name', key: 'k'.repeat(32), keyLocation: `https://irk.name/${'k'.repeat(32)}.txt`, urlList: ['https://irk.name/a/'] });
 });
