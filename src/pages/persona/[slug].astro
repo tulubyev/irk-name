@@ -80,6 +80,6 @@ const jsonLd = {
     <ul>
       {d.sources.map((s) => <li><a href={s.url} rel="noopener">{s.title}</a></li>)}
     </ul>
-    <p class="empty">Нашли ошибку или знаете больше? <a href={`https://github.com/tulubyev/irk-name/issues/new?title=${encodeURIComponent('Исправление: ' + d.name)}`} rel="noopener">Сообщите нам</a>.</p>
+    <p class="empty">Нашли ошибку или знаете больше? <a href={`/predlozhit/?slug=${person.id}`}>Сообщите нам</a>.</p>
   </article>
 </Base>
