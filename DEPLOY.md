@@ -82,9 +82,23 @@ npm run upload-media                # загрузить; повторный з�
 
 Белый список лицензий: Public domain, PD-*, CC0, CC BY *, CC BY-SA *. Файлы с другой лицензией (NC/ND, GFDL, fair use, без лицензии) скрипт пропускает и печатает списком.
 
+Если на сервере нет Node.js 22 (`node -v`), все команды ниже выполняйте в контейнере — ничего ставить не нужно:
+
+```bash
+cd /var/www/irk-name
+docker run --rm -it -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/app -w /app --env-file .env node:22 bash
+```
+
 ```bash
 cd /var/www/irk-name && git pull
 npm ci                                        # нужен sharp из devDependencies
+
+# 0. Автопоиск портретов для записей, которых ещё нет в манифесте (Wikidata, свойство «изображение» P18).
+#    Надёжная находка — только если это человек и совпадает год рождения (±1). Живые и архивные пропускаются.
+node scripts/discover-photos.mjs              # отчёт: data/commons-photos.candidates.json
+node scripts/discover-photos.mjs --write      # дописать надёжные находки в data/commons-photos.json
+#   «?» в выводе — несколько кандидатов или у записи нет года: проверьте в отчёте и при желании
+#   добавьте в манифест вручную.
 
 # 1. Метаданные + скачивание в media/ (persons/<slug>.webp, -640, -160; heraldry/<key>.webp|svg)
 node scripts/fetch-commons.mjs --dry-run      # только проверить, что файлы есть и лицензии свободные
@@ -106,7 +120,7 @@ node scripts/fetch-commons.mjs --apply
 npm run check && git diff --stat
 
 # 5. Коммит и деплой
-git add data/commons-photos.lock.json src/content/persons
+git add data/commons-photos.json data/commons-photos.lock.json src/content/persons
 git commit -m "Photos from Wikimedia Commons"
 git push                                       # нужен доступ на запись; иначе — PR с ноутбука
 bash deploy.sh
@@ -114,7 +128,7 @@ bash deploy.sh
 
 Гербы в шапке не используются: эмблема сайта — бабр из герба Иркутска без щита (`public/emblem/`, `src/components/Babr.astro`), раздел `heraldry` в манифесте пуст. Фото: если файла нет на CDN, блок фото на странице персоны скрывается.
 
-Добавить фото: допишите `{ "slug", "file": "File:….jpg", "alt" }` в `data/commons-photos.json` и повторите шаги 1–5. Живым людям и записям с `archived: true` фото не подбираем.
+Добавить фото: после пополнения справочника запустите шаг 0 (автопоиск) или допишите `{ "slug", "file": "File:….jpg", "alt" }` в `data/commons-photos.json` вручную, затем шаги 1–5. Живым людям и записям с `archived: true` фото не подбираем.
 
 ## CI
 
