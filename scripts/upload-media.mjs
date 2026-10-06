@@ -4,8 +4,8 @@
 //
 //   node scripts/upload-media.mjs [--dry-run] [--dir media] [--prefix ""]
 //
-// Окружение: S3_ENDPOINT, S3_REGION, S3_BUCKET, S3_FORCE_PATH_STYLE,
-//            S3_ACCESS_KEY_ID, S3_SECRET_ACCESS_KEY (ключи — только из окружения!)
+// Окружение: S3_ACCESS_KEY_ID, S3_SECRET_ACCESS_KEY (ключи — только из окружения!);
+//            S3_ENDPOINT, S3_REGION, S3_BUCKET, S3_FORCE_PATH_STYLE — по умолчанию бакет irk.name в Beget S3.
 import { S3Client, PutObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
 import { createHash } from 'node:crypto';
 import { readdir, readFile } from 'node:fs/promises';
@@ -18,10 +18,11 @@ const dir = opt('--dir', 'media');
 const prefix = opt('--prefix', '');
 
 const need = (n) => { const v = process.env[n]; if (!v) { console.error(`Не задана переменная ${n}`); process.exit(1); } return v; };
-const bucket = need('S3_BUCKET');
+// Значения по умолчанию — наш бакет в Beget S3 (не секрет); переопределяются через окружение
+const bucket = process.env.S3_BUCKET || '0a011f8d633a-irk-name';
 const client = new S3Client({
-  endpoint: need('S3_ENDPOINT'),
-  region: process.env.S3_REGION || 'us-east-1',
+  endpoint: process.env.S3_ENDPOINT || 'https://s3.ru1.storage.beget.cloud',
+  region: process.env.S3_REGION || 'ru1',
   forcePathStyle: (process.env.S3_FORCE_PATH_STYLE ?? 'true') !== 'false',
   credentials: dryRun && !process.env.S3_ACCESS_KEY_ID ? { accessKeyId: 'dry', secretAccessKey: 'dry' }
     : { accessKeyId: need('S3_ACCESS_KEY_ID'), secretAccessKey: need('S3_SECRET_ACCESS_KEY') },
