@@ -5,6 +5,7 @@ import '@fontsource/playfair-display/700.css';
 import '../styles/global.css';
 import { SITE } from '../lib/persons';
 import { COPYRIGHT_YEARS } from '../lib/operator';
+import Babr from '../components/Babr.astro';
 
 interface Props {
   title: string;
@@ -56,7 +57,10 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
   <body>
     <header class="site">
       <div class="wrap">
-        <a class="logo" href="/"><span class="logo-name">Иркутяне</span><span class="logo-tag">Знаменитые имена нашей земли</span></a>
+        <a class="logo" href="/">
+          <Babr />
+          <span class="logo-text"><span class="logo-name">Иркутяне</span><span class="logo-tag">Знаменитые имена нашей земли</span></span>
+        </a>
         <a class="suggest" href="/predlozhit/">Предложить<span class="long"> персону</span></a>
         <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему"><span class="long">Тема</span><span class="short" aria-hidden="true">◐</span></button>
       </div>

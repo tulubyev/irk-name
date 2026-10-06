@@ -13,6 +13,7 @@
 | `npm run build` | собрать статический сайт в `dist/` |
 | `npm run preview` | предпросмотр собранного сайта |
 | `npm run check` | проверка типов и схемы контента (`astro check`) |
+| `npm test` | тесты скриптов (`scripts/*.test.mjs`, без сети) |
 
 Нужен Node.js 20+ (проверено на 22).
 
@@ -65,7 +66,7 @@ archived: true              # необязательно: скрыть с сай
 
 - [ ] Сверить все записи по источникам и перевести в `verified`.
 - [ ] Карта мест (Leaflet + OpenStreetMap) — поля `places[].lat/lon` уже в схеме.
-- [ ] Фото с Wikimedia Commons (с атрибуцией).
+- [ ] Фото с Wikimedia Commons (с атрибуцией): манифест `data/commons-photos.json`, скрипт `scripts/fetch-commons.mjs`, порядок — DEPLOY.md, «Фото и гербы».
 - [ ] Расширение базы: спортсмены, артисты, градоначальники, меценаты.
 - [ ] Выкатить на VPS по DEPLOY.md и подключить DNS.
 - [ ] Автодеплой (GitHub Actions) — обсудить отдельно.

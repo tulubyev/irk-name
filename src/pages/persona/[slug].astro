@@ -38,7 +38,7 @@ const jsonLd = {
     )}
     {d.photo && (
       <figure class="photo">
-        <img src={mediaUrl(d.photo.key)} srcset={mediaSrcset(d.photo.key)} sizes="(max-width: 42rem) 100vw, 42rem" alt={d.photo.alt} loading="lazy" />
+        <img src={mediaUrl(d.photo.key)} srcset={mediaSrcset(d.photo.key)} sizes="(max-width: 26rem) 100vw, 24rem" alt={d.photo.alt} loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true" />
         <figcaption>
           Автор: {d.photo.author}. Лицензия:
           {d.photo.licenseUrl ? <a href={d.photo.licenseUrl}>{d.photo.license}</a> : d.photo.license}.

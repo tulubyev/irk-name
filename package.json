@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "upload-media": "node scripts/upload-media.mjs"
+    "upload-media": "node scripts/upload-media.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "fetch-commons": "node scripts/fetch-commons.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
@@ -19,6 +21,7 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.1146.0"
+    "@aws-sdk/client-s3": "^3.1146.0",
+    "sharp": "^0.35.5"
   }
 }
