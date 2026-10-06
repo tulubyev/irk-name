@@ -29,8 +29,8 @@ const jsonLd = {
     <label for="q" style="position:absolute;left:-9999px">Поиск по имени, сфере или месту</label>
     <input id="q" class="search" type="search" placeholder="Поиск: имя, сфера, место…" autocomplete="off" />
     <details class="dd" data-group="sphere">
-      <summary>Вид деятельности<span class="dd-count"></span></summary>
-      <div class="dd-panel" role="group" aria-label="Вид деятельности">
+      <summary>Занятие<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Занятие">
         {sphereCounts.map(({ k, n }) => (
           <label class={`fam-${SPHERE_FAMILY[k]}${n === 0 ? ' disabled' : ''}`} title={n === 0 ? 'Записей пока нет — предложите персону' : undefined}>
             <input type="checkbox" data-group="sphere" value={k} disabled={n === 0} /><span class="swatch"></span> {SPHERES[k]} <span class="n">{n}</span>
@@ -40,8 +40,8 @@ const jsonLd = {
       </div>
     </details>
     <details class="dd" data-group="district">
-      <summary>Проживание<span class="dd-count"></span></summary>
-      <div class="dd-panel" role="group" aria-label="Проживание">
+      <summary>Место<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Место">
         {districtCounts.map(({ k, n }) => (
           <label><input type="checkbox" data-group="district" value={k} /> {DISTRICTS[k]} <span class="n">{n}</span></label>
         ))}
@@ -77,7 +77,7 @@ const jsonLd = {
       var none = document.getElementById('none');
       var reset = document.getElementById('reset');
       var PARAM = { sphere: 'sfera', district: 'rayon', era: 'vek' };
-      var TITLE = { era: 'Время', sphere: 'Вид деятельности', district: 'Проживание' };
+      var TITLE = { era: 'Время', sphere: 'Занятие', district: 'Место' };
       var LABELS = JSON.parse(document.getElementById('filter-labels').textContent);
 
       function selected(group) {
