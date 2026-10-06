@@ -5,5 +5,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://irk.name',
   trailingSlash: 'always',
-  integrations: [sitemap()],
+  integrations: [
+    // служебные страницы в карту сайта не попадают
+    sitemap({ filter: (page) => !page.includes('/predlozhit/spasibo/') && !page.endsWith('/404/') }),
+  ],
 });

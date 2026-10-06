@@ -6,24 +6,34 @@ import '../styles/global.css';
 import { SITE } from '../lib/persons';
 import { COPYRIGHT_YEARS } from '../lib/operator';
 import Babr from '../components/Babr.astro';
+import { BRAND, VERIFICATION } from '../lib/seo';
 
 interface Props {
   title: string;
   description?: string;
   type?: 'website' | 'profile' | 'article';
   image?: string;
-  jsonLd?: object;
+  /** Один или несколько блоков schema.org */
+  jsonLd?: object | object[];
+  /** Готовый <title>, без добавления названия сайта */
+  fullTitle?: string;
+  /** Не индексировать страницу (служебные страницы) */
+  noindex?: boolean;
 }
 const {
   title,
-  description = 'Справочник знаменитых имён Иркутска: люди, связанные с городом.',
+  description = 'Знаменитые люди Иркутска и Иркутской области: учёные, писатели, декабристы, купцы, врачи, военные — биографии с источниками.',
   type = 'website',
   image,
   jsonLd,
+  fullTitle: fullTitleProp,
+  noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE).href;
-const fullTitle = Astro.url.pathname === '/' ? title : `${title} — irk.name`;
+const fullTitle = fullTitleProp ?? (Astro.url.pathname === '/' ? title : `${title} — ${BRAND}`);
 const ogImage = image ?? new URL('/og.png', SITE).href;
+const defaultImage = !image; // og.png — 1200×630
+const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 <!doctype html>
 <html lang="ru">
@@ -33,17 +43,30 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta property="og:site_name" content="irk.name" />
+    <link rel="preconnect" href="https://cdn.irk.name" crossorigin />
+    <meta name="theme-color" content="#7a2e2e" />
+    {VERIFICATION.yandex && <meta name="yandex-verification" content={VERIFICATION.yandex} />}
+    {VERIFICATION.google && <meta name="google-site-verification" content={VERIFICATION.google} />}
+    {VERIFICATION.bing && <meta name="msvalidate.01" content={VERIFICATION.bing} />}
+    <meta property="og:site_name" content={BRAND} />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:type" content={type} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta name="twitter:card" content="summary" />
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {defaultImage && <meta property="og:image:width" content="1200" />}
+    {defaultImage && <meta property="og:image:height" content="630" />}
+    <meta name="twitter:card" content={defaultImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {jsonLdBlocks.map((b) => <script type="application/ld+json" set:html={JSON.stringify(b)} />)}
     <script is:inline>
       (function () {
         try {

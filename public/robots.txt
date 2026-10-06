@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /api/
+Disallow: /predlozhit/spasibo/
+
+# Яндекс: параметры фильтров главной не создают отдельных страниц
+Clean-param: vek&sfera&rayon&q /
 
 Sitemap: https://irk.name/sitemap-index.xml

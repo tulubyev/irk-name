@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import PersonCard from '../../components/PersonCard.astro';
 import { getPersons } from '../../lib/persons';
 import { ERAS, type EraKey } from '../../lib/taxonomy';
+import { SITE } from '../../lib/persons';
+import { biographies, clip, namesOf, collectionLd, breadcrumbLd, BRAND } from '../../lib/seo';
 export async function getStaticPaths() {
   const persons = await getPersons();
   return (Object.keys(ERAS) as EraKey[])
@@ -12,9 +14,16 @@ export async function getStaticPaths() {
 const { era } = Astro.params;
 const { list } = Astro.props;
 const label = ERAS[era as EraKey];
+const url = `${SITE}/epoha/${era}/`;
+const description = clip(`${label} в истории Иркутска и Иркутской области: ${biographies(list.length)} — ${namesOf(list)} и другие. Годы жизни, чем известны, источники.`);
+const jsonLd = [
+  collectionLd({ name: label, url, description, persons: list }),
+  breadcrumbLd([{ name: 'Все имена', url: `${SITE}/` }, { name: 'Времена', url: `${SITE}/epoha/` }, { name: label, url }]),
+];
 ---
-<Base title={label} description={`${label} — знаменитые имена Иркутска.`}>
+<Base title={label} fullTitle={`Знаменитые люди Иркутска: ${label} | ${BRAND}`} description={description} jsonLd={jsonLd}>
   <nav class="breadcrumbs"><a href="/epoha/">Времена</a> › {label}</nav>
   <h1>{label}</h1>
+  <p class="lead">{biographies(list.length)} людей, чья жизнь связана с Иркутском и Иркутской областью в {label.replace(' век', ' веке')}: годы жизни, чем известен каждый и источники.</p>
   <ul class="cards">{list.map((p) => <PersonCard person={p} />)}</ul>
 </Base>
