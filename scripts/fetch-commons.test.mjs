@@ -168,6 +168,7 @@ test('fetchAll + applyAll на моках: фильтр, webp, lock, идемп�
     const big = await sharp(join(dir, 'media/persons/ivan.webp')).metadata();
     const small = await sharp(join(dir, 'media/persons/ivan-640.webp')).metadata();
     assert.deepEqual([big.format, big.width, small.width], ['webp', 1200, 640]);
+    assert.equal((await sharp(join(dir, 'media/persons/ivan-160.webp')).metadata()).width, 160);
     assert.equal((await sharp(join(dir, 'media/heraldry/irkutsk.webp')).metadata()).height, 128);
     assert.ok((await stat(join(dir, 'media/heraldry/irkutsk.svg'))).size > 0);
 

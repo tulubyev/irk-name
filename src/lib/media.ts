@@ -6,8 +6,16 @@ export function mediaUrl(key: string): string {
   return `${CDN}/${key.replace(/^\/+/, '')}`;
 }
 
-/** srcset из двух заранее подготовленных размеров: <name>-640.webp и <name>.webp (1280). */
+const sized = (key: string, suffix: string) => mediaUrl(key.replace(/\.webp$/, `${suffix}.webp`));
+
+/** srcset из двух заранее подготовленных размеров: <name>-640.webp и <name>.webp (≤1200). */
 export function mediaSrcset(key: string): string {
-  const small = key.replace(/\.webp$/, '-640.webp');
-  return `${mediaUrl(small)} 640w, ${mediaUrl(key)} 1280w`;
+  return `${sized(key, '-640')} 640w, ${mediaUrl(key)} 1200w`;
 }
+
+/** srcset миниатюры для карточки: <name>-160.webp и <name>-640.webp. */
+export function thumbSrcset(key: string): string {
+  return `${sized(key, '-160')} 160w, ${sized(key, '-640')} 640w`;
+}
+
+export const thumbUrl = (key: string) => sized(key, '-160');

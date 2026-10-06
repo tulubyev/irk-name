@@ -1,6 +1,7 @@
 ---
 import { SPHERES, DISTRICTS, SPHERE_FAMILY } from '../lib/taxonomy';
 import { lifespan, districtsOf, settlementsOf, type Person } from '../lib/persons';
+import { thumbUrl, thumbSrcset } from '../lib/media';
 interface Props { person: Person }
 const { person } = Astro.props;
 const d = person.data;
@@ -18,8 +19,15 @@ const search = [
   .replaceAll('ё', 'е');
 ---
 <li class={`card fam-${SPHERE_FAMILY[d.spheres[0]]}`} data-search={search} data-spheres={d.spheres.join(" ")} data-era={d.era} data-districts={districts.join(" ")}>
-  <h3><a href={`/persona/${person.id}/`}>{d.name}</a></h3>
-  <div class="years">{lifespan(d)}</div>
+  <div class="card-head">
+    {d.photo && (
+      <img class="card-thumb" src={thumbUrl(d.photo.key)} srcset={thumbSrcset(d.photo.key)} sizes="3.5rem" width="56" height="70" alt="" loading="lazy" decoding="async" onerror="this.remove()" />
+    )}
+    <div>
+      <h3><a href={`/persona/${person.id}/`}>{d.name}</a></h3>
+      <div class="years">{lifespan(d)}</div>
+    </div>
+  </div>
   <p>{d.summary}</p>
   <ul class="chips card-chips">
     {d.spheres.map((s) => <li><a class={`chip fam-${SPHERE_FAMILY[s]}`} href={`/sfera/${s}/`}>{SPHERES[s]}</a></li>)}

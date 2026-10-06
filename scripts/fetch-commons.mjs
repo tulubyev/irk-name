@@ -8,7 +8,7 @@
 //   node scripts/fetch-commons.mjs --only a,b # ограничиться этими slug (и ключами гербов)
 //
 // Вход:  data/commons-photos.json — { persons: [{ slug, file, alt }], heraldry: [{ key, file, alt }] }
-// Выход: media/persons/<slug>.webp (≤1200 px) + <slug>-640.webp, media/heraldry/<key>.svg|webp,
+// Выход: media/persons/<slug>.webp (≤1200 px) + <slug>-640.webp + <slug>-160.webp, media/heraldry/<key>.svg|webp,
 //        data/commons-photos.lock.json — автор, лицензия, ссылки (из API Commons, не вручную).
 // Повторный запуск ничего не перекачивает, если файл на Commons не изменился (sha1).
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
@@ -24,6 +24,7 @@ const THUMB_PERSON = 1280;
 const THUMB_HERALDRY = 500;
 const MAX_WIDTH = 1200;
 const SMALL_WIDTH = 640;
+const THUMB_WIDTH = 160; // миниатюра в карточке на главной
 const HERALDRY_HEIGHT = 128;
 
 // ---------- чистые функции (покрыты тестом) ----------
@@ -200,6 +201,7 @@ async function savePerson(sharp, buf, mediaDir, slug) {
   const img = sharp(buf, { failOn: 'none' }).rotate();
   await img.clone().resize({ width: MAX_WIDTH, withoutEnlargement: true }).webp({ quality: 80 }).toFile(join(dir, `${slug}.webp`));
   await img.clone().resize({ width: SMALL_WIDTH, withoutEnlargement: true }).webp({ quality: 78 }).toFile(join(dir, `${slug}-640.webp`));
+  await img.clone().resize({ width: THUMB_WIDTH, withoutEnlargement: true }).webp({ quality: 75 }).toFile(join(dir, `${slug}-160.webp`));
 }
 
 async function saveHeraldry(sharp, info, mediaDir, key) {
@@ -263,7 +265,7 @@ export async function fetchAll({ manifest, lockPath, mediaDir, dryRun, force, on
         ...(meta.description ? { description: meta.description } : {}),
       };
       const outs = g.kind === 'persons'
-        ? [join(mediaDir, 'persons', `${id}.webp`), join(mediaDir, 'persons', `${id}-640.webp`)]
+        ? ['', '-640', '-160'].map((s) => join(mediaDir, 'persons', `${id}${s}.webp`))
         : [join(mediaDir, 'heraldry', `${id}.webp`)];
       const same = prev && prev.sha1 === meta.sha1 && prev.file === page.title;
       if (dryRun) {

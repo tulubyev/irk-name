@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import { SITE } from '../lib/persons';
 import { OPERATOR, COPYRIGHT_YEARS } from '../lib/operator';
+import { HERALDRY } from '../lib/heraldry';
+import { mediaUrl } from '../lib/media';
 
 interface Props {
   title: string;
@@ -53,7 +55,12 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
   <body>
     <header class="site">
       <div class="wrap">
-        <a class="logo" href="/">irk<span>.name</span></a>
+        <a class="logo" href="/">
+          <span class="arms">
+            {HERALDRY.map((h) => <img src={mediaUrl(h.key)} width={h.width} height={h.height} alt={h.alt} title={h.alt} decoding="async" onerror="this.remove()" />)}
+          </span>
+          <span class="logo-text">irk<span>.name</span></span>
+        </a>
         <nav class="main" aria-label="Основная навигация">
           <a href="/">Все имена</a>
           <a href="/sfera/">Сферы</a>
