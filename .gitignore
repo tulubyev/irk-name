@@ -6,3 +6,4 @@ dist/
 .env
 media/
 previews/
+data/commons-photos.candidates.json
