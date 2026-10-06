@@ -1,4 +1,7 @@
 ---
+import '@fontsource/golos-text/400.css';
+import '@fontsource/golos-text/600.css';
+import '@fontsource/playfair-display/700.css';
 import '../styles/global.css';
 import { SITE } from '../lib/persons';
 import { COPYRIGHT_YEARS } from '../lib/operator';
@@ -53,9 +56,9 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
   <body>
     <header class="site">
       <div class="wrap">
-        <a class="logo" href="/">Иркутяне</a>
-        <a class="suggest" href="/predlozhit/">Предложить персону</a>
-        <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему">Тема</button>
+        <a class="logo" href="/"><span class="logo-name">Иркутяне</span><span class="logo-tag">Знаменитые имена нашей земли</span></a>
+        <a class="suggest" href="/predlozhit/">Предложить<span class="long"> персону</span></a>
+        <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему"><span class="long">Тема</span><span class="short" aria-hidden="true">◐</span></button>
       </div>
     </header>
     <main class="wrap"><slot /></main>
@@ -63,14 +66,10 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
       <div class="wrap">
         <span class="footer-copy">© {COPYRIGHT_YEARS} irk.name</span>
         <nav aria-label="Служебные ссылки">
-          <a href="/sfera/">Сферы</a>
-          <a href="/epoha/">Времена</a>
-          <a href="/mesto/">Районы</a>
           <a href="/o-proekte/">О проекте</a>
           <a href="/predlozhit/">Предложить персону</a>
           <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
           <a href="/personalnye-dannye/">Персональные данные</a>
-          <a href="/avtorskie-prava/">Авторские права</a>
         </nav>
       </div>
     </footer>
