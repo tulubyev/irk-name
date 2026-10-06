@@ -12,6 +12,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/martemyan-ryutin.webp"
+  alt: "Портрет: Мартемьян Никитич Рютин"
+  author: "НКВД"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%80%D1%82%D0%B5%D0%BC%D1%8C%D1%8F%D0%BD_%D0%A0%D1%8E%D1%82%D0%B8%D0%BD.jpg"
 sources:
   - title: "Википедия: Рютин, Мартемьян Никитич"
     url: "https://ru.wikipedia.org/wiki/Рютин,_Мартемьян_Никитич"

@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/erik-laksman.webp"
+  alt: "Портрет: Эрик Лаксман"
+  author: "unknown painter"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Laxman_full.png"
 sources:
   - title: "Википедия: Лаксман, Эрик"
     url: "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BA%D1%81%D0%BC%D0%B0%D0%BD,_%D0%AD%D1%80%D0%B8%D0%BA"

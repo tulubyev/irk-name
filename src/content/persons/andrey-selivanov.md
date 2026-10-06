@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/andrey-selivanov.webp"
+  alt: "Портрет: Андрей Николаевич Селиванов"
+  author: "неизв."
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Andrei_Selivanov.jpg"
 sources:
   - title: "Иркипедия: Селиванов, Андрей Николаевич"
     url: "http://irkipedia.ru/content/selivanov_andrey_nikolaevich"

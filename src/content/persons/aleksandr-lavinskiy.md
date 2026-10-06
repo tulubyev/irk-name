@@ -11,6 +11,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/aleksandr-lavinskiy.webp"
+  alt: "Портрет: Александр Степанович Лавинский"
+  author: "Подолинский Михаил Доминикович. Рустем (Рустемас) Ян (Йонас) (автор оригинала)"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Portrait_of_Alexander_Stepanovich_Lavinsky.jpg"
 sources:
   - title: "Иркипедия: Лавинский, Александр Степанович"
     url: "http://irkipedia.ru/content/lavinskiy_aleksandr_stepanovich"

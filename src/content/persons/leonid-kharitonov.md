@@ -11,6 +11,13 @@ places:
   - name: "Голуметь"
     settlement: "Голуметь"
     district: cheremhovskij-rajon
+photo:
+  key: "persons/leonid-kharitonov.webp"
+  alt: "Портрет: Леонид Михайлович Харитонов"
+  author: "L.M. Kharitonov."
+  license: "FAL"
+  licenseUrl: "https://artlibre.org/licence/lal/en"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Leonid_Kharitonov_1970s.jpg"
 sources:
   - title: "Википедия: Харитонов, Леонид Михайлович"
     url: "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%80%D0%B8%D1%82%D0%BE%D0%BD%D0%BE%D0%B2,_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"

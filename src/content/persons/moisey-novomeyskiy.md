@@ -14,6 +14,13 @@ places:
 links:
   - title: "Радио Свобода: Соль земли обетованной. Как сибирский инженер оживил Мёртвое море"
     url: "https://www.svoboda.org/a/sol-zemli-obetovannoy-kak-sibirskiy-inzhener-ozhivil-mertvoe-more/32237815.html"
+photo:
+  key: "persons/moisey-novomeyskiy.webp"
+  alt: "Портрет: Моисей Абрамович Новомейский"
+  author: "Dr. Avishai Teicher"
+  license: "CC BY 2.5"
+  licenseUrl: "https://creativecommons.org/licenses/by/2.5"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_29786_Moses_Novomeysky.JPG"
 sources:
   - title: "Электронная еврейская энциклопедия: Новомейский Моше"
     url: "https://eleven.co.il/zionism/from-balfour-to-state/12997/"

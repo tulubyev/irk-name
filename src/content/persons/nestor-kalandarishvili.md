@@ -12,6 +12,13 @@ places:
     settlement: "Иркутск"
     district: g-irkutsk
   - name: "Бассейн реки Китой"
+photo:
+  key: "persons/nestor-kalandarishvili.webp"
+  alt: "Портрет: Нестор Александрович Каландаришвили"
+  author: "Неизвестный фотограф"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Kalandar.jpg"
 sources:
   - title: "Хронос: Каландаришвили Нестор Александрович"
     url: "http://www.hrono.info/biograf/bio_k/kalandarishvili.php"

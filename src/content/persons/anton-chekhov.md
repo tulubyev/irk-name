@@ -11,6 +11,12 @@ places:
   - name: "Иркутск, гостиница «Амурское подворье»"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/anton-chekhov.webp"
+  alt: "Портрет Антона Чехова работы Осипа Браза, 1898 год"
+  author: "Осип Эммануилович Браз"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Chekhov_1898_by_Osip_Braz.jpg"
 sources:
   - title: "Википедия: Путешествие Чехова на Сахалин"
     url: "https://ru.wikipedia.org/wiki/%D0%9F%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D0%B5_%D0%A7%D0%B5%D1%85%D0%BE%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B8%D0%BD"

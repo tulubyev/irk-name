@@ -17,6 +17,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/iosif-kobzon.webp"
+  alt: "Портрет Иосифа Кобзона"
+  author: "duma.gov.ru"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Official_portrait_of_Iosif_Kobzon_(1).jpg"
 sources:
   - title: "Областная газета: Сибирские истории Кобзона"
     url: "https://www.ogirk.ru/2018/09/05/sibirskie-istorii-kobzona/"

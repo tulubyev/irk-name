@@ -14,6 +14,12 @@ places:
 links:
   - title: "Иркипедия: Кроль, Моисей Ааронович"
     url: "http://irkipedia.ru/content/krol_moisey_aoronovich"
+photo:
+  key: "persons/moisey-krol.webp"
+  alt: "Портрет: Моисей Ааронович Кроль"
+  author: "Неизвестный фотограф"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Krol_Moisei.jpg"
 sources:
   - title: "Берман Е. А., Генина Е. С. Еврейская община Иркутска в 1917 — конце 1930-х гг. (Вестник РУДН. История России, 2024)"
     url: "https://journals.rudn.ru/russian-history/article/view/38736"

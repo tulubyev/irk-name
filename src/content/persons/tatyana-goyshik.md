@@ -12,6 +12,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/tatyana-goyshik.webp"
+  alt: "Портрет: Татьяна Геннадьевна Гойшик"
+  author: "Щелковское Телевидение"
+  license: "CC BY 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/3.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Tatyana_Goyshchik,_February_2019.jpg"
 sources:
   - title: "Иркипедия: Гойшик, Татьяна Геннадьевна"
     url: "http://irkipedia.ru/content/goyshik_tatyana_gennadevna"

@@ -13,6 +13,12 @@ places:
     district: g-irkutsk
   - name: "Кругобайкальская железная дорога"
     district: slyudyanskij-rajon
+photo:
+  key: "persons/mikhail-khilkov.webp"
+  alt: "Портрет: Михаил Иванович Хилков"
+  author: "М.Л. Левенсон"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Prince_Mikhail_Ivanovich_Khilkov.jpg"
 sources:
   - title: "Глагол: Как Михаил Хилков первым из царских министров стал почетным иркутянином"
     url: "https://glagol38.ru/text/13-07-2026/006"

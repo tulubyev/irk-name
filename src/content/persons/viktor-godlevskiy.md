@@ -11,6 +11,13 @@ places:
   - name: "Култук"
     settlement: "Култук"
     district: slyudyanskij-rajon
+photo:
+  key: "persons/viktor-godlevskiy.webp"
+  alt: "Портрет Виктора Годлевского, фотография 1890 года"
+  author: "Vonglass"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Wiktor_Ignacy_Godlewski_1890.png"
 sources:
   - title: "Википедия: Годлевский, Виктор Александрович"
     url: "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%B4%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87"

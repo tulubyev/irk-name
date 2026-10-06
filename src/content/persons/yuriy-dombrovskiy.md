@@ -11,6 +11,12 @@ places:
   - name: "Тайшет, Озерлаг"
     settlement: "Тайшет"
     district: tajshetskij-rajon
+photo:
+  key: "persons/yuriy-dombrovskiy.webp"
+  alt: "Портрет: Юрий Осипович Домбровский"
+  author: "НКВД СССР"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Dombrovskiy_UO.jpg"
 sources:
   - title: "Википедия: Домбровский, Юрий Осипович"
     url: "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%B1%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%AE%D1%80%D0%B8%D0%B9_%D0%9E%D1%81%D0%B8%D0%BF%D0%BE%D0%B2%D0%B8%D1%87"

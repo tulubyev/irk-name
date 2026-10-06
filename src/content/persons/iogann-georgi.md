@@ -9,6 +9,12 @@ connection: ["visit"]
 connectionNote: "В 1771–1772 годах в составе экспедиции Палласа исследовал Байкал: в 1772 году составил карту озера в масштабе 10 вёрст в дюйме, описал байкальскую нерпу и её промысел, омуля, флору и фауну побережья, собрал гербарий."
 places:
   - name: "озеро Байкал"
+photo:
+  key: "persons/iogann-georgi.webp"
+  alt: "Портрет Иоганна Готлиба Георги"
+  author: "Penning G."
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Georgi_Johann_Gottlied_1729%E2%80%931802.jpg"
 sources:
   - title: "Википедия: Георги, Иоганн Готлиб"
     url: "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8,_%D0%98%D0%BE%D0%B3%D0%B0%D0%BD%D0%BD_%D0%93%D0%BE%D1%82%D0%BB%D0%B8%D0%B1"

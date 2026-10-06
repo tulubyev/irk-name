@@ -10,6 +10,13 @@ connectionNote: "Арестована 16 августа 1960 года по об�
 places:
   - name: "Станция Невельская близ Тайшета"
     district: tajshetskij-rajon
+photo:
+  key: "persons/olga-ivinskaya.webp"
+  alt: "Портрет Ольги Ивинской, фотография 1989 года"
+  author: "AndreiKozovoi"
+  license: "CC BY-SA 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Olga_Ivinskaya_(1989).jpg"
 sources:
   - title: "Википедия: Ивинская, Ольга Всеволодовна"
     url: "https://ru.wikipedia.org/wiki/%D0%98%D0%B2%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F,_%D0%9E%D0%BB%D1%8C%D0%B3%D0%B0_%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D0%BD%D0%B0"

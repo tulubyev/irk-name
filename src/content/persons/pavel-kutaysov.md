@@ -12,6 +12,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/pavel-kutaysov.webp"
+  alt: "Портрет: Павел Ипполитович Кутайсов"
+  author: "Фотография"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:P.Kutaisov.jpg"
 sources:
   - title: "Хронос: Кутайсов Павел Ипполитович"
     url: "http://www.hrono.info/biograf/bio_k/kutaysovpaip.php"

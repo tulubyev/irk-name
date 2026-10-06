@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/vladimir-voytinskiy.webp"
+  alt: "Портрет: Владимир Савельевич Войтинский"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Vladimir_S._Voitinsky_and_Emma_S._Shadkhan_(cropped).jpg"
 sources:
   - title: "Wikipedia: Vladimir Woytinsky"
     url: "https://en.wikipedia.org/wiki/Vladimir_Woytinsky"

@@ -11,6 +11,12 @@ places:
   - name: "Новая Уда"
     settlement: "Новая Уда"
     district: ust-udinskij-rajon
+photo:
+  key: "persons/iosif-stalin.webp"
+  alt: "Портрет Иосифа Сталина, фотография около 1942 года"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:JStalin_Secretary_general_CCCP_1942.jpg"
 sources:
   - title: "Википедия: Новая Уда (Иркутская область)"
     url: "https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F_%D0%A3%D0%B4%D0%B0_(%D0%98%D1%80%D0%BA%D1%83%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C)"

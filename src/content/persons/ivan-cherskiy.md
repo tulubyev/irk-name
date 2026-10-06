@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/ivan-cherskiy.webp"
+  alt: "Портрет: Иван Дементьевич Черский"
+  author: "St. Petersburg photo"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Jan_Czerski.jpg"
 sources:
   - title: "Википедия: Черский, Иван Дементьевич"
     url: "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D0%B9,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%94%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87"

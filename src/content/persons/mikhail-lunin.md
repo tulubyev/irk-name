@@ -12,6 +12,12 @@ places:
   - name: "Урик"
     settlement: "Урик"
     district: irkutskij-rajon
+photo:
+  key: "persons/mikhail-lunin.webp"
+  alt: "Портрет: Михаил Сергеевич Лунин"
+  author: "Пётр Фёдорович Соколов"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Lunin_by_Sokolov.jpg"
 sources:
   - title: "Википедия: Лунин, Михаил Сергеевич"
     url: "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B8%D0%BD,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87"

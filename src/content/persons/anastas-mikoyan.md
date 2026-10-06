@@ -14,6 +14,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/anastas-mikoyan.webp"
+  alt: "Портрет: Анастас Иванович Микоян"
+  author: "G. Weil for TASS"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:A.I._Mikoyan_TASS_Portrait_Trim_Edit.jpg"
 sources:
   - title: "Иркипедия: Визит Никиты Хрущева в Ангарск в 1954 году"
     url: "http://irkipedia.ru/content/vizit_nikity_hrushcheva_v_angarsk_v_1954_godu"

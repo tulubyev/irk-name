@@ -14,6 +14,13 @@ places:
   - name: "Иркутск, ул. Карла Маркса, 1 (гостиница «Ретро»)"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/leonid-brezhnev.webp"
+  alt: "Портрет Леонида Брежнева, фотография 1967 года"
+  author: "Ulrich Kohls"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Leonid_Bre%C5%BEn%C4%9Bv_(Bundesarchiv).jpg"
 sources:
   - title: "Заря Востока, 1978, № 79"
     url: "https://iverieli.nplg.gov.ge/bitstream/1234/522382/1/Zaria_Vostoka_1978_N79.pdf"

@@ -14,6 +14,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/fyodor-lytkin.webp"
+  alt: "Портрет: Фёдор Матвеевич Лыткин"
+  author: "Public domainPublic domainfalsefalse Это произведение находится в общественном достоянии в тех странах, где срок охраны авторского права равен жизни автора плюс 70 лет и менее. Вы также должны поме…"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:FeodorLytkin.jpg"
 sources:
   - title: "Иркипедия: Лыткин, Фёдор Матвеевич"
     url: "http://irkipedia.ru/content/lytkin_fyodor_matveevich"

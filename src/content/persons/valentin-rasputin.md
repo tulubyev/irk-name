@@ -19,6 +19,13 @@ places:
     district: g-irkutsk
     lat: 52.2897
     lon: 104.2806
+photo:
+  key: "persons/valentin-rasputin.webp"
+  alt: "Портрет: Валентин Григорьевич Распутин"
+  author: "Александр Стручков"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%A0%D0%B0%D1%81%D0%BF%D1%83%D1%82%D0%B8%D0%BD.jpg"
 sources:
   - title: "Википедия: Распутин, Валентин Григорьевич"
     url: "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%81%D0%BF%D1%83%D1%82%D0%B8%D0%BD,_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%B8%D1%87"

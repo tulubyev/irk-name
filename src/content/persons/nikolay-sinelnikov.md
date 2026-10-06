@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/nikolay-sinelnikov.webp"
+  alt: "Портрет: Николай Петрович Синельников"
+  author: "Константин Егорович Маковский"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Sinelnikov_by_Makovsky.jpg"
 sources:
   - title: "Иркипедия: Синельников, Николай Петрович"
     url: "http://irkipedia.ru/content/sinelnikov_nikolay_petrovich"

@@ -16,6 +16,12 @@ places:
     district: g-irkutsk
   - name: "Тунка (ныне Республика Бурятия)"
     settlement: "Тунка"
+photo:
+  key: "persons/yuzef-pilsudskiy.webp"
+  alt: "Портрет Юзефа Пилсудского"
+  author: "Witold Pikiel"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Jozef_Pilsudski1.jpg"
 sources:
   - title: "Википедия: Пилсудский, Юзеф"
     url: "https://ru.wikipedia.org/wiki/%D0%9F%D0%B8%D0%BB%D1%81%D1%83%D0%B4%D1%81%D0%BA%D0%B8%D0%B9,_%D0%AE%D0%B7%D0%B5%D1%84"

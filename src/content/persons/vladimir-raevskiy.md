@@ -11,6 +11,12 @@ places:
   - name: "Олонки"
     settlement: "Олонки"
     district: bohanskij-rajon
+photo:
+  key: "persons/vladimir-raevskiy.webp"
+  alt: "Портрет: Владимир Федосеевич Раевский"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:V_Raevsky.jpg"
 sources:
   - title: "Википедия: Раевский, Владимир Федосеевич"
     url: "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A4%D0%B5%D0%B4%D0%BE%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87"

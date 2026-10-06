@@ -13,6 +13,12 @@ places:
     district: g-irkutsk
     lat: 52.2897
     lon: 104.2806
+photo:
+  key: "persons/petr-kropotkin.webp"
+  alt: "Портрет Петра Кропоткина, фотография около 1900 года"
+  author: "Надар"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Peter_Kropotkin_circa_1900.jpg"
 sources:
   - title: "Википедия: Кропоткин, Пётр Алексеевич"
     url: "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%BE%D0%BF%D0%BE%D1%82%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87"

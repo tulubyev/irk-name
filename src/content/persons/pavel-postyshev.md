@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/pavel-postyshev.webp"
+  alt: "Портрет: Павел Петрович Постышев"
+  author: "unknow (scan by AMY 81-412 (talk) 19:37, 17 August 2010 (UTC))"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Globus-1935-05-Pavel-Postyshev-foto.jpg"
 sources:
   - title: "Большая советская энциклопедия: Постышев Павел Петрович (booksite.ru)"
     url: "https://www.booksite.ru/FullText/1/001/008/091/924.htm"

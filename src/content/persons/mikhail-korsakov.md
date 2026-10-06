@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/mikhail-korsakov.webp"
+  alt: "Портрет: Михаил Семёнович Корсаков"
+  author: "Schekinov Alexey Victorovich"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D1%80%D1%81%D0%B0%D0%BA%D0%BE%D0%B2_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_-_Korsakov_M.S..jpg"
 sources:
   - title: "Иркипедия: Корсаков, Михаил Семенович"
     url: "http://irkipedia.ru/content/korsakov_mihail_semenovich"

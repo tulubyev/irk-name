@@ -11,6 +11,13 @@ places:
   - name: "Мольта"
     settlement: "Мольта"
     district: alarskij-rajon
+photo:
+  key: "persons/efim-khaydurov.webp"
+  alt: "Портрет: Ефим Леонтьевич Хайдуров"
+  author: "Masyane4ka"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Khaydurov_efim.jpg"
 sources:
   - title: "Иркипедия: Хайдуров, Ефим Леонтьевич"
     url: "http://irkipedia.ru/content/haydurov_efim_leontevich"

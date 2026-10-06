@@ -13,6 +13,12 @@ places:
   - name: "Иркутск, ул. Горького, 14"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/aleksey-okladnikov.webp"
+  alt: "Портрет: Алексей Павлович Окладников"
+  author: "Department of the Interior. National Park Service. Alaska Region. (12/2/1980 - 5/1995)"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Aleksej_Okladnikov_(1972).jpg"
 sources:
   - title: "Википедия: Окладников, Алексей Павлович"
     url: "https://ru.wikipedia.org/wiki/%D0%9E%D0%BA%D0%BB%D0%B0%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"

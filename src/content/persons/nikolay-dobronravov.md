@@ -14,6 +14,13 @@ places:
   - name: "Усть-Илимск"
     settlement: "Усть-Илимск"
     district: g-ust-ilimsk
+photo:
+  key: "persons/nikolay-dobronravov.webp"
+  alt: "Портрет: Николай Николаевич Добронравов"
+  author: "Сергей Бобылев"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Presentation_of_1st_MoD%27s_Prize_of_Culture_and_Art_13_(cropped).jpg"
 sources:
   - title: "Глагол38: Почетный гражданин Братска Николай Добронравов"
     url: "https://glagol38.ru/text/22-11-2021/011"

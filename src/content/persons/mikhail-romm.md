@@ -13,6 +13,13 @@ places:
     district: g-irkutsk
     lat: 52.2897
     lon: 104.2806
+photo:
+  key: "persons/mikhail-romm.webp"
+  alt: "Портрет: Михаил Ильич Ромм"
+  author: "Boris Mikhailovich Baldin (1929-2005) - my father"
+  license: "CC BY-SA 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Mikhail_Romm_by_Boris_Baldin_2.jpg"
 sources:
   - title: "Википедия: Ромм, Михаил Ильич"
     url: "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BC%D0%BC,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%98%D0%BB%D1%8C%D0%B8%D1%87"

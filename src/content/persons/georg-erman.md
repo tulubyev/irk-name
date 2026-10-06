@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/georg-erman.webp"
+  alt: "Портрет: Георг Адольф Эрман"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%90%D0%B4%D0%BE%D0%BB%D1%8C%D1%84_%D0%AD%D1%80%D0%BC%D0%B0%D0%BD.gif"
 sources:
   - title: "Википедия: Эрман, Георг Адольф"
     url: "https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D0%B0%D0%BD,_%D0%93%D0%B5%D0%BE%D1%80%D0%B3_%D0%90%D0%B4%D0%BE%D0%BB%D1%8C%D1%84"

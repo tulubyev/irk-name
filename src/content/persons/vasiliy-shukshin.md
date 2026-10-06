@@ -14,6 +14,13 @@ places:
   - name: "Култук"
     settlement: "Култук"
     district: slyudyanskij-rajon
+photo:
+  key: "persons/vasiliy-shukshin.webp"
+  alt: "Портрет Василия Шукшина, фотография 1972 года"
+  author: "Гневашев, Игорь Иванович"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%A8%D1%83%D0%BA%D1%88%D0%B8%D0%BD_(1972).jpg"
 sources:
   - title: "АиФ Иркутск: Как Шукшин ел буузы на Байкале. Звёзды кино СССР сыграли в фильме «У озера»"
     url: "https://irk.aif.ru/society/kak-shukshin-el-pozy-na-baykale-zvyozdy-kino-sssr-sygrali-v-filme-u-ozera"

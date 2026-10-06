@@ -14,6 +14,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/nikolay-bulganin.webp"
+  alt: "Портрет Николая Булганина, фотография 1950-х годов"
+  author: "НеизвестенUnknown author"
+  license: "CC BY-SA 3.0 de"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-29921-0001,_Bulganin,_Nikolai_Alexandrowitsch.jpg"
 sources:
   - title: "Иркипедия: Визит Никиты Хрущева в Ангарск в 1954 году"
     url: "http://irkipedia.ru/content/vizit_nikity_hrushcheva_v_angarsk_v_1954_godu"

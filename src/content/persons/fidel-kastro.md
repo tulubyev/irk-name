@@ -19,6 +19,12 @@ places:
   - name: "Станция Зима"
     settlement: "Зима"
     district: g-zima
+photo:
+  key: "persons/fidel-kastro.webp"
+  alt: "Фидель Кастро в Вашингтоне, фотография 1959 года"
+  author: "Это изображение из Библиотеки Конгресса США, отдел эстампов и фотографий (Prints and Photographs division), имеет цифровой идентификатор (digital ID) ppmsc.03256. Эта пометка не указывает на правов…"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Fidel_Castro_-_MATS_Terminal_Washington_1959.jpg"
 sources:
   - title: "Фидель Кастро в СССР: кубинский лидер бывал в Иркутске и на Братской ГЭС в 1963 году (КП Иркутск)"
     url: "https://www.irk.kp.ru/daily/26612.7/3629041/"

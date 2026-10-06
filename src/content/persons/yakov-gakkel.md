@@ -13,6 +13,12 @@ places:
     district: g-irkutsk
   - name: "ГЭС на реке Ныгри, Ленские прииски"
     district: bodajbinskij-rajon
+photo:
+  key: "persons/yakov-gakkel.webp"
+  alt: "Портрет авиаконструктора Якова Гаккеля"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Gakkel.JPG"
 sources:
   - title: "Иркипедия: Гаккель, Яков Модестович"
     url: "http://irkipedia.ru/content/gakkel_yakov_modestovich"

@@ -1,0 +1,1222 @@
+{
+  "generatedBy": "scripts/fetch-commons.mjs",
+  "persons": {
+    "aleksandr-chekanovskiy": {
+      "file": "File:Aleksander Czekanowski Russian Empire.jpg",
+      "key": "persons/aleksandr-chekanovskiy.webp",
+      "alt": "Портрет: Александр Лаврентьевич Чекановский",
+      "author": "Russian Academy of Sciences",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aleksander_Czekanowski_Russian_Empire.jpg",
+      "sha1": "1ce3a52c3ba8f34aa0bd9d5faf2a9c9d5b15aaf2",
+      "description": "Чекановский, Александр Лаврентьевич"
+    },
+    "aleksandr-ezhevskiy": {
+      "file": "File:Ezhevskij.jpg",
+      "key": "persons/aleksandr-ezhevskiy.webp",
+      "alt": "Портрет: Александр Александрович Ежевский",
+      "author": "Svsver76",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ezhevskij.jpg",
+      "sha1": "498b44947f76fbb7090c2cd1dd56a00fef6d1c96",
+      "description": "А. А. Ежевский в 2014 году."
+    },
+    "aleksandr-goremykin": {
+      "file": "File:Goremykin Alexander Dmitrievich.jpg",
+      "key": "persons/aleksandr-goremykin.webp",
+      "alt": "Портрет: Александр Дмитриевич Горемыкин",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goremykin_Alexander_Dmitrievich.jpg",
+      "sha1": "a9f5a63424f14e300a2e85981bf312b89f2b61b2",
+      "description": "Горемыкин, Александр Дмитриевич (1832—1904) — русский военный и государственный деятель. Чин/звание: «Генерал от инфантерии» (30.08.1893) Знаки различия на картине: эполеты и звёзды «Генерал-лейтенант»."
+    },
+    "aleksandr-kolchak": {
+      "file": "File:Kolchak4.jpg",
+      "key": "persons/aleksandr-kolchak.webp",
+      "alt": "Портрет адмирала Александра Колчака",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kolchak4.jpg",
+      "sha1": "9b66a2247fe63fa10893be041e60db28d3c76194",
+      "description": "Верховный правитель адмирал Колчак"
+    },
+    "aleksandr-lavinskiy": {
+      "file": "File:Portrait of Alexander Stepanovich Lavinsky.jpg",
+      "key": "persons/aleksandr-lavinskiy.webp",
+      "alt": "Портрет: Александр Степанович Лавинский",
+      "author": "Подолинский Михаил Доминикович. Рустем (Рустемас) Ян (Йонас) (автор оригинала)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Alexander_Stepanovich_Lavinsky.jpg",
+      "sha1": "f10f0481c376ba4cf8babaa9eb862603b6017457",
+      "description": "Portrait of Alexander Stepanovich Lavinsky"
+    },
+    "aleksandr-liverovskiy": {
+      "file": "File:Liverovsky A V.JPG",
+      "key": "persons/aleksandr-liverovskiy.webp",
+      "alt": "Портрет: Александр Васильевич Ливеровский",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Liverovsky_A_V.JPG",
+      "sha1": "85af83c1bf0a19d92534655a015b87adcde6d348",
+      "description": "Ливеровский, Александр Васильевич (1867 - 1951)"
+    },
+    "aleksandr-panteleev": {
+      "file": "File:Panteleev Alexandr Ilich.jpg",
+      "key": "persons/aleksandr-panteleev.webp",
+      "alt": "Портрет: Александр Ильич Пантелеев",
+      "author": "М.Л. Левенсон",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panteleev_Alexandr_Ilich.jpg",
+      "sha1": "693d35e96d46c9fdf321819ee101bff6659d133d",
+      "description": "Пантелеев Александр Ильич"
+    },
+    "aleksandr-radishchev": {
+      "file": "File:Radishchev color.jpg",
+      "key": "persons/aleksandr-radishchev.webp",
+      "alt": "Портрет Александра Радищева, около 1790 года",
+      "author": "Неизвестный художник",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Radishchev_color.jpg",
+      "sha1": "c1c565819939a451c4c5641a18c2308c29ea0d8b"
+    },
+    "aleksandr-shcherbakov": {
+      "file": "File:Shcherbakov 1.jpg",
+      "key": "persons/aleksandr-shcherbakov.webp",
+      "alt": "Портрет: Александр Сергеевич Щербаков",
+      "author": "Post of USSR",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shcherbakov_1.jpg",
+      "sha1": "b37018a9210fa0f2e3e49964049abc36353e2fbe",
+      "description": "Марка СССР. \"5 лет со дня смерти выдающегося деятеля большевистской партии и советского государства Щербаков Александр Сергеевич\""
+    },
+    "aleksandr-sibiryakov": {
+      "file": "File:Alexander Sibiriakoff.jpg",
+      "key": "persons/aleksandr-sibiryakov.webp",
+      "alt": "Портрет: Александр Михайлович Сибиряков",
+      "author": "George J. Stodart",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexander_Sibiriakoff.jpg",
+      "sha1": "f8a67518d17c8256335f678ba03a46ab15849952",
+      "description": "Alexander Sibiryakov"
+    },
+    "aleksandr-solzhenitsyn": {
+      "file": "File:Evstafiev-solzhenitsyn.jpg",
+      "key": "persons/aleksandr-solzhenitsyn.webp",
+      "alt": "Александр Солженицын у окна вагона во Владивостоке, фотография 1994 года",
+      "author": "Evstafiev",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evstafiev-solzhenitsyn.jpg",
+      "sha1": "570159222bbae6e9c69a9e1fcd5d31692bcce2ab",
+      "description": "Russian writer and Nobel prize winner Aleksandr Solzhenitsyn looks out from a train, in Vladivostok, summer 1994, before departing on a journey across Russia. Solzhenitsyn returned to Russia after nearly 20 years in exile. Photo by Mikhail Evstafiev"
+    },
+    "aleksandr-vtorov": {
+      "file": "File:Alexander Vtorov.jpg",
+      "key": "persons/aleksandr-vtorov.webp",
+      "alt": "Портрет: Александр Фёдорович Второв",
+      "author": "Автор неизвестен",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexander_Vtorov.jpg",
+      "sha1": "870a32d295d3854a556f23c9f455afeea8745c3d"
+    },
+    "aleksey-ignatev": {
+      "file": "File:A.P.Ignatiev by Repin.jpg",
+      "key": "persons/aleksey-ignatev.webp",
+      "alt": "Портрет: Алексей Павлович Игнатьев",
+      "author": "Илья Ефимович Репин",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:A.P.Ignatiev_by_Repin.jpg",
+      "sha1": "42172a52db84214656377280752b25bec1f3dce1",
+      "description": "Портрет товарища министра внутренних дел, генерала от кавалерии и члена Государственного Совета графа Алексея Павловича Игнатьева. Этюд к картине Торжественное заседание Государственного Совета. Холст, масло. 89 × 62.5 см. Государственный Русский музей, Санкт-Петербург."
+    },
+    "aleksey-kosygin": {
+      "file": "File:Alexei Kosygin (cropped).jpg",
+      "key": "persons/aleksey-kosygin.webp",
+      "alt": "Алексей Косыгин на встрече в Гласборо, фотография 1967 года",
+      "author": "Yoichi Okamoto",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alexei_Kosygin_(cropped).jpg",
+      "sha1": "af92f745b7ca4ccb196fdccb002fc6ef8b4097b7",
+      "description": "Президент США Линдон Джонсон (справа) и председатель Совета Министров СССР Алексей Косыгин на встрече в Глассборо. 1967 год"
+    },
+    "aleksey-okladnikov": {
+      "file": "File:Aleksej Okladnikov (1972).jpg",
+      "key": "persons/aleksey-okladnikov.webp",
+      "alt": "Портрет: Алексей Павлович Окладников",
+      "author": "Department of the Interior. National Park Service. Alaska Region. (12/2/1980 - 5/1995)",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aleksej_Okladnikov_(1972).jpg",
+      "sha1": "434a1b2ec56e134846ac1d99cf047f060387a748"
+    },
+    "aleksey-yushnevskiy": {
+      "file": "File:86 portraits of Decembrists 455.jpg",
+      "key": "persons/aleksey-yushnevskiy.webp",
+      "alt": "Портрет: Алексей Петрович Юшневский",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:86_portraits_of_Decembrists_455.jpg",
+      "sha1": "6b592eda51e627f1f663681652abaf14b8a20461",
+      "description": "Юшневский, Александр Петрович,"
+    },
+    "anastas-mikoyan": {
+      "file": "File:A.I. Mikoyan TASS Portrait Trim Edit.jpg",
+      "key": "persons/anastas-mikoyan.webp",
+      "alt": "Портрет: Анастас Иванович Микоян",
+      "author": "G. Weil for TASS",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:A.I._Mikoyan_TASS_Portrait_Trim_Edit.jpg",
+      "sha1": "8888003698ea7761078995e4b5840ba7638eae58",
+      "description": "Series: \"Heads of the Government of the Soviet Union, Secretaries of the Central Committee of the All-Union Communist Party of the Soviet Union (b) and Leaders of the All-Union Communist Party of the Soviet Union and the All-Union Communist Party of the Soviet Union\". Portrait: A.I. Mikoyan."
+    },
+    "anatoliy-teplyakov": {
+      "file": "File:Анатолий Тепляков, Иркутск , август 2012.jpg",
+      "key": "persons/anatoliy-teplyakov.webp",
+      "alt": "Портрет: Анатолий Иннокентьевич Тепляков",
+      "author": "Дунай",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%A2%D0%B5%D0%BF%D0%BB%D1%8F%D0%BA%D0%BE%D0%B2,_%D0%98%D1%80%D0%BA%D1%83%D1%82%D1%81%D0%BA_,_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82_2012.jpg",
+      "sha1": "28f7b95bf7afcdfbeb9230e55bd70d9ba6fbd930",
+      "description": "фотография иркутского композитора Анатолия Теплякова выполнена в августе 2012 года и загружена на викисклад для статьи Тепляков, Анатолий Иннокентьевич"
+    },
+    "andrey-selivanov": {
+      "file": "File:Andrei Selivanov.jpg",
+      "key": "persons/andrey-selivanov.webp",
+      "alt": "Портрет: Андрей Николаевич Селиванов",
+      "author": "неизв.",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrei_Selivanov.jpg",
+      "sha1": "de7449c32554cd0650937e6f989b449cb85b77dc",
+      "description": "Генерал-от-инфантерии А.Н. Селиванов."
+    },
+    "anton-chekhov": {
+      "file": "File:Chekhov 1898 by Osip Braz.jpg",
+      "key": "persons/anton-chekhov.webp",
+      "alt": "Портрет Антона Чехова работы Осипа Браза, 1898 год",
+      "author": "Осип Эммануилович Браз",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chekhov_1898_by_Osip_Braz.jpg",
+      "sha1": "bde99d0f17204234599f8112d20d140ccd6aa0df",
+      "description": "Portrait of Anton Pavlovich Chekhov"
+    },
+    "avvakum-petrov": {
+      "file": "File:Protopop Avvakym.jpg",
+      "key": "persons/avvakum-petrov.webp",
+      "alt": "Портрет: Аввакум Петров, протопоп",
+      "author": "Анонимный авторUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Protopop_Avvakym.jpg",
+      "sha1": "23b5d366e81eee9ab2a3aab5e4b55c7452c77d21",
+      "description": "Протопоп Аввакум Школа или худ. центр: Поволжье Конец XVII — начало XVIII вв. Дерево, левкас, темпера. 14.5 × 12 см Государственный исторический музей, Москва, Россия"
+    },
+    "benedikt-dybovskiy": {
+      "file": "File:Benedykt Dybowski portrait.jpg",
+      "key": "persons/benedikt-dybovskiy.webp",
+      "alt": "Портрет Бенедикта Дыбовского, фотография начала XX века",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Benedykt_Dybowski_portrait.jpg",
+      "sha1": "5b6a859cfb0bed1fa42f772047a5b0221c3e887d",
+      "description": "Benedykt Dybowski"
+    },
+    "boris-eltsin": {
+      "file": "File:Boris Yeltsin 13 July 2006.jpg",
+      "key": "persons/boris-eltsin.webp",
+      "alt": "Борис Ельцин, фотография 2006 года",
+      "author": "ITAR-TASS",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boris_Yeltsin_13_July_2006.jpg",
+      "sha1": "1b8167675b0825c092b1dce0fb0c0199956c4fd5",
+      "description": "ЕКАТЕРИНБУРГ. С Наиной Иосифовной на Четвертом международном турнире по волейболу среди женских национальных команд на Кубок первого Президента России Бориса Ельцина."
+    },
+    "daykokuya-kodayu": {
+      "file": "File:Captain Daikokuya Kodayu and crewmate Isokichi 1792.png",
+      "key": "persons/daykokuya-kodayu.webp",
+      "alt": "Портрет: Дайкокуя Кодаю",
+      "author": "Anonymous Japanese painter 1792",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Captain_Daikokuya_Kodayu_and_crewmate_Isokichi_1792.png",
+      "sha1": "252adcd2e341b95f7fc8c1855330dc77c827a37f",
+      "description": "Captain Daikokuya Kodayu (大黒屋光太夫) and crewmate Isokichi (磯吉) 1792. This was when they were returned to Japan by Adam Laxman, 1792. \"Fukiage Secretary Drifting Visitor's Note\". It is a record of the questions and answers that Daikokuya Kodayu and his surviving companion Isokichi were asked about Russ"
+    },
+    "denis-matsuev": {
+      "file": "File:Крещендо 2018 пресс-конф 12.jpg",
+      "key": "persons/denis-matsuev.webp",
+      "alt": "Портрет: Денис Леонидович Мацуев",
+      "author": "Frolzart",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D1%80%D0%B5%D1%89%D0%B5%D0%BD%D0%B4%D0%BE_2018_%D0%BF%D1%80%D0%B5%D1%81%D1%81-%D0%BA%D0%BE%D0%BD%D1%84_12.jpg",
+      "sha1": "78a1c2f9162b759233a0b61f3e62876796676739",
+      "description": "пресс-конференция"
+    },
+    "dmitriy-anuchin": {
+      "file": "File:Анучин Дмитрий Гаврилович.jpg",
+      "key": "persons/dmitriy-anuchin.webp",
+      "alt": "Портрет: Дмитрий Гаврилович Анучин",
+      "author": "Рисовал П. Ф. Борель",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BD%D1%83%D1%87%D0%B8%D0%BD_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87.jpg",
+      "sha1": "15f33c5b7aa37c0caded90c7d79a3c8013b762c1",
+      "description": "ru:Анучин, Дмитрий Гаврилович, сенатор, генерал от инфантерии."
+    },
+    "dzhordzh-kennan": {
+      "file": "File:George Kennan 1885.jpg",
+      "key": "persons/dzhordzh-kennan.webp",
+      "alt": "Портрет: Джордж Кеннан",
+      "author": "Matsaevich & Co.",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:George_Kennan_1885.jpg",
+      "sha1": "74179b6602b0e861563650b24a1cafb00ded3d6d",
+      "description": "George Kennan, head-and-shoulders portrait, facing left"
+    },
+    "efim-khaydurov": {
+      "file": "File:Khaydurov efim.jpg",
+      "key": "persons/efim-khaydurov.webp",
+      "alt": "Портрет: Ефим Леонтьевич Хайдуров",
+      "author": "Masyane4ka",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khaydurov_efim.jpg",
+      "sha1": "9cccbdbe9b648fdd9d48c979beb4078339114f95",
+      "description": "Хайдуров Ефим Леонтьевич, Улан-Удэ, 1997, тир ВСТУ"
+    },
+    "ekaterina-trubetskaya": {
+      "file": "File:Ekaterina Troubetskoy.jpg",
+      "key": "persons/ekaterina-trubetskaya.webp",
+      "alt": "Портрет: Екатерина Ивановна Трубецкая",
+      "author": "Николай Александрович Бестужев",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ekaterina_Troubetskoy.jpg",
+      "sha1": "7a105d4a2c43b5ee7529e2aaf6e569fbb6d99b43",
+      "description": "Екатерина Ивановна Трубецкая (1800-1854) ур. Лаваль. Жена декабриста С.П.Трубецкого"
+    },
+    "erik-laksman": {
+      "file": "File:Laxman full.png",
+      "key": "persons/erik-laksman.webp",
+      "alt": "Портрет: Эрик Лаксман",
+      "author": "unknown painter",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laxman_full.png",
+      "sha1": "c9c53947837bd348d68a5fd0fc056105e90cee7f",
+      "description": "Э́рик (Кири́лл) Гу́ставович Ла́ксман (1737 – 1796) — российский учёный и путешественник шведского происхождения; химик, ботаник, географ."
+    },
+    "evgeniy-evtushenko": {
+      "file": "File:Sobyanin meeting Evtushenko 05.jpg",
+      "key": "persons/evgeniy-evtushenko.webp",
+      "alt": "Портрет: Евгений Александрович Евтушенко",
+      "author": "mos.ru",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sobyanin_meeting_Evtushenko_05.jpg",
+      "sha1": "e46e9e3c418f65dfd4865c718a38e04a1b119331",
+      "description": "Встреча Сергея Собянина с известным писателем Евгением Евтушенко"
+    },
+    "evgeniy-leonov": {
+      "file": "File:Евгений Леонов (1979).jpg",
+      "key": "persons/evgeniy-leonov.webp",
+      "alt": "Портрет актёра Евгения Леонова, фотография 1979 года",
+      "author": "Гневашев, Игорь Иванович",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%BE%D0%B2_(1979).jpg",
+      "sha1": "1abfbe8daaea24477ba982e964e2ab003d5ed683",
+      "description": "Народный артист СССР Евгений Леонов (портрет). Москва. 1979 год."
+    },
+    "feliks-dzerzhinskiy": {
+      "file": "File:Feliks Dzierżyński.jpg",
+      "key": "persons/feliks-dzerzhinskiy.webp",
+      "alt": "Портрет Феликса Дзержинского, фотография Моисея Наппельбаума, 1919 год",
+      "author": "M.S. Nappelbaum",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Feliks_Dzier%C5%BCy%C5%84ski.jpg",
+      "sha1": "483ef970000fb778e38004a4a5790bbbab0d646d",
+      "description": "1918 – 1919 гг. Ф.Э. Дзержинский. РГАКФД. Ед. хр. Д-2354. Фото."
+    },
+    "ferdinand-volf": {
+      "file": "File:Christian Wolf by N. Bestuzhev (1842).jpg",
+      "key": "persons/ferdinand-volf.webp",
+      "alt": "Портрет: Фердинанд Богданович Вольф",
+      "author": "Н. Бестужев",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christian_Wolf_by_N._Bestuzhev_(1842).jpg",
+      "sha1": "15198f1999234babd045537ff74bc39e6b8b8c6d",
+      "description": "Вольф, Фердинанд Богданович"
+    },
+    "fidel-kastro": {
+      "file": "File:Fidel Castro - MATS Terminal Washington 1959.jpg",
+      "key": "persons/fidel-kastro.webp",
+      "alt": "Фидель Кастро в Вашингтоне, фотография 1959 года",
+      "author": "Это изображение из Библиотеки Конгресса США, отдел эстампов и фотографий (Prints and Photographs division), имеет цифровой идентификатор (digital ID) ppmsc.03256. Эта пометка не указывает на правов…",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fidel_Castro_-_MATS_Terminal_Washington_1959.jpg",
+      "sha1": "33bf3736d7b8ea0435ddf97deb691526f1a4bda5",
+      "description": "Fidel Castro arrives MATS Terminal, Washington, D.C."
+    },
+    "fritof-nansen": {
+      "file": "File:Fridtjof Nansen LOC 03377u-3.jpg",
+      "key": "persons/fritof-nansen.webp",
+      "alt": "Портрет Фритьофа Нансена, фотография начала XX века",
+      "author": "Henry Van der Weyde",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fridtjof_Nansen_LOC_03377u-3.jpg",
+      "sha1": "428fa3182529ca0f5e9fddea6c1e64425c01dd09",
+      "description": "Norwegian scientist and diplomat Fridtjof Nansen"
+    },
+    "fyodor-lytkin": {
+      "file": "File:FeodorLytkin.jpg",
+      "key": "persons/fyodor-lytkin.webp",
+      "alt": "Портрет: Фёдор Матвеевич Лыткин",
+      "author": "Public domainPublic domainfalsefalse Это произведение находится в общественном достоянии в тех странах, где срок охраны авторского права равен жизни автора плюс 70 лет и менее. Вы также должны поме…",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:FeodorLytkin.jpg",
+      "sha1": "902bc9182dcfd66039a591044445f979ca002552",
+      "description": "Федор Лыткин Ферик Агитович Полатбеков"
+    },
+    "fyodor-uglov": {
+      "file": "File:RUSMARKA-3355.jpg",
+      "key": "persons/fyodor-uglov.webp",
+      "alt": "Портрет: Фёдор Григорьевич Углов",
+      "author": "Почта России, ИТЦ «Марка». Дизайнер – Бетрединова Х.",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:RUSMARKA-3355.jpg",
+      "sha1": "59a03d9c0cb390e403c1ba77e350788d26ee0340",
+      "description": "Ф. Г. Углов (1904–2008), хирург, писатель, общественный деятель, профессор"
+    },
+    "gelmut-kol": {
+      "file": "File:KAS-Kohl, Helmut-Bild-1079-1.jpg",
+      "key": "persons/gelmut-kol.webp",
+      "alt": "Портрет Гельмута Коля",
+      "author": "CDU",
+      "license": "CC BY-SA 3.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:KAS-Kohl,_Helmut-Bild-1079-1.jpg",
+      "sha1": "f04666c0742d85016c685a7ac3d7cc723ac374d8",
+      "description": "Helmut Kohl Kanzler für Deutschland CDU sicher sozial und frei Abbildung: Porträtfoto - vor Mikrofonen Kommentar: Außenaufnahme (Plakatwand) Plakatart: Kandidaten-/Personenplakat mit Porträt Objekt-Signatur: 10-001: 1800 Bestand: Plakate zu Bundestagswahlen (10-001) GliederungBestand10-18: Plakate z"
+    },
+    "genri-uolles": {
+      "file": "File:Henry-A.-Wallace-Townsend.jpeg",
+      "key": "persons/genri-uolles.webp",
+      "alt": "Портрет Генри Уоллеса",
+      "author": "Photo copyrighted by D.N. Townsend; no renewal in the U.S. Copyright Office",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Henry-A.-Wallace-Townsend.jpeg",
+      "sha1": "7cb2d689b5cc2f1cb1313665dd6fe55f1fa18c91",
+      "description": "Henry Agard Wallace, 1888–1965, bust portrait, facing left"
+    },
+    "georg-erman": {
+      "file": "File:Адольф Эрман.gif",
+      "key": "persons/georg-erman.webp",
+      "alt": "Портрет: Георг Адольф Эрман",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%B4%D0%BE%D0%BB%D1%8C%D1%84_%D0%AD%D1%80%D0%BC%D0%B0%D0%BD.gif",
+      "sha1": "a0be89a89889a60fb5353edce14f7e9fa63e6ed0",
+      "description": "Адольф Эрман (1806-1877)"
+    },
+    "grigoriy-shelikhov": {
+      "file": "File:Grigory Shelikov.jpg",
+      "key": "persons/grigoriy-shelikhov.webp",
+      "alt": "Портрет Григория Шелихова, литография",
+      "author": "Изначально этот файл был загружен участником Wikispork из английский Википедия",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grigory_Shelikov.jpg",
+      "sha1": "b9833f6423140d7f32d93288117d1bcafac34eac",
+      "description": "Григорий Шелихов. Литография, хранится в Библиотеке Конгресса США"
+    },
+    "gustav-radde": {
+      "file": "File:GustavRaddeRet.jpg",
+      "key": "persons/gustav-radde.webp",
+      "alt": "Портрет натуралиста Густава Радде",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:GustavRaddeRet.jpg",
+      "sha1": "061917e4a8d589ad64823aee28252558f83bcd88",
+      "description": "Gustav Radde's portrait"
+    },
+    "innokentiy-veniaminov": {
+      "file": "File:Metropolitan Innocent of Moscow.jpg",
+      "key": "persons/innokentiy-veniaminov.webp",
+      "alt": "Фотопортрет митрополита Московского Иннокентия (Вениаминова)",
+      "author": "Wickersham State Historic Site. Photographs, 1882-1930s. ASL-PCA-277",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Metropolitan_Innocent_of_Moscow.jpg",
+      "sha1": "47b756407632869cfedcfa7d26e1668c9e7445e0",
+      "description": "Metropolitan Innocent of Moscow"
+    },
+    "iogann-georgi": {
+      "file": "File:Georgi Johann Gottlied 1729–1802.jpg",
+      "key": "persons/iogann-georgi.webp",
+      "alt": "Портрет Иоганна Готлиба Георги",
+      "author": "Penning G.",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georgi_Johann_Gottlied_1729%E2%80%931802.jpg",
+      "sha1": "170766a6baba06c5aee89408d9252a3028ef2dd0",
+      "description": "Johann Gottlieb Georgi (1729–1802). German chemist, explorer, naturalist and geographer"
+    },
+    "iosif-kobzon": {
+      "file": "File:Official portrait of Iosif Kobzon (1).jpg",
+      "key": "persons/iosif-kobzon.webp",
+      "alt": "Портрет Иосифа Кобзона",
+      "author": "duma.gov.ru",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Official_portrait_of_Iosif_Kobzon_(1).jpg",
+      "sha1": "4e72965f3dfe58b991c6d8bf6391c5d689b1885a",
+      "description": "Официальное фото Народного артиста СССР, Первого заместителя Председателя Комитета Государственной Думы по культуре Иосифа Давыдовича Кобзона"
+    },
+    "iosif-stalin": {
+      "file": "File:JStalin Secretary general CCCP 1942.jpg",
+      "key": "persons/iosif-stalin.webp",
+      "alt": "Портрет Иосифа Сталина, фотография около 1942 года",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:JStalin_Secretary_general_CCCP_1942.jpg",
+      "sha1": "9f48f8832546b6f5063419fee68e8d30b41c41f9",
+      "description": "Joseph Stalin, Secretary-general of the Communist party of Soviet Union"
+    },
+    "iosip-broz-tito": {
+      "file": "File:Josip Broz Tito Bihać 1942.jpg",
+      "key": "persons/iosip-broz-tito.webp",
+      "alt": "Иосип Броз Тито в Бихаче, фотография 1942 года",
+      "author": "Unknown",
+      "license": "Attribution",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josip_Broz_Tito_Biha%C4%87_1942.jpg",
+      "sha1": "23c9dde8b628ae2bfe8eafd709a92f67d7e8ecf8",
+      "description": "Josip Broz Tito in Bihać in 1942"
+    },
+    "ivan-babushkin": {
+      "file": "File:Ivan Vasilyevich Babushkin photo.jpg",
+      "key": "persons/ivan-babushkin.webp",
+      "alt": "Портрет: Иван Васильевич Бабушкин",
+      "author": "https://s00.yaplakal.com/pics/pics_original/2/1/7/18136712.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ivan_Vasilyevich_Babushkin_photo.jpg",
+      "sha1": "6cbbd69e961c278af11b1198409c3634bd100476",
+      "description": "A photo of russian revolutioner Ivan Babuskin, worker-bolshevik."
+    },
+    "ivan-cherskiy": {
+      "file": "File:Jan Czerski.jpg",
+      "key": "persons/ivan-cherskiy.webp",
+      "alt": "Портрет: Иван Дементьевич Черский",
+      "author": "St. Petersburg photo",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jan_Czerski.jpg",
+      "sha1": "f58ad6808103b691cf5045ec30e624924ddb4de4",
+      "description": "Ivan Chersky - geologist, geographer and explorer of Siberia."
+    },
+    "ivan-goncharov": {
+      "file": "File:Ivan Goncharov.jpg",
+      "key": "persons/ivan-goncharov.webp",
+      "alt": "Портрет: Иван Александрович Гончаров",
+      "author": "Автор неизвестен",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ivan_Goncharov.jpg",
+      "sha1": "18da5df452b4cfc6c9ba706f3f983e27d5a3735b"
+    },
+    "ivan-khaminov": {
+      "file": "File:Иван Степанович Хаминов.jpg",
+      "key": "persons/ivan-khaminov.webp",
+      "alt": "Портрет: Иван Степанович Хаминов",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%98%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%D0%A5%D0%B0%D0%BC%D0%B8%D0%BD%D0%BE%D0%B2.jpg",
+      "sha1": "4bda81448163f47793741db165ea9c03b629f686",
+      "description": "Хаминов Иван Степанович — иркутсктий купец 1-й гильдии, городской голова Иркутска, меценат, почётный гражданин Иркутска."
+    },
+    "ivan-naymushin": {
+      "file": "File:Naymushin I.I.jpg",
+      "key": "persons/ivan-naymushin.webp",
+      "alt": "Портрет: Иван Иванович Наймушин",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naymushin_I.I.jpg",
+      "sha1": "7995c624e24ee1a900b1d378d16e579ca2104c1f",
+      "description": "Иван Иванович Наймушин (1905—1973) — советский гидростроитель"
+    },
+    "ivan-pestel": {
+      "file": "File:Pestel Ivan Borisovich.jpg",
+      "key": "persons/ivan-pestel.webp",
+      "alt": "Портрет: Иван Борисович Пестель",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pestel_Ivan_Borisovich.jpg",
+      "sha1": "48576e901dacec0b93f8b6d701d773ad82b7e415",
+      "description": "Pestel Ivan Borisovich (1765—1843)"
+    },
+    "ivan-yakobi": {
+      "file": "File:Юзеф Олешкевич - Портрет Ивана Варфоломеевича Якоби.jpg",
+      "key": "persons/ivan-yakobi.webp",
+      "alt": "Портрет: Иван Варфоломеевич Якоби",
+      "author": "Юзеф Олешкевич",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%AE%D0%B7%D0%B5%D1%84_%D0%9E%D0%BB%D0%B5%D1%88%D0%BA%D0%B5%D0%B2%D0%B8%D1%87_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%98%D0%B2%D0%B0%D0%BD%D0%B0_%D0%92%D0%B0%D1%80%D1%84%D0%BE%D0%BB%D0%BE%D0%BC%D0%B5%D0%B5%D0%B2%D0%B8%D1%87%D0%B0_%D0%AF%D0%BA%D0%BE%D0%B1%D0%B8.jpg",
+      "sha1": "f3778fa9a23e8754d8238b8f87ff73c0f56102a9",
+      "description": "Посмертный портрет Ивана Варфоломеевича Якоби"
+    },
+    "kho-shi-min": {
+      "file": "File:Ho Chi Minh 1946.jpg",
+      "key": "persons/kho-shi-min.webp",
+      "alt": "Портрет Хо Ши Мина, фотография около 1946 года",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_1946.jpg",
+      "sha1": "ebf63d974e0f1329d8d2d1ad3e7d18f2b6b6d9e9",
+      "description": "Hồ Chí Minh also known as Nguyễn Ái Quốc"
+    },
+    "kim-ir-sen": {
+      "file": "File:Kim Il-sung in 1950.jpg",
+      "key": "persons/kim-ir-sen.webp",
+      "alt": "Портрет Ким Ир Сена, фотография 1950 года",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kim_Il-sung_in_1950.jpg",
+      "sha1": "0d0756b3d9fe380fbfb8d58ee3c60ff1b7c19d7e",
+      "description": "Kim Il-sung"
+    },
+    "konstantin-shelashnikov": {
+      "file": "File:Portrait of Konstantin Nikolaevich Shelashnikov (1820–1888).jpg",
+      "key": "persons/konstantin-shelashnikov.webp",
+      "alt": "Портрет: Константин Николаевич Шелашников",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Konstantin_Nikolaevich_Shelashnikov_(1820%E2%80%931888).jpg",
+      "sha1": "a4ac2a66b05e1c080b855352f7e8efe0f696c232",
+      "description": "Portrait of Konstantin Nikolaevich Shelashnikov (1820–1888)"
+    },
+    "leonid-brezhnev": {
+      "file": "File:Leonid Brežněv (Bundesarchiv).jpg",
+      "key": "persons/leonid-brezhnev.webp",
+      "alt": "Портрет Леонида Брежнева, фотография 1967 года",
+      "author": "Ulrich Kohls",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonid_Bre%C5%BEn%C4%9Bv_(Bundesarchiv).jpg",
+      "sha1": "fbc0065b1b736c1fcf03c9e7b376db738c09b9f8",
+      "description": "Leonid Brezhnev Portrait"
+    },
+    "leonid-gayday": {
+      "file": "File:Леонид Гайдай (1974) (cropped).jpg",
+      "key": "persons/leonid-gayday.webp",
+      "alt": "Портрет: Леонид Иович Гайдай",
+      "author": "Н. В. Гнисюк / Главархив Москвы",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%93%D0%B0%D0%B9%D0%B4%D0%B0%D0%B9_(1974)_(cropped).jpg",
+      "sha1": "737772539d4c60927aa184d0d63ae4627800a8c9",
+      "description": "Участник VII Всесоюзного кинофестиваля, кинорежиссер, сценарист лауреат Государственной премии РСФСР, народный артист РСФСР Леонид Гайдай в зрительном зале Дворца имени В.И. Ленина. Фото Н. Гнисюка. Баку. Апрель 1974 года. Главархив Москвы."
+    },
+    "leonid-kharitonov": {
+      "file": "File:Leonid Kharitonov 1970s.jpg",
+      "key": "persons/leonid-kharitonov.webp",
+      "alt": "Портрет: Леонид Михайлович Харитонов",
+      "author": "L.M. Kharitonov.",
+      "license": "FAL",
+      "licenseUrl": "https://artlibre.org/licence/lal/en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leonid_Kharitonov_1970s.jpg",
+      "sha1": "ef78a057f700574cb3b15068b960dc74ea50c549",
+      "description": "Leonid Mikhailovich Kharitonov, Russian bass-baritone singer born 1933."
+    },
+    "lidiya-ruslanova": {
+      "file": "File:Лидия Русланова в Берлине в 1945 году.jpg",
+      "key": "persons/lidiya-ruslanova.webp",
+      "alt": "Портрет: Лидия Андреевна Русланова",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B8%D0%B4%D0%B8%D1%8F_%D0%A0%D1%83%D1%81%D0%BB%D0%B0%D0%BD%D0%BE%D0%B2%D0%B0_%D0%B2_%D0%91%D0%B5%D1%80%D0%BB%D0%B8%D0%BD%D0%B5_%D0%B2_1945_%D0%B3%D0%BE%D0%B4%D1%83.jpg",
+      "sha1": "4b88258815288a4cda2875b3996b7d8d8d416bdc",
+      "description": "Лидия Русланова в Берлине в 1945 году"
+    },
+    "mariya-volkonskaya": {
+      "file": "File:П.Соколов.Портрет княгини М.Н.Волконской с сыном Николаем.1826.png",
+      "key": "persons/mariya-volkonskaya.webp",
+      "alt": "Портрет: Мария Николаевна Волконская",
+      "author": "Пётр Фёдорович Соколов",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F.%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2.%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%BA%D0%BD%D1%8F%D0%B3%D0%B8%D0%BD%D0%B8_%D0%9C.%D0%9D.%D0%92%D0%BE%D0%BB%D0%BA%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%D0%B9_%D1%81_%D1%81%D1%8B%D0%BD%D0%BE%D0%BC_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%BC.1826.png",
+      "sha1": "c9b9b8a1ef9a92d94471fd53287f89663f2ea0d9",
+      "description": "“Портрет княгини Марии Николаевны Волконская с сыном”, 1826. Бумага, графитный карандаш, акварель. 21х17 см. Государственный музей им. А.С. Пушкина, Москва. М.Н. Волконская просила художника сделать повторение этого портрета для своей сестры (Орловой Е.Н), но о судьбе копии ничего не известно. Первы"
+    },
+    "martemyan-ryutin": {
+      "file": "File:Мартемьян Рютин.jpg",
+      "key": "persons/martemyan-ryutin.webp",
+      "alt": "Портрет: Мартемьян Никитич Рютин",
+      "author": "НКВД",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%80%D1%82%D0%B5%D0%BC%D1%8C%D1%8F%D0%BD_%D0%A0%D1%8E%D1%82%D0%B8%D0%BD.jpg",
+      "sha1": "d914d37cf041f953c9c98f2ec33b362f1ed6fe69",
+      "description": "Рютин Мартемьян Никитич"
+    },
+    "matvey-khangalov": {
+      "file": "File:Матвей Хагалов 1885.jpg",
+      "key": "persons/matvey-khangalov.webp",
+      "alt": "Портрет: Матвей Николаевич Хангалов",
+      "author": "НеизвестенUnknown author",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D1%82%D0%B2%D0%B5%D0%B9_%D0%A5%D0%B0%D0%B3%D0%B0%D0%BB%D0%BE%D0%B2_1885.jpg",
+      "sha1": "2e242b3dea172987e4252353d4a0ba0e3165bdf7",
+      "description": "Матвій Хангалов, бурятський етнограф"
+    },
+    "mikhail-bakunin": {
+      "file": "File:Bakunin.png",
+      "key": "persons/mikhail-bakunin.webp",
+      "alt": "Портрет Михаила Бакунина, фотография Надара около 1860 года",
+      "author": "Надар",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bakunin.png",
+      "sha1": "ce8a613381c890e329b879a2e595a3a371d11782",
+      "description": "Mikhail Bakunin, russian Anarchist"
+    },
+    "mikhail-gerasimov": {
+      "file": "File:RR5110-0081R.gif",
+      "key": "persons/mikhail-gerasimov.webp",
+      "alt": "Портрет: Михаил Михайлович Герасимов",
+      "author": "Банк России.",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:RR5110-0081R.gif",
+      "sha1": "04a2706bb33efc5dc50e465a19bca9e04b49134d",
+      "description": "Монета Банка России — Серия: «Выдающиеся личности России», 100-летие со дня рождения Михаила Михайловича Герасимова, 2 рубля, реверс."
+    },
+    "mikhail-gorbachyov": {
+      "file": "File:GorbachevMS.jpg",
+      "key": "persons/mikhail-gorbachyov.webp",
+      "alt": "Михаил Горбачёв, фотография 1991 года",
+      "author": "Leo Medvedev/Лев Леонидович Медведев",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:GorbachevMS.jpg",
+      "sha1": "d819c604a3d67b6682eda55f1de1e68ab151577a",
+      "description": "Советский государственный, политический и общественный деятель, Генеральный секретарь ЦК КПСС, президент СССР Михаил Сергеевич Горбачёв, Москва, 24 октября 1991 года"
+    },
+    "mikhail-khilkov": {
+      "file": "File:Prince Mikhail Ivanovich Khilkov.jpg",
+      "key": "persons/mikhail-khilkov.webp",
+      "alt": "Портрет: Михаил Иванович Хилков",
+      "author": "М.Л. Левенсон",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prince_Mikhail_Ivanovich_Khilkov.jpg",
+      "sha1": "3aea8e877b1ee4bc6661addf214622fc3c57da65",
+      "description": "Князь Михаил Иванович Хилков, член Государственного Совета."
+    },
+    "mikhail-korsakov": {
+      "file": "File:Корсаков Михаил Семёнович - Korsakov M.S..jpg",
+      "key": "persons/mikhail-korsakov.webp",
+      "alt": "Портрет: Михаил Семёнович Корсаков",
+      "author": "Schekinov Alexey Victorovich",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D1%80%D1%81%D0%B0%D0%BA%D0%BE%D0%B2_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_-_Korsakov_M.S..jpg",
+      "sha1": "148ae7b0a8c205b31d46fef13f1fa4aa55bcf83d",
+      "description": "Михаил Семёнович Корса́ков — русский государственный деятель, наказной атаман Забайкальского казачьего войска (фотофрагмент портрета середины 19-го века)."
+    },
+    "mikhail-lunin": {
+      "file": "File:Lunin by Sokolov.jpg",
+      "key": "persons/mikhail-lunin.webp",
+      "alt": "Портрет: Михаил Сергеевич Лунин",
+      "author": "Пётр Фёдорович Соколов",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lunin_by_Sokolov.jpg",
+      "sha1": "e595454aa9319fadb57122718ef53b10c017c2d7",
+      "description": "Михаил Сергеевич Лунин (29.12.1787 - 3.12.1845), декабрист."
+    },
+    "mikhail-mil": {
+      "file": "File:Rus Stamp-Mil-1.jpg",
+      "key": "persons/mikhail-mil.webp",
+      "alt": "Портрет: Михаил Леонтьевич Миль",
+      "author": "Нет данных:",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rus_Stamp-Mil-1.jpg",
+      "sha1": "6284f963a4f95e8201ea45673cf5f55f8c1191f8",
+      "description": "Почтовая марка России - Миль Михаил Леонтьевич, Герой Социалистического Труда"
+    },
+    "mikhail-romm": {
+      "file": "File:Mikhail Romm by Boris Baldin 2.jpg",
+      "key": "persons/mikhail-romm.webp",
+      "alt": "Портрет: Михаил Ильич Ромм",
+      "author": "Boris Mikhailovich Baldin (1929-2005) - my father",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mikhail_Romm_by_Boris_Baldin_2.jpg",
+      "sha1": "4a65c553ec33bb0a0deb2ece63e4937afb8ce8f0",
+      "description": "Михаил Ромм. 1965 г. Обыкновенный фашизм. Просмотровый зал к/с Мосфильм"
+    },
+    "mikhail-speranskiy": {
+      "file": "File:M.M.Speranskiy by Gedan.jpg",
+      "key": "persons/mikhail-speranskiy.webp",
+      "alt": "Портрет Михаила Сперанского, гравюра",
+      "author": "H. Gedan",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:M.M.Speranskiy_by_Gedan.jpg",
+      "sha1": "e159083303a875fbe822a6dad670b63bca281a1b",
+      "description": "М. М. Сперанский. Гравюра c портрета П. А. Иванова (1806)"
+    },
+    "moisey-krol": {
+      "file": "File:Krol Moisei.jpg",
+      "key": "persons/moisey-krol.webp",
+      "alt": "Портрет: Моисей Ааронович Кроль",
+      "author": "Неизвестный фотограф",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Krol_Moisei.jpg",
+      "sha1": "461e826113ca7b7fc49e19b0fef36a4d1ddb9118",
+      "description": "Моисе́й Ааро́нович Кроль (12 апреля 1862 — 31 декабря 1942) — исследователь статистики Сибири, этнограф и юрист., народоволец, затем эсер, член Учредительного собрания,"
+    },
+    "moisey-novomeyskiy": {
+      "file": "File:PikiWiki Israel 29786 Moses Novomeysky.JPG",
+      "key": "persons/moisey-novomeyskiy.webp",
+      "alt": "Портрет: Моисей Абрамович Новомейский",
+      "author": "Dr. Avishai Teicher",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_29786_Moses_Novomeysky.JPG",
+      "sha1": "94dd6cd8909bc62350395389774eaa8fe2cc34db",
+      "description": "Moses Novomeysky"
+    },
+    "nadezhda-chizhova": {
+      "file": "File:Nadezhda Chizhova 1968.jpg",
+      "key": "persons/nadezhda-chizhova.webp",
+      "alt": "Портрет: Надежда Владимировна Чижова",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nadezhda_Chizhova_1968.jpg",
+      "sha1": "0b0733e3548bbd1f64a4ab15cfe7be799425871b",
+      "description": "CAMPIONI dello SPORT 1970/71-n.43- CHIZHOVA - ATLETICA LEGGERA -Rec"
+    },
+    "nestor-kalandarishvili": {
+      "file": "File:Kalandar.jpg",
+      "key": "persons/nestor-kalandarishvili.webp",
+      "alt": "Портрет: Нестор Александрович Каландаришвили",
+      "author": "Неизвестный фотограф",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kalandar.jpg",
+      "sha1": "cb7781fcebc5e2b4a1682e23c5a1a77317f38898",
+      "description": "Нестор Александрович Каландаришвили"
+    },
+    "nikita-khrushchyov": {
+      "file": "File:Bundesarchiv Bild 183-B0628-0015-035, Nikita S. Chruschtschow.jpg",
+      "key": "persons/nikita-khrushchyov.webp",
+      "alt": "Никита Хрущёв во время визита в Берлин, фотография 1963 года",
+      "author": "Junge, Heinz",
+      "license": "CC BY-SA 3.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-B0628-0015-035,_Nikita_S._Chruschtschow.jpg",
+      "sha1": "a9f2346dcf76504da7ef97428b6beb65928ba510",
+      "description": "Для документальных целей Немецкий федеральный архив часто сохранял оригинальные заголовки изображений, которые могут быть ошибочными, подверженными внешнему влиянию, устаревшими или политически окрашенными. <abbr class=\"BArchtooltips\" title=\"Files from the inventories “Bild 101 Propagandakompanien d"
+    },
+    "nikita-muravyov": {
+      "file": "File:P.F. Sokolov 033.jpg",
+      "key": "persons/nikita-muravyov.webp",
+      "alt": "Портрет: Никита Михайлович Муравьёв",
+      "author": "Пётр Фёдорович Соколов",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:P.F._Sokolov_033.jpg",
+      "sha1": "58d31e5865e610f5c0ff098611ed48998608192a",
+      "description": "Соколов Петр Федорович. Портрет Никиты Михайловича Муравьева. 1824"
+    },
+    "nikolay-bulganin": {
+      "file": "File:Bundesarchiv Bild 183-29921-0001, Bulganin, Nikolai Alexandrowitsch.jpg",
+      "key": "persons/nikolay-bulganin.webp",
+      "alt": "Портрет Николая Булганина, фотография 1950-х годов",
+      "author": "НеизвестенUnknown author",
+      "license": "CC BY-SA 3.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-29921-0001,_Bulganin,_Nikolai_Alexandrowitsch.jpg",
+      "sha1": "9676eb6f2a53d6da243581ada02afcc5a38df46e",
+      "description": "Для документальных целей Немецкий федеральный архив часто сохранял оригинальные заголовки изображений, которые могут быть ошибочными, подверженными внешнему влиянию, устаревшими или политически окрашенными. <abbr class=\"BArchtooltips\" title=\"Files from the inventories “Bild 101 Propagandakompanien d"
+    },
+    "nikolay-chelnokov": {
+      "file": "File:Николай Васильевич Челноков.jpg",
+      "key": "persons/nikolay-chelnokov.webp",
+      "alt": "Портрет: Николай Васильевич Челноков",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87_%D0%A7%D0%B5%D0%BB%D0%BD%D0%BE%D0%BA%D0%BE%D0%B2.jpg",
+      "sha1": "9d8fbd71dd87af0a5622ffb174492d08018b32cb",
+      "description": "Дважды Герой Советского Союза Николай Васильевич Челноков"
+    },
+    "nikolay-chernyshevskiy": {
+      "file": "File:Nikolaj G. Černyševskij 1888.jpg",
+      "key": "persons/nikolay-chernyshevskiy.webp",
+      "alt": "Портрет: Николай Гаврилович Чернышевский",
+      "author": "Studio fotografico di S. I. Klimaševkaja",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikolaj_G._%C4%8Cerny%C5%A1evskij_1888.jpg",
+      "sha1": "9dbed9134cb85b955b21a8b4b1d0c9730ee40cbd",
+      "description": "Nikolaj Černyševskij in una foto del 1888 ad Astrachan'"
+    },
+    "nikolay-dobronravov": {
+      "file": "File:Presentation of 1st MoD's Prize of Culture and Art 13 (cropped).jpg",
+      "key": "persons/nikolay-dobronravov.webp",
+      "alt": "Портрет: Николай Николаевич Добронравов",
+      "author": "Сергей Бобылев",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Presentation_of_1st_MoD%27s_Prize_of_Culture_and_Art_13_(cropped).jpg",
+      "sha1": "81e6c923b389f4824d57a4468ba25b7eb2432b7b",
+      "description": "Церемония вручения премий Минобороны РФ в области культуры и искусства"
+    },
+    "nikolay-ii": {
+      "file": "File:Nicholas II by Boissonnas & Eggler c1909.jpg",
+      "key": "persons/nikolay-ii.webp",
+      "alt": "Император Николай II в морском мундире, фотография около 1909 года",
+      "author": "Boissonnas & Eggler, photographer, active 1902-1923, St. Petersburg, Nevsky 24.",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nicholas_II_by_Boissonnas_%26_Eggler_c1909.jpg",
+      "sha1": "5c2b8c23a3c30a30f8d9e279d4031deb28523653",
+      "description": "Gelatin silver print photograph of Nicholas II, Emperor of Russia. He is standing with his left hand resting on a bicorn hat on the decorative table beside him to the right. He is wearing an ornate naval uniform including epaulets, a sash and insignia. There is a pair of white gloves in his right ha"
+    },
+    "nikolay-kamov": {
+      "file": "File:Nikołaj Kamow 1973.png",
+      "key": "persons/nikolay-kamov.webp",
+      "alt": "Портрет: Николай Ильич Камов",
+      "author": "Autor nieznany",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Niko%C5%82aj_Kamow_1973.png",
+      "sha1": "f95e9467547632b85d87bec86d6de471fdff7b0e",
+      "description": "Nikołaj Kamow"
+    },
+    "nikolay-luzin": {
+      "file": "File:Luzinstamp.jpg",
+      "key": "persons/nikolay-luzin.webp",
+      "alt": "Портрет: Николай Николаевич Лузин",
+      "author": "Почта России",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luzinstamp.jpg",
+      "sha1": "6fca9f65e66f3f56f1f2f7b599e469d433a78479",
+      "description": "Н.Н. Лузин. Почтовая марка России"
+    },
+    "nikolay-muravyov-amurskiy": {
+      "file": "File:Konstantin Makovsky Nikolay-Muravyov-Amursky 1863.jpg",
+      "key": "persons/nikolay-muravyov-amurskiy.webp",
+      "alt": "Портрет Николая Муравьёва-Амурского работы Константина Маковского, 1863 год",
+      "author": "Константин Егорович Маковский",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Konstantin_Makovsky_Nikolay-Muravyov-Amursky_1863.jpg",
+      "sha1": "eead3f3d2ebfb4aee52af2b80f7315d44ab1dcfb",
+      "description": "Константин Егорович Маковский - Портрет графа Николая Николаевича Муравьева-Амурского, генерал-губернатора Восточной Сибири. 1863. Холст, масло. 177х137. Иркутский областной художественный музей им. В.П.Сукачева"
+    },
+    "nikolay-przhevalskiy": {
+      "file": "File:Nikolay Przhevalsky photoportrait and signature.jpg",
+      "key": "persons/nikolay-przhevalskiy.webp",
+      "alt": "Фотопортрет Николая Пржевальского с автографом",
+      "author": "В.Класен",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikolay_Przhevalsky_photoportrait_and_signature.jpg",
+      "sha1": "eb9602c6ef79395fbc9fbf4fdc17535d76b70679",
+      "description": "Фотопортрет Николая Михайловича Пржевальского и его подпись из книги \"От Кяхты на истоки Желтой реки, исследование северной окраины Тибета и путь через Лоб-Нор по бассейну Тарима\" 1888 г."
+    },
+    "nikolay-sinelnikov": {
+      "file": "File:Sinelnikov by Makovsky.jpg",
+      "key": "persons/nikolay-sinelnikov.webp",
+      "alt": "Портрет: Николай Петрович Синельников",
+      "author": "Константин Егорович Маковский",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sinelnikov_by_Makovsky.jpg",
+      "sha1": "5107a1aece4128b90fa02757621a06f02609402f",
+      "description": "Николай Петрович Синельников (1805—1892)"
+    },
+    "nikolay-treskin": {
+      "file": "File:Portrait of N.I. Treskin.jpg",
+      "key": "persons/nikolay-treskin.webp",
+      "alt": "Портрет: Николай Иванович Трескин",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_N.I._Treskin.jpg",
+      "sha1": "9742541b9b88d2d36039a60841a82010fbe5de7f",
+      "description": "Portrait of N.I. Treskin"
+    },
+    "nikolay-vtorov": {
+      "file": "File:Vtorov 1917.jpg",
+      "key": "persons/nikolay-vtorov.webp",
+      "alt": "Портрет: Николай Александрович Второв",
+      "author": "Автор неизвестен",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vtorov_1917.jpg",
+      "sha1": "7329960aade0bc33ff6cb82d5e0251577aa64647"
+    },
+    "nikolay-yadrintsev": {
+      "file": "File:Ядринцев Николай Михайлович.jpg",
+      "key": "persons/nikolay-yadrintsev.webp",
+      "alt": "Портрет: Николай Михайлович Ядринцев",
+      "author": "С фотографии В. Павловского. Рисовал К. О. Брож.",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%AF%D0%B4%D1%80%D0%B8%D0%BD%D1%86%D0%B5%D0%B2_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87.jpg",
+      "sha1": "d65c2c04048b413cc831be76cd9f062cac19b8bb",
+      "description": "Ядринцев Николай Михайлович, публицист, путешественник"
+    },
+    "olga-ivinskaya": {
+      "file": "File:Olga Ivinskaya (1989).jpg",
+      "key": "persons/olga-ivinskaya.webp",
+      "alt": "Портрет Ольги Ивинской, фотография 1989 года",
+      "author": "AndreiKozovoi",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olga_Ivinskaya_(1989).jpg",
+      "sha1": "8f868128a5abed0a2f358caf60552f74f6a8f77d",
+      "description": "Olga Ivinskaya"
+    },
+    "pavel-kutaysov": {
+      "file": "File:P.Kutaisov.jpg",
+      "key": "persons/pavel-kutaysov.webp",
+      "alt": "Портрет: Павел Ипполитович Кутайсов",
+      "author": "Фотография",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:P.Kutaisov.jpg",
+      "sha1": "f28d1451250eb29bb2e4c3f7f42eef5fd0d1085d",
+      "description": "ГрафПавел Ипполитович Кутайсов (1837—1911) — генерал от инфантерии, нижегородский губернатор (1873—1880), иркутский генерал-губернатор (1903—1905), член Государственного совета Российской империи. ."
+    },
+    "pavel-postyshev": {
+      "file": "File:Globus-1935-05-Pavel-Postyshev-foto.jpg",
+      "key": "persons/pavel-postyshev.webp",
+      "alt": "Портрет: Павел Петрович Постышев",
+      "author": "unknow (scan by AMY 81-412 (talk) 19:37, 17 August 2010 (UTC))",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Globus-1935-05-Pavel-Postyshev-foto.jpg",
+      "sha1": "cdf2521be6cf777e70d4f7a5b05b7a29fab8e216",
+      "description": "Павел Постышев, 1935 год"
+    },
+    "petr-kropotkin": {
+      "file": "File:Peter Kropotkin circa 1900.jpg",
+      "key": "persons/petr-kropotkin.webp",
+      "alt": "Портрет Петра Кропоткина, фотография около 1900 года",
+      "author": "Надар",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Kropotkin_circa_1900.jpg",
+      "sha1": "21ce46d2d74a6af623232a9adb64ab99132e298d",
+      "description": "Peter Kropotkin circa 1900"
+    },
+    "petr-pallas": {
+      "file": "File:Peter Simon Pallas. Stipple engraving by A. Tardieu after hi Wellcome V0004437.jpg",
+      "key": "persons/petr-pallas.webp",
+      "alt": "Портрет Петра Симона Палласа, гравюра А. Тардьё",
+      "author": "Амбруаз Тардьё",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Simon_Pallas._Stipple_engraving_by_A._Tardieu_after_hi_Wellcome_V0004437.jpg",
+      "sha1": "acaf5fee07f20fddced1d9e23f7b9e4c0b8e9d21",
+      "description": "Портрет Пётр Симон Паллас (1741-1811), Германский зоолог Peter Simon Pallas. Stipple engraving by A. Tardieu after himself. Iconographic Collections Keywords: portrait prints; Ambroise Tardieu; stipple prints; Peter Simon Pallas"
+    },
+    "platon-frederiks": {
+      "file": "File:Платон Фредерикс.jpg",
+      "key": "persons/platon-frederiks.webp",
+      "alt": "Портрет: Платон Александрович Фредерикс",
+      "author": "Нет данных",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BB%D0%B0%D1%82%D0%BE%D0%BD_%D0%A4%D1%80%D0%B5%D0%B4%D0%B5%D1%80%D0%B8%D0%BA%D1%81.jpg",
+      "sha1": "ba0bbcd2992c1d4b5fa10de2459d16a1da50ca05",
+      "description": "Барон Фредерикс, Платон Александрович (1828 — 1888) — генерал-лейтенант, генерал-адъютант, генерал-губернатор Восточной Сибири."
+    },
+    "rafail-kalinovskiy": {
+      "file": "File:Kalinowski1897.jpg",
+      "key": "persons/rafail-kalinovskiy.webp",
+      "alt": "Портрет Рафаила Калиновского, фотография 1897 года",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kalinowski1897.jpg",
+      "sha1": "679c3dd6185b10e985b3e294aa579548449b8a0e",
+      "description": "Photo de Raphaël Kalinowski"
+    },
+    "sergey-gerasimov": {
+      "file": "File:Gerasimov S.A.jpg",
+      "key": "persons/sergey-gerasimov.webp",
+      "alt": "Портрет кинорежиссёра Сергея Герасимова, фотография 1950 года",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gerasimov_S.A.jpg",
+      "sha1": "352730367f13df52a9ab09406b7322f8ecef86e0",
+      "description": "Сергей Аполлинариевич Герасимов, депутат Верховного Совета СССР"
+    },
+    "sergey-trubetskoy": {
+      "file": "File:Sergei Petrovich Trubetskoy by N. Bestuzhev.jpg",
+      "key": "persons/sergey-trubetskoy.webp",
+      "alt": "Портрет декабриста Сергея Трубецкого работы Николая Бестужева",
+      "author": "Bestuzhev, Nikolai Alexandrovich (1791-1855)",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sergei_Petrovich_Trubetskoy_by_N._Bestuzhev.jpg",
+      "sha1": "392983bb9ca47411f0bebcefb927bda3bda18f86",
+      "description": "Князь Сергей Петрович Трубецкой (1790-1860)"
+    },
+    "sergey-volkonskiy": {
+      "file": "File:S.G. Volkonskiy by Isabey (1814).jpg",
+      "key": "persons/sergey-volkonskiy.webp",
+      "alt": "Портрет Сергея Волконского работы Жана-Батиста Изабе, 1814 год",
+      "author": "Ж.-Б. Изабэ.",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:S.G._Volkonskiy_by_Isabey_(1814).jpg",
+      "sha1": "c06ea309417e4eb6804bc9f3795e713f1a2e5f46",
+      "description": "Ж.-Б. Изабэ. Портрет С.Г. Волконского. 1814 г."
+    },
+    "tatyana-goyshik": {
+      "file": "File:Tatyana Goyshchik, February 2019.jpg",
+      "key": "persons/tatyana-goyshik.webp",
+      "alt": "Портрет: Татьяна Геннадьевна Гойшик",
+      "author": "Щелковское Телевидение",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tatyana_Goyshchik,_February_2019.jpg",
+      "sha1": "086d278765ec2b31a239b6fab2e3d06a029e908c",
+      "description": "Советская бегунья и тренер Татьяна Гойщик"
+    },
+    "valentin-rasputin": {
+      "file": "File:Валентин Распутин.jpg",
+      "key": "persons/valentin-rasputin.webp",
+      "alt": "Портрет: Валентин Григорьевич Распутин",
+      "author": "Александр Стручков",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%A0%D0%B0%D1%81%D0%BF%D1%83%D1%82%D0%B8%D0%BD.jpg",
+      "sha1": "3bae96d49b54f748ad392362b9a1363315ae5988",
+      "description": "Распутин Валентин Григорьевич (р. 15.03.1937), писатель и общественный деятель. Родился в с. Усть-Уда Иркутской обл."
+    },
+    "valentin-ryabikov": {
+      "file": "File:Валентин Владимирович Рябиков.jpg",
+      "key": "persons/valentin-ryabikov.webp",
+      "alt": "Портрет: Валентин Владимирович Рябиков",
+      "author": "Иркутск накануне и в 1917 году:Очерки политической истории губернского центра",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87_%D0%A0%D1%8F%D0%B1%D0%B8%D0%BA%D0%BE%D0%B2.jpg",
+      "sha1": "6a2340fe3ec3353b0a7c4748cebc40ebb158318c",
+      "description": "Валентин Владимирович Рябиков (12 апреля 1883, Симбирск — 18 марта 1962, Москва) — революционер-большевик, участник установления советской власти в Восточной Сибири, член ЦИК Советов Сибири."
+    },
+    "vasiliy-shukshin": {
+      "file": "File:Василий Шукшин (1972).jpg",
+      "key": "persons/vasiliy-shukshin.webp",
+      "alt": "Портрет Василия Шукшина, фотография 1972 года",
+      "author": "Гневашев, Игорь Иванович",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%A8%D1%83%D0%BA%D1%88%D0%B8%D0%BD_(1972).jpg",
+      "sha1": "c4a0782b2e6d8eba8cb771a411196905221b0024",
+      "description": "Василий Шукшин на съёмках фильма \"Калина красная\""
+    },
+    "viktor-godlevskiy": {
+      "file": "File:Wiktor Ignacy Godlewski 1890.png",
+      "key": "persons/viktor-godlevskiy.webp",
+      "alt": "Портрет Виктора Годлевского, фотография 1890 года",
+      "author": "Vonglass",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wiktor_Ignacy_Godlewski_1890.png",
+      "sha1": "ff7795c48c16e3c147c28a9ab2685095154fc643",
+      "description": "Wiktor Ignacy Godlewski w 1890 r."
+    },
+    "vilgelm-rupert": {
+      "file": "File:Rupert Wilhelm Yakovlevich - reproduction.jpg",
+      "key": "persons/vilgelm-rupert.webp",
+      "alt": "Портрет: Вильгельм Яковлевич Руперт",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rupert_Wilhelm_Yakovlevich_-_reproduction.jpg",
+      "sha1": "c4ff06004a806d29f2b6067549d28b7e0fbcf0ae",
+      "description": "Rupert Wilhelm Yakovlevich - reproduction"
+    },
+    "vladimir-obruchev": {
+      "file": "File:1907-ObruchevVV.jpg",
+      "key": "persons/vladimir-obruchev.webp",
+      "alt": "Портрет Владимира Обручева, фотография 1907 года",
+      "author": "Томский политехнический институт, горное отделение",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1907-ObruchevVV.jpg",
+      "sha1": "b5d0ab9d2f35b3518895556d7a09b676a996563e",
+      "description": "Владимир Владимирович Обручев. Студент Томского политехнического институту, горное отделение."
+    },
+    "vladimir-raevskiy": {
+      "file": "File:V Raevsky.jpg",
+      "key": "persons/vladimir-raevskiy.webp",
+      "alt": "Портрет: Владимир Федосеевич Раевский",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:V_Raevsky.jpg",
+      "sha1": "0756eef1a6cc40eae3fd04785dacc85212e1ef12",
+      "description": "Russian poet Vladimir F Raevsky"
+    },
+    "vladimir-sukachyov": {
+      "file": "File:Vladimir Platonovich Sukachev (by V. Khudoyarov).jpg",
+      "key": "persons/vladimir-sukachyov.webp",
+      "alt": "Портрет Владимира Сукачёва работы Василия Худоярова",
+      "author": "Василий Павлович Худояров",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vladimir_Platonovich_Sukachev_(by_V._Khudoyarov).jpg",
+      "sha1": "e19be6681f5aeef3dcf54bd6d5c3b4c50a356773"
+    },
+    "vladimir-voytinskiy": {
+      "file": "File:Vladimir S. Voitinsky and Emma S. Shadkhan (cropped).jpg",
+      "key": "persons/vladimir-voytinskiy.webp",
+      "alt": "Портрет: Владимир Савельевич Войтинский",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vladimir_S._Voitinsky_and_Emma_S._Shadkhan_(cropped).jpg",
+      "sha1": "3e7fe3fc60cc77e11070132b4ad96ce21a30393b",
+      "description": "Photograph of Voitinsky with his wife Emma Savelyevna Shadkhan, inscription on the back: “Irkutsk, 1916.”"
+    },
+    "vladimir-vysotskiy": {
+      "file": "File:Vladimir Vysotsky.jpg",
+      "key": "persons/vladimir-vysotskiy.webp",
+      "alt": "Портрет Владимира Высоцкого, фотография 1979 года",
+      "author": "Игорь Анатольевич Пальмин",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vladimir_Vysotsky.jpg",
+      "sha1": "b64f2a371c55fcbb33edbc351643698f4775dd89",
+      "description": "Владимир Высоцкий"
+    },
+    "yakov-gakkel": {
+      "file": "File:Gakkel.JPG",
+      "key": "persons/yakov-gakkel.webp",
+      "alt": "Портрет авиаконструктора Якова Гаккеля",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gakkel.JPG",
+      "sha1": "815b9c4e805bf6f2de464b179347bdf33c4b8087",
+      "description": "Гаккель, Яков Модестович"
+    },
+    "yuriy-dombrovskiy": {
+      "file": "File:Dombrovskiy UO.jpg",
+      "key": "persons/yuriy-dombrovskiy.webp",
+      "alt": "Портрет: Юрий Осипович Домбровский",
+      "author": "НКВД СССР",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dombrovskiy_UO.jpg",
+      "sha1": "e24fcee698d8b8b9392cce44b82b93095bb5abbc",
+      "description": "Домбровский, Юрий Осипович. Фото из следственного дела"
+    },
+    "yuriy-nozhikov": {
+      "file": "File:Yuri Nozhikov.jpg",
+      "key": "persons/yuriy-nozhikov.webp",
+      "alt": "Портрет: Юрий Абрамович Ножиков",
+      "author": "Пресс-служба Совета Федерации Федерального Собрания РФ",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yuri_Nozhikov.jpg",
+      "sha1": "7f706f5ecb710ebb1e5b033c35bad78767973ff8",
+      "description": "Юрий Абрамович Ножиков (1934 — 2010) — российский государственный деятель"
+    },
+    "yuriy-stepanov": {
+      "file": "File:Юрий Степанов .jpg",
+      "key": "persons/yuriy-stepanov.webp",
+      "alt": "Портрет: Юрий Константинович Степанов",
+      "author": "Crystal Turandot Theatre Awards",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%AE%D1%80%D0%B8%D0%B9_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2_.jpg",
+      "sha1": "8dcaf1099253b7cf613ae43ed342eacfc9873ab3",
+      "description": "Юрий Степанов на вручении премии «Хрустальная Турандот»"
+    },
+    "yuzef-pilsudskiy": {
+      "file": "File:Jozef Pilsudski1.jpg",
+      "key": "persons/yuzef-pilsudskiy.webp",
+      "alt": "Портрет Юзефа Пилсудского",
+      "author": "Witold Pikiel",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jozef_Pilsudski1.jpg",
+      "sha1": "7a0de8edcd30c2e7c618aa588c89b34bb519eae6",
+      "description": "Юзеф Пилсудский"
+    }
+  },
+  "heraldry": {}
+}

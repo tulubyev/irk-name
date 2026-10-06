@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/nikolay-treskin.webp"
+  alt: "Портрет: Николай Иванович Трескин"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Portrait_of_N.I._Treskin.jpg"
 sources:
   - title: "Википедия: Трескин, Николай Иванович"
     url: "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B5%D1%81%D0%BA%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
