@@ -14,7 +14,7 @@ const { list } = Astro.props;
 const label = ERAS[era as EraKey];
 ---
 <Base title={label} description={`${label} — знаменитые имена Иркутска.`}>
-  <nav class="breadcrumbs"><a href="/epoha/">Эпохи</a> › {label}</nav>
+  <nav class="breadcrumbs"><a href="/epoha/">Времена</a> › {label}</nav>
   <h1>{label}</h1>
   <ul class="cards">{list.map((p) => <PersonCard person={p} />)}</ul>
 </Base>
