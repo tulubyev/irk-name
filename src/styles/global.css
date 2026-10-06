@@ -28,6 +28,8 @@
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
+/* [hidden] должен скрывать элемент даже при display: flex/grid у класса */
+[hidden] { display: none !important; }
 html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;

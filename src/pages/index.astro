@@ -1,18 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
 import PersonCard from '../components/PersonCard.astro';
-import { getPersons, layersOf, districtsOf, SITE } from '../lib/persons';
-import { SPHERES, SPHERE_FAMILY, LAYERS, LAYER_RULE, DISTRICTS, type SphereKey, type LayerKey, type DistrictKey } from '../lib/taxonomy';
+import { getPersons, districtsOf, SITE } from '../lib/persons';
+import { SPHERES, SPHERE_FAMILY, ERAS, DISTRICTS, type SphereKey, type EraKey, type DistrictKey } from '../lib/taxonomy';
 const persons = await getPersons();
 const sphereCounts = (Object.keys(SPHERES) as SphereKey[])
   .map((k) => ({ k, n: persons.filter((p) => p.data.spheres.includes(k)).length }));
 const districtCounts = (Object.keys(DISTRICTS) as DistrictKey[])
   .map((k) => ({ k, n: persons.filter((p) => districtsOf(p.data).includes(k)).length }))
   .filter((x) => x.n > 0);
-const layerCounts = (Object.keys(LAYERS) as LayerKey[]).map((k) => ({
-  k,
-  n: persons.filter((p) => layersOf(p.data).includes(k)).length,
-}));
+const eraCounts = (Object.keys(ERAS) as EraKey[])
+  .map((k) => ({ k, n: persons.filter((p) => p.data.era === k).length }))
+  .filter((x) => x.n > 0);
+// Подписи для строки «Найдено: …»
+const labels = { era: ERAS, sphere: SPHERES, district: DISTRICTS };
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -24,19 +25,17 @@ const jsonLd = {
 ---
 <Base title="irk.name — знаменитые имена Иркутска" jsonLd={jsonLd}>
   <h1>Знаменитые имена Иркутска</h1>
-  <p class="lead">Справочник людей, связанных с городом: уроженцев, жителей, учёных, писателей, декабристов, предпринимателей и меценатов.</p>
   <label for="q" style="position:absolute;left:-9999px">Поиск по имени, сфере или месту</label>
   <input id="q" class="search" type="search" placeholder="Поиск: имя, сфера деятельности, место…" autocomplete="off" />
 
   <div class="filters" id="filters">
-    <details class="dd" data-group="layer">
-      <summary>Период<span class="dd-count"></span></summary>
-      <div class="dd-panel" role="group" aria-label="Период">
-        {layerCounts.map(({ k, n }) => (
-          <label title={LAYERS[k].hint}><input type="checkbox" data-group="layer" value={k} /> {LAYERS[k].label} <span class="n">{n}</span></label>
+    <details class="dd" data-group="era">
+      <summary>Век<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Век">
+        {eraCounts.map(({ k, n }) => (
+          <label><input type="checkbox" data-group="era" value={k} /> {ERAS[k]} <span class="n">{n}</span></label>
         ))}
-        <div class="dd-hint">{LAYER_RULE}</div>
-        <div class="dd-actions"><button type="button" data-clear="layer">Очистить</button></div>
+        <div class="dd-actions"><button type="button" data-clear="era">Очистить</button></div>
       </div>
     </details>
     <details class="dd" data-group="sphere">
@@ -63,6 +62,7 @@ const jsonLd = {
   </div>
 
   <p id="count" class="empty" aria-live="polite">Всего записей: {persons.length}</p>
+  <script type="application/json" id="filter-labels" set:html={JSON.stringify(labels)} />
   <ul class="cards" id="list">
     {persons.map((p) => <PersonCard person={p} />)}
   </ul>
@@ -77,7 +77,9 @@ const jsonLd = {
       var count = document.getElementById('count');
       var none = document.getElementById('none');
       var reset = document.getElementById('reset');
-      var PARAM = { layer: 'period', sphere: 'sfera', district: 'rayon' };
+      var PARAM = { era: 'vek', sphere: 'sfera', district: 'rayon' };
+      var TITLE = { era: 'Век', sphere: 'Вид деятельности', district: 'Район' };
+      var LABELS = JSON.parse(document.getElementById('filter-labels').textContent);
 
       function selected(group) {
         return boxes.filter(function (b) { return b.dataset.group === group && b.checked; }).map(function (b) { return b.value; });
@@ -88,20 +90,25 @@ const jsonLd = {
         return list.some(function (v) { return vals.indexOf(v) !== -1; });
       }
       function apply() {
-        var state = { layer: selected('layer'), sphere: selected('sphere'), district: selected('district') };
+        var state = { era: selected('era'), sphere: selected('sphere'), district: selected('district') };
         var terms = q.value.toLowerCase().replace(/ё/g, 'е').split(/\s+/).filter(Boolean);
         var shown = 0;
         items.forEach(function (li) {
           var hay = li.getAttribute('data-search');
           var ok = terms.every(function (t) { return hay.indexOf(t) !== -1; }) &&
-            has(li.getAttribute('data-layers'), state.layer) &&
+            has(li.getAttribute('data-era'), state.era) &&
             has(li.getAttribute('data-spheres'), state.sphere) &&
             has(li.getAttribute('data-districts'), state.district);
           li.hidden = !ok;
           if (ok) shown++;
         });
-        var filtered = terms.length || state.layer.length || state.sphere.length || state.district.length;
-        count.textContent = (filtered ? 'Найдено: ' : 'Всего записей: ') + shown;
+        var filtered = terms.length || state.era.length || state.sphere.length || state.district.length;
+        var parts = [];
+        Object.keys(PARAM).forEach(function (g) {
+          if (state[g].length) parts.push(TITLE[g] + ': ' + state[g].map(function (v) { return LABELS[g][v] || v; }).join(', '));
+        });
+        if (q.value.trim()) parts.push('поиск «' + q.value.trim() + '»');
+        count.textContent = filtered ? 'Найдено: ' + shown + ' — ' + parts.join('; ') : 'Всего записей: ' + shown;
         none.hidden = shown !== 0;
         reset.hidden = !filtered;
         dropdowns.forEach(function (d) {
@@ -140,7 +147,7 @@ const jsonLd = {
         dropdowns.forEach(function (d) { if (d.open) { d.open = false; d.querySelector('summary').focus(); } });
       });
 
-      // Восстановление состояния из адреса (?period=…&sfera=…&rayon=…&q=…)
+      // Восстановление состояния из адреса (?vek=…&sfera=…&rayon=…&q=…)
       var params = new URLSearchParams(location.search);
       Object.keys(PARAM).forEach(function (g) {
         var vals = (params.get(PARAM[g]) || '').split(',').filter(Boolean);

@@ -71,7 +71,7 @@ const jsonLd = {
       )}
       <dt>Сферы</dt>
       <dd>{d.spheres.map((s, i) => <>{i > 0 && ', '}<a href={`/sfera/${s}/`}>{SPHERES[s]}</a></>)}</dd>
-      <dt>Эпоха</dt>
+      <dt>Век</dt>
       <dd><a href={`/epoha/${d.era}/`}>{ERAS[d.era]}</a></dd>
       <dt>Проверка</dt>
       <dd>{d.status === 'verified' ? <span class="badge ok">{STATUS.verified}</span> : <span class="badge warn">{STATUS['needs-check']}</span>}</dd>
