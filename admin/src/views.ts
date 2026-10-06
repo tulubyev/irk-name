@@ -99,9 +99,11 @@ ${opts.isNew
 <label for="connectionNote">Комментарий о связи</label><textarea id="connectionNote" name="connectionNote" style="min-height:4rem;font-family:inherit">${d.connectionNote ?? ''}</textarea>
 <label for="places">Места <span class="hint">— одно на строку: Название | Населённый пункт | район | широта | долгота. Районы: ${Object.keys(DISTRICTS).join(', ')}</span></label>
 <textarea id="places" name="places">${placesToText(d.places as PersonData['places'])}</textarea>
+<label for="links">Подробнее о жизни и деятельности <span class="hint">— статьи, книги, музейные страницы о человеке. Одна строка: Название | https://ссылка. Необязательно.</span></label>
+<textarea id="links" name="links">${sourcesToText(d.links as PersonData['links'])}</textarea>
 <label for="sources">Источники <span class="hint">— одна строка: Название | https://ссылка. Минимум один.</span></label>
 <textarea id="sources" name="sources" required>${sourcesToText(d.sources as PersonData['sources'])}</textarea>
-<label for="body">Текст (Markdown)</label><textarea id="body" name="body" style="min-height:12rem">${opts.body}</textarea>
+<label for="body">Статья (Markdown) <span class="hint">— развёрнутая биография; показывается на странице персоны под кратким описанием</span></label><textarea id="body" name="body" style="min-height:12rem">${opts.body}</textarea>
 ${d.photo ? html`<p class="muted">Фото: ${(d.photo as { key: string }).key} — правится в файле, в этой версии админки не редактируется.</p>` : ''}
 <div class="row">
 <div><label for="status">Проверка</label><select id="status" name="status">

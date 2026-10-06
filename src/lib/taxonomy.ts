@@ -48,6 +48,7 @@ export const DISTRICTS = {
   'alarskij-rajon': 'Аларский район',
   'g-cheremhovo': 'г. Черемхово',
   'ust-udinskij-rajon': 'Усть-Удинский район',
+  'balaganskij-rajon': 'Балаганский район',
   'nizhneilimskij-rajon': 'Нижнеилимский район',
   'g-bratsk': 'г. Братск',
   'kachugskij-rajon': 'Качугский район',
