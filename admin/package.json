@@ -3,8 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node22 --outfile=dist/server.mjs --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
+    "build": "npm run build:admin && npm run build:forms",
+    "build:admin": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node22 --outfile=dist/server.mjs --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
+    "build:forms": "esbuild src/forms.ts --bundle --platform=node --format=esm --target=node22 --outfile=dist/forms.mjs",
     "start": "node dist/server.mjs",
+    "start:forms": "node dist/forms.mjs",
     "typecheck": "tsc --noEmit -p ."
   },
   "dependencies": {

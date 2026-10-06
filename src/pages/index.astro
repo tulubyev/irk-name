@@ -23,24 +23,14 @@ const jsonLd = {
   description: 'Справочник знаменитых имён Иркутска',
 };
 ---
-<Base title="irk.name — знаменитые имена Иркутска" jsonLd={jsonLd}>
-  <h1>Знаменитые имена Иркутска</h1>
-  <label for="q" style="position:absolute;left:-9999px">Поиск по имени, сфере или месту</label>
-  <input id="q" class="search" type="search" placeholder="Поиск: имя, сфера деятельности, место…" autocomplete="off" />
-
+<Base title="Иркутяне — знаменитые имена нашей земли" jsonLd={jsonLd}>
+  <h1 class="sr-only">Иркутяне — знаменитые имена нашей земли</h1>
   <div class="filters" id="filters">
-    <details class="dd" data-group="era">
-      <summary>Век<span class="dd-count"></span></summary>
-      <div class="dd-panel" role="group" aria-label="Век">
-        {eraCounts.map(({ k, n }) => (
-          <label><input type="checkbox" data-group="era" value={k} /> {ERAS[k]} <span class="n">{n}</span></label>
-        ))}
-        <div class="dd-actions"><button type="button" data-clear="era">Очистить</button></div>
-      </div>
-    </details>
+    <label for="q" style="position:absolute;left:-9999px">Поиск по имени, сфере или месту</label>
+    <input id="q" class="search" type="search" placeholder="Поиск: имя, сфера, место…" autocomplete="off" />
     <details class="dd" data-group="sphere">
-      <summary>Вид деятельности<span class="dd-count"></span></summary>
-      <div class="dd-panel" role="group" aria-label="Вид деятельности">
+      <summary>Занятие<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Занятие">
         {sphereCounts.map(({ k, n }) => (
           <label class={`fam-${SPHERE_FAMILY[k]}${n === 0 ? ' disabled' : ''}`} title={n === 0 ? 'Записей пока нет — предложите персону' : undefined}>
             <input type="checkbox" data-group="sphere" value={k} disabled={n === 0} /><span class="swatch"></span> {SPHERES[k]} <span class="n">{n}</span>
@@ -50,12 +40,21 @@ const jsonLd = {
       </div>
     </details>
     <details class="dd" data-group="district">
-      <summary>Район<span class="dd-count"></span></summary>
-      <div class="dd-panel" role="group" aria-label="Район">
+      <summary>Место<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Место">
         {districtCounts.map(({ k, n }) => (
           <label><input type="checkbox" data-group="district" value={k} /> {DISTRICTS[k]} <span class="n">{n}</span></label>
         ))}
         <div class="dd-actions"><button type="button" data-clear="district">Очистить</button></div>
+      </div>
+    </details>
+    <details class="dd" data-group="era">
+      <summary>Время<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Время">
+        {eraCounts.map(({ k, n }) => (
+          <label><input type="checkbox" data-group="era" value={k} /> {ERAS[k]} <span class="n">{n}</span></label>
+        ))}
+        <div class="dd-actions"><button type="button" data-clear="era">Очистить</button></div>
       </div>
     </details>
     <button type="button" id="reset" class="dd-reset" hidden>Сбросить все фильтры</button>
@@ -66,7 +65,10 @@ const jsonLd = {
   <ul class="cards" id="list">
     {persons.map((p) => <PersonCard person={p} />)}
   </ul>
+  <div id="more" class="more-sentinel" aria-hidden="true"></div>
   <p id="none" class="empty" hidden>Ничего не найдено. Попробуйте убрать часть фильтров или <a href="/predlozhit/">предложите персону</a>.</p>
+
+  <button type="button" id="to-top" class="to-top" aria-label="Наверх" hidden>↑</button>
 
   <script is:inline>
     (function () {
@@ -77,8 +79,8 @@ const jsonLd = {
       var count = document.getElementById('count');
       var none = document.getElementById('none');
       var reset = document.getElementById('reset');
-      var PARAM = { era: 'vek', sphere: 'sfera', district: 'rayon' };
-      var TITLE = { era: 'Век', sphere: 'Вид деятельности', district: 'Район' };
+      var PARAM = { sphere: 'sfera', district: 'rayon', era: 'vek' };
+      var TITLE = { era: 'Время', sphere: 'Занятие', district: 'Место' };
       var LABELS = JSON.parse(document.getElementById('filter-labels').textContent);
 
       function selected(group) {
@@ -89,19 +91,46 @@ const jsonLd = {
         var vals = (attr || '').split(' ');
         return list.some(function (v) { return vals.indexOf(v) !== -1; });
       }
+      // Бесконечная прокрутка: показываем столько карточек, сколько помещается на экран
+      // (целыми рядами под текущее число колонок), остальные — по мере прокрутки.
+      var list = document.getElementById('list');
+      var sentinel = document.getElementById('more');
+      var matched = [];
+      var limit = 0;
+      function pageSize() {
+        var cols = getComputedStyle(list).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+        var rows = Math.max(2, Math.ceil((window.innerHeight * 1.5) / 240));
+        return cols * rows;
+      }
+      function render() {
+        var visible = {};
+        matched.slice(0, limit).forEach(function (li) { visible[li.id] = true; });
+        items.forEach(function (li) { li.hidden = !visible[li.id]; });
+        sentinel.hidden = matched.length <= limit;
+      }
+      function more() {
+        if (matched.length <= limit) return;
+        limit += pageSize();
+        render();
+      }
+      items.forEach(function (li, i) { li.id = li.id || 'p' + i; });
+
       function apply() {
         var state = { era: selected('era'), sphere: selected('sphere'), district: selected('district') };
         var terms = q.value.toLowerCase().replace(/ё/g, 'е').split(/\s+/).filter(Boolean);
         var shown = 0;
+        matched = [];
         items.forEach(function (li) {
           var hay = li.getAttribute('data-search');
           var ok = terms.every(function (t) { return hay.indexOf(t) !== -1; }) &&
             has(li.getAttribute('data-era'), state.era) &&
             has(li.getAttribute('data-spheres'), state.sphere) &&
             has(li.getAttribute('data-districts'), state.district);
-          li.hidden = !ok;
-          if (ok) shown++;
+          if (ok) matched.push(li);
         });
+        shown = matched.length;
+        limit = pageSize();
+        render();
         var filtered = terms.length || state.era.length || state.sphere.length || state.district.length;
         var parts = [];
         Object.keys(PARAM).forEach(function (g) {
@@ -136,7 +165,12 @@ const jsonLd = {
       // Открыт только один список; закрытие по клику вне и по Escape
       dropdowns.forEach(function (d) {
         d.addEventListener('toggle', function () {
-          if (d.open) dropdowns.forEach(function (o) { if (o !== d) o.open = false; });
+          if (!d.open) return;
+          dropdowns.forEach(function (o) { if (o !== d) o.open = false; });
+          // если список не помещается справа — открываем его влево от кнопки
+          var panel = d.querySelector('.dd-panel');
+          panel.classList.remove('to-left');
+          if (panel.getBoundingClientRect().right > document.documentElement.clientWidth - 8) panel.classList.add('to-left');
         });
       });
       document.addEventListener('click', function (e) {
@@ -155,6 +189,23 @@ const jsonLd = {
       });
       q.value = params.get('q') || '';
       apply();
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          if (entries.some(function (e) { return e.isIntersecting; })) more();
+        }, { rootMargin: '800px 0px' }).observe(sentinel);
+      } else {
+        limit = Infinity; render();
+      }
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () { limit = Math.max(limit, pageSize()); render(); }, 150);
+      });
+
+      var toTop = document.getElementById('to-top');
+      window.addEventListener('scroll', function () { toTop.hidden = window.scrollY < window.innerHeight * 1.5; }, { passive: true });
+      toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     })();
   </script>
 </Base>

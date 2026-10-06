@@ -1,9 +1,11 @@
 ---
+import '@fontsource/golos-text/400.css';
+import '@fontsource/golos-text/600.css';
+import '@fontsource/playfair-display/700.css';
 import '../styles/global.css';
 import { SITE } from '../lib/persons';
-import { OPERATOR, COPYRIGHT_YEARS } from '../lib/operator';
-import { HERALDRY } from '../lib/heraldry';
-import { mediaUrl } from '../lib/media';
+import { COPYRIGHT_YEARS } from '../lib/operator';
+import Babr from '../components/Babr.astro';
 
 interface Props {
   title: string;
@@ -56,35 +58,22 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
     <header class="site">
       <div class="wrap">
         <a class="logo" href="/">
-          <span class="arms">
-            {HERALDRY.map((h) => <img src={mediaUrl(h.key)} width={h.width} height={h.height} alt={h.alt} title={h.alt} decoding="async" onerror="this.remove()" />)}
-          </span>
-          <span class="logo-text">irk<span>.name</span></span>
+          <Babr />
+          <span class="logo-text"><span class="logo-name">Иркутяне</span><span class="logo-tag">Знаменитые имена нашей земли</span></span>
         </a>
-        <nav class="main" aria-label="Основная навигация">
-          <a href="/">Все имена</a>
-          <a href="/sfera/">Сферы</a>
-          <a href="/epoha/">Времена</a>
-          <a href="/mesto/">Районы</a>
-          <a href="/o-proekte/">О проекте</a>
-        </nav>
-        <a class="suggest" href="/predlozhit/">Предложить персону</a>
-        <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему">Тема</button>
+        <a class="suggest" href="/predlozhit/">Предложить<span class="long"> персону</span></a>
+        <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему"><span class="long">Тема</span><span class="short" aria-hidden="true">◐</span></button>
       </div>
     </header>
     <main class="wrap"><slot /></main>
     <footer class="site">
       <div class="wrap">
-        <div class="footer-copy">
-          <p>© {COPYRIGHT_YEARS} irk.name — справочник знаменитых имён Иркутска. {OPERATOR.shortName}.</p>
-          <p>Тексты охраняются авторским правом; изображения — по свободным лицензиям, авторы указаны на страницах. <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a></p>
-        </div>
+        <span class="footer-copy">© {COPYRIGHT_YEARS} irk.name</span>
         <nav aria-label="Служебные ссылки">
           <a href="/o-proekte/">О проекте</a>
           <a href="/predlozhit/">Предложить персону</a>
           <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
           <a href="/personalnye-dannye/">Персональные данные</a>
-          <a href="/avtorskie-prava/">Авторские права</a>
         </nav>
       </div>
     </footer>

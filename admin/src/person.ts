@@ -15,7 +15,7 @@ export function parse(content: string): { data: Record<string, unknown>; body: s
 }
 
 const ORDER = ['name', 'birthYear', 'deathYear', 'datesApproximate', 'spheres', 'era', 'summary', 'connection',
-  'connectionNote', 'places', 'photo', 'sources', 'status', 'archived'] as const;
+  'connectionNote', 'places', 'photo', 'links', 'sources', 'status', 'archived'] as const;
 
 /** Сериализует в Markdown с фронтматтером; значения по умолчанию (false, пустые списки) опускаются. */
 export function serialize(data: PersonData, body: string): string {
@@ -46,10 +46,14 @@ const num = (v: string | undefined) => (v === undefined || v.trim() === '' ? und
 export function placesToText(places: PersonData['places'] = []): string {
   return places.map((p) => [p.name, p.settlement ?? '', p.district ?? '', p.lat ?? '', p.lon ?? ''].join(' | ').replace(/( \| )+$/, '')).join('\n');
 }
-/** Источники: одна строка — «Название | URL». */
-export function sourcesToText(sources: PersonData['sources'] = []): string {
+/** Источники и ссылки «Подробнее»: одна строка — «Название | URL». */
+export function sourcesToText(sources: { title: string; url: string }[] = []): string {
   return sources.map((s) => `${s.title} | ${s.url}`).join('\n');
 }
+const textToLinks = (v: unknown) => str(v).split('\n').map((l) => l.trim()).filter(Boolean).map((l) => {
+  const i = l.lastIndexOf('|');
+  return i === -1 ? { title: l, url: l } : { title: l.slice(0, i).trim(), url: l.slice(i + 1).trim() };
+});
 
 /** Сохраняет прежний порядок отмеченных значений, новые — в конец (чтобы правка не переставляла сферы). */
 const keepOrder = (values: string[], prev: unknown) => {
@@ -69,10 +73,7 @@ export function fromForm(f: FormBody, existing: Record<string, unknown>): { data
       ...(num(lon) !== undefined ? { lon: num(lon) } : {}),
     };
   });
-  const sources = str(f.sources).split('\n').map((l) => l.trim()).filter(Boolean).map((l) => {
-    const i = l.lastIndexOf('|');
-    return i === -1 ? { title: l, url: l } : { title: l.slice(0, i).trim(), url: l.slice(i + 1).trim() };
-  });
+  const sources = textToLinks(f.sources);
   const data: Record<string, unknown> = {
     name: str(f.name),
     birthYear: int(f.birthYear),
@@ -86,6 +87,7 @@ export function fromForm(f: FormBody, existing: Record<string, unknown>): { data
     places,
     // фото в этой версии админки не редактируется — сохраняем как было
     photo: existing.photo,
+    links: textToLinks(f.links),
     sources,
     status: str(f.status),
     archived: f.archived === 'on',
@@ -96,7 +98,7 @@ export function fromForm(f: FormBody, existing: Record<string, unknown>): { data
 const LABELS: Record<string, string> = {
   name: 'Имя', birthYear: 'Год рождения', deathYear: 'Год смерти', spheres: 'Виды деятельности', era: 'Век',
   summary: 'Кратко', connection: 'Связь с регионом', connectionNote: 'Комментарий о связи', places: 'Места',
-  sources: 'Источники', status: 'Проверка', photo: 'Фото', title: 'название', url: 'ссылка',
+  sources: 'Источники', links: 'Подробнее о жизни и деятельности', status: 'Проверка', photo: 'Фото', title: 'название', url: 'ссылка',
   settlement: 'населённый пункт', district: 'район', lat: 'широта', lon: 'долгота',
 };
 export function issuesToText(err: z.ZodError): string[] {

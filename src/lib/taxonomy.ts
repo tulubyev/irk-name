@@ -48,6 +48,7 @@ export const DISTRICTS = {
   'alarskij-rajon': 'Аларский район',
   'g-cheremhovo': 'г. Черемхово',
   'ust-udinskij-rajon': 'Усть-Удинский район',
+  'balaganskij-rajon': 'Балаганский район',
   'nizhneilimskij-rajon': 'Нижнеилимский район',
   'g-bratsk': 'г. Братск',
   'kachugskij-rajon': 'Качугский район',
@@ -69,6 +70,7 @@ export const DISTRICTS = {
   'osinskij-rajon': 'Осинский район',
   'nukutskij-rajon': 'Нукутский район',
   'zalarinskij-rajon': 'Заларинский район',
+  'tulunskij-rajon': 'Тулунский район',
 } as const;
 export type DistrictKey = keyof typeof DISTRICTS;
 

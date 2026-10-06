@@ -48,6 +48,8 @@ services:
       GITHUB_TOKEN: ${GITHUB_TOKEN:-}
       GITHUB_REPO: ${GITHUB_REPO:-tulubyev/irk-name}
       GITHUB_BRANCH: ${GITHUB_BRANCH:-main}
+    volumes:
+      - suggestions:/data/suggestions
     labels:
       - traefik.enable=true
       - traefik.docker.network=${TRAEFIK_NETWORK:-traefik-public}
@@ -59,6 +61,40 @@ services:
       - traefik.http.routers.irkname-admin.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
       - traefik.http.routers.irkname-admin.service=irkname-admin
       - traefik.http.services.irkname-admin.loadbalancer.server.port=3000
+
+  # Приём формы «Предложить персону» (/api/suggest). Работает всегда, секретов не требует.
+  # Предложения пишутся только в том suggestions на этом сервере; читает их админка.
+  forms:
+    build:
+      context: .
+      dockerfile: admin/Dockerfile
+    image: irk-name-admin:latest
+    command: ["node", "forms.mjs"]
+    restart: unless-stopped
+    networks: [traefik]
+    environment:
+      PORT: 3001
+      FORMS_ORIGIN: https://${SITE_HOST:-irk.name}
+    volumes:
+      - suggestions:/data/suggestions
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3001/api/suggest/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=${TRAEFIK_NETWORK:-traefik-public}
+      - traefik.http.routers.irkname-forms.rule=Host(`${SITE_HOST:-irk.name}`) && PathPrefix(`/api/suggest`)
+      - traefik.http.routers.irkname-forms.priority=100
+      - traefik.http.routers.irkname-forms.entrypoints=${TRAEFIK_ENTRYPOINT_HTTPS:-websecure}
+      - traefik.http.routers.irkname-forms.tls=true
+      - traefik.http.routers.irkname-forms.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.routers.irkname-forms.service=irkname-forms
+      - traefik.http.services.irkname-forms.loadbalancer.server.port=3001
+
+volumes:
+  suggestions:
 
 networks:
   traefik:

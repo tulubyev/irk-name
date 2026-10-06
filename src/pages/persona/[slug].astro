@@ -48,6 +48,14 @@ const jsonLd = {
     )}
     <p>{d.summary}</p>
     <Content />
+    {(d.links ?? []).length > 0 && (
+      <>
+        <h2>Подробнее о жизни и деятельности</h2>
+        <ul class="more-links">
+          {(d.links ?? []).map((l) => <li><a href={l.url} rel="noopener">{l.title}</a></li>)}
+        </ul>
+      </>
+    )}
     <h2>Связь с Иркутском</h2>
     <dl class="facts">
       <dt>Связь</dt>
