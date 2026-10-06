@@ -56,9 +56,9 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
   <body>
     <header class="site">
       <div class="wrap">
-        <a class="logo" href="/">Иркутяне</a>
-        <a class="suggest" href="/predlozhit/">Предложить персону</a>
-        <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему">Тема</button>
+        <a class="logo" href="/"><span class="logo-name">Иркутяне</span><span class="logo-tag">Знаменитые имена нашей земли</span></a>
+        <a class="suggest" href="/predlozhit/">Предложить<span class="long"> персону</span></a>
+        <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему"><span class="long">Тема</span><span class="short" aria-hidden="true">◐</span></button>
       </div>
     </header>
     <main class="wrap"><slot /></main>
