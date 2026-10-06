@@ -14,6 +14,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/rafail-kalinovskiy.webp"
+  alt: "Портрет Рафаила Калиновского, фотография 1897 года"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Kalinowski1897.jpg"
 sources:
   - title: "Википедия: Калиновский, Рафаил"
     url: "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%A0%D0%B0%D1%84%D0%B0%D0%B8%D0%BB"

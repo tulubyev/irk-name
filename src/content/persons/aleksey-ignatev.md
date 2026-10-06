@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/aleksey-ignatev.webp"
+  alt: "Портрет: Алексей Павлович Игнатьев"
+  author: "Илья Ефимович Репин"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:A.P.Ignatiev_by_Repin.jpg"
 sources:
   - title: "Иркипедия: Игнатьев, Алексей Павлович"
     url: "http://irkipedia.ru/content/ignatev_aleksey_pavlovich"

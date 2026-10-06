@@ -11,6 +11,12 @@ places:
   - name: "Тайшет (Озерлаг)"
     settlement: "Тайшет"
     district: tajshetskij-rajon
+photo:
+  key: "persons/lidiya-ruslanova.webp"
+  alt: "Портрет: Лидия Андреевна Русланова"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B8%D0%B4%D0%B8%D1%8F_%D0%A0%D1%83%D1%81%D0%BB%D0%B0%D0%BD%D0%BE%D0%B2%D0%B0_%D0%B2_%D0%91%D0%B5%D1%80%D0%BB%D0%B8%D0%BD%D0%B5_%D0%B2_1945_%D0%B3%D0%BE%D0%B4%D1%83.jpg"
 sources:
   - title: "Википедия: Русланова, Лидия Андреевна"
     url: "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D0%BB%D0%B0%D0%BD%D0%BE%D0%B2%D0%B0,_%D0%9B%D0%B8%D0%B4%D0%B8%D1%8F_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%BD%D0%B0"

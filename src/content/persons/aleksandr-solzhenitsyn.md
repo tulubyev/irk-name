@@ -14,6 +14,13 @@ places:
   - name: "Музей «Ангарская деревня»"
     settlement: "Братск"
     district: g-bratsk
+photo:
+  key: "persons/aleksandr-solzhenitsyn.webp"
+  alt: "Александр Солженицын у окна вагона во Владивостоке, фотография 1994 года"
+  author: "Evstafiev"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Evstafiev-solzhenitsyn.jpg"
 sources:
   - title: "Глагол38: Владимир Ходий: 12 июня 1994 года в Иркутск приехал Александр Солженицын"
     url: "https://glagol38.ru/text/11-06-2024/015"

@@ -11,6 +11,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/ivan-babushkin.webp"
+  alt: "Портрет: Иван Васильевич Бабушкин"
+  author: "https://s00.yaplakal.com/pics/pics_original/2/1/7/18136712.jpg"
+  license: "CC BY-SA 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Ivan_Vasilyevich_Babushkin_photo.jpg"
 sources:
   - title: "Глагол: Революционер Иван Бабушкин в Иркутске: к 150-летию со дня рождения"
     url: "https://glagol38.ru/text/14-01-2023/005"

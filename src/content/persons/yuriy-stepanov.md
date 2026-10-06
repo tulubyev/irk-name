@@ -14,6 +14,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/yuriy-stepanov.webp"
+  alt: "Портрет: Юрий Константинович Степанов"
+  author: "Crystal Turandot Theatre Awards"
+  license: "CC BY 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/3.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%AE%D1%80%D0%B8%D0%B9_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2_.jpg"
 sources:
   - title: "Википедия: Степанов, Юрий Константинович"
     url: "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%AE%D1%80%D0%B8%D0%B9_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"

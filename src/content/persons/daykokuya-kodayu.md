@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/daykokuya-kodayu.webp"
+  alt: "Портрет: Дайкокуя Кодаю"
+  author: "Anonymous Japanese painter 1792"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Captain_Daikokuya_Kodayu_and_crewmate_Isokichi_1792.png"
 sources:
   - title: "Википедия: Хокуса бунряку"
     url: "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BA%D1%83%D1%81%D0%B0_%D0%B1%D1%83%D0%BD%D1%80%D1%8F%D0%BA%D1%83"

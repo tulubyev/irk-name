@@ -11,6 +11,12 @@ places:
   - name: "Киренск"
     settlement: "Киренск"
     district: kirenskij-rajon
+photo:
+  key: "persons/aleksey-kosygin.webp"
+  alt: "Алексей Косыгин на встрече в Гласборо, фотография 1967 года"
+  author: "Yoichi Okamoto"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Alexei_Kosygin_(cropped).jpg"
 sources:
   - title: "Глагол: Как будущий советский премьер Косыгин начинал карьеру в Киренске"
     url: "https://glagol38.ru/text/18-01-2020/008"

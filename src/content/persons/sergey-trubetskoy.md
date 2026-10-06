@@ -16,6 +16,12 @@ places:
     district: g-irkutsk
     lat: 52.2889
     lon: 104.2858
+photo:
+  key: "persons/sergey-trubetskoy.webp"
+  alt: "Портрет декабриста Сергея Трубецкого работы Николая Бестужева"
+  author: "Bestuzhev, Nikolai Alexandrovich (1791-1855)"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Sergei_Petrovich_Trubetskoy_by_N._Bestuzhev.jpg"
 sources:
   - title: "Википедия: Трубецкой, Сергей Петрович"
     url: "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%83%D0%B1%D0%B5%D1%86%D0%BA%D0%BE%D0%B9,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87"

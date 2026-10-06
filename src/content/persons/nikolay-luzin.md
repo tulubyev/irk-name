@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/nikolay-luzin.webp"
+  alt: "Портрет: Николай Николаевич Лузин"
+  author: "Почта России"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Luzinstamp.jpg"
 sources:
   - title: "Википедия: Лузин, Николай Николаевич"
     url: "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%B7%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87"

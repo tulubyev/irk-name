@@ -17,6 +17,13 @@ places:
   - name: "Братская ГЭС"
     settlement: "Братск"
     district: g-bratsk
+photo:
+  key: "persons/nikita-khrushchyov.webp"
+  alt: "Никита Хрущёв во время визита в Берлин, фотография 1963 года"
+  author: "Junge, Heinz"
+  license: "CC BY-SA 3.0 de"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-B0628-0015-035,_Nikita_S._Chruschtschow.jpg"
 sources:
   - title: "Иркипедия: Визит Никиты Хрущева в Ангарск в 1954 году"
     url: "http://irkipedia.ru/content/vizit_nikity_hrushcheva_v_angarsk_v_1954_godu"

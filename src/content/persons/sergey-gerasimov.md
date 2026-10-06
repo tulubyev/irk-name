@@ -13,6 +13,12 @@ places:
     district: slyudyanskij-rajon
   - name: "Остров Ольхон"
     district: olhonskij-rajon
+photo:
+  key: "persons/sergey-gerasimov.webp"
+  alt: "Портрет кинорежиссёра Сергея Герасимова, фотография 1950 года"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Gerasimov_S.A.jpg"
 sources:
   - title: "Глагол38: Как фильм про Байкал стал лучшим в Советском Союзе"
     url: "https://glagol38.ru/text/26-07-2024/003"

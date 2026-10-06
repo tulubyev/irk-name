@@ -17,6 +17,12 @@ places:
   - name: "Иркутский алюминиевый завод"
     settlement: "Шелехов"
     district: shelehovskij-rajon
+photo:
+  key: "persons/kim-ir-sen.webp"
+  alt: "Портрет Ким Ир Сена, фотография 1950 года"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Kim_Il-sung_in_1950.jpg"
 sources:
   - title: "ИрСити: Гельмут Коль ходил в баню, а английская принцесса — в музей. Каких еще высоких гостей принимал Иркутск до Лукашенко?"
     url: "https://ircity.ru/text/politics/2024/06/05/73664873/"

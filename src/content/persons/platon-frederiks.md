@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/platon-frederiks.webp"
+  alt: "Портрет: Платон Александрович Фредерикс"
+  author: "Нет данных"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BB%D0%B0%D1%82%D0%BE%D0%BD_%D0%A4%D1%80%D0%B5%D0%B4%D0%B5%D1%80%D0%B8%D0%BA%D1%81.jpg"
 sources:
   - title: "Иркипедия: Фредерикс, Платон Александрович"
     url: "http://irkipedia.ru/content/frederiks_platon_aleksandrovich"

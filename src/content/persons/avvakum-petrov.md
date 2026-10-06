@@ -12,6 +12,12 @@ places:
   - name: "Братский острог"
     settlement: "Братск"
     district: g-bratsk
+photo:
+  key: "persons/avvakum-petrov.webp"
+  alt: "Портрет: Аввакум Петров, протопоп"
+  author: "Анонимный авторUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Protopop_Avvakym.jpg"
 sources:
   - title: "Википедия: Аввакум Петров"
     url: "https://ru.wikipedia.org/wiki/%D0%90%D0%B2%D0%B2%D0%B0%D0%BA%D1%83%D0%BC_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2"

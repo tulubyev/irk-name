@@ -17,6 +17,12 @@ places:
   - name: "Братск"
     settlement: "Братск"
     district: g-bratsk
+photo:
+  key: "persons/iosip-broz-tito.webp"
+  alt: "Иосип Броз Тито в Бихаче, фотография 1942 года"
+  author: "Unknown"
+  license: "Attribution"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Josip_Broz_Tito_Biha%C4%87_1942.jpg"
 sources:
   - title: "Глагол: Иосип Броз Тито на берегах Байкала"
     url: "https://glagol38.ru/text/05-05-2020/001"

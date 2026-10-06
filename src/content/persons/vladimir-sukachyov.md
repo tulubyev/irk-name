@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/vladimir-sukachyov.webp"
+  alt: "Портрет Владимира Сукачёва работы Василия Худоярова"
+  author: "Василий Павлович Худояров"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Vladimir_Platonovich_Sukachev_(by_V._Khudoyarov).jpg"
 sources:
   - title: "Википедия: Сукачёв, Владимир Платонович"
     url: "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D0%BA%D0%B0%D1%87%D1%91%D0%B2,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D0%BB%D0%B0%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"

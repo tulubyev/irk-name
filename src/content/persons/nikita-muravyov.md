@@ -11,6 +11,12 @@ places:
   - name: "Урик"
     settlement: "Урик"
     district: irkutskij-rajon
+photo:
+  key: "persons/nikita-muravyov.webp"
+  alt: "Портрет: Никита Михайлович Муравьёв"
+  author: "Пётр Фёдорович Соколов"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:P.F._Sokolov_033.jpg"
 sources:
   - title: "Википедия: Муравьёв, Никита Михайлович"
     url: "https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D1%80%D0%B0%D0%B2%D1%8C%D1%91%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"

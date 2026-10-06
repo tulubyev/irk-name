@@ -14,6 +14,13 @@ places:
   - name: "Братск"
     settlement: "Братск"
     district: g-bratsk
+photo:
+  key: "persons/yuriy-nozhikov.webp"
+  alt: "Портрет: Юрий Абрамович Ножиков"
+  author: "Пресс-служба Совета Федерации Федерального Собрания РФ"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Yuri_Nozhikov.jpg"
 sources:
   - title: "Иркипедия: Ножиков, Юрий Абрамович"
     url: "http://irkipedia.ru/content/nozhikov_yuriy_abramovich"

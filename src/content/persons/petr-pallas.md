@@ -11,6 +11,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/petr-pallas.webp"
+  alt: "Портрет Петра Симона Палласа, гравюра А. Тардьё"
+  author: "Амбруаз Тардьё"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Peter_Simon_Pallas._Stipple_engraving_by_A._Tardieu_after_hi_Wellcome_V0004437.jpg"
 sources:
   - title: "Википедия: Паллас, Пётр Симон"
     url: "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BB%D0%BB%D0%B0%D1%81,_%D0%9F%D1%91%D1%82%D1%80_%D0%A1%D0%B8%D0%BC%D0%BE%D0%BD"

@@ -11,6 +11,12 @@ places:
   - name: "Братская ГЭС"
     settlement: "Братск"
     district: g-bratsk
+photo:
+  key: "persons/ivan-naymushin.webp"
+  alt: "Портрет: Иван Иванович Наймушин"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Naymushin_I.I.jpg"
 sources:
   - title: "Википедия: Наймушин, Иван Иванович"
     url: "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B9%D0%BC%D1%83%D1%88%D0%B8%D0%BD,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"

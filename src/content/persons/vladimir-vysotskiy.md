@@ -17,6 +17,13 @@ places:
   - name: "Нижнеудинск"
     settlement: "Нижнеудинск"
     district: nizhneudinskij-rajon
+photo:
+  key: "persons/vladimir-vysotskiy.webp"
+  alt: "Портрет Владимира Высоцкого, фотография 1979 года"
+  author: "Игорь Анатольевич Пальмин"
+  license: "CC BY-SA 2.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Vladimir_Vysotsky.jpg"
 sources:
   - title: "IRK.ru: Зачем Владимир Высоцкий приезжал в Иркутск"
     url: "https://www.irk.ru/news/articles/20210125/vysotsky/"

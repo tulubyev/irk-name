@@ -12,6 +12,12 @@ places:
   - name: "Урик"
     settlement: "Урик"
     district: irkutskij-rajon
+photo:
+  key: "persons/ferdinand-volf.webp"
+  alt: "Портрет: Фердинанд Богданович Вольф"
+  author: "Н. Бестужев"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Christian_Wolf_by_N._Bestuzhev_(1842).jpg"
 sources:
   - title: "Википедия: Вольф, Фердинанд Богданович"
     url: "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%BB%D1%8C%D1%84,_%D0%A4%D0%B5%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D0%BD%D0%B4_%D0%91%D0%BE%D0%B3%D0%B4%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"

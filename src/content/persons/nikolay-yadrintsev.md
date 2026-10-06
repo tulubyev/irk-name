@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/nikolay-yadrintsev.webp"
+  alt: "Портрет: Николай Михайлович Ядринцев"
+  author: "С фотографии В. Павловского. Рисовал К. О. Брож."
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%AF%D0%B4%D1%80%D0%B8%D0%BD%D1%86%D0%B5%D0%B2_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87.jpg"
 sources:
   - title: "Иркипедия: Ядринцев, Николай Михайлович // «Историческая энциклопедия Сибири» (2009)"
     url: "http://irkipedia.ru/content/yadrincev_nikolay_mihaylovich_istoricheskaya_enciklopediya_sibiri_2009"

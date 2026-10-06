@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/mikhail-mil.webp"
+  alt: "Портрет: Михаил Леонтьевич Миль"
+  author: "Нет данных:"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Rus_Stamp-Mil-1.jpg"
 sources:
   - title: "Википедия: Миль, Михаил Леонтьевич"
     url: "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BB%D1%8C,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%9B%D0%B5%D0%BE%D0%BD%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87"

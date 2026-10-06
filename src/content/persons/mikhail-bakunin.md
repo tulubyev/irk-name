@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/mikhail-bakunin.webp"
+  alt: "Портрет Михаила Бакунина, фотография Надара около 1860 года"
+  author: "Надар"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Bakunin.png"
 sources:
   - title: "Википедия: Бакунин, Михаил Александрович"
     url: "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BA%D1%83%D0%BD%D0%B8%D0%BD,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87"

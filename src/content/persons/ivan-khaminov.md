@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/ivan-khaminov.webp"
+  alt: "Портрет: Иван Степанович Хаминов"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%98%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%D0%A5%D0%B0%D0%BC%D0%B8%D0%BD%D0%BE%D0%B2.jpg"
 sources:
   - title: "Википедия: Хаминов, Иван Степанович"
     url: "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BC%D0%B8%D0%BD%D0%BE%D0%B2,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"

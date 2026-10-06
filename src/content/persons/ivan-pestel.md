@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/ivan-pestel.webp"
+  alt: "Портрет: Иван Борисович Пестель"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Pestel_Ivan_Borisovich.jpg"
 sources:
   - title: "Иркипедия: Пестель, Иван Борисович"
     url: "http://irkipedia.ru/content/pestel_ivan_borisovich"

@@ -11,6 +11,13 @@ places:
   - name: "Иркутск, предместье Глазково"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/leonid-gayday.webp"
+  alt: "Портрет: Леонид Иович Гайдай"
+  author: "Н. В. Гнисюк / Главархив Москвы"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%93%D0%B0%D0%B9%D0%B4%D0%B0%D0%B9_(1974)_(cropped).jpg"
 sources:
   - title: "Википедия: Гайдай, Леонид Иович"
     url: "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%B9%D0%B4%D0%B0%D0%B9,_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%98%D0%BE%D0%B2%D0%B8%D1%87"

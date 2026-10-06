@@ -235,6 +235,376 @@
       "slug": "yuzef-pilsudskiy",
       "file": "File:Jozef Pilsudski1.jpg",
       "alt": "Портрет Юзефа Пилсудского"
+    },
+    {
+      "slug": "aleksandr-chekanovskiy",
+      "file": "File:Aleksander Czekanowski Russian Empire.jpg",
+      "alt": "Портрет: Александр Лаврентьевич Чекановский"
+    },
+    {
+      "slug": "aleksandr-ezhevskiy",
+      "file": "File:Ezhevskij.jpg",
+      "alt": "Портрет: Александр Александрович Ежевский"
+    },
+    {
+      "slug": "aleksandr-goremykin",
+      "file": "File:Goremykin Alexander Dmitrievich.jpg",
+      "alt": "Портрет: Александр Дмитриевич Горемыкин"
+    },
+    {
+      "slug": "aleksandr-lavinskiy",
+      "file": "File:Portrait of Alexander Stepanovich Lavinsky.jpg",
+      "alt": "Портрет: Александр Степанович Лавинский"
+    },
+    {
+      "slug": "aleksandr-liverovskiy",
+      "file": "File:Liverovsky A V.JPG",
+      "alt": "Портрет: Александр Васильевич Ливеровский"
+    },
+    {
+      "slug": "aleksandr-panteleev",
+      "file": "File:Panteleev Alexandr Ilich.jpg",
+      "alt": "Портрет: Александр Ильич Пантелеев"
+    },
+    {
+      "slug": "aleksandr-shcherbakov",
+      "file": "File:Shcherbakov 1.jpg",
+      "alt": "Портрет: Александр Сергеевич Щербаков"
+    },
+    {
+      "slug": "aleksandr-sibiryakov",
+      "file": "File:Alexander Sibiriakoff.jpg",
+      "alt": "Портрет: Александр Михайлович Сибиряков"
+    },
+    {
+      "slug": "aleksandr-vtorov",
+      "file": "File:Alexander Vtorov.jpg",
+      "alt": "Портрет: Александр Фёдорович Второв"
+    },
+    {
+      "slug": "aleksey-ignatev",
+      "file": "File:A.P.Ignatiev by Repin.jpg",
+      "alt": "Портрет: Алексей Павлович Игнатьев"
+    },
+    {
+      "slug": "aleksey-okladnikov",
+      "file": "File:Aleksej Okladnikov (1972).jpg",
+      "alt": "Портрет: Алексей Павлович Окладников"
+    },
+    {
+      "slug": "aleksey-yushnevskiy",
+      "file": "File:86 portraits of Decembrists 455.jpg",
+      "alt": "Портрет: Алексей Петрович Юшневский"
+    },
+    {
+      "slug": "anastas-mikoyan",
+      "file": "File:A.I. Mikoyan TASS Portrait Trim Edit.jpg",
+      "alt": "Портрет: Анастас Иванович Микоян"
+    },
+    {
+      "slug": "anatoliy-teplyakov",
+      "file": "File:Анатолий Тепляков, Иркутск , август 2012.jpg",
+      "alt": "Портрет: Анатолий Иннокентьевич Тепляков"
+    },
+    {
+      "slug": "andrey-selivanov",
+      "file": "File:Andrei Selivanov.jpg",
+      "alt": "Портрет: Андрей Николаевич Селиванов"
+    },
+    {
+      "slug": "avvakum-petrov",
+      "file": "File:Protopop Avvakym.jpg",
+      "alt": "Портрет: Аввакум Петров, протопоп"
+    },
+    {
+      "slug": "daykokuya-kodayu",
+      "file": "File:Captain Daikokuya Kodayu and crewmate Isokichi 1792.png",
+      "alt": "Портрет: Дайкокуя Кодаю"
+    },
+    {
+      "slug": "denis-matsuev",
+      "file": "File:Крещендо 2018 пресс-конф 12.jpg",
+      "alt": "Портрет: Денис Леонидович Мацуев"
+    },
+    {
+      "slug": "dmitriy-anuchin",
+      "file": "File:Анучин Дмитрий Гаврилович.jpg",
+      "alt": "Портрет: Дмитрий Гаврилович Анучин"
+    },
+    {
+      "slug": "dzhordzh-kennan",
+      "file": "File:George Kennan 1885.jpg",
+      "alt": "Портрет: Джордж Кеннан"
+    },
+    {
+      "slug": "efim-khaydurov",
+      "file": "File:Khaydurov efim.jpg",
+      "alt": "Портрет: Ефим Леонтьевич Хайдуров"
+    },
+    {
+      "slug": "ekaterina-trubetskaya",
+      "file": "File:Ekaterina Troubetskoy.jpg",
+      "alt": "Портрет: Екатерина Ивановна Трубецкая"
+    },
+    {
+      "slug": "erik-laksman",
+      "file": "File:Laxman full.png",
+      "alt": "Портрет: Эрик Лаксман"
+    },
+    {
+      "slug": "evgeniy-evtushenko",
+      "file": "File:Sobyanin meeting Evtushenko 05.jpg",
+      "alt": "Портрет: Евгений Александрович Евтушенко"
+    },
+    {
+      "slug": "ferdinand-volf",
+      "file": "File:Christian Wolf by N. Bestuzhev (1842).jpg",
+      "alt": "Портрет: Фердинанд Богданович Вольф"
+    },
+    {
+      "slug": "fyodor-lytkin",
+      "file": "File:FeodorLytkin.jpg",
+      "alt": "Портрет: Фёдор Матвеевич Лыткин"
+    },
+    {
+      "slug": "fyodor-uglov",
+      "file": "File:RUSMARKA-3355.jpg",
+      "alt": "Портрет: Фёдор Григорьевич Углов"
+    },
+    {
+      "slug": "georg-erman",
+      "file": "File:Адольф Эрман.gif",
+      "alt": "Портрет: Георг Адольф Эрман"
+    },
+    {
+      "slug": "ivan-babushkin",
+      "file": "File:Ivan Vasilyevich Babushkin photo.jpg",
+      "alt": "Портрет: Иван Васильевич Бабушкин"
+    },
+    {
+      "slug": "ivan-cherskiy",
+      "file": "File:Jan Czerski.jpg",
+      "alt": "Портрет: Иван Дементьевич Черский"
+    },
+    {
+      "slug": "ivan-goncharov",
+      "file": "File:Ivan Goncharov.jpg",
+      "alt": "Портрет: Иван Александрович Гончаров"
+    },
+    {
+      "slug": "ivan-khaminov",
+      "file": "File:Иван Степанович Хаминов.jpg",
+      "alt": "Портрет: Иван Степанович Хаминов"
+    },
+    {
+      "slug": "ivan-naymushin",
+      "file": "File:Naymushin I.I.jpg",
+      "alt": "Портрет: Иван Иванович Наймушин"
+    },
+    {
+      "slug": "ivan-pestel",
+      "file": "File:Pestel Ivan Borisovich.jpg",
+      "alt": "Портрет: Иван Борисович Пестель"
+    },
+    {
+      "slug": "ivan-yakobi",
+      "file": "File:Юзеф Олешкевич - Портрет Ивана Варфоломеевича Якоби.jpg",
+      "alt": "Портрет: Иван Варфоломеевич Якоби"
+    },
+    {
+      "slug": "konstantin-shelashnikov",
+      "file": "File:Portrait of Konstantin Nikolaevich Shelashnikov (1820–1888).jpg",
+      "alt": "Портрет: Константин Николаевич Шелашников"
+    },
+    {
+      "slug": "leonid-gayday",
+      "file": "File:Леонид Гайдай (1974) (cropped).jpg",
+      "alt": "Портрет: Леонид Иович Гайдай"
+    },
+    {
+      "slug": "leonid-kharitonov",
+      "file": "File:Leonid Kharitonov 1970s.jpg",
+      "alt": "Портрет: Леонид Михайлович Харитонов"
+    },
+    {
+      "slug": "lidiya-ruslanova",
+      "file": "File:Лидия Русланова в Берлине в 1945 году.jpg",
+      "alt": "Портрет: Лидия Андреевна Русланова"
+    },
+    {
+      "slug": "mariya-volkonskaya",
+      "file": "File:П.Соколов.Портрет княгини М.Н.Волконской с сыном Николаем.1826.png",
+      "alt": "Портрет: Мария Николаевна Волконская"
+    },
+    {
+      "slug": "martemyan-ryutin",
+      "file": "File:Мартемьян Рютин.jpg",
+      "alt": "Портрет: Мартемьян Никитич Рютин"
+    },
+    {
+      "slug": "matvey-khangalov",
+      "file": "File:Матвей Хагалов 1885.jpg",
+      "alt": "Портрет: Матвей Николаевич Хангалов"
+    },
+    {
+      "slug": "mikhail-gerasimov",
+      "file": "File:RR5110-0081R.gif",
+      "alt": "Портрет: Михаил Михайлович Герасимов"
+    },
+    {
+      "slug": "mikhail-khilkov",
+      "file": "File:Prince Mikhail Ivanovich Khilkov.jpg",
+      "alt": "Портрет: Михаил Иванович Хилков"
+    },
+    {
+      "slug": "mikhail-korsakov",
+      "file": "File:Корсаков Михаил Семёнович - Korsakov M.S..jpg",
+      "alt": "Портрет: Михаил Семёнович Корсаков"
+    },
+    {
+      "slug": "mikhail-lunin",
+      "file": "File:Lunin by Sokolov.jpg",
+      "alt": "Портрет: Михаил Сергеевич Лунин"
+    },
+    {
+      "slug": "mikhail-mil",
+      "file": "File:Rus Stamp-Mil-1.jpg",
+      "alt": "Портрет: Михаил Леонтьевич Миль"
+    },
+    {
+      "slug": "mikhail-romm",
+      "file": "File:Mikhail Romm by Boris Baldin 2.jpg",
+      "alt": "Портрет: Михаил Ильич Ромм"
+    },
+    {
+      "slug": "moisey-krol",
+      "file": "File:Krol Moisei.jpg",
+      "alt": "Портрет: Моисей Ааронович Кроль"
+    },
+    {
+      "slug": "moisey-novomeyskiy",
+      "file": "File:PikiWiki Israel 29786 Moses Novomeysky.JPG",
+      "alt": "Портрет: Моисей Абрамович Новомейский"
+    },
+    {
+      "slug": "nadezhda-chizhova",
+      "file": "File:Nadezhda Chizhova 1968.jpg",
+      "alt": "Портрет: Надежда Владимировна Чижова"
+    },
+    {
+      "slug": "nestor-kalandarishvili",
+      "file": "File:Kalandar.jpg",
+      "alt": "Портрет: Нестор Александрович Каландаришвили"
+    },
+    {
+      "slug": "nikita-muravyov",
+      "file": "File:P.F. Sokolov 033.jpg",
+      "alt": "Портрет: Никита Михайлович Муравьёв"
+    },
+    {
+      "slug": "nikolay-chelnokov",
+      "file": "File:Николай Васильевич Челноков.jpg",
+      "alt": "Портрет: Николай Васильевич Челноков"
+    },
+    {
+      "slug": "nikolay-chernyshevskiy",
+      "file": "File:Nikolaj G. Černyševskij 1888.jpg",
+      "alt": "Портрет: Николай Гаврилович Чернышевский"
+    },
+    {
+      "slug": "nikolay-dobronravov",
+      "file": "File:Presentation of 1st MoD's Prize of Culture and Art 13 (cropped).jpg",
+      "alt": "Портрет: Николай Николаевич Добронравов"
+    },
+    {
+      "slug": "nikolay-kamov",
+      "file": "File:Nikołaj Kamow 1973.png",
+      "alt": "Портрет: Николай Ильич Камов"
+    },
+    {
+      "slug": "nikolay-luzin",
+      "file": "File:Luzinstamp.jpg",
+      "alt": "Портрет: Николай Николаевич Лузин"
+    },
+    {
+      "slug": "nikolay-sinelnikov",
+      "file": "File:Sinelnikov by Makovsky.jpg",
+      "alt": "Портрет: Николай Петрович Синельников"
+    },
+    {
+      "slug": "nikolay-treskin",
+      "file": "File:Portrait of N.I. Treskin.jpg",
+      "alt": "Портрет: Николай Иванович Трескин"
+    },
+    {
+      "slug": "nikolay-vtorov",
+      "file": "File:Vtorov 1917.jpg",
+      "alt": "Портрет: Николай Александрович Второв"
+    },
+    {
+      "slug": "nikolay-yadrintsev",
+      "file": "File:Ядринцев Николай Михайлович.jpg",
+      "alt": "Портрет: Николай Михайлович Ядринцев"
+    },
+    {
+      "slug": "pavel-kutaysov",
+      "file": "File:P.Kutaisov.jpg",
+      "alt": "Портрет: Павел Ипполитович Кутайсов"
+    },
+    {
+      "slug": "pavel-postyshev",
+      "file": "File:Globus-1935-05-Pavel-Postyshev-foto.jpg",
+      "alt": "Портрет: Павел Петрович Постышев"
+    },
+    {
+      "slug": "platon-frederiks",
+      "file": "File:Платон Фредерикс.jpg",
+      "alt": "Портрет: Платон Александрович Фредерикс"
+    },
+    {
+      "slug": "tatyana-goyshik",
+      "file": "File:Tatyana Goyshchik, February 2019.jpg",
+      "alt": "Портрет: Татьяна Геннадьевна Гойшик"
+    },
+    {
+      "slug": "valentin-rasputin",
+      "file": "File:Валентин Распутин.jpg",
+      "alt": "Портрет: Валентин Григорьевич Распутин"
+    },
+    {
+      "slug": "valentin-ryabikov",
+      "file": "File:Валентин Владимирович Рябиков.jpg",
+      "alt": "Портрет: Валентин Владимирович Рябиков"
+    },
+    {
+      "slug": "vilgelm-rupert",
+      "file": "File:Rupert Wilhelm Yakovlevich - reproduction.jpg",
+      "alt": "Портрет: Вильгельм Яковлевич Руперт"
+    },
+    {
+      "slug": "vladimir-raevskiy",
+      "file": "File:V Raevsky.jpg",
+      "alt": "Портрет: Владимир Федосеевич Раевский"
+    },
+    {
+      "slug": "vladimir-voytinskiy",
+      "file": "File:Vladimir S. Voitinsky and Emma S. Shadkhan (cropped).jpg",
+      "alt": "Портрет: Владимир Савельевич Войтинский"
+    },
+    {
+      "slug": "yuriy-dombrovskiy",
+      "file": "File:Dombrovskiy UO.jpg",
+      "alt": "Портрет: Юрий Осипович Домбровский"
+    },
+    {
+      "slug": "yuriy-nozhikov",
+      "file": "File:Yuri Nozhikov.jpg",
+      "alt": "Портрет: Юрий Абрамович Ножиков"
+    },
+    {
+      "slug": "yuriy-stepanov",
+      "file": "File:Юрий Степанов .jpg",
+      "alt": "Портрет: Юрий Константинович Степанов"
     }
   ],
   "heraldry": []

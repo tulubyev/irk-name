@@ -11,6 +11,12 @@ places:
   - name: "Иркутский драматический театр"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/genri-uolles.webp"
+  alt: "Портрет Генри Уоллеса"
+  author: "Photo copyrighted by D.N. Townsend; no renewal in the U.S. Copyright Office"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Henry-A.-Wallace-Townsend.jpeg"
 sources:
   - title: "Глагол: Владимир Ходий: В 1944 году Иркутск посетил вице-президент США Генри Уоллес"
     url: "https://glagol38.ru/text/05-06-2024/015"

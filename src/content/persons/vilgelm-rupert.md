@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/vilgelm-rupert.webp"
+  alt: "Портрет: Вильгельм Яковлевич Руперт"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Rupert_Wilhelm_Yakovlevich_-_reproduction.jpg"
 sources:
   - title: "Википедия: Руперт, Вильгельм Яковлевич"
     url: "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D0%BF%D0%B5%D1%80%D1%82,_%D0%92%D0%B8%D0%BB%D1%8C%D0%B3%D0%B5%D0%BB%D1%8C%D0%BC_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87"

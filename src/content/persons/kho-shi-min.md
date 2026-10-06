@@ -14,6 +14,12 @@ places:
   - name: "Хомутово"
     settlement: "Хомутово"
     district: irkutskij-rajon
+photo:
+  key: "persons/kho-shi-min.webp"
+  alt: "Портрет Хо Ши Мина, фотография около 1946 года"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_1946.jpg"
 sources:
   - title: "Глагол: Как Хо Ши Мин впервые приехал в Иркутск"
     url: "https://glagol38.ru/text/09-07-2025/010"

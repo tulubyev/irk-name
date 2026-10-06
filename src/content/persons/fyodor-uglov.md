@@ -14,6 +14,12 @@ places:
   - name: "Киренск"
     settlement: "Киренск"
     district: kirenskij-rajon
+photo:
+  key: "persons/fyodor-uglov.webp"
+  alt: "Портрет: Фёдор Григорьевич Углов"
+  author: "Почта России, ИТЦ «Марка». Дизайнер – Бетрединова Х."
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:RUSMARKA-3355.jpg"
 sources:
   - title: "Википедия: Углов, Фёдор Григорьевич"
     url: "https://ru.wikipedia.org/wiki/%D0%A3%D0%B3%D0%BB%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%B8%D1%87"

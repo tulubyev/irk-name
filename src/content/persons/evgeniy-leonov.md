@@ -23,6 +23,13 @@ places:
   - name: "Ангарск"
     settlement: "Ангарск"
     district: g-angarsk
+photo:
+  key: "persons/evgeniy-leonov.webp"
+  alt: "Портрет актёра Евгения Леонова, фотография 1979 года"
+  author: "Гневашев, Игорь Иванович"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%BE%D0%B2_(1979).jpg"
 sources:
   - title: "Глагол38: Иркутские истории Евгения Леонова"
     url: "https://glagol38.ru/text/02-09-2026/008"

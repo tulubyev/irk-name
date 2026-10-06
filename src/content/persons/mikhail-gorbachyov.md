@@ -14,6 +14,13 @@ places:
   - name: "Иркутск, школа № 47"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/mikhail-gorbachyov.webp"
+  alt: "Михаил Горбачёв, фотография 1991 года"
+  author: "Leo Medvedev/Лев Леонидович Медведев"
+  license: "CC BY-SA 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:GorbachevMS.jpg"
 sources:
   - title: "Глагол: Горбачев в Иркутске"
     url: "https://glagol38.ru/text/02-03-2018/gorbachev_v_irkutske"

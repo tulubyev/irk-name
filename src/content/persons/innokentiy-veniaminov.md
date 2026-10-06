@@ -11,6 +11,12 @@ places:
   - name: "Анга"
     settlement: "Анга"
     district: kachugskij-rajon
+photo:
+  key: "persons/innokentiy-veniaminov.webp"
+  alt: "Фотопортрет митрополита Московского Иннокентия (Вениаминова)"
+  author: "Wickersham State Historic Site. Photographs, 1882-1930s. ASL-PCA-277"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Metropolitan_Innocent_of_Moscow.jpg"
 sources:
   - title: "Википедия: Иннокентий (Вениаминов)"
     url: "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%BD%D0%BE%D0%BA%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_(%D0%92%D0%B5%D0%BD%D0%B8%D0%B0%D0%BC%D0%B8%D0%BD%D0%BE%D0%B2)"

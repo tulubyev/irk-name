@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/dzhordzh-kennan.webp"
+  alt: "Портрет: Джордж Кеннан"
+  author: "Matsaevich & Co."
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:George_Kennan_1885.jpg"
 sources:
   - title: "Википедия: Кеннан, Джордж"
     url: "https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D0%BD%D0%BD%D0%B0%D0%BD,_%D0%94%D0%B6%D0%BE%D1%80%D0%B4%D0%B6"

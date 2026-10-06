@@ -15,6 +15,13 @@ places:
     district: irkutskij-rajon
   - name: "Кругобайкальская железная дорога"
     district: slyudyanskij-rajon
+photo:
+  key: "persons/gelmut-kol.webp"
+  alt: "Портрет Гельмута Коля"
+  author: "CDU"
+  license: "CC BY-SA 3.0 de"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:KAS-Kohl,_Helmut-Bild-1079-1.jpg"
 sources:
   - title: "ИрСити: Гельмут Коль ходил в баню, а английская принцесса — в музей. Каких еще высоких гостей принимал Иркутск до Лукашенко?"
     url: "https://ircity.ru/text/politics/2024/06/05/73664873/"

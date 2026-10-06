@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/aleksandr-shcherbakov.webp"
+  alt: "Портрет: Александр Сергеевич Щербаков"
+  author: "Post of USSR"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Shcherbakov_1.jpg"
 sources:
   - title: "Википедия: Щербаков, Александр Сергеевич"
     url: "https://ru.wikipedia.org/wiki/Щербаков,_Александр_Сергеевич"

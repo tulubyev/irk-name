@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/fritof-nansen.webp"
+  alt: "Портрет Фритьофа Нансена, фотография начала XX века"
+  author: "Henry Van der Weyde"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Fridtjof_Nansen_LOC_03377u-3.jpg"
 sources:
   - title: "Глагол: 30 сентября 1913 года в Иркутск прибыл норвежский путешественник Фритьоф Нансен"
     url: "https://glagol38.ru/text/30-09-2022/003"

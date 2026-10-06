@@ -20,6 +20,13 @@ places:
   - name: "Листвянка, Байкал"
     settlement: "Листвянка"
     district: irkutskij-rajon
+photo:
+  key: "persons/boris-eltsin.webp"
+  alt: "Борис Ельцин, фотография 2006 года"
+  author: "ITAR-TASS"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Boris_Yeltsin_13_July_2006.jpg"
 sources:
   - title: "Иркипедия: 1993. Июль"
     url: "http://irkipedia.ru/content/1993_iyul"
