@@ -2,6 +2,7 @@ import { html, raw } from 'hono/html';
 import type { HtmlEscapedString } from 'hono/utils/html';
 import { SPHERES, ERAS, CONNECTIONS, DISTRICTS } from '../../src/lib/taxonomy';
 import { placesToText, sourcesToText, type PersonData } from './person';
+import { FIELDS, RETENTION_DAYS, type Suggestion } from './suggestions';
 
 type H = HtmlEscapedString | Promise<HtmlEscapedString>;
 
@@ -31,7 +32,7 @@ export function page(title: string, body: H, opts: { authed?: boolean } = {}): H
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>${title} — админка irk.name</title><style>${raw(CSS)}</style></head>
 <body><header><a href="/admin/">irk.name · админка</a><span class="sp"></span>
-${opts.authed ? html`<a href="/admin/new">+ Новая запись</a><a href="/" target="_blank" rel="noopener">Сайт ↗</a>
+${opts.authed ? html`<a href="/admin/predlozheniya">Предложения</a><a href="/admin/new">+ Новая запись</a><a href="/" target="_blank" rel="noopener">Сайт ↗</a>
 <form class="inline" method="post" action="/admin/logout"><button>Выйти</button></form>` : ''}
 </header><main>${body}</main></body></html>`;
 }
@@ -111,4 +112,28 @@ ${d.photo ? html`<p class="muted">Фото: ${(d.photo as { key: string }).key} 
 </div>
 <p style="margin-top:1.5rem"><button class="primary">Сохранить</button> <a href="/admin/">Отмена</a></p>
 </form>`, { authed: true });
+}
+
+const fmtDate = (iso: string) => new Date(iso).toLocaleString('ru-RU', { timeZone: 'Asia/Irkutsk', dateStyle: 'short', timeStyle: 'short' });
+
+export function inboxPage(items: Suggestion[], flash?: string): H {
+  return page('Предложения', html`<h1>Предложения посетителей (${items.length})</h1>
+${flash ? html`<p class="msg ok">${flash}</p>` : ''}
+<p class="muted">Хранятся только на сервере и удаляются автоматически через ${RETENTION_DAYS} дней. Рассмотренные удаляйте сразу. Контакты отправителей не переносите в записи справочника.</p>
+${items.length ? html`<table><thead><tr><th>Дата</th><th>Персона</th><th>Чем известен</th></tr></thead><tbody>
+${items.map((s) => html`<tr><td style="white-space:nowrap">${fmtDate(s.createdAt)}</td>
+<td><a href="/admin/predlozheniya/${s.id}">${s.personName}</a>${s.years ? html`<br><span class="muted">${s.years}</span>` : ''}</td>
+<td>${s.about.length > 160 ? s.about.slice(0, 160) + '…' : s.about}</td></tr>`)}
+</tbody></table>` : html`<p>Новых предложений нет.</p>`}`, { authed: true });
+}
+
+export function suggestionPage(s: Suggestion): H {
+  const rows = (Object.keys(FIELDS) as (keyof typeof FIELDS)[]).filter((k) => s[k]);
+  return page(s.personName, html`<p><a href="/admin/predlozheniya">← Все предложения</a></p>
+<h1>${s.personName}</h1><p class="muted">Получено ${fmtDate(s.createdAt)}</p>
+<table>${rows.map((k) => html`<tr><th style="width:12rem">${FIELDS[k][0]}</th><td style="white-space:pre-wrap">${s[k]}</td></tr>`)}</table>
+<div class="actions" style="margin-top:1rem">
+<a class="btn primary" href="/admin/new?name=${encodeURIComponent(s.personName)}">Создать запись</a>
+<form class="inline" method="post" action="/admin/predlozheniya/${s.id}/delete"><button>Удалить предложение</button></form></div>
+<p class="muted">«Создать запись» переносит только имя персоны. Факты переносите вручную после проверки по источникам.</p>`, { authed: true });
 }
