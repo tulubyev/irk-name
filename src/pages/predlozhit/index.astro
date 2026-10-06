@@ -80,7 +80,13 @@ import Base from '../../layouts/Base.astro';
         limit: 'Слишком много отправок подряд. Попробуйте через час.',
         server: 'Не удалось сохранить предложение из-за ошибки на сервере. Попробуйте позже.'
       };
-      var code = new URLSearchParams(location.search).get('oshibka');
+      var params = new URLSearchParams(location.search);
+      // «Сообщите нам» со страницы персоны: подставляем ссылку на запись
+      var slug = params.get('slug');
+      if (slug && /^[a-z0-9-]+$/.test(slug)) {
+        document.getElementById('about').value = 'Уточнение к записи https://irk.name/persona/' + slug + '/ :\n';
+      }
+      var code = params.get('oshibka');
       if (code) {
         var el = document.getElementById('form-error');
         el.textContent = MSG[code] || MSG.server;

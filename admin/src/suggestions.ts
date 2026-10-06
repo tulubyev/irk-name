@@ -1,6 +1,7 @@
 import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { randomBytes } from 'node:crypto';
 import { join } from 'node:path';
+import { LEGAL_DATE } from '../../src/lib/operator';
 
 // Предложения посетителей хранятся только на сервере (том docker), не в git и не во внешних сервисах.
 export const SUGGESTIONS_DIR = process.env.SUGGESTIONS_DIR ?? '/data/suggestions';
@@ -20,6 +21,8 @@ export interface Suggestion {
   senderName: string;
   senderEmail: string;
   consent: true;
+  /** Редакция политики, на которую дано согласие */
+  consentPolicy: string;
 }
 
 const ID_RE = /^\d{13}-[a-f0-9]{8}$/;
@@ -53,7 +56,7 @@ export function validate(form: Record<string, unknown>): { ok: true; data: Omit<
   }
   if (out.senderEmail && !EMAIL_RE.test(out.senderEmail)) errors.push('E-mail: неверный формат');
   if (form.consent !== 'on' && form.consent !== 'yes') errors.push('Нужно согласие на обработку персональных данных');
-  return errors.length ? { ok: false, errors } : { ok: true, data: { ...out, consent: true } };
+  return errors.length ? { ok: false, errors } : { ok: true, data: { ...out, consent: true, consentPolicy: `/personalnye-dannye/, редакция от ${LEGAL_DATE}` } };
 }
 
 export async function save(data: Omit<Suggestion, 'id' | 'createdAt'>): Promise<string> {

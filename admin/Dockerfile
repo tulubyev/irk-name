@@ -7,7 +7,7 @@ COPY admin/package.json admin/package-lock.json admin/
 RUN cd admin && npm ci
 COPY admin admin
 # общая схема записей и справочники сайта
-COPY src/lib/person-schema.ts src/lib/taxonomy.ts src/lib/
+COPY src/lib/person-schema.ts src/lib/taxonomy.ts src/lib/operator.ts src/lib/
 RUN cd admin && npm run typecheck && npm run build
 
 FROM node:22-alpine

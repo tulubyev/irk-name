@@ -20,6 +20,7 @@
   "include": [
     "src",
     "../src/lib/person-schema.ts",
-    "../src/lib/taxonomy.ts"
+    "../src/lib/taxonomy.ts",
+    "../src/lib/operator.ts"
   ]
 }

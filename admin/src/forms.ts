@@ -22,10 +22,10 @@ app.use('*', async (c, next) => {
 
 app.get('/healthz', (c) => c.text('ok'));
 
-// Не более 5 отправок в час с одного IP (в памяти, на диск не пишется).
+// Не более 10 отправок в час с одного IP (в памяти, на диск не пишется).
 const hits = new Map<string, number[]>();
 const WINDOW = 3600_000;
-const LIMIT = 5;
+const LIMIT = 10;
 function limited(ip: string): boolean {
   const now = Date.now();
   const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW);
