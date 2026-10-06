@@ -10,9 +10,9 @@ test('stripHtml убирает теги и раскрывает сущности
 });
 
 test('isFreeLicense — белый список', () => {
-  for (const ok of ['Public domain', 'PD-RU-exempt', 'PD-old-100', 'CC0', 'CC0 1.0', 'CC BY 4.0', 'CC BY-SA 3.0', 'CC BY-SA 3.0 de', 'CC BY 2.0', 'CC BY-SA 4.0'])
+  for (const ok of ['Public domain', 'PD-RU-exempt', 'PD-old-100', 'CC0', 'CC0 1.0', 'CC BY 4.0', 'CC BY-SA 3.0', 'CC BY-SA 3.0 de', 'CC BY 2.0', 'CC BY-SA 4.0', 'Attribution', 'FAL', 'Free Art License 1.3'])
     assert.ok(isFreeLicense(ok), ok);
-  for (const bad of ['', undefined, 'CC BY-NC 4.0', 'CC BY-NC-SA 2.0', 'CC BY-ND 3.0', 'GFDL', 'Attribution', 'Fair use', 'All rights reserved', 'CC BY-SA 4.0; GFDL extra'])
+  for (const bad of ['', undefined, 'CC BY-NC 4.0', 'CC BY-NC-SA 2.0', 'CC BY-ND 3.0', 'GFDL', 'Attribution-NonCommercial', 'Fair use', 'All rights reserved', 'CC BY-SA 4.0; GFDL extra'])
     assert.ok(!isFreeLicense(bad), String(bad));
 });
 
