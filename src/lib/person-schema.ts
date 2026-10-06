@@ -42,6 +42,8 @@ export function personSchema(z: typeof Zod) {
         sourceUrl: z.url(),
       })
       .optional(),
+    // Расширение карточки: статьи и материалы о жизни и деятельности (помимо источников фактов)
+    links: z.array(z.object({ title: z.string().min(1), url: z.url() })).default([]),
     sources: z.array(z.object({ title: z.string().min(1), url: z.url() })).min(1),
     status: z.enum(['verified', 'needs-check']).default('needs-check'),
     // В архиве: запись не публикуется на сайте (видна только администратору)
