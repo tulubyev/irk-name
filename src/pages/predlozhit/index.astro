@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Предложить персону" description="Предложите человека, связанного с Иркутском или Иркутской областью, для справочника irk.name.">
+  <article class="prose">
+    <h1>Предложить персону</h1>
+    <p class="lead">Знаете земляка, о котором стоит рассказать? Учёного, врача, музыканта, строителя, священника, военного — или просто интересного человека с необычной судьбой из любого района области.</p>
+    <p>Предложение попадает к редакторам. Мы сверяем факты по источникам и, если всё подтверждается, добавляем запись на сайт. О наших современниках публикуем только публичные, общеизвестные биографические факты.</p>
+  </article>
+
+  <form class="suggest-form" id="forma" method="post" action="/api/suggest/">
+    <p class="form-error" id="form-error" role="alert" hidden></p>
+
+    <fieldset>
+      <legend>О персоне</legend>
+      <label for="personName">Имя, отчество, фамилия <span class="req" aria-hidden="true">*</span></label>
+      <input id="personName" name="personName" type="text" maxlength="200" required />
+
+      <div class="form-row">
+        <div>
+          <label for="years">Годы жизни</label>
+          <input id="years" name="years" type="text" maxlength="60" placeholder="например, 1837–1910" />
+        </div>
+        <div>
+          <label for="activity">Вид деятельности</label>
+          <input id="activity" name="activity" type="text" maxlength="200" placeholder="врач, музыкант, купец…" />
+        </div>
+      </div>
+
+      <label for="place">Населённый пункт и район, с которыми связан человек</label>
+      <input id="place" name="place" type="text" maxlength="200" />
+
+      <label for="about">Чем известен <span class="req" aria-hidden="true">*</span></label>
+      <textarea id="about" name="about" rows="5" maxlength="3000" required placeholder="Коротко и по фактам"></textarea>
+
+      <label for="sources">Источники <span class="req" aria-hidden="true">*</span></label>
+      <textarea id="sources" name="sources" rows="3" maxlength="3000" required placeholder="Ссылки на статьи, книги, музеи, архивы — по одной на строку"></textarea>
+      <p class="hint">Без источников запись не публикуется.</p>
+
+      <label for="photo">Фото со свободной лицензией</label>
+      <input id="photo" name="photo" type="text" maxlength="1000" placeholder="ссылка, например, на Wikimedia Commons" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Для обратной связи <span class="hint">— по желанию</span></legend>
+      <div class="form-row">
+        <div>
+          <label for="senderName">Ваше имя</label>
+          <input id="senderName" name="senderName" type="text" maxlength="100" autocomplete="name" />
+        </div>
+        <div>
+          <label for="senderEmail">E-mail</label>
+          <input id="senderEmail" name="senderEmail" type="email" maxlength="200" autocomplete="email" />
+        </div>
+      </div>
+      <p class="hint">Контакты нужны только чтобы задать уточняющий вопрос; на сайте они не публикуются.</p>
+    </fieldset>
+
+    <div class="hp" aria-hidden="true">
+      <label for="website">Не заполняйте это поле</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <input type="hidden" name="ts" id="ts" />
+
+    <label class="consent">
+      <input type="checkbox" name="consent" required />
+      <span>Даю согласие ООО «БИННКО» на обработку персональных данных, указанных в форме, для рассмотрения предложения в соответствии с <a href="/personalnye-dannye/" target="_blank">Политикой обработки персональных данных</a>. Данные хранятся на серверах в России не более 1 года. <span class="req" aria-hidden="true">*</span></span>
+    </label>
+
+    <p><button type="submit" class="submit">Отправить предложение</button></p>
+    <p class="hint"><span class="req">*</span> — обязательные поля</p>
+  </form>
+
+  <script is:inline>
+    (function () {
+      document.getElementById('ts').value = String(Date.now());
+      var MSG = {
+        data: 'Проверьте заполнение обязательных полей и формат e-mail и отправьте форму ещё раз.',
+        size: 'Слишком большой объём текста. Сократите описание или список источников.',
+        limit: 'Слишком много отправок подряд. Попробуйте через час.',
+        server: 'Не удалось сохранить предложение из-за ошибки на сервере. Попробуйте позже.'
+      };
+      var code = new URLSearchParams(location.search).get('oshibka');
+      if (code) {
+        var el = document.getElementById('form-error');
+        el.textContent = MSG[code] || MSG.server;
+        el.hidden = false;
+      }
+    })();
+  </script>
+</Base>

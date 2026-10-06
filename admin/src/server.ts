@@ -5,7 +5,8 @@ import { config } from './config';
 import { verifyPassword, createSession, verifySession, SESSION_COOKIE, isLocked, recordFailure, clearFailures } from './auth';
 import { store, ConflictError } from './store';
 import { schema, parse, serialize, fromForm, issuesToText, SLUG_RE } from './person';
-import { loginPage, listPage, editPage, type Row } from './views';
+import { loginPage, listPage, editPage, inboxPage, suggestionPage, type Row } from './views';
+import * as suggestions from './suggestions';
 
 // strict: false — /admin и /admin/ ведут на одну страницу
 const app = new Hono({ strict: false }).basePath('/admin');
@@ -69,6 +70,8 @@ const requireAuth = async (c: Context, next: Next) => {
 app.use('/', requireAuth);
 app.use('/new', requireAuth);
 app.use('/p/*', requireAuth);
+app.use('/predlozheniya', requireAuth);
+app.use('/predlozheniya/*', requireAuth);
 
 // Кэш разобранных файлов по sha: повторно скачиваются только изменённые.
 const cache = new Map<string, Row>();
@@ -115,7 +118,8 @@ async function save(slug: string, content: string, sha: string | null, message: 
   return newSha;
 }
 
-app.get('/new', (c) => c.html(editPage({ isNew: true, data: { status: 'needs-check', era: 'xx' }, body: '' })));
+// ?name= — предзаполнение из входящего предложения (переносится только имя персоны, без контактов отправителя)
+app.get('/new', (c) => c.html(editPage({ isNew: true, data: { status: 'needs-check', era: 'xx', name: (c.req.query('name') ?? '').slice(0, 200) || undefined }, body: '' })));
 app.post('/new', async (c) => {
   const f = await c.req.parseBody({ all: true });
   const slug = typeof f.slug === 'string' ? f.slug.trim() : '';
@@ -188,6 +192,20 @@ app.post('/p/:slug/toggle', async (c) => {
     return c.text((e as Error).message, e instanceof ConflictError ? 409 : 500);
   }
   return c.redirect(`/admin/?saved=${encodeURIComponent(slug)}`);
+});
+
+// Входящие предложения с публичной формы. Хранятся только в томе на сервере, срок — не более года.
+app.get('/predlozheniya', async (c) => {
+  const flash = c.req.query('deleted') ? 'Предложение удалено.' : undefined;
+  return c.html(inboxPage(await suggestions.list(), flash));
+});
+app.get('/predlozheniya/:id', async (c) => {
+  const s = await suggestions.get(c.req.param('id'));
+  return s ? c.html(suggestionPage(s)) : c.notFound();
+});
+app.post('/predlozheniya/:id/delete', async (c) => {
+  await suggestions.remove(c.req.param('id'));
+  return c.redirect('/admin/predlozheniya?deleted=1');
 });
 
 app.onError((err, c) => {

@@ -196,3 +196,25 @@ footer.site .footer-copy p { margin: 0 0 0.3rem; }
 footer.site a { color: var(--muted); text-decoration: none; }
 footer.site a:hover { color: var(--accent); text-decoration: underline; }
 p.muted { color: var(--muted); font-family: system-ui, sans-serif; font-size: 0.85rem; margin-top: -0.5rem; }
+
+/* ---- Форма «Предложить персону» ---- */
+.suggest-form { max-width: 42rem; font-family: system-ui, sans-serif; font-size: 0.95rem; }
+.suggest-form fieldset { border: 1px solid var(--border); border-radius: 0.6rem; background: var(--surface); padding: 0.8rem 1rem 1rem; margin: 0 0 1rem; }
+.suggest-form legend { font-weight: 600; padding: 0 0.3rem; }
+.suggest-form label { display: block; margin: 0.8rem 0 0.25rem; font-size: 0.88rem; }
+.suggest-form input[type='text'], .suggest-form input[type='email'], .suggest-form textarea {
+  width: 100%; box-sizing: border-box; font: inherit; color: var(--text); background: var(--bg);
+  border: 1px solid var(--border); border-radius: 0.45rem; padding: 0.5rem 0.65rem;
+}
+.suggest-form input:focus, .suggest-form textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.suggest-form textarea { resize: vertical; }
+.suggest-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.suggest-form .hint { color: var(--muted); font-size: 0.8rem; margin: 0.3rem 0 0; font-weight: 400; }
+.suggest-form .req { color: var(--accent); }
+.suggest-form .consent { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.85rem; line-height: 1.45; }
+.suggest-form .consent input { margin-top: 0.2rem; flex: none; }
+.suggest-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.suggest-form .form-error { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); border: 1px solid var(--accent); border-radius: 0.5rem; padding: 0.6rem 0.8rem; }
+button.submit { font: inherit; font-weight: 600; cursor: pointer; border: none; border-radius: 999px; padding: 0.6rem 1.4rem; background: var(--accent); color: var(--accent-contrast); }
+button.submit:hover { opacity: 0.9; }
+@media (max-width: 36rem) { .suggest-form .form-row { grid-template-columns: 1fr; } }
