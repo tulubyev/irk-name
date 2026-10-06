@@ -7,7 +7,7 @@ const counts = (Object.keys(ERAS) as EraKey[])
   .map((k) => ({ k, n: persons.filter((p) => p.data.era === k).length }))
   .filter((x) => x.n > 0);
 ---
-<Base title="Времена" description="Знаменитые имена Иркутска по векам.">
+<Base title="Времена" description="Знаменитые люди Иркутска и Иркутской области по векам: от XVII века до наших дней — биографии с источниками.">
   <h1>Времена</h1>
   <ul class="chips">
     {counts.map(({ k, n }) => <li><a class="chip" href={`/epoha/${k}/`}>{ERAS[k]} · {n}</a></li>)}

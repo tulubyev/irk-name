@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import PersonCard from '../components/PersonCard.astro';
-import { getPersons, districtsOf, SITE } from '../lib/persons';
+import { getPersons, districtsOf } from '../lib/persons';
+import { siteLd, biographies } from '../lib/seo';
 import { SPHERES, SPHERE_FAMILY, ERAS, DISTRICTS, DISTRICT_ORDER, isCity, type SphereKey, type EraKey } from '../lib/taxonomy';
 const persons = await getPersons();
 const sphereCounts = (Object.keys(SPHERES) as SphereKey[])
@@ -16,17 +17,11 @@ const eraCounts = (Object.keys(ERAS) as EraKey[])
   .filter((x) => x.n > 0);
 // Подписи для строки «Найдено: …»
 const labels = { era: ERAS, sphere: SPHERES, district: DISTRICTS };
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'irk.name',
-  url: SITE,
-  inLanguage: 'ru',
-  description: 'Справочник знаменитых имён Иркутска',
-};
+const description = `Знаменитые люди Иркутска и Иркутской области: ${biographies(persons.length)} учёных, писателей, декабристов, купцов, врачей и военных — годы жизни, чем известны, источники.`;
+const jsonLd = siteLd(description);
 ---
-<Base title="Иркутяне — знаменитые имена нашей земли" jsonLd={jsonLd}>
-  <h1 class="sr-only">Иркутяне — знаменитые имена нашей земли</h1>
+<Base title="Знаменитые люди Иркутска и Иркутской области — Иркутяне" description={description} jsonLd={jsonLd}>
+  <h1 class="sr-only">Знаменитые люди Иркутска и Иркутской области</h1>
   <div class="filters" id="filters">
     <label for="q" style="position:absolute;left:-9999px">Поиск по имени, сфере или месту</label>
     <input id="q" class="search" type="search" placeholder="Поиск: имя, сфера, место…" autocomplete="off" />

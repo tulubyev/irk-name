@@ -4,6 +4,8 @@ import { getPersons, lifespan, SITE } from '../../lib/persons';
 import { SPHERES, ERAS, CONNECTIONS, STATUS, DISTRICTS } from '../../lib/taxonomy';
 import { render } from 'astro:content';
 import { mediaUrl, mediaSrcset } from '../../lib/media';
+import PersonCard from '../../components/PersonCard.astro';
+import { personTitle, relatedTo, profileLd, breadcrumbLd, clip, BRAND } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const persons = await getPersons();
@@ -13,22 +15,18 @@ const { person } = Astro.props;
 const d = person.data;
 const { Content } = await render(person);
 const url = `${SITE}/persona/${person.id}/`;
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': `${url}#person`,
-  name: d.name,
-  url,
-  description: d.summary,
-  ...(d.birthYear ? { birthDate: String(d.birthYear) } : {}),
-  ...(d.deathYear ? { deathDate: String(d.deathYear) } : {}),
-  ...(d.photo ? { image: mediaUrl(d.photo.key) } : {}),
-  knowsAbout: d.spheres.map((s) => SPHERES[s]),
-  sameAs: d.sources.map((s) => s.url),
-  subjectOf: { '@type': 'WebPage', url },
-};
+const title = personTitle(d);
+const all = await getPersons();
+const related = relatedTo(person, all);
+const jsonLd = [
+  profileLd(person, url, title),
+  breadcrumbLd([
+    { name: 'Все имена', url: `${SITE}/` },
+    { name: d.name, url },
+  ]),
+];
 ---
-<Base title={d.name} description={d.summary} type="profile" image={d.photo ? mediaUrl(d.photo.key) : undefined} jsonLd={jsonLd}>
+<Base title={d.name} fullTitle={`${title} | ${BRAND}`} description={clip(d.summary, 300)} type="profile" image={d.photo ? mediaUrl(d.photo.key) : undefined} jsonLd={jsonLd}>
   <nav class="breadcrumbs"><a href="/">Все имена</a> › {d.name}</nav>
   <article class="prose">
     <h1>{d.name}</h1>
@@ -88,6 +86,12 @@ const jsonLd = {
     <ul>
       {d.sources.map((s) => <li><a href={s.url} rel="noopener">{s.title}</a></li>)}
     </ul>
+    {related.length > 0 && (
+      <>
+        <h2>Ещё по теме</h2>
+        <ul class="cards related">{related.map((p) => <PersonCard person={p} />)}</ul>
+      </>
+    )}
     <p class="empty">Нашли ошибку или знаете больше? <a href={`/predlozhit/?slug=${person.id}`}>Сообщите нам</a>.</p>
   </article>
 </Base>

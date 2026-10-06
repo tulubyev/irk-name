@@ -6,7 +6,7 @@ const persons = await getPersons();
 const counts = (Object.keys(SPHERES) as SphereKey[])
   .map((k) => ({ k, n: persons.filter((p) => p.data.spheres.includes(k)).length }));
 ---
-<Base title="Сферы деятельности" description="Знаменитые имена Иркутска по сферам деятельности.">
+<Base title="Сферы деятельности" description="Знаменитые люди Иркутска и Иркутской области по сферам деятельности: учёные, писатели, врачи, военные, купцы, декабристы, музыканты, спортсмены.">
   <h1>Сферы деятельности</h1>
   <ul class="chips">
     {counts.map(({ k, n }) =>

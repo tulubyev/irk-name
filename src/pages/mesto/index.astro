@@ -7,7 +7,7 @@ const counts = (Object.keys(DISTRICTS) as DistrictKey[])
   .map((k) => ({ k, n: persons.filter((p) => districtsOf(p.data).includes(k)).length }))
   .filter((x) => x.n > 0);
 ---
-<Base title="Районы" description="Знаменитые имена Иркутской области по районам и населённым пунктам.">
+<Base title="Районы" description="Знаменитые люди Иркутской области по городам и районам: Иркутск, Братск, Ангарск, Усть-Илимск и другие — уроженцы, жители, герои.">
   <h1>Районы</h1>
   <p class="lead">Люди, связанные с районами и городами Иркутской области: по месту рождения, жизни, работы или ссылки.</p>
   <ul class="chips">
