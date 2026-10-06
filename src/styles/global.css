@@ -45,9 +45,7 @@ header.site { border-bottom: 1px solid var(--border); background: var(--surface)
 header.site .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; padding-block: 0.75rem; }
 .logo { font-weight: 700; font-size: 1.3rem; text-decoration: none; color: var(--text); letter-spacing: 0.01em; }
 .logo span { color: var(--accent); }
-nav.main { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; flex: 1; font-family: system-ui, sans-serif; font-size: 0.85rem; }
-nav.main a { color: var(--muted); text-decoration: none; }
-nav.main a:hover { color: var(--accent); }
+header.site a.suggest { margin-left: auto; }
 button.theme {
   font: inherit; font-family: system-ui, sans-serif; font-size: 0.8rem;
   background: none; border: 1px solid var(--border); color: var(--muted);
@@ -93,8 +91,7 @@ footer.site { border-top: 1px solid var(--border); padding-block: 1.5rem; color:
 .breadcrumbs { font-family: system-ui, sans-serif; font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
 @media (max-width: 36rem) {
   html { font-size: 106%; }
-  nav.main { order: 3; flex-basis: 100%; }
-  header.site a.suggest { margin-left: auto; }
+
   h1 { font-size: 1.6rem; }
   dl.facts { grid-template-columns: 1fr; }
   dl.facts dt { padding-top: 0.6rem; }
@@ -191,8 +188,7 @@ button.dd-reset:hover { border-color: var(--accent); }
 /* ---- Футер ---- */
 footer.site .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: baseline; justify-content: space-between; }
 footer.site nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; }
-footer.site .footer-copy { flex: 1 1 20rem; }
-footer.site .footer-copy p { margin: 0 0 0.3rem; }
+footer.site .footer-copy { white-space: nowrap; }
 footer.site a { color: var(--muted); text-decoration: none; }
 footer.site a:hover { color: var(--accent); text-decoration: underline; }
 p.muted { color: var(--muted); font-family: system-ui, sans-serif; font-size: 0.85rem; margin-top: -0.5rem; }

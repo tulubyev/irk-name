@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../lib/persons';
-import { OPERATOR, COPYRIGHT_YEARS } from '../lib/operator';
+import { COPYRIGHT_YEARS } from '../lib/operator';
 
 interface Props {
   title: string;
@@ -54,13 +54,6 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
     <header class="site">
       <div class="wrap">
         <a class="logo" href="/">irk<span>.name</span></a>
-        <nav class="main" aria-label="Основная навигация">
-          <a href="/">Все имена</a>
-          <a href="/sfera/">Сферы</a>
-          <a href="/epoha/">Времена</a>
-          <a href="/mesto/">Районы</a>
-          <a href="/o-proekte/">О проекте</a>
-        </nav>
         <a class="suggest" href="/predlozhit/">Предложить персону</a>
         <button class="theme" id="theme-toggle" type="button" aria-label="Переключить тему">Тема</button>
       </div>
@@ -68,11 +61,11 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
     <main class="wrap"><slot /></main>
     <footer class="site">
       <div class="wrap">
-        <div class="footer-copy">
-          <p>© {COPYRIGHT_YEARS} irk.name — справочник знаменитых имён Иркутска. {OPERATOR.shortName}.</p>
-          <p>Тексты охраняются авторским правом; изображения — по свободным лицензиям, авторы указаны на страницах. <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a></p>
-        </div>
+        <span class="footer-copy">© {COPYRIGHT_YEARS} irk.name</span>
         <nav aria-label="Служебные ссылки">
+          <a href="/sfera/">Сферы</a>
+          <a href="/epoha/">Времена</a>
+          <a href="/mesto/">Районы</a>
           <a href="/o-proekte/">О проекте</a>
           <a href="/predlozhit/">Предложить персону</a>
           <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>

@@ -29,15 +29,6 @@ const jsonLd = {
   <input id="q" class="search" type="search" placeholder="Поиск: имя, сфера деятельности, место…" autocomplete="off" />
 
   <div class="filters" id="filters">
-    <details class="dd" data-group="era">
-      <summary>Век<span class="dd-count"></span></summary>
-      <div class="dd-panel" role="group" aria-label="Век">
-        {eraCounts.map(({ k, n }) => (
-          <label><input type="checkbox" data-group="era" value={k} /> {ERAS[k]} <span class="n">{n}</span></label>
-        ))}
-        <div class="dd-actions"><button type="button" data-clear="era">Очистить</button></div>
-      </div>
-    </details>
     <details class="dd" data-group="sphere">
       <summary>Вид деятельности<span class="dd-count"></span></summary>
       <div class="dd-panel" role="group" aria-label="Вид деятельности">
@@ -50,12 +41,21 @@ const jsonLd = {
       </div>
     </details>
     <details class="dd" data-group="district">
-      <summary>Район<span class="dd-count"></span></summary>
-      <div class="dd-panel" role="group" aria-label="Район">
+      <summary>Проживание<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Проживание">
         {districtCounts.map(({ k, n }) => (
           <label><input type="checkbox" data-group="district" value={k} /> {DISTRICTS[k]} <span class="n">{n}</span></label>
         ))}
         <div class="dd-actions"><button type="button" data-clear="district">Очистить</button></div>
+      </div>
+    </details>
+    <details class="dd" data-group="era">
+      <summary>Время<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Время">
+        {eraCounts.map(({ k, n }) => (
+          <label><input type="checkbox" data-group="era" value={k} /> {ERAS[k]} <span class="n">{n}</span></label>
+        ))}
+        <div class="dd-actions"><button type="button" data-clear="era">Очистить</button></div>
       </div>
     </details>
     <button type="button" id="reset" class="dd-reset" hidden>Сбросить все фильтры</button>
@@ -77,8 +77,8 @@ const jsonLd = {
       var count = document.getElementById('count');
       var none = document.getElementById('none');
       var reset = document.getElementById('reset');
-      var PARAM = { era: 'vek', sphere: 'sfera', district: 'rayon' };
-      var TITLE = { era: 'Век', sphere: 'Вид деятельности', district: 'Район' };
+      var PARAM = { sphere: 'sfera', district: 'rayon', era: 'vek' };
+      var TITLE = { era: 'Время', sphere: 'Вид деятельности', district: 'Проживание' };
       var LABELS = JSON.parse(document.getElementById('filter-labels').textContent);
 
       function selected(group) {
