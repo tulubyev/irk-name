@@ -10,7 +10,7 @@ connectionNote: "Родился 18 ноября 1890 года в селе Тут
 places:
   - name: "Село Тутура"
     settlement: "Тутура"
-    district: kachugskij-rajon
+    district: zhigalovskij-rajon
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
