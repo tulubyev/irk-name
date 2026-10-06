@@ -1,5 +1,5 @@
 ---
-import { SPHERES, DISTRICTS } from '../lib/taxonomy';
+import { SPHERES, DISTRICTS, SPHERE_FAMILY } from '../lib/taxonomy';
 import { lifespan, layersOf, districtsOf, settlementsOf, type Person } from '../lib/persons';
 interface Props { person: Person }
 const { person } = Astro.props;
@@ -17,11 +17,11 @@ const search = [
   .toLowerCase()
   .replaceAll('ё', 'е');
 ---
-<li class="card" data-search={search} data-spheres={d.spheres.join(" ")} data-layers={layersOf(d).join(" ")} data-districts={districts.join(" ")}>
+<li class={`card fam-${SPHERE_FAMILY[d.spheres[0]]}`} data-search={search} data-spheres={d.spheres.join(" ")} data-layers={layersOf(d).join(" ")} data-districts={districts.join(" ")}>
   <h3><a href={`/persona/${person.id}/`}>{d.name}</a></h3>
   <div class="years">{lifespan(d)}</div>
   <p>{d.summary}</p>
-  <ul class="chips" style="margin:0">
-    {d.spheres.map((s) => <li><a class="chip" href={`/sfera/${s}/`}>{SPHERES[s]}</a></li>)}
+  <ul class="chips card-chips">
+    {d.spheres.map((s) => <li><a class={`chip fam-${SPHERE_FAMILY[s]}`} href={`/sfera/${s}/`}>{SPHERES[s]}</a></li>)}
   </ul>
 </li>

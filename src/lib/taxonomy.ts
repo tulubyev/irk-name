@@ -19,6 +19,27 @@ export const SPHERES = {
 } as const;
 export type SphereKey = keyof typeof SPHERES;
 
+// Цветовые группы сфер (цвета — в global.css, классы .fam-<группа>; контраст ≥ 4.5:1 в обеих темах).
+export const SPHERE_FAMILY: Record<SphereKey, string> = {
+  puteshestvennik: 'travel',
+  kupec: 'merchant',
+  pisatel: 'culture',
+  dramaturg: 'culture',
+  artist: 'culture',
+  muzykant: 'culture',
+  uchenyj: 'science',
+  voennyj: 'military',
+  'gosudarstvennyj-deyatel': 'power',
+  gradonachalnik: 'power',
+  revolyucioner: 'power',
+  dekabrist: 'power',
+  svyashchennik: 'clergy',
+  vrach: 'medicine',
+  arhitektor: 'builders',
+  sportsmen: 'people',
+  interesnye: 'people',
+};
+
 // Районы и городские округа Иркутской области. Добавляйте по мере появления записей.
 export const DISTRICTS = {
   'g-irkutsk': 'г. Иркутск',

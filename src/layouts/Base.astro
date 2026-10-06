@@ -68,8 +68,11 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
     <main class="wrap"><slot /></main>
     <footer class="site">
       <div class="wrap">
-        irk.name — справочник знаменитых имён Иркутска. Данные в открытом репозитории{" "}
-        <a href="https://github.com/tulubyev/irk-name">tulubyev/irk-name</a>.
+        <span>© {new Date().getFullYear()} irk.name — справочник знаменитых имён Иркутска</span>
+        <nav aria-label="Служебные ссылки">
+          <a href="/o-proekte/">О проекте</a>
+          <a href="/predlozhit/">Предложить персону</a>
+        </nav>
       </div>
     </footer>
     <script is:inline>

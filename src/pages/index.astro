@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PersonCard from '../components/PersonCard.astro';
 import { getPersons, layersOf, districtsOf, SITE } from '../lib/persons';
-import { SPHERES, LAYERS, LAYER_RULE, DISTRICTS, type SphereKey, type LayerKey, type DistrictKey } from '../lib/taxonomy';
+import { SPHERES, SPHERE_FAMILY, LAYERS, LAYER_RULE, DISTRICTS, type SphereKey, type LayerKey, type DistrictKey } from '../lib/taxonomy';
 const persons = await getPersons();
 const sphereCounts = (Object.keys(SPHERES) as SphereKey[])
   .map((k) => ({ k, n: persons.filter((p) => p.data.spheres.includes(k)).length }));
@@ -28,33 +28,38 @@ const jsonLd = {
   <label for="q" style="position:absolute;left:-9999px">Поиск по имени, сфере или месту</label>
   <input id="q" class="search" type="search" placeholder="Поиск: имя, сфера деятельности, место…" autocomplete="off" />
 
-  <div class="filters">
-    <div class="filter-group" role="group" aria-labelledby="f-layer">
-      <span id="f-layer" class="filter-title">Период</span>
-      {layerCounts.map(({ k, n }) => (
-        <button type="button" class="chip toggle" data-group="layer" data-value={k} aria-pressed="false" title={LAYERS[k].hint}>
-          {LAYERS[k].label} <span class="n">{n}</span>
-        </button>
-      ))}
-      <span class="hint">{LAYER_RULE}</span>
-    </div>
-    <div class="filter-group" role="group" aria-labelledby="f-sphere">
-      <span id="f-sphere" class="filter-title">Вид деятельности</span>
-      {sphereCounts.map(({ k, n }) => (
-        <button type="button" class="chip toggle" data-group="sphere" data-value={k} aria-pressed="false" disabled={n === 0} title={n === 0 ? 'Записей пока нет — предложите персону' : undefined}>
-          {SPHERES[k]} <span class="n">{n}</span>
-        </button>
-      ))}
-    </div>
-    <div class="filter-group" role="group" aria-labelledby="f-district">
-      <span id="f-district" class="filter-title">Район</span>
-      {districtCounts.map(({ k, n }) => (
-        <button type="button" class="chip toggle" data-group="district" data-value={k} aria-pressed="false">
-          {DISTRICTS[k]} <span class="n">{n}</span>
-        </button>
-      ))}
-    </div>
-    <button type="button" id="reset" class="chip" hidden>Сбросить фильтры</button>
+  <div class="filters" id="filters">
+    <details class="dd" data-group="layer">
+      <summary>Период<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Период">
+        {layerCounts.map(({ k, n }) => (
+          <label title={LAYERS[k].hint}><input type="checkbox" data-group="layer" value={k} /> {LAYERS[k].label} <span class="n">{n}</span></label>
+        ))}
+        <div class="dd-hint">{LAYER_RULE}</div>
+        <div class="dd-actions"><button type="button" data-clear="layer">Очистить</button></div>
+      </div>
+    </details>
+    <details class="dd" data-group="sphere">
+      <summary>Вид деятельности<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Вид деятельности">
+        {sphereCounts.map(({ k, n }) => (
+          <label class={`fam-${SPHERE_FAMILY[k]}${n === 0 ? ' disabled' : ''}`} title={n === 0 ? 'Записей пока нет — предложите персону' : undefined}>
+            <input type="checkbox" data-group="sphere" value={k} disabled={n === 0} /><span class="swatch"></span> {SPHERES[k]} <span class="n">{n}</span>
+          </label>
+        ))}
+        <div class="dd-actions"><button type="button" data-clear="sphere">Очистить</button></div>
+      </div>
+    </details>
+    <details class="dd" data-group="district">
+      <summary>Район<span class="dd-count"></span></summary>
+      <div class="dd-panel" role="group" aria-label="Район">
+        {districtCounts.map(({ k, n }) => (
+          <label><input type="checkbox" data-group="district" value={k} /> {DISTRICTS[k]} <span class="n">{n}</span></label>
+        ))}
+        <div class="dd-actions"><button type="button" data-clear="district">Очистить</button></div>
+      </div>
+    </details>
+    <button type="button" id="reset" class="chip" hidden>Сбросить все фильтры</button>
   </div>
 
   <p id="count" class="empty" aria-live="polite">Всего записей: {persons.length}</p>
@@ -67,28 +72,23 @@ const jsonLd = {
     (function () {
       var q = document.getElementById('q');
       var items = Array.prototype.slice.call(document.querySelectorAll('#list .card'));
-      var buttons = Array.prototype.slice.call(document.querySelectorAll('button.toggle'));
+      var boxes = Array.prototype.slice.call(document.querySelectorAll('#filters input[type=checkbox]'));
+      var dropdowns = Array.prototype.slice.call(document.querySelectorAll('#filters details.dd'));
       var count = document.getElementById('count');
       var none = document.getElementById('none');
       var reset = document.getElementById('reset');
-      var total = items.length;
-      var state = { layer: [], sphere: [], district: [] };
+      var PARAM = { layer: 'period', sphere: 'sfera', district: 'rayon' };
 
+      function selected(group) {
+        return boxes.filter(function (b) { return b.dataset.group === group && b.checked; }).map(function (b) { return b.value; });
+      }
       function has(attr, list) {
         if (!list.length) return true;
         var vals = (attr || '').split(' ');
         return list.some(function (v) { return vals.indexOf(v) !== -1; });
       }
-      function syncUrl() {
-        var p = new URLSearchParams();
-        if (state.layer.length) p.set('period', state.layer.join(','));
-        if (state.sphere.length) p.set('sfera', state.sphere.join(','));
-        if (state.district.length) p.set('rayon', state.district.join(','));
-        if (q.value) p.set('q', q.value);
-        var s = p.toString();
-        try { history.replaceState(null, '', location.pathname + (s ? '?' + s : '')); } catch (e) {}
-      }
       function apply() {
+        var state = { layer: selected('layer'), sphere: selected('sphere'), district: selected('district') };
         var terms = q.value.toLowerCase().replace(/ё/g, 'е').split(/\s+/).filter(Boolean);
         var shown = 0;
         items.forEach(function (li) {
@@ -104,25 +104,48 @@ const jsonLd = {
         count.textContent = (filtered ? 'Найдено: ' : 'Всего записей: ') + shown;
         none.hidden = shown !== 0;
         reset.hidden = !filtered;
-        buttons.forEach(function (b) {
-          b.setAttribute('aria-pressed', state[b.dataset.group].indexOf(b.dataset.value) !== -1 ? 'true' : 'false');
+        dropdowns.forEach(function (d) {
+          var n = state[d.dataset.group].length;
+          d.querySelector('.dd-count').textContent = n ? String(n) : '';
+          d.classList.toggle('active', n > 0);
         });
-        syncUrl();
+        var p = new URLSearchParams();
+        Object.keys(PARAM).forEach(function (g) { if (state[g].length) p.set(PARAM[g], state[g].join(',')); });
+        if (q.value) p.set('q', q.value);
+        var s = p.toString();
+        try { history.replaceState(null, '', location.pathname + (s ? '?' + s : '')); } catch (e) {}
       }
-      buttons.forEach(function (b) {
-        b.addEventListener('click', function () {
-          var list = state[b.dataset.group], i = list.indexOf(b.dataset.value);
-          if (i === -1) list.push(b.dataset.value); else list.splice(i, 1);
+
+      boxes.forEach(function (b) { b.addEventListener('change', apply); });
+      document.querySelectorAll('[data-clear]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          boxes.forEach(function (b) { if (b.dataset.group === btn.dataset.clear) b.checked = false; });
           apply();
         });
       });
-      reset.addEventListener('click', function () { state.layer = []; state.sphere = []; state.district = []; q.value = ''; apply(); });
+      reset.addEventListener('click', function () { boxes.forEach(function (b) { b.checked = false; }); q.value = ''; apply(); });
       q.addEventListener('input', apply);
 
+      // Открыт только один список; закрытие по клику вне и по Escape
+      dropdowns.forEach(function (d) {
+        d.addEventListener('toggle', function () {
+          if (d.open) dropdowns.forEach(function (o) { if (o !== d) o.open = false; });
+        });
+      });
+      document.addEventListener('click', function (e) {
+        dropdowns.forEach(function (d) { if (d.open && !d.contains(e.target)) d.open = false; });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        dropdowns.forEach(function (d) { if (d.open) { d.open = false; d.querySelector('summary').focus(); } });
+      });
+
+      // Восстановление состояния из адреса (?period=…&sfera=…&rayon=…&q=…)
       var params = new URLSearchParams(location.search);
-      state.layer = (params.get('period') || '').split(',').filter(Boolean);
-      state.sphere = (params.get('sfera') || '').split(',').filter(Boolean);
-      state.district = (params.get('rayon') || '').split(',').filter(Boolean);
+      Object.keys(PARAM).forEach(function (g) {
+        var vals = (params.get(PARAM[g]) || '').split(',').filter(Boolean);
+        boxes.forEach(function (b) { if (b.dataset.group === g && vals.indexOf(b.value) !== -1 && !b.disabled) b.checked = true; });
+      });
       q.value = params.get('q') || '';
       apply();
     })();
