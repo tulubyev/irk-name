@@ -45,14 +45,16 @@ export function stripHtml(html = '') {
 }
 
 /**
- * Свободная ли лицензия: Public domain, PD-*, CC0, CC BY *, CC BY-SA *.
- * NC/ND, GFDL-only, «Attribution», fair use и всё непонятное — нет.
+ * Свободная ли лицензия: Public domain, PD-*, CC0, CC BY *, CC BY-SA *, Attribution, FAL.
+ * Также {{Attribution}} и Free Art License. NC/ND, GFDL-only, fair use и всё непонятное — нет.
  */
 export function isFreeLicense(shortName) {
   const s = String(shortName ?? '').trim().toLowerCase();
   if (!s) return false;
   if (s === 'public domain' || /^pd(-|$)/.test(s)) return true;
   if (/^cc0(\s+1\.0)?$/.test(s)) return true;
+  // Шаблон Commons {{Attribution}} — любое использование с указанием автора; Free Art License (FAL) — копилефт, как CC BY-SA
+  if (s === 'attribution' || /^(fal|free art license)(\s+1\.3)?$/.test(s)) return true;
   if (/\b(nc|nd)\b/.test(s)) return false;
   return /^cc[ -]by(-sa)?(\s+\d(\.\d)?)?(\s+[a-z]{2,}(-[a-z]+)?)?$/.test(s);
 }
