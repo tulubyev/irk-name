@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Уведомление Яндекса и Bing (протокол IndexNow) об изменившихся страницах: новые страницы попадают в индекс быстрее.
+// Уведомление Яндекса (протокол IndexNow) об изменившихся страницах: новые страницы попадают в индекс быстрее.
 // Отправляются только публичные адреса сайта. Ключ — публичный файл public/<ключ>.txt (так требует протокол).
 //
 //   node scripts/indexnow.mjs --from <sha> --to <sha>   # страницы персон, изменённые между коммитами (вызывает deploy.sh)
@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const HOST = 'irk.name';
 export const SITE = `https://${HOST}`;
-export const ENDPOINTS = ['https://yandex.com/indexnow', 'https://www.bing.com/indexnow'];
+export const ENDPOINTS = ['https://yandex.com/indexnow'];
 
 /** Ключ — единственный публичный файл вида <32 hex>.txt в public/. */
 export function findKey(dir = join(ROOT, 'public')) {
