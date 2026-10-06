@@ -44,7 +44,6 @@ a:hover { text-decoration-thickness: 2px; }
 header.site { border-bottom: 1px solid var(--border); background: var(--surface); }
 header.site .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; padding-block: 0.75rem; }
 .logo { font-weight: 700; font-size: 1.3rem; text-decoration: none; color: var(--text); letter-spacing: 0.01em; }
-.logo span { color: var(--accent); }
 header.site a.suggest { margin-left: auto; }
 button.theme {
   font: inherit; font-family: system-ui, sans-serif; font-size: 0.8rem;
@@ -56,9 +55,10 @@ h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 0.5rem; }
 h2 { font-size: 1.3rem; margin-top: 2rem; }
 .lead { color: var(--muted); font-size: 1.05rem; margin-top: 0; }
 .search {
-  width: 100%; font: inherit; font-family: system-ui, sans-serif; font-size: 1rem;
-  padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 0.6rem;
-  background: var(--surface); color: var(--text); margin: 1rem 0;
+  flex: 1 1 14rem; min-width: 0; box-sizing: border-box; margin: 0;
+  font: inherit; font-family: system-ui, sans-serif; font-size: 0.85rem; line-height: inherit;
+  padding: 0.45rem 0.8rem; border: 1px solid var(--border); border-radius: 0.5rem;
+  background: var(--surface); color: var(--text);
 }
 .search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
@@ -142,7 +142,7 @@ a.chip[class*='fam-'] {
 a.chip[class*='fam-']:hover { border-color: var(--fam); color: var(--fam); }
 
 /* ---- Выпадающие фильтры с множественным выбором ---- */
-.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; margin: 0 0 1rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; margin: 1rem 0; }
 details.dd { position: relative; }
 details.dd > summary {
   list-style: none; cursor: pointer; user-select: none;
@@ -182,6 +182,7 @@ button.dd-reset:hover { border-color: var(--accent); }
   .filters { flex-direction: column; align-items: stretch; }
   details.dd > summary { width: 100%; }
   button.dd-reset { width: 100%; text-align: center; }
+  .filters .search { flex: none; width: 100%; }
   .dd-panel { position: static; width: auto; max-width: none; margin-top: 0.3rem; box-shadow: none; }
 }
 
