@@ -69,6 +69,7 @@ export const DISTRICTS = {
   'osinskij-rajon': 'Осинский район',
   'nukutskij-rajon': 'Нукутский район',
   'zalarinskij-rajon': 'Заларинский район',
+  'tulunskij-rajon': 'Тулунский район',
 } as const;
 export type DistrictKey = keyof typeof DISTRICTS;
 
