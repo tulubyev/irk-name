@@ -62,7 +62,7 @@ docker compose up -d --build
 
 1. В панели Beget создайте S3-бакет (у нас: `0a011f8d633a-irk-name`), включите **публичное чтение** объектов. Запишите эндпоинт и регион, создайте ключ доступа.
 2. Подключите к бакету CDN Beget с доменом `cdn.irk.name` и поставьте CNAME из таблицы DNS выше. Проверка: `curl -I https://cdn.irk.name/persons/<файл>.webp` → `200`.
-3. Подготовьте картинки локально в папке `media/` (она в `.gitignore`): для каждой персоны два webp — `persons/<slug>.webp` (1280 px) и `persons/<slug>-640.webp`. Для неизменяемых файлов добавляйте хэш в имя (`<slug>-<8+ hex>.webp`) — они получат `immutable` на год.
+3. Подготовьте картинки локально в папке `media/` (она в `.gitignore`): для каждой персоны три webp — `persons/<slug>.webp` (до 1200 px), `persons/<slug>-640.webp` и `persons/<slug>-160.webp` (миниатюра в карточке). Для фото с Wikimedia Commons это делает `scripts/fetch-commons.mjs` — см. «Фото и гербы» ниже. Для неизменяемых файлов добавляйте хэш в имя (`<slug>-<8+ hex>.webp`) — они получат `immutable` на год.
 4. Загрузите (ключи из окружения):
 
 ```bash
@@ -75,6 +75,47 @@ npm run upload-media                # загрузить; повторный з�
 5. В карточке персоны укажите `photo.key` (`persons/<slug>.webp`), автора, лицензию и ссылку на источник — они выводятся под фото. Только свободные лицензии.
 
 **Обновить картинку:** CDN кеширует файлы, поэтому изменённую картинку проще загрузить под новым именем (с хэшем, например `<slug>-<8+ hex>.webp`) и поменять `photo.key`. Сбросить кеш конкретного файла можно в панели CDN Beget.
+
+## Фото и гербы
+
+Фото персон и гербы берутся **только с Wikimedia Commons** и только со свободными лицензиями. Список файлов — `data/commons-photos.json` (`persons`: `slug` → `file` + `alt`; `heraldry`: гербы для шапки). Автор, лицензия и ссылки **не заполняются вручную** — их получает из API Commons скрипт `scripts/fetch-commons.mjs`. Скрипт запускается на сервере (из облачных сред Commons часто недоступен), Node.js 22.
+
+Белый список лицензий: Public domain, PD-*, CC0, CC BY *, CC BY-SA *. Файлы с другой лицензией (NC/ND, GFDL, fair use, без лицензии) скрипт пропускает и печатает списком.
+
+```bash
+cd /var/www/irk-name && git pull
+npm ci                                        # нужен sharp из devDependencies
+
+# 1. Метаданные + скачивание в media/ (persons/<slug>.webp, -640, -160; heraldry/<key>.webp|svg)
+node scripts/fetch-commons.mjs --dry-run      # только проверить, что файлы есть и лицензии свободные
+node scripts/fetch-commons.mjs                # скачать; повторный запуск пропускает неизменённые файлы
+#   --only slug1,slug2 — только эти записи;  --force — перекачать всё
+
+# 2. Проверить lock-файл: автор, лицензия, источник; открыть пару картинок из media/
+less data/commons-photos.lock.json
+#   «✗ … не найдено» — имя файла в манифесте неверно; «✗ … лицензия» — файл несвободный:
+#   поправьте data/commons-photos.json (или удалите запись) и повторите шаг 1.
+
+# 3. Загрузить картинки в бакет (ключи S3 — из окружения, см. «Медиа-хранилище»)
+node scripts/upload-media.mjs --dry-run
+node scripts/upload-media.mjs
+curl -I https://cdn.irk.name/persons/anton-chekhov.webp            # 200
+curl -I https://cdn.irk.name/heraldry/irkutsk.webp                 # 200
+
+# 4. Дописать photo во фронтматтер записей (только по lock-файлу; запись с другим фото не трогается без --force)
+node scripts/fetch-commons.mjs --apply
+npm run check && git diff --stat
+
+# 5. Коммит и деплой
+git add data/commons-photos.lock.json src/content/persons
+git commit -m "Photos from Wikimedia Commons"
+git push                                       # нужен доступ на запись; иначе — PR с ноутбука
+bash deploy.sh
+```
+
+Гербы в шапке (`src/lib/heraldry.ts`) появляются сами, как только `heraldry/*.webp` загружены на CDN; до этого картинки скрываются и вёрстку не ломают. То же для фото: если файла нет на CDN, блок фото на странице персоны скрывается.
+
+Добавить фото: допишите `{ "slug", "file": "File:….jpg", "alt" }` в `data/commons-photos.json` и повторите шаги 1–5. Живым людям и записям с `archived: true` фото не подбираем.
 
 ## CI
 
