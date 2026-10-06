@@ -59,7 +59,7 @@ archived: true              # необязательно: скрыть с сай
 
 ## Хостинг
 
-Собственный VPS: Docker + Traefik, домен irk.name, картинки через `cdn.irk.name` (S3 Beget). Подробности — в [DEPLOY.md](DEPLOY.md).
+Собственный VPS: Docker + Traefik, домен irk.name, картинки — S3 Beget через CDN Beget на `cdn.irk.name`. Подробности — в [DEPLOY.md](DEPLOY.md).
 
 ## TODO
 

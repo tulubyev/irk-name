@@ -59,35 +59,9 @@ services:
       - traefik.http.routers.irkname-admin.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
       - traefik.http.routers.irkname-admin.service=irkname-admin
       - traefik.http.services.irkname-admin.loadbalancer.server.port=3000
-  cdn:
-    image: nginx:1.27-alpine
-    restart: unless-stopped
-    networks: [traefik]
-    environment:
-      S3_HOST: ${S3_HOST:?задайте S3_HOST в .env}
-      S3_BUCKET: ${S3_BUCKET:?задайте S3_BUCKET в .env}
-    volumes:
-      - ./deploy/cdn/default.conf.template:/etc/nginx/templates/default.conf.template:ro
-      - cdn-cache:/var/cache/nginx
-    healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/healthz"]
-      interval: 30s
-      timeout: 3s
-      retries: 3
-    labels:
-      - traefik.enable=true
-      - traefik.docker.network=${TRAEFIK_NETWORK:-traefik-public}
-      - traefik.http.routers.irkname-cdn.rule=Host(`${CDN_HOST:-cdn.irk.name}`)
-      - traefik.http.routers.irkname-cdn.entrypoints=${TRAEFIK_ENTRYPOINT_HTTPS:-websecure}
-      - traefik.http.routers.irkname-cdn.tls=true
-      - traefik.http.routers.irkname-cdn.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
-      - traefik.http.routers.irkname-cdn.service=irkname-cdn
-      - traefik.http.services.irkname-cdn.loadbalancer.server.port=80
 
 networks:
   traefik:
     name: ${TRAEFIK_NETWORK:-traefik-public}
     external: true
 
-volumes:
-  cdn-cache:

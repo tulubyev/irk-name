@@ -1,6 +1,6 @@
 # Деплой на VPS (Docker + Traefik)
 
-Сайт — статика (`dist/`), которую отдаёт nginx в контейнере `web`. Картинки лежат в S3-бакете Beget и отдаются через `cdn.irk.name` (контейнер `cdn`, nginx с дисковым кешем). Оба сервиса подключаются к уже работающему Traefik; порты наружу не публикуются.
+Сайт — статика (`dist/`), которую отдаёт nginx в контейнере `web` (и админка `admin`, если включена). Контейнеры подключаются к уже работающему Traefik; порты наружу не публикуются. Картинки лежат в S3-бакете Beget и раздаются через **CDN Beget** на `cdn.irk.name` — на VPS для этого ничего не запускается.
 
 > Секретов в репозитории нет и быть не должно (репозиторий публичный). Ключи S3 нужны только для загрузки картинок и хранятся в переменных окружения / GitHub Secrets.
 
@@ -10,9 +10,9 @@
 | --- | --- | --- |
 | A | `irk.name` | `90.156.168.149` |
 | A | `www.irk.name` | `90.156.168.149` |
-| A | `cdn.irk.name` | `90.156.168.149` |
+| CNAME | `cdn.irk.name` | адрес CDN-ресурса из панели Beget (вида `xxxxxxxx.a.trbcdn.net`) |
 
-`www` автоматически редиректится на `irk.name` (301).
+`www` автоматически редиректится на `irk.name` (301). Сертификат для `cdn.irk.name` выпускает CDN Beget, Traefik в этом не участвует.
 
 ## 2. Настройка
 
@@ -23,7 +23,7 @@ cp .env.example .env
 $EDITOR .env
 ```
 
-Значения по умолчанию уже соответствуют серверу (см. `tulubyev/vps-server-infra`: Traefik v2.11, сеть `traefik-public`, entrypoints `web`/`websecure`, certresolver `letsencrypt`, глобальный редирект http→https). Менять нужно только S3:
+Значения по умолчанию уже соответствуют серверу (см. `tulubyev/vps-server-infra`: Traefik v2.11, сеть `traefik-public`, entrypoints `web`/`websecure`, certresolver `letsencrypt`, глобальный редирект http→https). Менять обычно ничего не нужно:
 
 | Переменная | По умолчанию | Что это |
 | --- | --- | --- |
@@ -31,9 +31,8 @@ $EDITOR .env
 | `TRAEFIK_ENTRYPOINT_HTTP` | `web` | entrypoint :80 |
 | `TRAEFIK_ENTRYPOINT_HTTPS` | `websecure` | entrypoint :443 |
 | `TRAEFIK_CERTRESOLVER` | `letsencrypt` | certresolver Let's Encrypt в конфиге Traefik |
-| `SITE_HOST`, `CDN_HOST` | `irk.name`, `cdn.irk.name` | домены |
+| `SITE_HOST` | `irk.name` | домен сайта |
 | `PUBLIC_CDN_URL` | `https://cdn.irk.name` | базовый URL картинок (зашивается при сборке) |
-| `S3_HOST`, `S3_BUCKET` | — | хост эндпоинта Beget и имя бакета (для прокси `cdn`) |
 
 ## 3. Запуск
 
@@ -61,8 +60,8 @@ docker compose up -d --build
 
 ## Медиа-хранилище (Beget S3)
 
-1. В панели Beget создайте S3-бакет, включите **публичное чтение** (для картинок). Запишите эндпоинт, регион, имя бакета и создайте ключ доступа.
-2. Впишите `S3_ENDPOINT`, `S3_HOST`, `S3_REGION`, `S3_BUCKET` в `.env` (ключи — не сюда).
+1. В панели Beget создайте S3-бакет (у нас: `0a011f8d633a-irk-name`), включите **публичное чтение** объектов. Запишите эндпоинт и регион, создайте ключ доступа.
+2. Подключите к бакету CDN Beget с доменом `cdn.irk.name` и поставьте CNAME из таблицы DNS выше. Проверка: `curl -I https://cdn.irk.name/persons/<файл>.webp` → `200`.
 3. Подготовьте картинки локально в папке `media/` (она в `.gitignore`): для каждой персоны два webp — `persons/<slug>.webp` (1280 px) и `persons/<slug>-640.webp`. Для неизменяемых файлов добавляйте хэш в имя (`<slug>-<8+ hex>.webp`) — они получат `immutable` на год.
 4. Загрузите (ключи из окружения):
 
@@ -75,13 +74,7 @@ npm run upload-media                # загрузить; повторный з�
 
 5. В карточке персоны укажите `photo.key` (`persons/<slug>.webp`), автора, лицензию и ссылку на источник — они выводятся под фото. Только свободные лицензии.
 
-**Сброс кеша CDN:** кеш nginx лежит в томе `cdn-cache`:
-
-```bash
-docker compose stop cdn && docker volume rm irk-name_cdn-cache && docker compose up -d cdn
-```
-
-(имя тома смотрите в `docker volume ls`; префикс зависит от имени каталога проекта).
+**Обновить картинку:** CDN кеширует файлы, поэтому изменённую картинку проще загрузить под новым именем (с хэшем, например `<slug>-<8+ hex>.webp`) и поменять `photo.key`. Сбросить кеш конкретного файла можно в панели CDN Beget.
 
 ## CI
 
