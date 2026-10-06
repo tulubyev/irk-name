@@ -71,8 +71,30 @@ export const DISTRICTS = {
   'nukutskij-rajon': 'Нукутский район',
   'zalarinskij-rajon': 'Заларинский район',
   'tulunskij-rajon': 'Тулунский район',
+  // остальные городские округа и районы области — полный список из 42 муниципальных образований
+  'g-sayansk': 'г. Саянск',
+  'g-svirsk': 'г. Свирск',
+  'bayandaevskij-rajon': 'Баяндаевский район',
+  'bratskij-rajon': 'Братский район',
+  'zhigalovskij-rajon': 'Жигаловский район',
+  'ziminskij-rajon': 'Зиминский район',
+  'kazachinsko-lenskij-rajon': 'Казачинско-Ленский район',
+  'katangskij-rajon': 'Катангский район',
+  'kujtunskij-rajon': 'Куйтунский район',
+  'mamsko-chujskij-rajon': 'Мамско-Чуйский район',
+  'usolskij-rajon': 'Усольский район',
+  'ust-ilimskij-rajon': 'Усть-Илимский район',
+  'chunskij-rajon': 'Чунский район',
 } as const;
 export type DistrictKey = keyof typeof DISTRICTS;
+
+/** Городской округ (ключ g-*) или муниципальный район. */
+export const isCity = (k: DistrictKey) => k.startsWith('g-');
+const sortName = (k: DistrictKey) => DISTRICTS[k].replace(/^г\.\s*/, '');
+/** Сначала города, затем районы; внутри — по алфавиту. */
+export const DISTRICT_ORDER = (Object.keys(DISTRICTS) as DistrictKey[]).sort(
+  (a, b) => Number(isCity(b)) - Number(isCity(a)) || sortName(a).localeCompare(sortName(b), 'ru'),
+);
 
 export const ERAS = {
   'xvii': 'XVII век',
