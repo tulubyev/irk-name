@@ -78,15 +78,15 @@ npm run upload-media                # загрузить; повторный з�
 
 ## Фото и гербы
 
-Фото персон и гербы берутся **только с Wikimedia Commons** и только со свободными лицензиями. Список файлов — `data/commons-photos.json` (`persons`: `slug` → `file` + `alt`; `heraldry`: гербы для шапки). Автор, лицензия и ссылки **не заполняются вручную** — их получает из API Commons скрипт `scripts/fetch-commons.mjs`. Скрипт запускается на сервере (из облачных сред Commons часто недоступен), Node.js 22.
+Фото персон и гербы берутся **только с Wikimedia Commons** и только со свободными лицензиями. Список файлов — `data/commons-photos.json` (`persons`: `slug` → `file` + `alt`; `heraldry`: гербы для шапки). Автор, лицензия и ссылки **не заполняются вручную** — их получает из API Commons скрипт `scripts/fetch-commons.mjs`. Скрипт запускается на сервере (из облачных сред Commons часто недоступен), Node.js 24.
 
 Белый список лицензий: Public domain, PD-*, CC0, CC BY *, CC BY-SA *, Attribution, Free Art License (FAL). Файлы с другой лицензией (NC/ND, GFDL, fair use, без лицензии) скрипт пропускает и печатает списком.
 
-Если на сервере нет Node.js 22 (`node -v`), все команды ниже выполняйте в контейнере — ничего ставить не нужно:
+Если на сервере нет Node.js 24 (`node -v`), все команды ниже выполняйте в контейнере — ничего ставить не нужно:
 
 ```bash
 cd /var/www/irk-name
-docker run --rm -it -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/app -w /app --env-file .env node:22 bash
+docker run --rm -it -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/app -w /app --env-file .env node:24 bash
 ```
 
 ```bash
