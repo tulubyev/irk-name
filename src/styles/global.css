@@ -197,6 +197,8 @@ details.dd.active > summary { border-color: var(--accent); }
 .dd-panel label { display: flex; gap: 0.5rem; align-items: center; padding: 0.3rem 0.5rem; border-radius: 0.35rem; cursor: pointer; }
 .dd-panel label:hover { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
 .dd-panel label.disabled { opacity: 0.45; cursor: not-allowed; }
+.dd-panel label.dd-all { font-weight: 600; border-bottom: 1px solid var(--border); border-radius: 0.35rem 0.35rem 0 0; margin-bottom: 0.2rem; }
+.dd-panel .dd-sub { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); padding: 0.5rem 0.5rem 0.15rem; }
 .dd-panel .n { margin-left: auto; color: var(--muted); font-size: 0.78rem; }
 .dd-panel .dd-hint { color: var(--muted); font-size: 0.75rem; padding: 0.4rem 0.5rem 0.2rem; border-top: 1px solid var(--border); margin-top: 0.3rem; }
 .dd-panel .swatch { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--fam); flex: none; }
