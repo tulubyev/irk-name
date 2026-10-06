@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # Сборка из корня репозитория: docker build -f admin/Dockerfile .
 # Один образ — два сервиса: админка (server.mjs) и приём формы предложений (forms.mjs).
-FROM node:22-alpine AS build
+FROM node:24-alpine AS build
 WORKDIR /app
 COPY admin/package.json admin/package-lock.json admin/
 RUN cd admin && npm ci
@@ -10,7 +10,7 @@ COPY admin admin
 COPY src/lib/person-schema.ts src/lib/taxonomy.ts src/lib/operator.ts src/lib/
 RUN cd admin && npm run typecheck && npm run build
 
-FROM node:22-alpine
+FROM node:24-alpine
 WORKDIR /app
 COPY --from=build /app/admin/dist/server.mjs /app/admin/dist/forms.mjs ./
 COPY admin/hash-password.mjs ./hash-password.mjs
