@@ -1,6 +1,6 @@
 export const SPHERES = {
   'puteshestvennik': 'Путешественники и первопроходцы',
-  'kupec': 'Купцы и меценаты',
+  'kupec': 'Бизнес',
   'pisatel': 'Писатели и поэты',
   'dramaturg': 'Драматурги',
   'uchenyj': 'Учёные',
