@@ -60,13 +60,14 @@ docker compose up -d --build
 
 ## Медиа-хранилище (Beget S3)
 
-1. В панели Beget создайте S3-бакет (у нас: `0a011f8d633a-irk-name`), включите **публичное чтение** объектов. Запишите эндпоинт и регион, создайте ключ доступа.
+1. В панели Beget создайте S3-бакет (у нас: `0a011f8d633a-irk-name`, эндпоинт `https://s3.ru1.storage.beget.cloud`, регион `ru1`), включите **публичное чтение** объектов, создайте ключ доступа.
 2. Подключите к бакету CDN Beget с доменом `cdn.irk.name` и поставьте CNAME из таблицы DNS выше. Проверка: `curl -I https://cdn.irk.name/persons/<файл>.webp` → `200`.
 3. Подготовьте картинки локально в папке `media/` (она в `.gitignore`): для каждой персоны три webp — `persons/<slug>.webp` (до 1200 px), `persons/<slug>-640.webp` и `persons/<slug>-160.webp` (миниатюра в карточке). Для фото с Wikimedia Commons это делает `scripts/fetch-commons.mjs` — см. «Фото и гербы» ниже. Для неизменяемых файлов добавляйте хэш в имя (`<slug>-<8+ hex>.webp`) — они получат `immutable` на год.
 4. Загрузите (ключи из окружения):
 
 ```bash
-export S3_ENDPOINT=… S3_REGION=… S3_BUCKET=… S3_FORCE_PATH_STYLE=true
+# эндпоинт, регион и бакет уже заданы по умолчанию (Beget: s3.ru1.storage.beget.cloud, ru1, 0a011f8d633a-irk-name);
+# нужны только ключи — например, из .env на сервере: set -a; . ./.env; set +a
 export S3_ACCESS_KEY_ID=… S3_SECRET_ACCESS_KEY=…
 npm run upload-media -- --dry-run   # посмотреть, что будет загружено
 npm run upload-media                # загрузить; повторный запуск пропускает неизменённые файлы
