@@ -1,0 +1,10 @@
+---
+import { OPERATOR } from '../lib/operator';
+---
+<dl class="facts">
+  <dt>Наименование</dt><dd>{OPERATOR.name} ({OPERATOR.shortName})</dd>
+  <dt>ИНН / КПП</dt><dd>{OPERATOR.inn} / {OPERATOR.kpp}</dd>
+  <dt>ОГРН</dt><dd>{OPERATOR.ogrn}</dd>
+  <dt>Адрес</dt><dd>{OPERATOR.address}</dd>
+  <dt>E-mail</dt><dd><a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a></dd>
+</dl>

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE } from '../lib/persons';
+import { OPERATOR, COPYRIGHT_YEARS } from '../lib/operator';
 
 interface Props {
   title: string;
@@ -67,10 +68,16 @@ const ogImage = image ?? new URL('/og.png', SITE).href;
     <main class="wrap"><slot /></main>
     <footer class="site">
       <div class="wrap">
-        <span>© {new Date().getFullYear()} irk.name — справочник знаменитых имён Иркутска</span>
+        <div class="footer-copy">
+          <p>© {COPYRIGHT_YEARS} irk.name — справочник знаменитых имён Иркутска. {OPERATOR.shortName}.</p>
+          <p>Тексты охраняются авторским правом; изображения — по свободным лицензиям, авторы указаны на страницах. <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a></p>
+        </div>
         <nav aria-label="Служебные ссылки">
           <a href="/o-proekte/">О проекте</a>
           <a href="/predlozhit/">Предложить персону</a>
+          <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+          <a href="/personalnye-dannye/">Персональные данные</a>
+          <a href="/avtorskie-prava/">Авторские права</a>
         </nav>
       </div>
     </footer>
