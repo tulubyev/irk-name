@@ -9,6 +9,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/nikolai-nasonov.webp"
+  alt: "Портрет Николая Фёдоровича Насонова в военной форме с наградами"
+  author: "Фотоателье Р. И. Каупе, Иркутск; из семейного архива потомков"
+  license: "Публикуется с разрешения владельца семейного архива"
+  sourceUrl: "https://irk.name/persona/nikolai-nasonov/"
 sources:
   - title: "Насонов Николай Фёдорович - Офицеры РИА"
     url: "http://rusgeneral.ru/gen/n/gen_n109b.html"
