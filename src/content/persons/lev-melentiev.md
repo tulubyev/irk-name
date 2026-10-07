@@ -1,5 +1,5 @@
 ---
-name: "Лев Абрамович Мелентьев"
+name: "Лев Александрович Мелентьев"
 birthYear: 1908
 deathYear: 1986
 spheres: ["uchenyj", "gosudarstvennyj-deyatel"]
@@ -12,7 +12,7 @@ places:
     settlement: "Иркутск"
     district: g-irkutsk
 sources:
-  - title: "Мелентьев, Лев Абрамович. Большая Советская Энциклопедия"
+  - title: "Путь выдающегося энергетика. К 100-летию со дня рождения Льва Александровича Мелентьева"
     url: "https://www.prometeus.nsc.ru/science/calendar/nvs/melent1.pdf"
   - title: "Мелентьев Лев Александрович. Большая Российская Энциклопедия"
     url: "https://bigenc.ru/c/melent-ev-lev-aleksandrovich-d60c29"
