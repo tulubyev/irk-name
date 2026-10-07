@@ -1,10 +1,12 @@
 import { Hono, type Context, type Next } from 'hono';
+import { bodyLimit } from 'hono/body-limit';
 import { serve } from '@hono/node-server';
 import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
 import { config } from './config';
 import { verifyPassword, createSession, verifySession, SESSION_COOKIE, isLocked, recordFailure, clearFailures } from './auth';
 import { store, ConflictError } from './store';
-import { schema, parse, serialize, fromForm, issuesToText, SLUG_RE } from './person';
+import { schema, parse, serialize, fromForm, issuesToText, newUploadsFromForm, arrangeImages, SLUG_RE, type ImgRow } from './person';
+import { media, processImage, type ProcessedImage } from './media';
 import { loginPage, listPage, editPage, inboxPage, suggestionPage, type Row } from './views';
 import * as suggestions from './suggestions';
 
@@ -19,7 +21,7 @@ app.use('*', async (c, next) => {
   c.header('X-Content-Type-Options', 'nosniff');
   c.header('Referrer-Policy', 'same-origin');
   c.header('Cache-Control', 'no-store');
-  c.header('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'");
+  c.header('Content-Security-Policy', `default-src 'none'; style-src 'unsafe-inline'; img-src 'self' ${config.cdnUrl}; form-action 'self'; frame-ancestors 'none'; base-uri 'none'`);
 });
 
 app.get('/healthz', (c) => c.text('ok'));
@@ -152,7 +154,8 @@ app.get('/p/:slug', async (c) => {
   }));
 });
 
-app.post('/p/:slug', async (c) => {
+// Правка записи вместе с новыми фото (до 3 файлов по 25 МБ)
+app.post('/p/:slug', bodyLimit({ maxSize: 90 * 1024 * 1024, onError: (c) => c.text('Слишком большой запрос: файлов не больше 25 МБ каждый', 413) }), async (c) => {
   const slug = c.req.param('slug');
   if (!SLUG_RE.test(slug)) return c.notFound();
   const f = await c.req.parseBody({ all: true });
@@ -160,13 +163,37 @@ app.post('/p/:slug', async (c) => {
   const file = await store.get(slug);
   if (!file) return c.notFound();
   const { data: existing } = parse(file.content);
-  const { data, body } = fromForm(f, existing);
+  const { data, body, rows, mainId } = fromForm(f, existing);
+  const fail = (errors: string[], status: 400 | 409 | 500 = 400) => c.html(editPage({ slug, sha, data, body, errors }), status);
+
+  // Новые фото: проверка полей, обработка в память; в хранилище уходят только после успешной проверки записи
+  const { uploads, errors: uploadErrors } = newUploadsFromForm(f);
+  if (uploads.length && !media) uploadErrors.push('Загрузка фото отключена: на сервере не заданы ключи S3');
+  if (uploadErrors.length) return fail(uploadErrors);
+  const processed: ProcessedImage[] = [];
+  const newRows: ImgRow[] = [];
+  for (const u of uploads) {
+    try {
+      const img = await processImage(Buffer.from(await u.file.arrayBuffer()), slug);
+      processed.push(img);
+      newRows.push({ id: u.id, key: img.key, ...u.meta });
+    } catch (e) {
+      return fail([`Новое фото ${u.id.slice(1)}: ${(e as Error).message}`]);
+    }
+  }
+  if (newRows.length) {
+    const arranged = arrangeImages([...rows, ...newRows], mainId);
+    data.photo = arranged.photo;
+    data.gallery = arranged.gallery;
+  }
+
   const res = schema.safeParse(data);
-  if (!res.success) return c.html(editPage({ slug, sha, data, body, errors: issuesToText(res.error) }), 400);
+  if (!res.success) return fail(issuesToText(res.error));
   try {
-    await save(slug, serialize(res.data, body), sha, `admin: update ${slug}`);
+    for (const img of processed) for (const part of img.files) await media!.put(part.key, part.body);
+    await save(slug, serialize(res.data, body), sha, newRows.length ? `admin: update ${slug}, photos +${newRows.length}` : `admin: update ${slug}`);
   } catch (e) {
-    return c.html(editPage({ slug, sha, data, body, errors: [(e as Error).message] }), e instanceof ConflictError ? 409 : 500);
+    return fail([(e as Error).message], e instanceof ConflictError ? 409 : 500);
   }
   return c.redirect(`/admin/p/${slug}?saved=1`);
 });

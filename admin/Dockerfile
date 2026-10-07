@@ -12,6 +12,9 @@ RUN cd admin && npm run typecheck && npm run build
 
 FROM node:24-alpine
 WORKDIR /app
+# sharp (обработка фото) — нативный модуль, в бандл не входит
+COPY admin/package.json admin/package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
 COPY --from=build /app/admin/dist/server.mjs /app/admin/dist/forms.mjs ./
 COPY admin/hash-password.mjs ./hash-password.mjs
 # Каталог предложений (том docker наследует владельца node при первом создании)
