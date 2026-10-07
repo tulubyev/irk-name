@@ -9,7 +9,7 @@ connectionNote: "Родился в Тайшете Иркутской облас�
 places:
   - name: "Тайшет"
     settlement: "Тайшет"
-    district: taj-shetskij-rajon
+    district: tajshetskij-rajon
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
