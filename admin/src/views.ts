@@ -1,12 +1,19 @@
 import { html, raw } from 'hono/html';
 import type { HtmlEscapedString } from 'hono/utils/html';
 import { SPHERES, ERAS, CONNECTIONS, DISTRICTS } from '../../src/lib/taxonomy';
-import { placesToText, sourcesToText, type PersonData } from './person';
+import { placesToText, sourcesToText, imagesOf, NEW_SLOTS, MAX_UPLOAD_BYTES, type PersonData } from './person';
+import { mediaUrl, sizedKey, media } from './media';
 import { FIELDS, RETENTION_DAYS, type Suggestion } from './suggestions';
 
 type H = HtmlEscapedString | Promise<HtmlEscapedString>;
 
 const CSS = `
+fieldset.photos{border:1px solid var(--border);border-radius:.5rem;padding:.2rem 1rem 1rem;margin:1.2rem 0;background:#fff}fieldset.photos legend{font-weight:600;padding:0 .4rem}
+.img{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--border)}.img:last-of-type{border-bottom:0}.img img{width:100%;height:auto;border-radius:.3rem;background:#eee;display:block}
+.img .f{display:grid;grid-template-columns:1fr 1fr;gap:.2rem .8rem}.img .f label{margin:.3rem 0 .1rem;font-size:.85rem}.img .f .w{grid-column:1/-1}@media(max-width:40rem){.img{grid-template-columns:1fr}.img .f{grid-template-columns:1fr}}
+.inline-check{display:flex;gap:.3rem;align-items:center;font-weight:400;margin:.3rem 1rem .3rem 0}.snippet{font-family:ui-monospace,monospace;font-size:.8rem}
+details.slot{margin:.6rem 0;border:1px dashed var(--border);border-radius:.4rem;padding:.4rem .8rem}details.slot summary{cursor:pointer;font-weight:600}
+
 :root{--bg:#fbf8f3;--fg:#1f1b16;--muted:#6a6258;--accent:#7a2e2e;--border:#e4ddd0;--warn:#fff4d6;--ok:#e3f3e6;--err:#fde2e2;color-scheme:light}
 *{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--fg)}
 header{display:flex;gap:1rem;align-items:center;padding:.7rem 1rem;border-bottom:1px solid var(--border);background:#fff;flex-wrap:wrap}
@@ -18,7 +25,7 @@ table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:.4rem .5
 form.inline{display:inline}button,.btn{font:inherit;border:1px solid var(--border);background:#fff;border-radius:.4rem;padding:.3rem .7rem;cursor:pointer;color:var(--fg);text-decoration:none;display:inline-block}
 button.primary,.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
 label{display:block;font-weight:600;margin:.8rem 0 .2rem}.hint{font-weight:400;color:var(--muted);font-size:.85rem}
-input[type=text],input[type=password],input[type=search],input[type=number],select,textarea{width:100%;font:inherit;padding:.4rem .5rem;border:1px solid var(--border);border-radius:.4rem;background:#fff}
+input[type=text],input[type=url],input[type=password],input[type=search],input[type=number],select,textarea{width:100%;font:inherit;padding:.4rem .5rem;border:1px solid var(--border);border-radius:.4rem;background:#fff}
 textarea{min-height:6rem;font-family:ui-monospace,monospace;font-size:.85rem}
 .checks{display:flex;flex-wrap:wrap;gap:.3rem 1rem}.checks label{font-weight:400;margin:0;display:flex;gap:.3rem;align-items:center}
 .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}@media(max-width:40rem){.row{grid-template-columns:1fr}}
@@ -82,7 +89,7 @@ export function editPage(opts: {
 <h1>${opts.isNew ? 'Новая запись' : d.name}</h1>
 ${opts.flash ? html`<p class="msg ok">${opts.flash}</p>` : ''}
 ${opts.errors?.length ? html`<div class="msg err"><strong>Запись не сохранена:</strong><ul>${opts.errors.map((e) => html`<li>${e}</li>`)}</ul></div>` : ''}
-<form method="post" action="${action}">
+<form method="post" action="${action}" enctype="multipart/form-data">
 ${opts.isNew
   ? html`<label for="slug">Адрес (slug) <span class="hint">— транслит имени латиницей через дефис, например ivan-ivanov; потом не меняется</span></label>
 <input type="text" id="slug" name="slug" value="${opts.slug ?? ''}" required pattern="[a-z0-9]+(-[a-z0-9]+)*">`
@@ -105,7 +112,7 @@ ${opts.isNew
 <label for="sources">Источники <span class="hint">— одна строка: Название | https://ссылка. Минимум один.</span></label>
 <textarea id="sources" name="sources" required>${sourcesToText(d.sources as PersonData['sources'])}</textarea>
 <label for="body">Статья (Markdown) <span class="hint">— развёрнутая биография; показывается на странице персоны под кратким описанием</span></label><textarea id="body" name="body" style="min-height:12rem">${opts.body}</textarea>
-${d.photo ? html`<p class="muted">Фото: ${(d.photo as { key: string }).key} — правится в файле, в этой версии админки не редактируется.</p>` : ''}
+${photosSection(d, opts.isNew === true)}
 <div class="row">
 <div><label for="status">Проверка</label><select id="status" name="status">
 <option value="needs-check" ${d.status !== 'verified' ? 'selected' : ''}>Требует проверки</option>
@@ -114,6 +121,48 @@ ${d.photo ? html`<p class="muted">Фото: ${(d.photo as { key: string }).key} 
 </div>
 <p style="margin-top:1.5rem"><button class="primary">Сохранить</button> <a href="/admin/">Отмена</a></p>
 </form>`, { authed: true });
+}
+
+const imgField = (label: string, name: string, value: string | undefined, opts: { wide?: boolean; required?: boolean; hint?: string; type?: string } = {}) =>
+  html`<div class="${opts.wide ? 'w' : ''}"><label for="${name}">${label}${opts.hint ? html` <span class="hint">— ${opts.hint}</span>` : ''}</label><input type="${opts.type ?? 'text'}" id="${name}" name="${name}" value="${value ?? ''}" ${opts.required ? 'required' : ''}></div>`;
+
+function photosSection(d: Record<string, unknown>, isNew: boolean): H {
+  if (isNew) return html`<fieldset class="photos"><legend>Фотографии</legend><p class="muted">Фото добавляются после создания записи: сохраните её, и на этой странице появится загрузка.</p></fieldset>`;
+  const imgs = imagesOf(d);
+  const slot = (n: number) => html`<details class="slot" ${n === 1 ? 'open' : ''}><summary>Новое фото ${n}</summary>
+<label for="new_file_${n}">Файл <span class="hint">— JPEG, PNG, WebP или TIFF до ${MAX_UPLOAD_BYTES / 1024 / 1024} МБ; сервер сам сделает три размера</span></label>
+<input type="file" id="new_file_${n}" name="new_file_${n}" accept="image/jpeg,image/png,image/webp,image/tiff">
+<div class="f" style="display:grid;grid-template-columns:1fr 1fr;gap:.2rem .8rem">
+${imgField('Описание для скринридера', `new_alt_${n}`, '', { wide: true, hint: 'кто или что на снимке' })}
+${imgField('Подпись под фото', `new_caption_${n}`, '', { wide: true, hint: 'необязательно, например «Н. Ф. Насонов, 1910-е»' })}
+${imgField('Автор', `new_author_${n}`, '', { hint: 'фотограф, студия или «из семейного архива»' })}
+${imgField('Лицензия или условия', `new_license_${n}`, '', { hint: 'например «Публикуется с разрешения владельца архива»' })}
+${imgField('Страница лицензии (URL)', `new_licenseUrl_${n}`, '', { type: 'url' })}
+${imgField('Источник (URL)', `new_sourceUrl_${n}`, '', { type: 'url', hint: 'если есть в интернете' })}
+</div>
+<label class="inline-check"><input type="radio" name="main" value="n${n}"> сделать главным (миниатюра в карточке)</label></details>`;
+  return html`<fieldset class="photos"><legend>Фотографии</legend>
+<p class="muted">Главное фото показывается в карточке и вверху страницы, остальные идут галереей под статьёй. Чтобы поставить снимок внутри статьи, скопируйте строку из поля «В статью» в текст выше. Всё применяется кнопкой «Сохранить» внизу.</p>
+<input type="hidden" name="img_count" value="${imgs.length}">
+${imgs.map((img, i) => html`<div class="img"><div><img src="${mediaUrl(sizedKey(img.key, '-160'))}" alt="" loading="lazy"></div><div>
+<div class="f">
+${imgField('Описание для скринридера', `img_alt_${i}`, img.alt, { wide: true, required: true })}
+${imgField('Подпись под фото', `img_caption_${i}`, img.caption, { wide: true })}
+${imgField('Автор', `img_author_${i}`, img.author, { required: true })}
+${imgField('Лицензия или условия', `img_license_${i}`, img.license, { required: true })}
+${imgField('Страница лицензии (URL)', `img_licenseUrl_${i}`, img.licenseUrl, { type: 'url' })}
+${imgField('Источник (URL)', `img_sourceUrl_${i}`, img.sourceUrl, { type: 'url' })}
+</div>
+<input type="hidden" name="img_key_${i}" value="${img.key}">
+<label for="snip_${i}" style="font-size:.85rem">В статью <span class="hint">— скопируйте и вставьте в текст</span></label>
+<input type="text" id="snip_${i}" class="snippet" readonly value="![${img.alt.replace(/[\[\]]/g, '')}](${mediaUrl(sizedKey(img.key, '-640'))})">
+<label class="inline-check"><input type="radio" name="main" value="i${i}" ${i === 0 ? 'checked' : ''}> главное</label>
+<label class="inline-check"><input type="checkbox" name="img_del_${i}"> убрать из записи <span class="hint">(файл в хранилище остаётся)</span></label>
+</div></div>`)}
+${media
+  ? html`<h3 style="margin:1rem 0 .3rem;font-size:1rem">Добавить фото</h3>${NEW_SLOTS.map(slot)}<p class="muted">Хранилище: ${media.describe()}.</p>`
+  : html`<p class="msg err">Загрузка фото отключена: на сервере не заданы ключи S3 (S3_ACCESS_KEY_ID и S3_SECRET_ACCESS_KEY, см. DEPLOY.md).</p>`}
+</fieldset>`;
 }
 
 const fmtDate = (iso: string) => new Date(iso).toLocaleString('ru-RU', { timeZone: 'Asia/Irkutsk', dateStyle: 'short', timeStyle: 'short' });

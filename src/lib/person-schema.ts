@@ -7,6 +7,18 @@ import { SPHERES, ERAS, CONNECTIONS, DISTRICTS } from './taxonomy';
 const keys = <T extends Record<string, unknown>>(o: T) => Object.keys(o) as [keyof T & string, ...(keyof T & string)[]];
 
 export function personSchema(z: typeof Zod) {
+  const image = z.object({
+    // относительный ключ в бакете, напр. persons/<slug>.webp (+ <slug>-640.webp, <slug>-160.webp)
+    key: z.string().regex(/^[a-z0-9][a-z0-9\-_/]*\.webp$/),
+    alt: z.string(),
+    // подпись под фото (необязательно)
+    caption: z.string().optional(),
+    author: z.string(),
+    license: z.string(),
+    licenseUrl: z.url().optional(),
+    // ссылка на оригинал; у снимков из семейных архивов её может не быть
+    sourceUrl: z.url().optional(),
+  });
   return z.object({
     name: z.string().min(1),
     birthYear: z.number().int().optional(),
@@ -30,18 +42,10 @@ export function personSchema(z: typeof Zod) {
         }),
       )
       .default([]),
-    // Только свободные лицензии (Wikimedia Commons и т.п.) с атрибуцией
-    photo: z
-      .object({
-        // относительный ключ в бакете, напр. persons/<slug>.webp (+ <slug>-640.webp)
-        key: z.string().regex(/^[a-z0-9][a-z0-9\-_/]*\.webp$/),
-        alt: z.string(),
-        author: z.string(),
-        license: z.string(),
-        licenseUrl: z.url().optional(),
-        sourceUrl: z.url(),
-      })
-      .optional(),
+    // Главное фото (миниатюра в карточке, картинка в соцсетях). Свободная лицензия или разрешение владельца архива
+    photo: image.optional(),
+    // Дополнительные фото: показываются на странице персоны под статьёй
+    gallery: z.array(image).default([]),
     // Расширение карточки: статьи и материалы о жизни и деятельности (помимо источников фактов)
     links: z.array(z.object({ title: z.string().min(1), url: z.url() })).default([]),
     sources: z.array(z.object({ title: z.string().min(1), url: z.url() })).min(1),

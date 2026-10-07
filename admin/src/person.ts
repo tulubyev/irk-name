@@ -15,7 +15,7 @@ export function parse(content: string): { data: Record<string, unknown>; body: s
 }
 
 const ORDER = ['name', 'birthYear', 'deathYear', 'datesApproximate', 'spheres', 'era', 'summary', 'connection',
-  'connectionNote', 'places', 'photo', 'links', 'sources', 'status', 'archived'] as const;
+  'connectionNote', 'places', 'photo', 'gallery', 'links', 'sources', 'status', 'archived'] as const;
 
 /** Сериализует в Markdown с фронтматтером; значения по умолчанию (false, пустые списки) опускаются. */
 export function serialize(data: PersonData, body: string): string {
@@ -62,7 +62,60 @@ const keepOrder = (values: string[], prev: unknown) => {
   return [...values].sort((a, b) => rank(a) - rank(b));
 };
 
-export function fromForm(f: FormBody, existing: Record<string, unknown>): { data: Record<string, unknown>; body: string } {
+// ---- Фотографии ----
+
+export interface Img { key: string; alt: string; caption?: string; author: string; license: string; licenseUrl?: string; sourceUrl?: string }
+export type ImgRow = Img & { id: string };
+export const NEW_SLOTS = [1, 2, 3];
+export const MAX_UPLOAD_BYTES = 25 * 1024 * 1024;
+
+const opt = (v: unknown) => str(v) || undefined;
+const imgFields = (get: (name: string) => unknown): Img => ({
+  key: str(get('key')), alt: str(get('alt')), caption: opt(get('caption')), author: str(get('author')),
+  license: str(get('license')), licenseUrl: opt(get('licenseUrl')), sourceUrl: opt(get('sourceUrl')),
+});
+
+/** Фото записи в порядке «главное, затем галерея». */
+export function imagesOf(data: Record<string, unknown>): Img[] {
+  return [data.photo, ...((data.gallery as unknown[] | undefined) ?? [])].filter(Boolean) as Img[];
+}
+
+/** Главное фото и галерея из списка; главное — по id, иначе первое. */
+export function arrangeImages(rows: ImgRow[], mainId: string): { photo: Img | undefined; gallery: Img[] } {
+  const strip = ({ id: _id, ...img }: ImgRow): Img => JSON.parse(JSON.stringify(img));
+  const main = rows.find((r) => r.id === mainId) ?? rows[0];
+  return { photo: main ? strip(main) : undefined, gallery: rows.filter((r) => r !== main).map(strip) };
+}
+
+/** Строки уже загруженных фото из формы (с правками и отметкой «удалить»). */
+export function existingRowsFromForm(f: FormBody): { rows: ImgRow[]; mainId: string } | null {
+  if (f.img_count === undefined) return null;
+  const n = Math.min(Number(str(f.img_count)) || 0, 200);
+  const rows: ImgRow[] = [];
+  for (let i = 0; i < n; i++) {
+    if (str(f[`img_del_${i}`]) === 'on') continue;
+    rows.push({ id: `i${i}`, ...imgFields((k) => f[`img_${k}_${i}`]) });
+  }
+  return { rows, mainId: str(f.main) };
+}
+
+/** Новые файлы из формы: до трёх, каждый со своими данными об авторе и лицензии. */
+export function newUploadsFromForm(f: FormBody): { uploads: { id: string; file: File; meta: Omit<Img, 'key'> }[]; errors: string[] } {
+  const uploads: { id: string; file: File; meta: Omit<Img, 'key'> }[] = [];
+  const errors: string[] = [];
+  for (const n of NEW_SLOTS) {
+    const file = f[`new_file_${n}`];
+    if (!(file instanceof File) || file.size === 0) continue;
+    const { key: _key, ...meta } = imgFields((k) => f[`new_${k}_${n}`]);
+    const miss = ([['alt', 'описание для скринридера'], ['author', 'автор'], ['license', 'лицензия или условия публикации']] as const).filter(([k]) => !meta[k]).map(([, l]) => l);
+    if (miss.length) errors.push(`Новое фото ${n}: заполните — ${miss.join(', ')}`);
+    else if (file.size > MAX_UPLOAD_BYTES) errors.push(`Новое фото ${n}: файл больше ${MAX_UPLOAD_BYTES / 1024 / 1024} МБ`);
+    else uploads.push({ id: `n${n}`, file, meta });
+  }
+  return { uploads, errors };
+}
+
+export function fromForm(f: FormBody, existing: Record<string, unknown>): { data: Record<string, unknown>; body: string; rows: ImgRow[]; mainId: string } {
   const places = str(f.places).split('\n').map((l) => l.trim()).filter(Boolean).map((l) => {
     const [name, settlement, district, lat, lon] = l.split('|').map((x) => x.trim());
     return {
@@ -74,6 +127,11 @@ export function fromForm(f: FormBody, existing: Record<string, unknown>): { data
     };
   });
   const sources = textToLinks(f.sources);
+  const fromRows = existingRowsFromForm(f);
+  const rows: ImgRow[] = fromRows?.rows ?? imagesOf(existing).map((img, i) => ({ id: `i${i}`, ...img }));
+  const mainId = fromRows?.mainId ?? '';
+  const arranged = arrangeImages(rows, mainId);
+  const images = { photo: arranged.photo, gallery: arranged.gallery };
   const data: Record<string, unknown> = {
     name: str(f.name),
     birthYear: int(f.birthYear),
@@ -85,20 +143,19 @@ export function fromForm(f: FormBody, existing: Record<string, unknown>): { data
     connection: keepOrder(list(f.connection), existing.connection),
     connectionNote: str(f.connectionNote) || undefined,
     places,
-    // фото в этой версии админки не редактируется — сохраняем как было
-    photo: existing.photo,
+    ...images,
     links: textToLinks(f.links),
     sources,
     status: str(f.status),
     archived: f.archived === 'on',
   };
-  return { data, body: typeof f.body === 'string' ? f.body.replace(/\r\n/g, '\n') : '' };
+  return { data, body: typeof f.body === 'string' ? f.body.replace(/\r\n/g, '\n') : '', rows, mainId };
 }
 
 const LABELS: Record<string, string> = {
   name: 'Имя', birthYear: 'Год рождения', deathYear: 'Год смерти', spheres: 'Виды деятельности', era: 'Век',
   summary: 'Кратко', connection: 'Связь с регионом', connectionNote: 'Комментарий о связи', places: 'Места',
-  sources: 'Источники', links: 'Подробнее о жизни и деятельности', status: 'Проверка', photo: 'Фото', title: 'название', url: 'ссылка',
+  sources: 'Источники', gallery: 'Фотографии', alt: 'описание фото', author: 'автор фото', license: 'лицензия', caption: 'подпись', links: 'Подробнее о жизни и деятельности', status: 'Проверка', photo: 'Фото', title: 'название', url: 'ссылка',
   settlement: 'населённый пункт', district: 'район', lat: 'широта', lon: 'долгота',
 };
 export function issuesToText(err: z.ZodError): string[] {

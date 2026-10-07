@@ -38,14 +38,35 @@ const jsonLd = [
       <figure class="photo">
         <img src={mediaUrl(d.photo.key)} srcset={mediaSrcset(d.photo.key)} sizes="(max-width: 26rem) 100vw, 24rem" alt={d.photo.alt} loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true" />
         <figcaption>
-          Автор: {d.photo.author}. Лицензия:
+          {d.photo.caption && <>{d.photo.caption}. </>}
+          Автор: {d.photo.author}. Лицензия:{' '}
           {d.photo.licenseUrl ? <a href={d.photo.licenseUrl}>{d.photo.license}</a> : d.photo.license}.
-          <a href={d.photo.sourceUrl}> Источник</a>
+          {d.photo.sourceUrl && <a href={d.photo.sourceUrl}> Источник</a>}
         </figcaption>
       </figure>
     )}
     <p>{d.summary}</p>
     <Content />
+    {(d.gallery ?? []).length > 0 && (
+      <>
+        <h2>Фотографии</h2>
+        <div class="gallery">
+          {d.gallery.map((g) => (
+            <figure class="photo">
+              <a href={mediaUrl(g.key)} target="_blank" rel="noopener">
+                <img src={mediaUrl(g.key.replace(/\.webp$/, '-640.webp'))} srcset={mediaSrcset(g.key)} sizes="(max-width: 40rem) 100vw, 20rem" alt={g.alt} loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true" />
+              </a>
+              <figcaption>
+                {g.caption && <>{g.caption}. </>}
+                Автор: {g.author}. Лицензия:{' '}
+                {g.licenseUrl ? <a href={g.licenseUrl}>{g.license}</a> : g.license}.
+                {g.sourceUrl && <a href={g.sourceUrl}> Источник</a>}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </>
+    )}
     {(d.links ?? []).length > 0 && (
       <>
         <h2>Подробнее о жизни и деятельности</h2>

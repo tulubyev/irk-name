@@ -25,6 +25,16 @@ export const config = {
     apiUrl: process.env.GITHUB_API_URL ?? 'https://api.github.com',
   },
   siteUrl: process.env.SITE_URL ?? 'https://irk.name',
+  // Фото: загрузка в S3-бакет (ключи — только из окружения), просмотр — через CDN
+  cdnUrl: (process.env.PUBLIC_CDN_URL ?? 'https://cdn.irk.name').replace(/\/+$/, ''),
+  s3: {
+    endpoint: process.env.S3_ENDPOINT ?? 'https://s3.ru1.storage.beget.cloud',
+    region: process.env.S3_REGION ?? 'ru1',
+    bucket: process.env.S3_BUCKET ?? '0a011f8d633a-irk-name',
+    forcePathStyle: (process.env.S3_FORCE_PATH_STYLE ?? 'true') !== 'false',
+    accessKeyId: process.env.S3_ACCESS_KEY_ID ?? '',
+    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY ?? '',
+  },
 };
 
 if (config.sessionSecret.length < 32) throw new Error('ADMIN_SESSION_SECRET должен быть не короче 32 символов');

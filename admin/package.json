@@ -4,15 +4,17 @@
   "type": "module",
   "scripts": {
     "build": "npm run build:admin && npm run build:forms",
-    "build:admin": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node24 --outfile=dist/server.mjs --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
+    "build:admin": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node24 --external:sharp --outfile=dist/server.mjs --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
     "build:forms": "esbuild src/forms.ts --bundle --platform=node --format=esm --target=node24 --outfile=dist/forms.mjs",
     "start": "node dist/server.mjs",
     "start:forms": "node dist/forms.mjs",
     "typecheck": "tsc --noEmit -p ."
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1147.0",
     "@hono/node-server": "^2.1.3",
     "hono": "^4.13.13",
+    "sharp": "^0.35.5",
     "yaml": "^2.9.1",
     "zod": "^4.6.5"
   },
