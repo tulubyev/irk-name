@@ -38,6 +38,8 @@ h1, h2, h3, .logo { font-family: var(--font-head); font-weight: 700; }
 [hidden] { display: none !important; }
 html { font-size: 106.25%; -webkit-text-size-adjust: 100%; }
 body {
+  min-height: 100vh; min-height: 100dvh;
+  display: flex; flex-direction: column;
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -46,7 +48,9 @@ body {
 }
 a { color: var(--accent); text-underline-offset: 0.18em; }
 a:hover { text-decoration-thickness: 2px; }
-.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1rem; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1rem; width: 100%; box-sizing: border-box; }
+main.wrap { flex: 1 0 auto; }
+footer.site { margin-top: auto; }
 header.site { border-bottom: 1px solid var(--border); background: var(--surface); }
 header.site .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; padding-block: 0.75rem; }
 .logo { font-weight: 700; font-size: 1.3rem; text-decoration: none; color: var(--text); letter-spacing: 0.01em; }
@@ -261,15 +265,16 @@ button.submit { font: inherit; font-weight: 600; cursor: pointer; border: none; 
 button.submit:hover { opacity: 0.9; }
 @media (max-width: 36rem) { .suggest-form .form-row { grid-template-columns: 1fr; } }
 
-/* ---- Прокрутка на главной ---- */
-.more-sentinel { height: 1px; }
-button.to-top {
-  position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 30;
-  width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid var(--border);
-  background: var(--surface); color: var(--accent); font: 600 1.2rem/1 var(--font-text); cursor: pointer;
-  box-shadow: 0 4px 14px rgb(0 0 0 / 0.15);
+/* ---- Постраничная выдача на главной ---- */
+.pager { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.35rem; margin-top: 1rem; font-family: var(--font-text); }
+.pager button {
+  font: inherit; min-width: 2.4rem; height: 2.4rem; padding: 0 0.6rem; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 0.5rem; background: var(--surface); color: var(--text);
 }
-button.to-top:hover { border-color: var(--accent); }
+.pager button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.pager button.cur { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); font-weight: 600; }
+.pager button:disabled { opacity: 0.4; cursor: default; }
+.pager span { color: var(--muted); padding: 0 0.15rem; }
 
 /* Блок «Ещё по теме» на странице персоны */
 .related { margin-top: 0.5rem; }
