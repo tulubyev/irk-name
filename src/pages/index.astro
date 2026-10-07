@@ -90,6 +90,26 @@ const jsonLd = siteLd(description);
       var TITLE = { era: 'Время', sphere: 'Занятие', district: 'Место' };
       var LABELS = JSON.parse(document.getElementById('filter-labels').textContent);
 
+      // Перемешивание карточек: Fisher-Yates shuffle
+      function shuffle(arr) {
+        for (var i = arr.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+        }
+        return arr;
+      }
+
+      // Перемешиваем карточки при первой загрузке (если нет параметров фильтрации в URL)
+      var params = new URLSearchParams(location.search);
+      var hasFilters = params.has('vek') || params.has('sfera') || params.has('rayon') || params.has('q');
+      if (!hasFilters) {
+        items = shuffle(items);
+        var listEl = document.getElementById('list');
+        items.forEach(function (li) { listEl.appendChild(li); });
+      }
+
       function selected(group) {
         return boxes.filter(function (b) { return b.dataset.group === group && b.checked; }).map(function (b) { return b.value; });
       }
