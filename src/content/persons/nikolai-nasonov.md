@@ -15,13 +15,18 @@ places:
     settlement: Иркутск
     district: g-irkutsk
 photo:
-  key: persons/nikolai-nasonov.webp
+  key: persons/nikolai-nasonov-8c360cd94f.webp
   alt: Портрет Николая Фёдоровича Насонова в военной форме с наградами
-  caption: Портрет Николая Фёдоровича Насонова в военной форме с наградами
-  author: Фотоателье Р. И. Каупе, Иркутск; из семейного архива потомков
-  license: Публикуется с разрешения владельца семейного архива
-  sourceUrl: https://irk.name/persona/nikolai-nasonov/
+  caption: Портрет Николая Фёдоровича Насонова в военной форме с наградами 1910 год
+  author: Фотоателье Р. И. Каупе, Иркутск;
+  license: Из семейного архива
 gallery:
+  - key: persons/nikolai-nasonov.webp
+    alt: Портрет Николая Фёдоровича Насонова в военной форме с наградами
+    caption: Портрет Николая Фёдоровича Насонова в военной форме с наградами
+    author: Фотоателье Р. И. Каупе, Иркутск; из семейного архива потомков
+    license: Публикуется с разрешения владельца семейного архива
+    sourceUrl: https://irk.name/persona/nikolai-nasonov/
   - key: persons/nikolai-nasonov-3406890d47.webp
     alt: Насонов Н.Ф. в военной форме
     caption: Насонов Н.Ф. в военной форме
