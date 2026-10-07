@@ -1,8 +1,11 @@
 ---
-name: "Олег Владимирович Васильев, доктор наук, профессор"
+name: "Олег Владимирович Васильев"
 birthYear: 1939
 deathYear: 2002
-spheres: [nauka, uchenyj]
+spheres: ["uchenyj"]
+era: xx
+summary: "Доктор наук, профессор. Один из основателей иркутской школы оптимального управления. Декан математического факультета, заведующий кафедрой вычислительной математики, основатель и директор Института математики и экономики ИГУ. Почётный работник науки Российской Федерации."
+connection: ["work"]
 sources:
   - title: "On the 75th anniversary of professor O. V. Vasiliev"
     url: "https://geodesic.mathdoc.fr/item/IIGUM_2014_8_a0"

@@ -1,7 +1,10 @@
 ---
-name: "Юрий Викторович Парфенов, доктор наук, профессор"
+name: "Юрий Викторович Парфенов"
 birthYear: 1940
-spheres: [nauka, uchenyj]
+spheres: ["uchenyj"]
+era: xx
+summary: "Доктор наук, профессор физики ИГУ. Участник создания нейтринного телескопа на озере Байкал и детектора космических лучей Tunka-25, превратившихся в установки Baikal-GVD, Tunka-133 и Tunka-GRANDE. Уважаемый коллега и наставник в области высокоэнергетической физики."
+connection: ["work"]
 sources:
   - title: "Парфенов - Памяти профессора"
     url: "https://www.pd.isu.ru/sost/teor_phi/korenb/TDSPh/parfenov_2020_4.pdf"

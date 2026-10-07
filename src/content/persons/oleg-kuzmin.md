@@ -1,7 +1,10 @@
 ---
-name: "Олег Викторович Кузьмин, доктор наук, профессор"
+name: "Олег Викторович Кузьмин"
 birthYear: 1950
-spheres: [nauka, uchenyj]
+spheres: ["uchenyj"]
+era: xx
+summary: "Доктор наук, профессор математики ИГУ. С 2003 года возглавляет кафедру теории вероятностей и дискретной математики. Активный член математического сообщества Иркутска, внес значительный вклад в развитие кафедры в Институте математики и информационных технологий."
+connection: ["work"]
 sources:
   - title: "Department of Probability Theory and Discrete Mathematics"
     url: "https://math.isu.ru/export/sites/math/ru/chairs/is/.galleries/docs/50doklad.pdf"

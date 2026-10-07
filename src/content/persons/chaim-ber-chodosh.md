@@ -1,8 +1,11 @@
 ---
-name: "Хаим-Бер Гершонович Ходош, доктор медицинских наук, профессор"
+name: "Хаим-Бер Гершонович Ходош"
 birthYear: 1897
 deathYear: 1995
-spheres: [nauka, vrach, uchenyj]
+spheres: ["vrach", "uchenyj"]
+era: xx
+summary: "Доктор медицинских наук, профессор. Основатель иркутской неврологической школы. Один из первых советских докторов наук в области неврологии. Автор переиздаваемого учебника по нервным болезням. Заслуженный деятель науки РСФСР (1967). Подготовил множество специалистов-неврологов."
+connection: ["work"]
 sources:
   - title: "Chaim-Ber Gershonovich Chodosh - Wikipedia"
     url: "https://en.wikipedia.org/wiki/Chaim-Ber_Gershonovich_Chodosh"

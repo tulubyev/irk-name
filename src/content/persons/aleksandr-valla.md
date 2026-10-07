@@ -1,8 +1,11 @@
 ---
-name: "Александр Николаевич Валла, доктор наук, профессор"
+name: "Александр Николаевич Валла"
 birthYear: 1938
 deathYear: 2016
-spheres: [nauka, uchenyj]
+spheres: ["uchenyj"]
+era: xx
+summary: "Доктор физико-математических наук, профессор. Заведующий кафедрой теоретической физики ИГУ (1987-2015). Организатор Байкальской летней школы по физике элементарных частиц."
+connection: ["work"]
 sources:
   - title: "Кожев и Валла: памяти профессора А.Н.Валла"
     url: "https://physdep.isu.ru/export/sites/physdep/ru/departments/theory/.galleries/docs/Kozhev_Vall.pdf"

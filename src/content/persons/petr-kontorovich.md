@@ -1,8 +1,11 @@
 ---
-name: "Петр Григорьевич Конторович, доктор наук, профессор"
+name: "Петр Григорьевич Конторович"
 birthYear: 1920
 deathYear: 1990
-spheres: [nauka, uchenyj]
+spheres: ["uchenyj"]
+era: xx
+summary: "Доктор наук, профессор. Советский математик и научный руководитель на Урале. Руководил работой 22 студентов (1947-1968). Среди его студентов выдающиеся математики Лев Шеврин, Виктор Бусаркин и Юрий Гуревич. Специалист в области абстрактной алгебры и теории групп."
+connection: ["work"]
 sources:
   - title: "Petr Grigoryevich Kontorovich - Mathematics Genealogy Project"
     url: "https://mathgenealogy.org/id.php?id=21181"

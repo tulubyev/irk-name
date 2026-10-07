@@ -1,7 +1,10 @@
 ---
-name: "Игорь Владимирович Малов, доктор медицинских наук, профессор"
+name: "Игорь Владимирович Малов"
 birthYear: 1960
-spheres: [vrach, uchenyj]
+spheres: ["vrach", "uchenyj"]
+era: xx
+summary: "Доктор медицинских наук, профессор. Ректор Иркутского государственного медицинского университета. Занимает ведущую позицию в развитии высшего медицинского образования в Иркутской области. Руководит крупнейшим медицинским учебным заведением в Сибири."
+connection: ["work"]
 sources:
   - title: "IGMU - Rector Igor Vladimirovich Malov"
     url: "https://izvestiahist.isu.ru/en/article/file?id=761"

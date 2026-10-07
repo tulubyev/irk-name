@@ -1,8 +1,11 @@
 ---
-name: "Али Иванович Кокорин, доктор наук, профессор"
+name: "Али Иванович Кокорин"
 birthYear: 1929
 deathYear: 1987
-spheres: [nauka, uchenyj]
+spheres: ["uchenyj"]
+era: xx
+summary: "Доктор наук, профессор. Основатель иркутской научной школы алгебры, логики и кибернетики. Работал в ИГУ (1969-1987), возглавляя кафедру алгебры и логики. Автор учебника 'Линейно упорядоченные группы'. Подготовил 11 студентов и 15 научных потомков."
+connection: ["work"]
 sources:
   - title: "Ali Ivanovich Kokorin - Mathematics Genealogy"
     url: "https://mathgenealogy.org/id.php?id=125433"
