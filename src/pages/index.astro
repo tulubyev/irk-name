@@ -72,10 +72,8 @@ const jsonLd = siteLd(description);
   <ul class="cards" id="list">
     {persons.map((p) => <PersonCard person={p} />)}
   </ul>
-  <div id="more" class="more-sentinel" aria-hidden="true"></div>
+  <nav id="pager" class="pager" aria-label="Страницы" hidden></nav>
   <p id="none" class="empty" hidden>Ничего не найдено. Попробуйте убрать часть фильтров или <a href="/predlozhit/">предложите персону</a>.</p>
-
-  <button type="button" id="to-top" class="to-top" aria-label="Наверх" hidden>↑</button>
 
   <script is:inline>
     (function () {
@@ -103,7 +101,7 @@ const jsonLd = siteLd(description);
 
       // Перемешиваем карточки при первой загрузке (если нет параметров фильтрации в URL)
       var params = new URLSearchParams(location.search);
-      var hasFilters = params.has('vek') || params.has('sfera') || params.has('rayon') || params.has('q');
+      var hasFilters = params.has('vek') || params.has('sfera') || params.has('rayon') || params.has('q') || params.has('str');
       if (!hasFilters) {
         items = shuffle(items);
         var listEl = document.getElementById('list');
@@ -118,30 +116,72 @@ const jsonLd = siteLd(description);
         var vals = (attr || '').split(' ');
         return list.some(function (v) { return vals.indexOf(v) !== -1; });
       }
-      // Бесконечная прокрутка: показываем столько карточек, сколько помещается на экран
-      // (целыми рядами под текущее число колонок), остальные — по мере прокрутки.
+      // Постраничная выдача: на странице ровно столько карточек, сколько помещается на экран
       var list = document.getElementById('list');
-      var sentinel = document.getElementById('more');
+      var pager = document.getElementById('pager');
       var matched = [];
-      var limit = 0;
-      function pageSize() {
+      var page = 1;
+      var perPage = 12;
+      function measure() {
         var cols = getComputedStyle(list).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
-        var rows = Math.max(2, Math.ceil((window.innerHeight * 1.5) / 240));
-        return cols * rows;
+        var probe = matched.length ? matched.slice(0, 12) : items.slice(0, 12);
+        var was = probe.map(function (li) { return li.hidden; });
+        probe.forEach(function (li) { li.hidden = false; });
+        var h = Math.max.apply(null, probe.map(function (li) { return li.getBoundingClientRect().height; })) || 200;
+        probe.forEach(function (li, i) { li.hidden = was[i]; });
+        var gap = parseFloat(getComputedStyle(list).rowGap) || 0;
+        var ft = document.querySelector('footer.site');
+        var foot = ft ? ft.offsetHeight : 90;
+        var top = list.getBoundingClientRect().top + window.scrollY;
+        var free = window.innerHeight - top - foot - 64;
+        var rows = Math.max(2, Math.floor((free + gap) / (h + gap)));
+        perPage = cols * rows;
+      }
+      function pageList(n, cur) {
+        var out = [], last = 0;
+        for (var i = 1; i <= n; i++) {
+          if (i === 1 || i === n || Math.abs(i - cur) <= 1) {
+            if (last && i - last > 1) out.push(null);
+            out.push(i); last = i;
+          }
+        }
+        return out;
+      }
+      function renderPager(total) {
+        pager.hidden = total <= 1;
+        pager.textContent = '';
+        if (total <= 1) return;
+        function btn(label, target, opts) {
+          var b = document.createElement('button');
+          b.type = 'button'; b.textContent = label;
+          if (opts && opts.cur) { b.className = 'cur'; b.setAttribute('aria-current', 'page'); }
+          if (opts && opts.aria) b.setAttribute('aria-label', opts.aria);
+          if (opts && opts.off) b.disabled = true;
+          else b.addEventListener('click', function () { go(target); });
+          pager.appendChild(b);
+        }
+        btn('←', page - 1, { aria: 'Предыдущая страница', off: page === 1 });
+        pageList(total, page).forEach(function (n) {
+          if (n === null) { var s = document.createElement('span'); s.textContent = '…'; pager.appendChild(s); }
+          else btn(String(n), n, { cur: n === page });
+        });
+        btn('→', page + 1, { aria: 'Следующая страница', off: page === total });
       }
       function render() {
+        var total = Math.max(1, Math.ceil(matched.length / perPage));
+        page = Math.min(Math.max(page, 1), total);
         var visible = {};
-        matched.slice(0, limit).forEach(function (li) { visible[li.id] = true; });
+        matched.slice((page - 1) * perPage, page * perPage).forEach(function (li) { visible[li.id] = true; });
         items.forEach(function (li) { li.hidden = !visible[li.id]; });
-        sentinel.hidden = matched.length <= limit;
+        renderPager(total);
       }
-      function more() {
-        if (matched.length <= limit) return;
-        limit += pageSize();
-        render();
+      function go(n) {
+        page = n; render(); syncUrl();
+        window.scrollTo({ top: 0 });
       }
       items.forEach(function (li, i) { li.id = li.id || 'p' + i; });
 
+      var fromFilter = true;
       function apply() {
         var state = { era: selected('era'), sphere: selected('sphere'), district: selected('district') };
         var terms = q.value.toLowerCase().replace(/ё/g, 'е').split(/\s+/).filter(Boolean);
@@ -156,7 +196,8 @@ const jsonLd = siteLd(description);
           if (ok) matched.push(li);
         });
         shown = matched.length;
-        limit = pageSize();
+        if (fromFilter) page = 1;
+        measure();
         render();
         var filtered = terms.length || state.era.length || state.sphere.length || state.district.length;
         var parts = [];
@@ -179,9 +220,13 @@ const jsonLd = siteLd(description);
           all.checked = n > 0 && n === avail.length;
           all.indeterminate = n > 0 && n < avail.length;
         });
+        syncUrl();
+      }
+      function syncUrl() {
         var p = new URLSearchParams();
-        Object.keys(PARAM).forEach(function (g) { if (state[g].length) p.set(PARAM[g], state[g].join(',')); });
+        Object.keys(PARAM).forEach(function (g) { var v = selected(g); if (v.length) p.set(PARAM[g], v.join(',')); });
         if (q.value) p.set('q', q.value);
+        if (page > 1) p.set('str', String(page));
         var s = p.toString();
         try { history.replaceState(null, '', location.pathname + (s ? '?' + s : '')); } catch (e) {}
       }
@@ -229,23 +274,22 @@ const jsonLd = siteLd(description);
       });
       q.value = params.get('q') || '';
       apply();
+      fromFilter = false;
+      var startPage = parseInt(params.get('str') || '1', 10);
+      if (startPage > 1) { page = startPage; render(); syncUrl(); }
 
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver(function (entries) {
-          if (entries.some(function (e) { return e.isIntersecting; })) more();
-        }, { rootMargin: '800px 0px' }).observe(sentinel);
-      } else {
-        limit = Infinity; render();
-      }
       var resizeTimer;
-      window.addEventListener('resize', function () {
+      function relayout() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () { limit = Math.max(limit, pageSize()); render(); }, 150);
-      });
-
-      var toTop = document.getElementById('to-top');
-      window.addEventListener('scroll', function () { toTop.hidden = window.scrollY < window.innerHeight * 1.5; }, { passive: true });
-      toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        resizeTimer = setTimeout(function () {
+          var first = matched.indexOf(items.filter(function (li) { return !li.hidden; })[0]);
+          measure();
+          page = first < 0 ? 1 : Math.floor(first / perPage) + 1;
+          render();
+        }, 150);
+      }
+      window.addEventListener('resize', relayout);
+      window.addEventListener('load', relayout);
     })();
   </script>
 </Base>
