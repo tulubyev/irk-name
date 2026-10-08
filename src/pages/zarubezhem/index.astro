@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import { getPersons, SITE } from '../../lib/persons';
+import { biographies, clip, namesOf, collectionLd, breadcrumbLd, plural, BRAND } from '../../lib/seo';
+const all = await getPersons();
+const list = all.filter((p) => p.data.countries.length > 0);
+const countries = [...new Set(list.flatMap((p) => p.data.countries))]
+  .map((c) => ({ name: c, items: list.filter((p) => p.data.countries.includes(c)) }))
+  .sort((a, b) => b.items.length - a.items.length || a.name.localeCompare(b.name, 'ru'));
+const anchor = (c: string) => c.replace(/\s+/g, '-');
+const url = `${SITE}/zarubezhem/`;
+const title = 'Иркутяне за рубежом';
+const description = clip(`Иркутяне за рубежом: ${biographies(list.length)} уроженцев и жителей Иркутска и Иркутской области, живших и работавших в ${countries.length} ${plural(countries.length, ['стране', 'странах', 'странах'])} — ${namesOf(list)} и другие. Годы жизни, чем известны, источники.`, 300);
+const jsonLd = [
+  collectionLd({ name: title, url, description, persons: list }),
+  breadcrumbLd([{ name: 'Все имена', url: `${SITE}/` }, { name: title, url }]),
+];
+---
+<Base title={title} fullTitle={`${title}: знаменитые уроженцы Иркутска за границей | ${BRAND}`} description={description} jsonLd={jsonLd}>
+  <nav class="breadcrumbs"><a href="/">Все имена</a> › {title}</nav>
+  <h1>{title}</h1>
+  <p class="lead">{biographies(list.length)} людей, связанных с Иркутском и Иркутской областью, которые жили или работали за пределами России: эмигранты разных волн, учёные, артисты, спортсмены. Годы жизни, чем известен каждый и источники — на страницах персон.</p>
+  <ul class="chips">
+    {countries.map((c) => <li><a class="chip" href={`#${anchor(c.name)}`}>{c.name} · {c.items.length}</a></li>)}
+  </ul>
+  {countries.map((c) => (
+    <section id={anchor(c.name)} class="country">
+      <h2>{c.name}</h2>
+      <ul class="cards">{c.items.map((p) => <PersonCard person={p} />)}</ul>
+    </section>
+  ))}
+  <p class="empty">Знаете иркутянина, который живёт или жил за границей? <a href="/predlozhit/">Предложите персону</a>.</p>
+</Base>

@@ -96,6 +96,7 @@ const jsonLd = [
           </dd>
         </>
       )}
+      {(d.countries ?? []).length > 0 && (<><dt>За рубежом</dt><dd><a href="/zarubezhem/">{d.countries.join(', ')}</a></dd></>)}
       <dt>Сферы</dt>
       <dd>{d.spheres.map((s, i) => <>{i > 0 && ', '}<a href={`/sfera/${s}/`}>{SPHERES[s]}</a></>)}</dd>
       <dt>Век</dt>
