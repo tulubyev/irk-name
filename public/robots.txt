@@ -5,6 +5,6 @@ Disallow: /api/
 Disallow: /predlozhit/spasibo/
 
 # Яндекс: параметры фильтров главной не создают отдельных страниц
-Clean-param: vek&sfera&rayon&q /
+Clean-param: vek&sfera&rayon&q&str /
 
 Sitemap: https://irk.name/sitemap-index.xml
