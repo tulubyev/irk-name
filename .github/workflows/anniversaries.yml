@@ -1,0 +1,34 @@
+name: Юбилеи
+# Раз в месяц собирает черновик пресс-пакета на ближайшие юбилеи и открывает issue.
+on:
+  schedule:
+    - cron: '17 6 1 * *'
+  workflow_dispatch:
+    inputs:
+      year:
+        description: Год для анализа (по умолчанию — текущий)
+        required: false
+permissions:
+  contents: read
+  issues: write
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - name: Сформировать отчёт
+        env:
+          YEAR_IN: ${{ inputs.year }}
+        run: node scripts/anniversaries.mjs --year "${YEAR_IN:-$(date +%Y)}" --out report.md
+      - uses: actions/upload-artifact@v4
+        with: { name: anniversaries, path: report.md }
+      - name: Открыть issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YEAR_IN: ${{ inputs.year }}
+        run: |
+          Y="${YEAR_IN:-$(date +%Y)}"
+          M="$(date +%Y-%m)"
+          gh issue create --title "Юбилеи $Y: пресс-пакет ($M)" --body-file report.md
