@@ -19,8 +19,7 @@ sources:
     url: "https://www.istu.edu/person/37217"
   - title: "Pribaikal.ru: Борис Александрович Говорин. Мэр города Иркутска 1994–1997"
     url: "https://www.pribaikal.ru/obl-events/article/14917.html"
-status: needs-check
-archived: true
+status: verified
 ---
 
 Окончил Иркутский политехнический институт, Новосибирскую высшую партийную школу и Иркутский государственный университет. В 1994–1997 годах — мэр Иркутска.

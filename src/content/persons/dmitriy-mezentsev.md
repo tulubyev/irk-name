@@ -17,8 +17,7 @@ sources:
     url: "https://www.kommersant.ru/doc/3961268"
   - title: "Лента.ру: Мезенцев, Дмитрий"
     url: "https://lenta.ru/lib/14212155/"
-status: needs-check
-archived: true
+status: verified
 ---
 
 Родился в Ленинграде, в 1981 году окончил Ленинградский институт инженеров железнодорожного транспорта, кандидат психологических наук.

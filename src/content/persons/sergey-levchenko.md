@@ -17,8 +17,7 @@ sources:
     url: "https://www.tadviser.ru/index.php/%D0%9F%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0:%D0%9B%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%BE_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D0%B8%D1%87"
   - title: "Глобал38: Левченко Сергей Георгиевич"
     url: "https://global38.ru/person/id/124"
-status: needs-check
-archived: true
+status: verified
 ---
 
 Родился в Новосибирске, окончил Новосибирский инженерно-строительный институт (1976) и Российскую академию государственной службы (1993). Депутат Государственной думы III, V, VI и VIII созывов, член Президиума ЦК КПРФ.
