@@ -13,7 +13,7 @@ places:
     district: g-irkutsk
   - name: "Китай"
   - name: "Бразилия"
-countries: ["Китай", "Бразилия"]
+countries: ["Бразилия"]
 photo:
   key: "persons/valeriy-pereleshin.webp"
   alt: "Портрет: Валерия Перелешина"

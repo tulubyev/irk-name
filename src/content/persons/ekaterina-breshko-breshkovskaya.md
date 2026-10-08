@@ -14,7 +14,7 @@ places:
   - name: "Чехословакия"
   - name: "США"
   - name: "Франция"
-countries: ["Чехословакия", "США", "Франция"]
+countries: ["Чехословакия"]
 photo:
   key: "persons/ekaterina-breshko-breshkovskaya.webp"
   alt: "Портрет: Екатерины Брешко-Брешковской"

@@ -14,7 +14,7 @@ places:
   - name: "Швейцария"
   - name: "Великобритания"
   - name: "Франция"
-countries: ["Швейцария", "Великобритания", "Франция"]
+countries: ["Франция"]
 photo:
   key: "persons/vladimir-burtsev.webp"
   alt: "Портрет: Владимира Бурцева"

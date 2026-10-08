@@ -13,7 +13,7 @@ places:
     district: g-irkutsk
   - name: "Франция"
   - name: "Бельгия"
-countries: ["Франция", "Бельгия"]
+countries: ["Бельгия"]
 photo:
   key: "persons/aleksandr-veretennikov.webp"
   alt: "Портрет: Александра Веретенникова"

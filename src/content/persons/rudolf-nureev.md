@@ -15,7 +15,7 @@ places:
   - name: "Франция"
   - name: "Австрия"
   - name: "США"
-countries: ["Великобритания", "Франция", "Австрия", "США"]
+countries: ["Франция"]
 photo:
   key: "persons/rudolf-nureev.webp"
   alt: "Портрет: Рудольфа Нуреева"

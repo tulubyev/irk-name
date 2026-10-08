@@ -157,7 +157,7 @@ const LABELS: Record<string, string> = {
   name: 'Имя', birthYear: 'Год рождения', deathYear: 'Год смерти', spheres: 'Виды деятельности', era: 'Век',
   summary: 'Кратко', connection: 'Связь с регионом', connectionNote: 'Комментарий о связи', places: 'Места',
   sources: 'Источники', gallery: 'Фотографии', alt: 'описание фото', author: 'автор фото', license: 'лицензия', caption: 'подпись', links: 'Подробнее о жизни и деятельности', status: 'Проверка', photo: 'Фото', title: 'название', url: 'ссылка',
-  countries: 'Страны за рубежом', settlement: 'населённый пункт', district: 'район', lat: 'широта', lon: 'долгота',
+  countries: 'Страна за рубежом', settlement: 'населённый пункт', district: 'район', lat: 'широта', lon: 'долгота',
 };
 export function issuesToText(err: z.ZodError): string[] {
   return err.issues.map((i) => {
