@@ -13,7 +13,7 @@ export const VERIFICATION = {
 };
 
 // Номер счётчика Яндекс.Метрики (metrica.yandex.ru). Пусто — счётчик, уведомление о cookie и разделы о счётчике в политиках не выводятся.
-export const METRIKA_ID = '';
+export const METRIKA_ID = '113547234';
 
 export function plural(n: number, forms: [string, string, string]): string {
   const m10 = n % 10;
