@@ -21,12 +21,6 @@ photo:
   author: Фотоателье Р. И. Каупе, Иркутск;
   license: Из семейного архива
 gallery:
-  - key: persons/nikolai-nasonov.webp
-    alt: Портрет Николая Фёдоровича Насонова в военной форме с наградами
-    caption: Портрет Николая Фёдоровича Насонова в военной форме с наградами
-    author: Фотоателье Р. И. Каупе, Иркутск; из семейного архива потомков
-    license: Публикуется с разрешения владельца семейного архива
-    sourceUrl: https://irk.name/persona/nikolai-nasonov/
   - key: persons/nikolai-nasonov-3406890d47.webp
     alt: Насонов Н.Ф. в военной форме
     caption: Насонов Н.Ф. в военной форме
