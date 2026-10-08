@@ -20,8 +20,7 @@ sources:
     url: "https://tass.ru/encyclopedia/person/eroschenko-sergey-vladimirovich"
   - title: "АиФ Иркутск: Сергей Ерощенко. Досье"
     url: "https://irk.aif.ru/politic/person/sergey_eroshchenko_dose"
-status: needs-check
-archived: true
+status: verified
 ---
 
 Окончил Иркутский государственный университет (1983) по специальности «физик». С 1992 года заведовал лабораторией физической химии природного сырья Иркутского института органической химии, с 1996 года — генеральный директор ЗАО «Истлэнд».
