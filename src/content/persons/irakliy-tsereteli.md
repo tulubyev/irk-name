@@ -14,7 +14,7 @@ places:
   - name: "Франция"
   - name: "США"
   - name: "Грузия"
-countries: ["Франция", "США", "Грузия"]
+countries: ["США"]
 photo:
   key: "persons/irakliy-tsereteli.webp"
   alt: "Портрет: Ираклия Церетели"

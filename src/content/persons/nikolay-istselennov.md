@@ -13,7 +13,7 @@ places:
     district: g-irkutsk
   - name: "Франция"
   - name: "Бельгия"
-countries: ["Франция", "Бельгия"]
+countries: ["Франция"]
 sources:
   - title: "Исцеленнов, Николай Иванович — Википедия (ru)"
     url: "https://ru.wikipedia.org/wiki/%D0%98%D1%81%D1%86%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"

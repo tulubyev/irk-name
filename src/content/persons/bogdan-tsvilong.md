@@ -13,7 +13,7 @@ places:
     district: g-irkutsk
   - name: "Польша"
   - name: "Великобритания"
-countries: ["Польша", "Великобритания"]
+countries: ["Великобритания"]
 sources:
   - title: "Bohdan Cwilong — Википедия (pl)"
     url: "https://pl.wikipedia.org/wiki/Bohdan_Cwilong"

@@ -13,7 +13,7 @@ places:
     district: g-irkutsk
   - name: "Китай"
   - name: "США"
-countries: ["Китай", "США"]
+countries: ["США"]
 sources:
   - title: "Иннокентий (Быстров) — Википедия (ru)"
     url: "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%BD%D0%BE%D0%BA%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_(%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D0%B2)"

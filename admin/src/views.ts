@@ -107,7 +107,7 @@ ${opts.isNew
 <label for="connectionNote">Комментарий о связи</label><textarea id="connectionNote" name="connectionNote" style="min-height:4rem;font-family:inherit">${d.connectionNote ?? ''}</textarea>
 <label for="places">Места <span class="hint">— одно на строку: Название | Населённый пункт | район | широта | долгота. Районы: ${Object.keys(DISTRICTS).join(', ')}</span></label>
 <textarea id="places" name="places">${placesToText(d.places as PersonData['places'])}</textarea>
-<label for="countries">Страны за рубежом <span class="hint">— через запятую, где жил или работал вне России; такие записи попадают в подборку «Иркутяне за рубежом». Необязательно.</span></label>
+<label for="countries">Страна за рубежом <span class="hint">— одна страна вне России, где человек скончался или живёт сейчас; такие записи попадают в подборку «Иркутяне за рубежом». Необязательно.</span></label>
 <input type="text" id="countries" name="countries" value="${(Array.isArray(d.countries) ? d.countries.join(', ') : '')}">
 <label for="links">Подробнее о жизни и деятельности <span class="hint">— статьи, книги, музейные страницы о человеке. Одна строка: Название | https://ссылка. Необязательно.</span></label>
 <textarea id="links" name="links">${sourcesToText(d.links as PersonData['links'])}</textarea>

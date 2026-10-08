@@ -13,7 +13,7 @@ places:
     district: g-irkutsk
   - name: "Китай"
   - name: "Израиль"
-countries: ["Китай", "Израиль"]
+countries: ["Израиль"]
 photo:
   key: "persons/aleksandr-pogrebetskiy.webp"
   alt: "Портрет: Александра Погребецкого"

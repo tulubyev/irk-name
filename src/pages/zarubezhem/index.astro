@@ -20,7 +20,6 @@ const jsonLd = [
 <Base title={title} fullTitle={`${title}: знаменитые уроженцы Иркутска за границей | ${BRAND}`} description={description} jsonLd={jsonLd}>
   <nav class="breadcrumbs"><a href="/">Все имена</a> › {title}</nav>
   <h1>{title}</h1>
-  <p class="lead">{biographies(list.length)} людей, связанных с Иркутском и Иркутской областью, которые жили или работали за пределами России: эмигранты разных волн, учёные, артисты, спортсмены. Годы жизни, чем известен каждый и источники — на страницах персон.</p>
   <ul class="chips">
     {countries.map((c) => <li><a class="chip" href={`#${anchor(c.name)}`}>{c.name} · {c.items.length}</a></li>)}
   </ul>

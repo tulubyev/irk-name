@@ -13,7 +13,7 @@ places:
     district: g-irkutsk
   - name: "Китай"
   - name: "Монголия"
-countries: ["Китай", "Монголия"]
+countries: ["Китай"]
 photo:
   key: "persons/ivan-lavrov-gubernskiy-komissar.webp"
   alt: "Портрет: Ивана Лаврова"
