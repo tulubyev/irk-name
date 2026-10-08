@@ -12,6 +12,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/ivan-tseydler.webp"
+  alt: "Портрет: Ивана Богдановича Цейдлера"
+  author: "Владимир Иванович Гау"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Vladimir_Hau5.jpg"
 sources:
   - title: "Иркипедия: Цейдлер, Иван Богданович"
     url: "http://irkipedia.ru/content/ceydler_ivan_bogdanovich"

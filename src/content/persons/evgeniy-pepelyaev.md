@@ -11,6 +11,13 @@ places:
   - name: "Бодайбо"
     settlement: "Бодайбо"
     district: bodajbinskij-rajon
+photo:
+  key: "persons/evgeniy-pepelyaev.webp"
+  alt: "Портрет: Евгения Георгиевича Пепеляева"
+  author: "НеизвестенUnknown author"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Evgeny_Pepelyaev.jpg"
 sources:
   - title: "Wikipedia: Yevgeny Pepelyaev"
     url: "https://en.wikipedia.org/wiki/Yevgeny_Pepelyaev"

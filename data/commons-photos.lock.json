@@ -1,6 +1,27 @@
 {
   "generatedBy": "scripts/fetch-commons.mjs",
   "persons": {
+    "afanasiy-beloborodov": {
+      "file": "File:Afanasy Beloborodov c. 1950s.jpg",
+      "key": "persons/afanasiy-beloborodov.webp",
+      "alt": "Портрет Афанасия Павлантьевича Белобородова",
+      "author": "Soviet Army photographer",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Afanasy_Beloborodov_c._1950s.jpg",
+      "sha1": "e930b3e1129a43eae17a89ef9328efb554ad567a",
+      "description": "then-Colonel General Afanasy Beloborodov around the 1950s"
+    },
+    "afanasiy-shchapov": {
+      "file": "File:Афанасий Прокопьевич Щапов.jpg",
+      "key": "persons/afanasiy-shchapov.webp",
+      "alt": "Портрет Афанасий Прокопьевич Щапов",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%84%D0%B0%D0%BD%D0%B0%D1%81%D0%B8%D0%B9_%D0%9F%D1%80%D0%BE%D0%BA%D0%BE%D0%BF%D1%8C%D0%B5%D0%B2%D0%B8%D1%87_%D0%A9%D0%B0%D0%BF%D0%BE%D0%B2.jpg",
+      "sha1": "2240d3550891ed41ebd45d87ad5eb5b4fc27ce87",
+      "description": "Афанасий Прокофьевич Щапов, сибирский писатель, философ, общественный деятель."
+    },
     "aleksandr-chekanovskiy": {
       "file": "File:Aleksander Czekanowski Russian Empire.jpg",
       "key": "persons/aleksandr-chekanovskiy.webp",
@@ -41,6 +62,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kolchak4.jpg",
       "sha1": "9b66a2247fe63fa10893be041e60db28d3c76194",
       "description": "Верховный правитель адмирал Колчак"
+    },
+    "aleksandr-kurzenkov": {
+      "file": "File:Курзенков Александр Георгиевич.jpg",
+      "key": "persons/aleksandr-kurzenkov.webp",
+      "alt": "Портрет Александр Георгиевич Курзенков",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D1%83%D1%80%D0%B7%D0%B5%D0%BD%D0%BA%D0%BE%D0%B2_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D0%B8%D1%87.jpg",
+      "sha1": "4391dc6e00a6db12609f93cdbd65efa3ccc90c64",
+      "description": "Герой Советского Союза Александр Георгиевич Курзенков"
     },
     "aleksandr-lavinskiy": {
       "file": "File:Portrait of Alexander Stepanovich Lavinsky.jpg",
@@ -91,6 +122,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shcherbakov_1.jpg",
       "sha1": "b37018a9210fa0f2e3e49964049abc36353e2fbe",
       "description": "Марка СССР. \"5 лет со дня смерти выдающегося деятеля большевистской партии и советского государства Щербаков Александр Сергеевич\""
+    },
+    "aleksandr-shiryamov": {
+      "file": "File:Александр Александрович Ширямов.jpg",
+      "key": "persons/aleksandr-shiryamov.webp",
+      "alt": "Портрет Александра Ширямова",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87_%D0%A8%D0%B8%D1%80%D1%8F%D0%BC%D0%BE%D0%B2.jpg",
+      "sha1": "87cc3c0020a63a91ffc8d82137afa36210b93796",
+      "description": "Александр Александрович Ширямов, председатель Иркутского ВРК (1920)"
     },
     "aleksandr-sibiryakov": {
       "file": "File:Alexander Sibiriakoff.jpg",
@@ -264,6 +305,16 @@
       "sha1": "15f33c5b7aa37c0caded90c7d79a3c8013b762c1",
       "description": "ru:Анучин, Дмитрий Гаврилович, сенатор, генерал от инфантерии."
     },
+    "dzhon-ledyard": {
+      "file": "File:John Ledyard.jpg",
+      "key": "persons/dzhon-ledyard.webp",
+      "alt": "Портрет Джона Ледьярда",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Ledyard.jpg",
+      "sha1": "30b84219ec3536c030a71e0a465ef87b720a160d",
+      "description": "en:John Ledyard."
+    },
     "dzhordzh-kennan": {
       "file": "File:George Kennan 1885.jpg",
       "key": "persons/dzhordzh-kennan.webp",
@@ -326,6 +377,17 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%BE%D0%B2_(1979).jpg",
       "sha1": "1abfbe8daaea24477ba982e964e2ab003d5ed683",
       "description": "Народный артист СССР Евгений Леонов (портрет). Москва. 1979 год."
+    },
+    "evgeniy-pepelyaev": {
+      "file": "File:Evgeny Pepelyaev.jpg",
+      "key": "persons/evgeniy-pepelyaev.webp",
+      "alt": "Портрет Евгения Георгиевича Пепеляева",
+      "author": "НеизвестенUnknown author",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evgeny_Pepelyaev.jpg",
+      "sha1": "42c5019f247d711d1af21849bd58bd31c5bfb5bf",
+      "description": "Евгений Георгиевич Пепеляев (1918 — 2013) — советский лётчик-истребитель, Герой Советского Союза (1952)"
     },
     "feliks-dzerzhinskiy": {
       "file": "File:Feliks Dzierżyński.jpg",
@@ -418,6 +480,16 @@
       "sha1": "a0be89a89889a60fb5353edce14f7e9fa63e6ed0",
       "description": "Адольф Эрман (1806-1877)"
     },
+    "gerasim-dobroserdov": {
+      "file": "File:Gerasim Dobroserdov.jpg",
+      "key": "persons/gerasim-dobroserdov.webp",
+      "alt": "Портрет епископа Герасима (Добросердова)",
+      "author": "anonimus",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gerasim_Dobroserdov.jpg",
+      "sha1": "49530403fed857432304948df32bb5681e7b8b5c",
+      "description": "Герасим (Добросердов), еп. Фотография. 60-70-е гг. XIX в."
+    },
     "grigoriy-shelikhov": {
       "file": "File:Grigory Shelikov.jpg",
       "key": "persons/grigoriy-shelikhov.webp",
@@ -438,6 +510,26 @@
       "sha1": "061917e4a8d589ad64823aee28252558f83bcd88",
       "description": "Gustav Radde's portrait"
     },
+    "innokentiy-irkutskiy": {
+      "file": "File:Portrait of Bishop Innocent of Irkutsk.jpg",
+      "key": "persons/innokentiy-irkutskiy.webp",
+      "alt": "Портрет святителя Иннокентия (Кульчицкого), епископа Иркутского",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Bishop_Innocent_of_Irkutsk.jpg",
+      "sha1": "716017ae7a9070540ef9333f80f321a19f19377a",
+      "description": "Portrait of Bishop Innokenty of Irkutsk"
+    },
+    "innokentiy-sibiryakov": {
+      "file": "File:Innokenty Sibiryakov.jpg",
+      "key": "persons/innokentiy-sibiryakov.webp",
+      "alt": "Портрет Иннокентий Михайлович Сибиряков",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Innokenty_Sibiryakov.jpg",
+      "sha1": "5659ff9623fd0b0cb969ec802b92a0753904dd82",
+      "description": "Иннокентий Сибиряков — русский меценат и благотворитель."
+    },
     "innokentiy-veniaminov": {
       "file": "File:Metropolitan Innocent of Moscow.jpg",
       "key": "persons/innokentiy-veniaminov.webp",
@@ -457,6 +549,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georgi_Johann_Gottlied_1729%E2%80%931802.jpg",
       "sha1": "170766a6baba06c5aee89408d9252a3028ef2dd0",
       "description": "Johann Gottlieb Georgi (1729–1802). German chemist, explorer, naturalist and geographer"
+    },
+    "iogann-gmelin": {
+      "file": "File:JJ Haid nach WD Majer - Johann Georg Gmelin (Schabkunst 1760).jpg",
+      "key": "persons/iogann-gmelin.webp",
+      "alt": "Портрет Иоганна Георга Гмелина (гравюра И. Я. Хайда, 1760)",
+      "author": "Иоганн Якоб Хайд / Wolfgang Dietrich Majer",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:JJ_Haid_nach_WD_Majer_-_Johann_Georg_Gmelin_(Schabkunst_1760).jpg",
+      "sha1": "37eaad7b93c4e42635340c90bc7bbbbd0dac851d",
+      "description": "Ioannes Georgivs Gmelinvs, Porträt des deutschen Botanikers Johann Georg Gmelin (1709–1755)"
     },
     "iosif-kobzon": {
       "file": "File:Official portrait of Iosif Kobzon (1).jpg",
@@ -479,6 +581,16 @@
       "sha1": "9f48f8832546b6f5063419fee68e8d30b41c41f9",
       "description": "Joseph Stalin, Secretary-general of the Communist party of Soviet Union"
     },
+    "iosif-utkin": {
+      "file": "File:Iosif Utkin.jpg",
+      "key": "persons/iosif-utkin.webp",
+      "alt": "Портрет Иосиф Павлович Уткин",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iosif_Utkin.jpg",
+      "sha1": "8f0dbdd884aaa0e76f3875e6a5d4e29f66b49797",
+      "description": "Iosif Utkin"
+    },
     "iosip-broz-tito": {
       "file": "File:Josip Broz Tito Bihać 1942.jpg",
       "key": "persons/iosip-broz-tito.webp",
@@ -488,6 +600,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Josip_Broz_Tito_Biha%C4%87_1942.jpg",
       "sha1": "23c9dde8b628ae2bfe8eafd709a92f67d7e8ecf8",
       "description": "Josip Broz Tito in Bihać in 1942"
+    },
+    "isay-faynberg": {
+      "file": "File:Исай Матвеевич Файнберг.jpg",
+      "key": "persons/isay-faynberg.webp",
+      "alt": "Портрет Исая Файнберга",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%98%D1%81%D0%B0%D0%B9_%D0%9C%D0%B0%D1%82%D0%B2%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%A4%D0%B0%D0%B9%D0%BD%D0%B1%D0%B5%D1%80%D0%B3.jpg",
+      "sha1": "a84056a73e5517f32fc389f9186c3467d56f5341",
+      "description": "Исай Матвеевич Файнберг (1846, г. Селенгинск Забайкальской области, Российская империя – 1923, г. Иркутск, РСФСР, СССР) — купец 1-й гильдии, промышленник, домовладелец."
     },
     "ivan-babushkin": {
       "file": "File:Ivan Vasilyevich Babushkin photo.jpg",
@@ -529,6 +651,15 @@
       "sha1": "4bda81448163f47793741db165ea9c03b629f686",
       "description": "Хаминов Иван Степанович — иркутсктий купец 1-й гильдии, городской голова Иркутска, меценат, почётный гражданин Иркутска."
     },
+    "ivan-lamb": {
+      "file": "File:Lamb Ivan Varfolomeevich.jpg",
+      "key": "persons/ivan-lamb.webp",
+      "alt": "Портрет Иван Варфоломеевич Ламб",
+      "author": "Приписывается: Дмитрий Григорьевич Левицкий",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lamb_Ivan_Varfolomeevich.jpg",
+      "sha1": "fe9068508e1101fa06d6d4123f3809143a474bb4"
+    },
     "ivan-naymushin": {
       "file": "File:Naymushin I.I.jpg",
       "key": "persons/ivan-naymushin.webp",
@@ -548,6 +679,26 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pestel_Ivan_Borisovich.jpg",
       "sha1": "48576e901dacec0b93f8b6d701d773ad82b7e415",
       "description": "Pestel Ivan Borisovich (1765—1843)"
+    },
+    "ivan-serebrennikov": {
+      "file": "File:Серебренников И.И. в 1930-е.png",
+      "key": "persons/ivan-serebrennikov.webp",
+      "alt": "Портрет Ивана Серебренникова",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2_%D0%98.%D0%98._%D0%B2_1930-%D0%B5.png",
+      "sha1": "6ded30bbdcb6a84940b79b6069ffeab4de6fb4c9",
+      "description": "Иван Иннокентьевич Серебренников. 1930-е годы (Из коллекции документов по истории Белого движения и эмиграции Государственного архива Российской Федерации)."
+    },
+    "ivan-tseydler": {
+      "file": "File:Vladimir Hau5.jpg",
+      "key": "persons/ivan-tseydler.webp",
+      "alt": "Портрет Ивана Богдановича Цейдлера",
+      "author": "Владимир Иванович Гау",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vladimir_Hau5.jpg",
+      "sha1": "028f08b55fe36e4264978787102b1f6a5f9e3ffd",
+      "description": "Иван Богданович Цейдлер (1777—1853)"
     },
     "ivan-yakobi": {
       "file": "File:Юзеф Олешкевич - Портрет Ивана Варфоломеевича Якоби.jpg",
@@ -733,6 +884,15 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rus_Stamp-Mil-1.jpg",
       "sha1": "6284f963a4f95e8201ea45673cf5f55f8c1191f8",
       "description": "Почтовая марка России - Миль Михаил Леонтьевич, Герой Социалистического Труда"
+    },
+    "mikhail-petrashevskiy": {
+      "file": "File:Petrashevsky.jpg",
+      "key": "persons/mikhail-petrashevskiy.webp",
+      "alt": "Портрет Михаила Буташевича-Петрашевского",
+      "author": "Автор неизвестен",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petrashevsky.jpg",
+      "sha1": "4332b7b9e81027ecbc4c4622c568e6f062afd36c"
     },
     "mikhail-romm": {
       "file": "File:Mikhail Romm by Boris Baldin 2.jpg",
@@ -1082,6 +1242,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87_%D0%A0%D1%8F%D0%B1%D0%B8%D0%BA%D0%BE%D0%B2.jpg",
       "sha1": "6a2340fe3ec3353b0a7c4748cebc40ebb158318c",
       "description": "Валентин Владимирович Рябиков (12 апреля 1883, Симбирск — 18 марта 1962, Москва) — революционер-большевик, участник установления советской власти в Восточной Сибири, член ЦИК Советов Сибири."
+    },
+    "valerian-kuybyshev": {
+      "file": "File:Валериан Владимирович Куйбышев.jpg",
+      "key": "persons/valerian-kuybyshev.webp",
+      "alt": "Портрет Валериан Владимирович Куйбышев",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D0%B0%D0%BD_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87_%D0%9A%D1%83%D0%B9%D0%B1%D1%8B%D1%88%D0%B5%D0%B2.jpg",
+      "sha1": "d11dd727eccbcc07c84312ddf727353798ee5687",
+      "description": "Валериан Владимирович Куйбышев"
     },
     "vasiliy-shukshin": {
       "file": "File:Василий Шукшин (1972).jpg",

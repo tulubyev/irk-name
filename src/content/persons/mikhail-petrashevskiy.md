@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/mikhail-petrashevskiy.webp"
+  alt: "Портрет: Михаила Буташевича-Петрашевского"
+  author: "Автор неизвестен"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Petrashevsky.jpg"
 sources:
   - title: "Википедия: Петрашевский, Михаил Васильевич"
     url: "https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%82%D1%80%D0%B0%D1%88%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87"

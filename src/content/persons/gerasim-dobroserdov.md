@@ -17,6 +17,12 @@ places:
 links:
   - title: "Азбука веры: Выдержки из дневника ученика Иркутской семинарии Егора Добросердова"
     url: "https://azbyka.ru/otechnik/Gerasim_Dobroserdov/vyderzhki-iz-dnevnika-uchenika-irkutskoj-seminarii/"
+photo:
+  key: "persons/gerasim-dobroserdov.webp"
+  alt: "Портрет: епископа Герасима (Добросердова)"
+  author: "anonimus"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Gerasim_Dobroserdov.jpg"
 sources:
   - title: "Азбука веры: святитель Герасим (Добросердов)"
     url: "https://azbyka.ru/otechnik/Gerasim_Dobroserdov/"
