@@ -15,7 +15,7 @@ export function parse(content: string): { data: Record<string, unknown>; body: s
 }
 
 const ORDER = ['name', 'birthYear', 'deathYear', 'datesApproximate', 'spheres', 'era', 'summary', 'connection',
-  'connectionNote', 'places', 'photo', 'gallery', 'links', 'sources', 'status', 'archived'] as const;
+  'connectionNote', 'places', 'countries', 'photo', 'gallery', 'links', 'sources', 'status', 'archived'] as const;
 
 /** Сериализует в Markdown с фронтматтером; значения по умолчанию (false, пустые списки) опускаются. */
 export function serialize(data: PersonData, body: string): string {
@@ -143,6 +143,7 @@ export function fromForm(f: FormBody, existing: Record<string, unknown>): { data
     connection: keepOrder(list(f.connection), existing.connection),
     connectionNote: str(f.connectionNote) || undefined,
     places,
+    countries: str(f.countries).split(',').map((c) => c.trim()).filter(Boolean),
     ...images,
     links: textToLinks(f.links),
     sources,
@@ -156,7 +157,7 @@ const LABELS: Record<string, string> = {
   name: 'Имя', birthYear: 'Год рождения', deathYear: 'Год смерти', spheres: 'Виды деятельности', era: 'Век',
   summary: 'Кратко', connection: 'Связь с регионом', connectionNote: 'Комментарий о связи', places: 'Места',
   sources: 'Источники', gallery: 'Фотографии', alt: 'описание фото', author: 'автор фото', license: 'лицензия', caption: 'подпись', links: 'Подробнее о жизни и деятельности', status: 'Проверка', photo: 'Фото', title: 'название', url: 'ссылка',
-  settlement: 'населённый пункт', district: 'район', lat: 'широта', lon: 'долгота',
+  countries: 'Страны за рубежом', settlement: 'населённый пункт', district: 'район', lat: 'широта', lon: 'долгота',
 };
 export function issuesToText(err: z.ZodError): string[] {
   return err.issues.map((i) => {
