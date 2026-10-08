@@ -282,3 +282,8 @@ button.submit:hover { opacity: 0.9; }
 
 /* Блок «Ещё по теме» на странице персоны */
 .related { margin-top: 0.5rem; }
+
+/* Уведомление о cookie (только при подключённой Метрике) */
+.cookie-note { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.6rem 1rem; padding: 0.7rem max(1rem, env(safe-area-inset-right)) calc(0.7rem + env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left)); background: var(--surface); border-top: 1px solid var(--border); box-shadow: 0 -4px 14px rgb(0 0 0 / 0.1); font-family: var(--font-text); font-size: 0.85rem; }
+.cookie-note p { margin: 0; max-width: 46rem; }
+.cookie-note button { font: inherit; cursor: pointer; border: none; border-radius: 999px; padding: 0.4rem 1.2rem; background: var(--accent); color: var(--accent-contrast); }

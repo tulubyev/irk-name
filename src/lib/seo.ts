@@ -12,6 +12,9 @@ export const VERIFICATION = {
   google: '', // Google Search Console: <meta name="google-site-verification">
 };
 
+// Номер счётчика Яндекс.Метрики (metrica.yandex.ru). Пусто — счётчик, уведомление о cookie и разделы о счётчике в политиках не выводятся.
+export const METRIKA_ID = '';
+
 export function plural(n: number, forms: [string, string, string]): string {
   const m10 = n % 10;
   const m100 = n % 100;

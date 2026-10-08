@@ -6,7 +6,7 @@ import '../styles/global.css';
 import { SITE } from '../lib/persons';
 import { COPYRIGHT_YEARS } from '../lib/operator';
 import Babr from '../components/Babr.astro';
-import { BRAND, VERIFICATION } from '../lib/seo';
+import { BRAND, VERIFICATION, METRIKA_ID } from '../lib/seo';
 
 interface Props {
   title: string;
@@ -33,6 +33,12 @@ const canonical = new URL(Astro.url.pathname, SITE).href;
 const fullTitle = fullTitleProp ?? (Astro.url.pathname === '/' ? title : `${title} — ${BRAND}`);
 const ogImage = image ?? new URL('/og.png', SITE).href;
 const defaultImage = !image; // og.png — 1200×630
+const metrikaScript = `window.addEventListener('load', function () {
+  (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })
+  (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+  ym(${Number(METRIKA_ID)}, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: false });
+});`;
 const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 <!doctype html>
@@ -67,6 +73,7 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     {jsonLdBlocks.map((b) => <script type="application/ld+json" set:html={JSON.stringify(b)} />)}
+    {METRIKA_ID && <script is:inline set:html={metrikaScript} />}
     <script is:inline>
       (function () {
         try {
@@ -100,6 +107,12 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         </nav>
       </div>
     </footer>
+    {METRIKA_ID && (
+      <div class="cookie-note" id="cookie-note" role="region" aria-label="Уведомление о cookie" hidden>
+        <p>Сайт использует Яндекс.Метрику (файлы cookie) для анонимной статистики посещений. Запись действий посетителей не ведётся. <a href="/politika-konfidencialnosti/">Подробнее</a></p>
+        <button type="button" id="cookie-ok">Понятно</button>
+      </div>
+    )}
     <script is:inline>
       document.getElementById('theme-toggle').addEventListener('click', function () {
         var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
@@ -107,5 +120,20 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         try { localStorage.setItem('theme', next); } catch (e) {}
       });
     </script>
+    {METRIKA_ID && (
+      <script is:inline>
+        (function () {
+          var box = document.getElementById('cookie-note');
+          var seen = false;
+          try { seen = localStorage.getItem('cookie-note') === '1'; } catch (e) {}
+          if (!seen && box) box.hidden = false;
+          var ok = document.getElementById('cookie-ok');
+          if (ok) ok.addEventListener('click', function () {
+            box.hidden = true;
+            try { localStorage.setItem('cookie-note', '1'); } catch (e) {}
+          });
+        })();
+      </script>
+    )}
   </body>
 </html>
