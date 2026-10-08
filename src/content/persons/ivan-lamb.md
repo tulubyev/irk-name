@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/ivan-lamb.webp"
+  alt: "Портрет: Иван Варфоломеевич Ламб"
+  author: "Приписывается: Дмитрий Григорьевич Левицкий"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Lamb_Ivan_Varfolomeevich.jpg"
 sources:
   - title: "Иркипедия: Ламб, Иван Варфоломеевич"
     url: "http://irkipedia.ru/content/lamb_ivan_varfolomeevich"

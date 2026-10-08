@@ -18,6 +18,12 @@ places:
 links:
   - title: "7ka.tv: Тайны купца Файнберга приоткрыты"
     url: "https://7ka.tv/news/34779"
+photo:
+  key: "persons/isay-faynberg.webp"
+  alt: "Портрет: Исая Файнберга"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%98%D1%81%D0%B0%D0%B9_%D0%9C%D0%B0%D1%82%D0%B2%D0%B5%D0%B5%D0%B2%D0%B8%D1%87_%D0%A4%D0%B0%D0%B9%D0%BD%D0%B1%D0%B5%D1%80%D0%B3.jpg"
 sources:
   - title: "Иркипедия: Файнберг, Исай Матвеевич"
     url: "http://irkipedia.ru/content/faynberg_isay_matveevich"

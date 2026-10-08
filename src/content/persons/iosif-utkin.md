@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/iosif-utkin.webp"
+  alt: "Портрет: Иосиф Павлович Уткин"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Iosif_Utkin.jpg"
 sources:
   - title: "Википедия: Уткин, Иосиф Павлович"
     url: "https://ru.wikipedia.org/wiki/%D0%A3%D1%82%D0%BA%D0%B8%D0%BD,_%D0%98%D0%BE%D1%81%D0%B8%D1%84_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"

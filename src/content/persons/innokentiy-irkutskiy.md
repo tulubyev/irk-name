@@ -14,6 +14,12 @@ places:
     district: g-irkutsk
     lat: 52.296
     lon: 104.277
+photo:
+  key: "persons/innokentiy-irkutskiy.webp"
+  alt: "Портрет: святителя Иннокентия (Кульчицкого), епископа Иркутского"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Portrait_of_Bishop_Innocent_of_Irkutsk.jpg"
 sources:
   - title: "Википедия: Иннокентий (Кульчицкий)"
     url: "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%BD%D0%BE%D0%BA%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_(%D0%9A%D1%83%D0%BB%D1%8C%D1%87%D0%B8%D1%86%D0%BA%D0%B8%D0%B9)"
