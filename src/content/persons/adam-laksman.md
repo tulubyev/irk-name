@@ -10,6 +10,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/adam-laksman.webp"
+  alt: "Портрет: Адама Лаксмана"
+  author: "Anonymous Japanese work, 1793"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Adam_Kirillovich_Laksman.jpg"
 sources:
   - title: "Википедия: Лаксман, Адам Эрикович"
     url: "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BA%D1%81%D0%BC%D0%B0%D0%BD,_%D0%90%D0%B4%D0%B0%D0%BC_%D0%AD%D1%80%D0%B8%D0%BA%D0%BE%D0%B2%D0%B8%D1%87"
