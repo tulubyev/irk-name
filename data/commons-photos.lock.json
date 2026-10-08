@@ -252,6 +252,17 @@
       "sha1": "8888003698ea7761078995e4b5840ba7638eae58",
       "description": "Series: \"Heads of the Government of the Soviet Union, Secretaries of the Central Committee of the All-Union Communist Party of the Soviet Union (b) and Leaders of the All-Union Communist Party of the Soviet Union and the All-Union Communist Party of the Soviet Union\". Portrait: A.I. Mikoyan."
     },
+    "anatoliy-kuznetsov-arkhiepiskop": {
+      "file": "File:Diocese of Sourozh Jubilee Congress 10-Jun-2012 226 (7419118706).jpg",
+      "key": "persons/anatoliy-kuznetsov-arkhiepiskop.webp",
+      "alt": "Архиепископ Анатолий (Кузнецов)",
+      "author": "James Hyndman",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diocese_of_Sourozh_Jubilee_Congress_10-Jun-2012_226_(7419118706).jpg",
+      "sha1": "8630a97c5bb7fe256ad6e499403082bef4bd7f2b",
+      "description": "Архиепископ Керченский Анатолий на конгрессе, посвящённом юбилею Сурожской епархии. 10 июня 2012 года"
+    },
     "anatoliy-teplyakov": {
       "file": "File:Анатолий Тепляков, Иркутск , август 2012.jpg",
       "key": "persons/anatoliy-teplyakov.webp",
@@ -282,6 +293,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chekhov_1898_by_Osip_Braz.jpg",
       "sha1": "bde99d0f17204234599f8112d20d140ccd6aa0df",
       "description": "Portrait of Anton Pavlovich Chekhov"
+    },
+    "avgust-rozental": {
+      "file": "File:August Rosenthal Autoportrait.jpg",
+      "key": "persons/avgust-rozental.webp",
+      "alt": "Автопортрет Августа Розенталя",
+      "author": "Август Розентал",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:August_Rosenthal_Autoportrait.jpg",
+      "sha1": "52c8a9a9554d0be88105624ad542a225e2f45bcf",
+      "description": "August Rosenthal, bulgarian painter (1876 - 1912)."
     },
     "avvakum-petrov": {
       "file": "File:Protopop Avvakym.jpg",
@@ -438,6 +459,17 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Evgeny_Pepelyaev.jpg",
       "sha1": "42c5019f247d711d1af21849bd58bd31c5bfb5bf",
       "description": "Евгений Георгиевич Пепеляев (1918 — 2013) — советский лётчик-истребитель, Герой Советского Союза (1952)"
+    },
+    "evgeniy-shinkarev": {
+      "file": "File:Poet Evgueni Shinkarev.jpg",
+      "key": "persons/evgeniy-shinkarev.webp",
+      "alt": "Портрет: Евгения Шинкарёва",
+      "author": "Schwamendingen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Poet_Evgueni_Shinkarev.jpg",
+      "sha1": "245224ea72706b3b23d76bbdd0e60f27958fb873",
+      "description": "Поэт Евгений Шинкарев в горах в Швейцарии"
     },
     "feliks-dzerzhinskiy": {
       "file": "File:Feliks Dzierżyński.jpg",
@@ -1270,6 +1302,17 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kalinowski1897.jpg",
       "sha1": "679c3dd6185b10e985b3e294aa579548449b8a0e",
       "description": "Photo de Raphaël Kalinowski"
+    },
+    "rudolf-nureev": {
+      "file": "File:Nureyev 9 Allan Warren.jpg",
+      "key": "persons/rudolf-nureev.webp",
+      "alt": "Портрет: Рудольфа Нуреева",
+      "author": "Allan Warren",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nureyev_9_Allan_Warren.jpg",
+      "sha1": "164dd4e3882ddf9f6f9da23bbbfbea1475da3163",
+      "description": "Rudolf Nureyev in his dressing room at the Royal Ballet School, 155 Talgarth Road, Barons Court, London."
     },
     "sergey-gerasimov": {
       "file": "File:Gerasimov S.A.jpg",
