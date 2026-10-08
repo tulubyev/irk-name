@@ -19,6 +19,12 @@ places:
   - name: "Черемхово"
     settlement: "Черемхово"
     district: g-cheremhovo
+photo:
+  key: "persons/terentiy-belousov.webp"
+  alt: "Портрет: Терентия Осиповича Белоусова"
+  author: "Карл Карлович Булла"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Belousov_TO.jpg"
 sources:
   - title: "Иркипедия: Белоусов, Терентий Осипович"
     url: "http://irkipedia.ru/content/belousov_terentiy_osipovich"

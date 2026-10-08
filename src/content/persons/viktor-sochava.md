@@ -11,6 +11,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/viktor-sochava.webp"
+  alt: "Портрет: Виктор Борисович Сочава"
+  author: "L.Sochava"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:V._B._Sochava_-_1965.jpg"
 sources:
   - title: "Сочава, Виктор Борисович. Cyclowiki"
     url: "https://cyclowiki.org/wiki/%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87_%D0%A1%D0%BE%D1%87%D0%B0%D0%B2%D0%B0"
