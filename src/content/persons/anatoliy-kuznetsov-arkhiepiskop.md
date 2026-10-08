@@ -13,6 +13,13 @@ places:
     district: g-irkutsk
   - name: "Великобритания"
 countries: ["Великобритания"]
+photo:
+  key: "persons/anatoliy-kuznetsov-arkhiepiskop.webp"
+  alt: "Архиепископ Анатолий (Кузнецов)"
+  author: "James Hyndman"
+  license: "CC BY 2.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/2.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Diocese_of_Sourozh_Jubilee_Congress_10-Jun-2012_226_(7419118706).jpg"
 sources:
   - title: "Анатолий (Кузнецов) — Википедия (ru)"
     url: "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_(%D0%9A%D1%83%D0%B7%D0%BD%D0%B5%D1%86%D0%BE%D0%B2)"
