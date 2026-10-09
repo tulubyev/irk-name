@@ -17,6 +17,12 @@ places:
   - name: "Верхоленск"
     settlement: "Верхоленск"
     district: kachugskij-rajon
+photo:
+  key: "persons/lev-trotskiy.webp"
+  alt: "Портрет Льва Троцкого"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Leon_Trotsky_(3x4_cropped).jpg"
 sources:
   - title: "Википедия: Первая ссылка Троцкого"
     url: "https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B2%D0%B0%D1%8F_%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0_%D0%A2%D1%80%D0%BE%D1%86%D0%BA%D0%BE%D0%B3%D0%BE"

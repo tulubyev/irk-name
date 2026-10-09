@@ -885,6 +885,16 @@
       "sha1": "ef78a057f700574cb3b15068b960dc74ea50c549",
       "description": "Leonid Mikhailovich Kharitonov, Russian bass-baritone singer born 1933."
     },
+    "lev-trotskiy": {
+      "file": "File:Leon Trotsky (3x4 cropped).jpg",
+      "key": "persons/lev-trotskiy.webp",
+      "alt": "Портрет Льва Троцкого",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leon_Trotsky_(3x4_cropped).jpg",
+      "sha1": "390b9f7b45ec39f796cc595bacffb6d67cae07df",
+      "description": "Photograph of Trotsky that was published on the cover of the magazine \"Prozhektor\" in January 1924."
+    },
     "lidiya-ruslanova": {
       "file": "File:Лидия Русланова в Берлине в 1945 году.jpg",
       "key": "persons/lidiya-ruslanova.webp",
@@ -945,6 +955,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bakunin.png",
       "sha1": "ce8a613381c890e329b879a2e595a3a371d11782",
       "description": "Mikhail Bakunin, russian Anarchist"
+    },
+    "mikhail-frunze": {
+      "file": "File:Mikhail Frunze by Isaak Brodsky (1929).jpg",
+      "key": "persons/mikhail-frunze.webp",
+      "alt": "Портрет Михаила Фрунзе работы Исаака Бродского",
+      "author": "Исаак Бродский",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mikhail_Frunze_by_Isaak_Brodsky_(1929).jpg",
+      "sha1": "a17289027edd0b16edc38ce30bb9d256a5697107",
+      "description": "«М.В.Фрунзе на маневрах» 1929. Холст, масло. 133 x 93 см. Central Armed Forces Museum"
     },
     "mikhail-gerasimov": {
       "file": "File:RR5110-0081R.gif",
