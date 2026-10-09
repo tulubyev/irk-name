@@ -366,6 +366,16 @@
       "sha1": "15f33c5b7aa37c0caded90c7d79a3c8013b762c1",
       "description": "ru:Анучин, Дмитрий Гаврилович, сенатор, генерал от инфантерии."
     },
+    "dmitriy-kondratev": {
+      "file": "File:Kondratyev.jpg",
+      "key": "persons/dmitriy-kondratev.webp",
+      "alt": "Портрет Дмитрия Кондратьева",
+      "author": "NASA",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kondratyev.jpg",
+      "sha1": "b205331a76b948fab9f56598cc72248a929d81e3",
+      "description": "Portrait of cosmonaut Dmitri Yurievich Kondratyev"
+    },
     "dzhon-ledyard": {
       "file": "File:John Ledyard.jpg",
       "key": "persons/dzhon-ledyard.webp",
@@ -723,6 +733,17 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ivan_Vasilyevich_Babushkin_photo.jpg",
       "sha1": "6cbbd69e961c278af11b1198409c3634bd100476",
       "description": "A photo of russian revolutioner Ivan Babuskin, worker-bolshevik."
+    },
+    "ivan-batudaev": {
+      "file": "File:Portrait of Batudaev Ivan Alexandrovich.jpg",
+      "key": "persons/ivan-batudaev.webp",
+      "alt": "Портрет Ивана Батудаева",
+      "author": "Chimit",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Batudaev_Ivan_Alexandrovich.jpg",
+      "sha1": "da8f1278202da04b38dd6c7592131de096edfbd6",
+      "description": "Батудаев Иван Александрович"
     },
     "ivan-cherskiy": {
       "file": "File:Jan Czerski.jpg",
