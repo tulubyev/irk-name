@@ -197,6 +197,16 @@ async function download(url) {
   return Buffer.from(await (await http(url)).arrayBuffer());
 }
 
+// Миниатюра с thumb.wikimedia.org доступна не из всех сетей: если не скачалась, берём оригинал.
+async function downloadImage(meta) {
+  if (!meta.thumbUrl) return download(meta.url);
+  try { return await download(meta.thumbUrl); }
+  catch (e) {
+    console.warn(`  миниатюра недоступна (${e.cause?.code ?? e.message}), берём оригинал`);
+    return download(meta.url);
+  }
+}
+
 async function savePerson(sharp, buf, mediaDir, slug) {
   const dir = join(mediaDir, 'persons');
   await mkdir(dir, { recursive: true });
@@ -277,7 +287,7 @@ export async function fetchAll({ manifest, lockPath, mediaDir, dryRun, force, on
         console.log(`= ${id}: без изменений`);
       } else {
         try {
-          if (g.kind === 'persons') await savePerson(sharp, await download(meta.thumbUrl ?? meta.url), mediaDir, id);
+          if (g.kind === 'persons') await savePerson(sharp, await downloadImage(meta), mediaDir, id);
           else entry.svg = await saveHeraldry(sharp, { ...meta }, mediaDir, id);
           stats.downloaded++;
           console.log(`↓ ${id}: ${entry.license} · ${entry.author}`);

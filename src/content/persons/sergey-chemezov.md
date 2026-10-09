@@ -13,6 +13,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/sergey-chemezov.webp"
+  alt: "Портрет Сергея Чемезова"
+  author: "Press Service"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Sergey_Chemezov_2017.jpg"
 sources:
   - title: "Википедия: Чемезов, Сергей Викторович"
     url: "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BC%D0%B5%D0%B7%D0%BE%D0%B2,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
