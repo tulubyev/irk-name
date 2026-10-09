@@ -10,6 +10,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/boris-volynov.webp"
+  alt: "Портрет Бориса Волынова"
+  author: "Press Service"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Boris_Volynov_2016.jpg"
 sources:
   - title: "Википедия: Волынов, Борис Валентинович"
     url: "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%BB%D1%8B%D0%BD%D0%BE%D0%B2,_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"

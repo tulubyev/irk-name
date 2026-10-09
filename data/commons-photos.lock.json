@@ -335,6 +335,17 @@
       "sha1": "1b8167675b0825c092b1dce0fb0c0199956c4fd5",
       "description": "ЕКАТЕРИНБУРГ. С Наиной Иосифовной на Четвертом международном турнире по волейболу среди женских национальных команд на Кубок первого Президента России Бориса Ельцина."
     },
+    "boris-volynov": {
+      "file": "File:Boris Volynov 2016.jpg",
+      "key": "persons/boris-volynov.webp",
+      "alt": "Портрет Бориса Волынова",
+      "author": "Press Service",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boris_Volynov_2016.jpg",
+      "sha1": "9c874eb1cb319f9ac0ef9faf75f51dc953122bf0",
+      "description": "Борис Валентинович Волынов (род. 1934) — лётчик-космонавт СССР"
+    },
     "daykokuya-kodayu": {
       "file": "File:Captain Daikokuya Kodayu and crewmate Isokichi 1792.png",
       "key": "persons/daykokuya-kodayu.webp",
@@ -1354,6 +1365,17 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nureyev_9_Allan_Warren.jpg",
       "sha1": "164dd4e3882ddf9f6f9da23bbbfbea1475da3163",
       "description": "Rudolf Nureyev in his dressing room at the Royal Ballet School, 155 Talgarth Road, Barons Court, London."
+    },
+    "sergey-chemezov": {
+      "file": "File:Sergey Chemezov 2017.jpg",
+      "key": "persons/sergey-chemezov.webp",
+      "alt": "Портрет Сергея Чемезова",
+      "author": "Press Service",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sergey_Chemezov_2017.jpg",
+      "sha1": "4a40b2a9c653a12a56b6710ddec1d2eebff3136c",
+      "description": "Сергей Викторович Чемезов (род.1952) — российский государственный и политический деятель"
     },
     "sergey-gerasimov": {
       "file": "File:Gerasimov S.A.jpg",
