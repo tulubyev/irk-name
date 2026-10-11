@@ -25,6 +25,8 @@ export function personSchema(z: typeof Zod) {
     deathYear: z.number().int().optional(),
     // «≈» перед годом выводится, если год приблизительный
     datesApproximate: z.boolean().default(false),
+    // год смерти умершего человека не выяснен точно: показывается «***» вместо года
+    deathYearUnknown: z.boolean().default(false),
     spheres: z.array(z.enum(keys(SPHERES))).min(1),
     era: z.enum(keys(ERAS)),
     summary: z.string().min(1).max(300),
