@@ -13,10 +13,13 @@ export async function getAllPersons({ includeArchived = false } = {}): Promise<P
   return all.sort((a, b) => a.data.name.localeCompare(b.data.name, 'ru'));
 }
 
+/** Годы жизни. Если год не выяснен точно, вместо него ставится «***». */
 export function lifespan(p: Person['data']): string {
   const a = p.datesApproximate ? '≈' : '';
-  if (!p.birthYear && !p.deathYear) return '';
-  return `${a}${p.birthYear ?? '?'}–${p.deathYear ?? ''}`.replace(/–$/, p.deathYear ? '' : '–');
+  if (!p.birthYear && !p.deathYear) return '***';
+  const birth = p.birthYear ?? '***';
+  const death = p.deathYear ?? (p.deathYearUnknown ? '***' : '');
+  return `${a}${birth}–${death}`;
 }
 
 export const SITE = 'https://irk.name';
