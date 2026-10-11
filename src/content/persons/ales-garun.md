@@ -11,6 +11,12 @@ places:
   - name: "Бодайбо"
     settlement: "Бодайбо"
     district: bodajbinskij-rajon
+photo:
+  key: "persons/ales-garun.webp"
+  alt: "Портрет: Алеся Гаруна"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Alie%C5%9B_Harun.jpg"
 sources:
   - title: "Википедия: Алесь Гарун"
     url: "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B5%D1%81%D1%8C_%D0%93%D0%B0%D1%80%D1%83%D0%BD"

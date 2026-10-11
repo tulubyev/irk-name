@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/vsevolod-vagin.webp"
+  alt: "Портрет: Всеволода Ивановича Вагина"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Vsevolod_Vagin.jpg"
 sources:
   - title: "Википедия: Вагин, Всеволод Иванович"
     url: "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%B3%D0%B8%D0%BD%2C_%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"

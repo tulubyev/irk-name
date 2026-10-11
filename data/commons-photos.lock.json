@@ -242,6 +242,16 @@
       "sha1": "6b592eda51e627f1f663681652abaf14b8a20461",
       "description": "Юшневский, Александр Петрович,"
     },
+    "ales-garun": {
+      "file": "File:Alieś Harun.jpg",
+      "key": "persons/ales-garun.webp",
+      "alt": "Портрет: Алеся Гаруна",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alie%C5%9B_Harun.jpg",
+      "sha1": "19a69529057c44fc5b4719c26701c629e6d4d0ed",
+      "description": "Алесь Гарун"
+    },
     "anastas-mikoyan": {
       "file": "File:A.I. Mikoyan TASS Portrait Trim Edit.jpg",
       "key": "persons/anastas-mikoyan.webp",
@@ -377,6 +387,16 @@
       "sha1": "15f33c5b7aa37c0caded90c7d79a3c8013b762c1",
       "description": "ru:Анучин, Дмитрий Гаврилович, сенатор, генерал от инфантерии."
     },
+    "dmitriy-davydov-poet": {
+      "file": "File:Давыдов Дмитрий Павлович.jpg",
+      "key": "persons/dmitriy-davydov-poet.webp",
+      "alt": "Портрет: Дмитрия Павловича Давыдова",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B0%D0%B2%D1%8B%D0%B4%D0%BE%D0%B2_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87.jpg",
+      "sha1": "073428f38825d62173bbc84d03f087040185caff",
+      "description": "Дмитрий Павлович Давыдов — русский этнограф, поэт и учитель, дворянин"
+    },
     "dmitriy-kondratev": {
       "file": "File:Kondratyev.jpg",
       "key": "persons/dmitriy-kondratev.webp",
@@ -386,6 +406,26 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kondratyev.jpg",
       "sha1": "b205331a76b948fab9f56598cc72248a929d81e3",
       "description": "Portrait of cosmonaut Dmitri Yurievich Kondratyev"
+    },
+    "dorzhi-banzarov": {
+      "file": "File:Banzarov phototype.jpg",
+      "key": "persons/dorzhi-banzarov.webp",
+      "alt": "Портрет: Доржи Банзарова",
+      "author": "Из собраний А. Н. Турунова",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banzarov_phototype.jpg",
+      "sha1": "ee8f25c4f0806a2a594c234920bb2b1b3753fc30",
+      "description": "Бурятский ученый Доржи Банзаров. автор неизвестен"
+    },
+    "dzhek-altauzen": {
+      "file": "File:Алтаузен Джек сов.поэт.JPG",
+      "key": "persons/dzhek-altauzen.webp",
+      "alt": "Портрет: Джека Алтаузена",
+      "author": "J. Altauzen",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BB%D1%82%D0%B0%D1%83%D0%B7%D0%B5%D0%BD_%D0%94%D0%B6%D0%B5%D0%BA_%D1%81%D0%BE%D0%B2.%D0%BF%D0%BE%D1%8D%D1%82.JPG",
+      "sha1": "98a54b24e1ec6cb667cd13f7ed09f593858b8c79",
+      "description": "Джек (Яков Моисеевич) Алтаузен (1907-1942). Портрет в его книге \"Стихотворения и поэмы\" из \"Библиотеки советской поэзии\". Москва, Художественная литература."
     },
     "dzhon-ledyard": {
       "file": "File:John Ledyard.jpg",
@@ -417,6 +457,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khaydurov_efim.jpg",
       "sha1": "9cccbdbe9b648fdd9d48c979beb4078339114f95",
       "description": "Хайдуров Ефим Леонтьевич, Улан-Удэ, 1997, тир ВСТУ"
+    },
+    "ekaterina-avdeeva": {
+      "file": "File:Екатерина Алексеевна Авдеева.gif",
+      "key": "persons/ekaterina-avdeeva.webp",
+      "alt": "Портрет: Екатерины Алексеевны Авдеевой",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%BD%D0%B0_%D0%90%D0%B2%D0%B4%D0%B5%D0%B5%D0%B2%D0%B0.gif",
+      "sha1": "ce7aecbb5bc1ea3fb2a51173517a91fa30dfe954",
+      "description": "Екатерина Алексеевна Авдеева"
     },
     "ekaterina-breshko-breshkovskaya": {
       "file": "File:Breshkovskaya.jpg",
@@ -563,6 +613,28 @@
       "sha1": "f04666c0742d85016c685a7ac3d7cc723ac374d8",
       "description": "Helmut Kohl Kanzler für Deutschland CDU sicher sozial und frei Abbildung: Porträtfoto - vor Mikrofonen Kommentar: Außenaufnahme (Plakatwand) Plakatart: Kandidaten-/Personenplakat mit Porträt Objekt-Signatur: 10-001: 1800 Bestand: Plakate zu Bundestagswahlen (10-001) GliederungBestand10-18: Plakate z"
     },
+    "gennadiy-ermakov": {
+      "file": "File:Фотография геолога Ермакова Г. А.jpg",
+      "key": "persons/gennadiy-ermakov.webp",
+      "alt": "Портрет: Геннадия Алексеевича Ермакова",
+      "author": "КирЯр",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%B3%D0%B5%D0%BE%D0%BB%D0%BE%D0%B3%D0%B0_%D0%95%D1%80%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0_%D0%93._%D0%90.jpg",
+      "sha1": "18820f7c3c7fbde9a021344af05836846a7a6156",
+      "description": "Фотография геолога в геологическом музее города Улан-Удэ"
+    },
+    "gennadiy-pavlovets": {
+      "file": "File:Павловец-Г.А..jpg",
+      "key": "persons/gennadiy-pavlovets.webp",
+      "alt": "Портрет: Геннадия Андреевича Павловца",
+      "author": "Bogdanov-62",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B5%D1%86-%D0%93.%D0%90..jpg",
+      "sha1": "9443e79cc6905ffa660a07f1364c46e73dea5610",
+      "description": "Gennady Pavlovets (1939-2010)"
+    },
     "genri-uolles": {
       "file": "File:Henry-A.-Wallace-Townsend.jpeg",
       "key": "persons/genri-uolles.webp",
@@ -622,6 +694,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Bishop_Innocent_of_Irkutsk.jpg",
       "sha1": "716017ae7a9070540ef9333f80f321a19f19377a",
       "description": "Portrait of Bishop Innokenty of Irkutsk"
+    },
+    "innokentiy-omulevskiy": {
+      "file": "File:Omulevskii Innokentii Vasilevich.jpg",
+      "key": "persons/innokentiy-omulevskiy.webp",
+      "alt": "Портрет: Иннокентия Васильевича Омулевского",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Omulevskii_Innokentii_Vasilevich.jpg",
+      "sha1": "26398692b26fec756a1fd3e4e035fc0d8371e271",
+      "description": "Омулевский, Иннокентий Васильевич"
     },
     "innokentiy-sibiryakov": {
       "file": "File:Innokenty Sibiryakov.jpg",
@@ -774,6 +856,16 @@
       "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ivan_Goncharov.jpg",
       "sha1": "18da5df452b4cfc6c9ba706f3f983e27d5a3735b"
+    },
+    "ivan-kalashnikov-pisatel": {
+      "file": "File:Ivan kalashnikov.jpg",
+      "key": "persons/ivan-kalashnikov-pisatel.webp",
+      "alt": "Портрет: Ивана Тимофеевича Калашникова",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ivan_kalashnikov.jpg",
+      "sha1": "41df441fe46cf1b7d9a7ff3a23760f54136feaa0",
+      "description": "Калашников, Иван Тимофеевич"
     },
     "ivan-khaminov": {
       "file": "File:Иван Степанович Хаминов.jpg",
@@ -1089,6 +1181,16 @@
       "sha1": "e159083303a875fbe822a6dad670b63bca281a1b",
       "description": "М. М. Сперанский. Гравюра c портрета П. А. Иванова (1806)"
     },
+    "mikhail-zagoskin": {
+      "file": "File:Загоскин Михаил Васильевич.jpg",
+      "key": "persons/mikhail-zagoskin.webp",
+      "alt": "Портрет: Михаила Васильевича Загоскина",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B0%D0%B3%D0%BE%D1%81%D0%BA%D0%B8%D0%BD_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87.jpg",
+      "sha1": "18ab40638c9546360cf6aeb29603751d85a5e8d0",
+      "description": "Михаил Васильевич Загоскин — прозаик, журналист."
+    },
     "moisey-krol": {
       "file": "File:Krol Moisei.jpg",
       "key": "persons/moisey-krol.webp",
@@ -1193,6 +1295,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Presentation_of_1st_MoD%27s_Prize_of_Culture_and_Art_13_(cropped).jpg",
       "sha1": "81e6c923b389f4824d57a4468ba25b7eb2432b7b",
       "description": "Церемония вручения премий Минобороны РФ в области культуры и искусства"
+    },
+    "nikolay-fedoseev": {
+      "file": "File:Nikolaj Fedoseev.jpg",
+      "key": "persons/nikolay-fedoseev.webp",
+      "alt": "Портрет: Николая Евграфовича Федосеева",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nikolaj_Fedoseev.jpg",
+      "sha1": "980db217a2cf0a0c52266e750e158e3bcc885c41",
+      "description": "Николай Федосеев(1871-1898) - русский марксист"
     },
     "nikolay-ii": {
       "file": "File:Nicholas II by Boissonnas & Eggler c1909.jpg",
@@ -1344,6 +1456,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BB%D0%B0%D1%82%D0%BE%D0%BD_%D0%A4%D1%80%D0%B5%D0%B4%D0%B5%D1%80%D0%B8%D0%BA%D1%81.jpg",
       "sha1": "ba0bbcd2992c1d4b5fa10de2459d16a1da50ca05",
       "description": "Барон Фредерикс, Платон Александрович (1828 — 1888) — генерал-лейтенант, генерал-адъютант, генерал-губернатор Восточной Сибири."
+    },
+    "pyotr-gromnitskiy": {
+      "file": "File:26 Gromnitskiy Petr Fedorovich.jpg",
+      "key": "persons/pyotr-gromnitskiy.webp",
+      "alt": "Портрет: Петра Фёдоровича Громницкого",
+      "author": "Головачев, Пётр Михайлович",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:26_Gromnitskiy_Petr_Fedorovich.jpg",
+      "sha1": "fe5996dd60a2297cc2b2c919189b8a2d1abcd3e7",
+      "description": "Громницкий, Пётр Фёдорович"
     },
     "rafail-kalinovskiy": {
       "file": "File:Kalinowski1897.jpg",
@@ -1543,6 +1665,17 @@
       "sha1": "140d488f2592b8c9d9209fae1bf75518fa0e64de",
       "description": "Российский революционер и писатель Владимир Бурцев."
     },
+    "vladimir-gladilin": {
+      "file": "File:Владимир Гладилин.jpg",
+      "key": "persons/vladimir-gladilin.webp",
+      "alt": "Портрет: Владимира Васильевича Гладилина",
+      "author": "Aimikhin",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%BB%D0%B8%D0%BD.jpg",
+      "sha1": "dfd6c7fcc5196c4437789ea722b30e8533b902a5",
+      "description": "Владимир Гладилин"
+    },
     "vladimir-obruchev": {
       "file": "File:1907-ObruchevVV.jpg",
       "key": "persons/vladimir-obruchev.webp",
@@ -1592,6 +1725,16 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vladimir_Vysotsky.jpg",
       "sha1": "b64f2a371c55fcbb33edbc351643698f4775dd89",
       "description": "Владимир Высоцкий"
+    },
+    "vsevolod-vagin": {
+      "file": "File:Vsevolod Vagin.jpg",
+      "key": "persons/vsevolod-vagin.webp",
+      "alt": "Портрет: Всеволода Ивановича Вагина",
+      "author": "НеизвестенUnknown author",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vsevolod_Vagin.jpg",
+      "sha1": "a8f8fa7244cc55725065ad02d17a8ad347bfbb95",
+      "description": "Портрет Всеволода Ивановича Вагина (1823—1900)"
     },
     "yakov-gakkel": {
       "file": "File:Gakkel.JPG",

@@ -14,6 +14,12 @@ places:
   - name: "Грановщина"
     settlement: "Грановщина"
     district: irkutskij-rajon
+photo:
+  key: "persons/mikhail-zagoskin.webp"
+  alt: "Портрет: Михаила Васильевича Загоскина"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%97%D0%B0%D0%B3%D0%BE%D1%81%D0%BA%D0%B8%D0%BD_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87.jpg"
 sources:
   - title: "Википедия: Загоскин, Михаил Васильевич"
     url: "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BE%D1%81%D0%BA%D0%B8%D0%BD,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87"
