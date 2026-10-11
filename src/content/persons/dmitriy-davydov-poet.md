@@ -11,6 +11,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/dmitriy-davydov-poet.webp"
+  alt: "Портрет: Дмитрия Павловича Давыдова"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B0%D0%B2%D1%8B%D0%B4%D0%BE%D0%B2_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87.jpg"
 sources:
   - title: "Википедия: Давыдов, Дмитрий Павлович"
     url: "https://ru.wikipedia.org/wiki/%D0%94%D0%B0%D0%B2%D1%8B%D0%B4%D0%BE%D0%B2,_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"

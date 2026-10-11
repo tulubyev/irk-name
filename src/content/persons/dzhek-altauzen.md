@@ -14,6 +14,12 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/dzhek-altauzen.webp"
+  alt: "Портрет: Джека Алтаузена"
+  author: "J. Altauzen"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BB%D1%82%D0%B0%D1%83%D0%B7%D0%B5%D0%BD_%D0%94%D0%B6%D0%B5%D0%BA_%D1%81%D0%BE%D0%B2.%D0%BF%D0%BE%D1%8D%D1%82.JPG"
 sources:
   - title: "Википедия: Алтаузен, Джек"
     url: "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%82%D0%B0%D1%83%D0%B7%D0%B5%D0%BD,_%D0%94%D0%B6%D0%B5%D0%BA"

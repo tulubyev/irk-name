@@ -11,6 +11,12 @@ places:
   - name: "Верхоленск"
     settlement: "Верхоленск"
     district: kachugskij-rajon
+photo:
+  key: "persons/nikolay-fedoseev.webp"
+  alt: "Портрет: Николая Евграфовича Федосеева"
+  author: "НеизвестенUnknown author"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Nikolaj_Fedoseev.jpg"
 sources:
   - title: "Википедия: Федосеев, Николай Евграфович"
     url: "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D0%BE%D1%81%D0%B5%D0%B5%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%B2%D0%B8%D1%87"

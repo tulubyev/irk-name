@@ -14,6 +14,12 @@ places:
   - name: "Усолье-Сибирское"
     settlement: "Усолье-Сибирское"
     district: g-usole-sibirskoe
+photo:
+  key: "persons/pyotr-gromnitskiy.webp"
+  alt: "Портрет: Петра Фёдоровича Громницкого"
+  author: "Головачев, Пётр Михайлович"
+  license: "Public domain"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:26_Gromnitskiy_Petr_Fedorovich.jpg"
 sources:
   - title: "Википедия: Громницкий, Пётр Фёдорович"
     url: "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%BE%D0%BC%D0%BD%D0%B8%D1%86%D0%BA%D0%B8%D0%B9%2C_%D0%9F%D1%91%D1%82%D1%80_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"

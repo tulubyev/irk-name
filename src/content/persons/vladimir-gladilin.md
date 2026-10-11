@@ -14,6 +14,13 @@ places:
   - name: "Иркутск"
     settlement: "Иркутск"
     district: g-irkutsk
+photo:
+  key: "persons/vladimir-gladilin.webp"
+  alt: "Портрет: Владимира Васильевича Гладилина"
+  author: "Aimikhin"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0"
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%BB%D0%B8%D0%BD.jpg"
 sources:
   - title: "Википедия: Гладилин, Владимир Васильевич"
     url: "https://ru.wikipedia.org/wiki/%D0%93%D0%BB%D0%B0%D0%B4%D0%B8%D0%BB%D0%B8%D0%BD,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87"

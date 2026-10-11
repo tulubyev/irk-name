@@ -805,6 +805,76 @@
       "slug": "ivan-batudaev",
       "file": "File:Portrait of Batudaev Ivan Alexandrovich.jpg",
       "alt": "Портрет Ивана Батудаева"
+    },
+    {
+      "slug": "ales-garun",
+      "file": "File:Alieś Harun.jpg",
+      "alt": "Портрет: Алеся Гаруна"
+    },
+    {
+      "slug": "dmitriy-davydov-poet",
+      "file": "File:Давыдов Дмитрий Павлович.jpg",
+      "alt": "Портрет: Дмитрия Павловича Давыдова"
+    },
+    {
+      "slug": "dorzhi-banzarov",
+      "file": "File:Banzarov phototype.jpg",
+      "alt": "Портрет: Доржи Банзарова"
+    },
+    {
+      "slug": "dzhek-altauzen",
+      "file": "File:Алтаузен Джек сов.поэт.JPG",
+      "alt": "Портрет: Джека Алтаузена"
+    },
+    {
+      "slug": "ekaterina-avdeeva",
+      "file": "File:Екатерина Алексеевна Авдеева.gif",
+      "alt": "Портрет: Екатерины Алексеевны Авдеевой"
+    },
+    {
+      "slug": "gennadiy-ermakov",
+      "file": "File:Фотография геолога Ермакова Г. А.jpg",
+      "alt": "Портрет: Геннадия Алексеевича Ермакова"
+    },
+    {
+      "slug": "gennadiy-pavlovets",
+      "file": "File:Павловец-Г.А..jpg",
+      "alt": "Портрет: Геннадия Андреевича Павловца"
+    },
+    {
+      "slug": "innokentiy-omulevskiy",
+      "file": "File:Omulevskii Innokentii Vasilevich.jpg",
+      "alt": "Портрет: Иннокентия Васильевича Омулевского"
+    },
+    {
+      "slug": "ivan-kalashnikov-pisatel",
+      "file": "File:Ivan kalashnikov.jpg",
+      "alt": "Портрет: Ивана Тимофеевича Калашникова"
+    },
+    {
+      "slug": "mikhail-zagoskin",
+      "file": "File:Загоскин Михаил Васильевич.jpg",
+      "alt": "Портрет: Михаила Васильевича Загоскина"
+    },
+    {
+      "slug": "nikolay-fedoseev",
+      "file": "File:Nikolaj Fedoseev.jpg",
+      "alt": "Портрет: Николая Евграфовича Федосеева"
+    },
+    {
+      "slug": "pyotr-gromnitskiy",
+      "file": "File:26 Gromnitskiy Petr Fedorovich.jpg",
+      "alt": "Портрет: Петра Фёдоровича Громницкого"
+    },
+    {
+      "slug": "vladimir-gladilin",
+      "file": "File:Владимир Гладилин.jpg",
+      "alt": "Портрет: Владимира Васильевича Гладилина"
+    },
+    {
+      "slug": "vsevolod-vagin",
+      "file": "File:Vsevolod Vagin.jpg",
+      "alt": "Портрет: Всеволода Ивановича Вагина"
     }
   ],
   "heraldry": []
