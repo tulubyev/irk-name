@@ -1,0 +1,125 @@
+---
+// Постраничная выдача карточек — тот же формат, что на главной: на странице ровно столько карточек,
+// сколько помещается на экран вместе с подвалом; номер страницы — в адресе (?str=2).
+// Внутрь кладётся разметка с одним или несколькими <ul class="cards">; секции (.country) без видимых карточек скрываются.
+---
+<div data-paged>
+  <slot />
+  <nav id="pager" class="pager" aria-label="Страницы" hidden></nav>
+</div>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector('[data-paged]');
+    if (!root) return;
+    var items = Array.prototype.slice.call(root.querySelectorAll('.card'));
+    var list = root.querySelector('.cards');
+    var pager = document.getElementById('pager');
+    var sections = Array.prototype.slice.call(root.querySelectorAll('[data-paged-section]'));
+    var page = 1;
+    var perPage = 12;
+    items.forEach(function (li, i) { li.id = li.id || 'p' + i; });
+
+    function measure() {
+      var cols = getComputedStyle(list).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+      var probe = items.slice(0, 12);
+      var was = probe.map(function (li) { return li.hidden; });
+      probe.forEach(function (li) { li.hidden = false; });
+      var h = Math.max.apply(null, probe.map(function (li) { return li.getBoundingClientRect().height; })) || 200;
+      probe.forEach(function (li, i) { li.hidden = was[i]; });
+      var gap = parseFloat(getComputedStyle(list).rowGap) || 0;
+      var ft = document.querySelector('footer.site');
+      var foot = ft ? ft.offsetHeight : 90;
+      // место под карточки: от верха первого списка до подвала; заголовки секций и текст над списком не считаются карточками
+      var top = list.getBoundingClientRect().top + window.scrollY;
+      var free = window.innerHeight - top - foot - 64;
+      var rows = Math.max(2, Math.floor((free + gap) / (h + gap)));
+      perPage = cols * rows;
+    }
+    function pageList(n, cur) {
+      var out = [], last = 0;
+      for (var i = 1; i <= n; i++) {
+        if (i === 1 || i === n || Math.abs(i - cur) <= 1) {
+          if (last && i - last > 1) out.push(null);
+          out.push(i); last = i;
+        }
+      }
+      return out;
+    }
+    function renderPager(total) {
+      pager.hidden = total <= 1;
+      pager.textContent = '';
+      if (total <= 1) return;
+      function btn(label, target, opts) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.textContent = label;
+        if (opts && opts.cur) { b.className = 'cur'; b.setAttribute('aria-current', 'page'); }
+        if (opts && opts.aria) b.setAttribute('aria-label', opts.aria);
+        if (opts && opts.off) b.disabled = true;
+        else b.addEventListener('click', function () { go(target); });
+        pager.appendChild(b);
+      }
+      btn('←', page - 1, { aria: 'Предыдущая страница', off: page === 1 });
+      pageList(total, page).forEach(function (n) {
+        if (n === null) { var s = document.createElement('span'); s.textContent = '…'; pager.appendChild(s); }
+        else btn(String(n), n, { cur: n === page });
+      });
+      btn('→', page + 1, { aria: 'Следующая страница', off: page === total });
+    }
+    function render() {
+      var total = Math.max(1, Math.ceil(items.length / perPage));
+      page = Math.min(Math.max(page, 1), total);
+      var visible = {};
+      items.slice((page - 1) * perPage, page * perPage).forEach(function (li) { visible[li.id] = true; });
+      items.forEach(function (li) { li.hidden = !visible[li.id]; });
+      sections.forEach(function (s) { s.hidden = !s.querySelector('.card:not([hidden])'); });
+      renderPager(total);
+    }
+    function syncUrl() {
+      var p = new URLSearchParams(location.search);
+      if (page > 1) p.set('str', String(page)); else p.delete('str');
+      var s = p.toString();
+      try { history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash); } catch (e) {}
+    }
+    function go(n) {
+      page = n; render(); syncUrl();
+      window.scrollTo({ top: 0 });
+    }
+
+    // переход по якорю к секции (например, к стране): открываем страницу, где у секции начинаются карточки
+    function showSection(hash) {
+      var sec = hash && document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (!sec || sections.indexOf(sec) === -1) return false;
+      var first = items.indexOf(sec.querySelector('.card'));
+      if (first < 0) return false;
+      page = Math.floor(first / perPage) + 1;
+      render(); syncUrl();
+      sec.scrollIntoView();
+      return true;
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (a && showSection(a.getAttribute('href'))) e.preventDefault();
+    });
+
+    var startPage = parseInt(new URLSearchParams(location.search).get('str') || '1', 10);
+    measure();
+    if (startPage > 1) page = startPage;
+    render();
+    if (location.hash) showSection(location.hash);
+
+    var resizeTimer;
+    function relayout() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        var first = items.indexOf(items.filter(function (li) { return !li.hidden; })[0]);
+        measure();
+        page = first < 0 ? 1 : Math.floor(first / perPage) + 1;
+        render();
+        syncUrl();
+      }, 150);
+    }
+    window.addEventListener('resize', relayout);
+    window.addEventListener('load', relayout);
+  })();
+</script>
