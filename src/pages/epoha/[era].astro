@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PagedCards from '../../components/PagedCards.astro';
 import PersonCard from '../../components/PersonCard.astro';
 import { getPersons } from '../../lib/persons';
 import { ERAS, type EraKey } from '../../lib/taxonomy';
@@ -25,5 +26,7 @@ const jsonLd = [
   <nav class="breadcrumbs"><a href="/epoha/">Времена</a> › {label}</nav>
   <h1>{label}</h1>
   <p class="lead">{biographies(list.length)} людей, чья жизнь связана с Иркутском и Иркутской областью в {label.replace(' век', ' веке')}: годы жизни, чем известен каждый и источники.</p>
-  <ul class="cards">{list.map((p) => <PersonCard person={p} />)}</ul>
+  <PagedCards>
+    <ul class="cards">{list.map((p) => <PersonCard person={p} />)}</ul>
+  </PagedCards>
 </Base>

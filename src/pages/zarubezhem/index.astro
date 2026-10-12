@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PagedCards from '../../components/PagedCards.astro';
 import PersonCard from '../../components/PersonCard.astro';
 import { getPersons, SITE } from '../../lib/persons';
 import { biographies, clip, namesOf, collectionLd, breadcrumbLd, plural, BRAND } from '../../lib/seo';
@@ -23,11 +24,13 @@ const jsonLd = [
   <ul class="chips">
     {countries.map((c) => <li><a class="chip" href={`#${anchor(c.name)}`}>{c.name} · {c.items.length}</a></li>)}
   </ul>
+  <PagedCards>
   {countries.map((c) => (
-    <section id={anchor(c.name)} class="country">
+    <section id={anchor(c.name)} class="country" data-paged-section>
       <h2>{c.name}</h2>
       <ul class="cards">{c.items.map((p) => <PersonCard person={p} />)}</ul>
     </section>
   ))}
+  </PagedCards>
   <p class="empty">Знаете иркутянина, который живёт или жил за границей? <a href="/predlozhit/">Предложите персону</a>.</p>
 </Base>
