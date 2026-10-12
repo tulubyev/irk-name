@@ -1,0 +1,51 @@
+---
+// Памятная страница: Герои Социалистического Труда, связанные с Иркутской областью.
+// Служебная: без ссылок с сайта, не индексируется, в карту сайта не входит (см. astro.config.mjs).
+import Base from '../../layouts/Base.astro';
+import heroes from '../../data/soctrud.json';
+
+const groups = new Map<string, typeof heroes>();
+for (const h of heroes) groups.set(h.place, [...(groups.get(h.place) ?? []), h]);
+// крупные города и районы — первыми; «место не указано» и «вне области» — в конце
+const TAIL = ['Иркутская обл. (место не указано)', 'Награждён вне области'];
+const ordered = [...groups].sort(([a, x], [b, y]) => (TAIL.includes(a) ? 1 : 0) - (TAIL.includes(b) ? 1 : 0) || TAIL.indexOf(a) - TAIL.indexOf(b) || y.length - x.length || a.localeCompare(b, 'ru'));
+const anchor = (s: string) => s.replace(/[\s()]+/g, '-');
+const wiki = (h: (typeof heroes)[number]) => (h.wiki ? `https://ru.wikipedia.org/wiki/${h.wiki}` : '');
+---
+<Base title="Герои Социалистического Труда" description="Памятный список Героев Социалистического Труда, связанных с Иркутской областью." noindex>
+  <h1>Герои Социалистического Труда</h1>
+  <p class="lead">Памятный список: {heroes.length} Героев Социалистического Труда, работавших в Иркутской области на момент награждения, а также уроженцев области, получивших звание в других регионах. Список составлен по статье Википедии «Герои Социалистического Труда Иркутской области»; ссылки ведут на статьи о каждом из них.</p>
+  <ul class="chips">
+    {ordered.map(([place, items]) => <li><a class="chip" href={`#${anchor(place)}`}>{place} · {items.length}</a></li>)}
+  </ul>
+  {ordered.map(([place, items]) => (
+    <section id={anchor(place)} class="place">
+      <h2>{place}</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Имя</th><th>Годы жизни</th><th>Звание присвоено</th><th>Должность и место работы</th></tr></thead>
+          <tbody>
+            {items.map((h) => (
+              <tr>
+                <td>{h.wiki ? <a href={wiki(h)} rel="noopener nofollow" target="_blank">{h.name}</a> : h.name}</td>
+                <td class="nowrap">{h.years}</td>
+                <td class="nowrap">{h.year}</td>
+                <td>{h.post}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .lead { max-width: 46rem; color: var(--muted); }
+  .place { margin-top: 2rem; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+  .nowrap { white-space: nowrap; font-variant-numeric: tabular-nums; }
+</style>
