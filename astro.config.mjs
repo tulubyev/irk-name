@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://irk.name',
   trailingSlash: 'always',
   integrations: [
-    // служебные страницы в карту сайта не попадают
-    sitemap({ filter: (page) => !page.includes('/predlozhit/spasibo/') && !page.endsWith('/404/') }),
+    // служебные страницы (и закрытая памятная /soctrud/) в карту сайта не попадают
+    sitemap({ filter: (page) => !page.includes('/predlozhit/spasibo/') && !page.endsWith('/404/') && !page.includes('/soctrud/') }),
   ],
 });
