@@ -69,13 +69,24 @@ export function foundersFromText(text) {
 
 // ---------- запросы ----------
 
+/** fetch с понятной причиной сбоя: в Node он пишет просто «fetch failed», а код (сертификат, тайм-аут, отказ) лежит в cause. */
+async function fetchOrExplain(url, init) {
+  try { return await fetch(url, { ...init, signal: AbortSignal.timeout(30000) }); }
+  catch (e) {
+    const code = e.cause?.code || e.cause?.message || e.name;
+    const hint = /CERT|SELF_SIGNED|UNABLE_TO_VERIFY|ISSUER/.test(String(code))
+      ? ' — не принят сертификат сайта: запустите с NODE_OPTIONS=--use-openssl-ca (Node возьмёт системные сертификаты)'
+      : /TIMEOUT|ECONNRESET|ENOTFOUND|ECONNREFUSED|EAI_AGAIN/.test(String(code)) ? ' — нет соединения с сайтом (адрес заблокирован или нет сети)' : '';
+    throw new Error(`${url}: ${code}${hint}`);
+  }
+}
 async function post(path, body) {
-  const res = await fetch(BASE + path, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'Accept': 'application/json' }, body: new URLSearchParams(body) });
+  const res = await fetchOrExplain(BASE + path, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'Accept': 'application/json' }, body: new URLSearchParams(body) });
   if (!res.ok) throw new Error(`${path}: ${res.status}`);
   return res.json();
 }
 async function get(path, asBuffer = false) {
-  const res = await fetch(BASE + path, { headers: { 'User-Agent': UA, 'Accept': '*/*' } });
+  const res = await fetchOrExplain(BASE + path, { headers: { 'User-Agent': UA, 'Accept': '*/*' } });
   if (!res.ok) throw new Error(`${path}: ${res.status}`);
   return asBuffer ? Buffer.from(await res.arrayBuffer()) : res.json();
 }
