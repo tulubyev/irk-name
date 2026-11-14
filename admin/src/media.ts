@@ -1,6 +1,6 @@
-// Обработка и хранение фото персон: три WebP-размера (как у scripts/fetch-commons.mjs) и загрузка в S3.
-import { createHash } from 'node:crypto';
-import { mkdir, writeFile } from 'node:fs/promises';
+// Обработка и хранение фото персон: три WebP-размера (как у scripts/fetch-commons.mjs) и запись в локальное хранилище либо S3.
+import { createHash, randomUUID } from 'node:crypto';
+import { mkdir, writeFile, rename, unlink, lstat } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import sharp from 'sharp';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
@@ -17,6 +17,7 @@ export interface ProcessedImage { key: string; files: { key: string; body: Buffe
 
 /** Декодирует загруженный файл, учитывает поворот из EXIF и готовит три размера. Имя файла содержит хэш — кэш CDN не мешает правкам. */
 export async function processImage(input: Buffer, slug: string): Promise<ProcessedImage> {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('Недопустимое имя персоны');
   const src = sharp(input, { failOn: 'none', limitInputPixels: 80_000_000 });
   const meta = await src.metadata();
   if (!meta.format || !FORMATS.has(meta.format)) throw new Error('поддерживаются JPEG, PNG, WebP и TIFF');
@@ -37,34 +38,59 @@ export interface MediaStore {
 }
 
 class S3Media implements MediaStore {
-  private client = new S3Client({
-    endpoint: config.s3.endpoint,
-    region: config.s3.region,
-    forcePathStyle: config.s3.forcePathStyle,
-    credentials: { accessKeyId: config.s3.accessKeyId, secretAccessKey: config.s3.secretAccessKey },
-  });
-  describe() { return `S3 ${config.s3.bucket}`; }
+  private client: S3Client;
+  constructor(private options: typeof config.s3) {
+    this.client = new S3Client({
+      endpoint: options.endpoint, region: options.region, forcePathStyle: options.forcePathStyle,
+      credentials: { accessKeyId: options.accessKeyId, secretAccessKey: options.secretAccessKey },
+    });
+  }
+  describe() { return `S3 ${this.options.bucket}`; }
   async put(key: string, body: Buffer) {
     await this.client.send(new PutObjectCommand({
-      Bucket: config.s3.bucket, Key: key, Body: body, ContentType: 'image/webp',
+      Bucket: this.options.bucket, Key: key, Body: body, ContentType: 'image/webp',
       CacheControl: 'public, max-age=31536000, immutable', ACL: 'public-read',
     }));
   }
 }
 
 class FsMedia implements MediaStore {
-  private root = join(config.fsRoot, 'media');
-  describe() { return `локальная папка ${this.root}`; }
+  constructor(private root: string) {}
+  describe() { return 'локальное хранилище'; }
   async put(key: string, body: Buffer) {
+    if (!/^persons\/[a-z0-9]+(?:-[a-z0-9]+)*\.webp$/.test(key)) {
+      throw new Error('Недопустимый ключ фотографии');
+    }
     const file = join(this.root, key);
-    await mkdir(dirname(file), { recursive: true });
-    await writeFile(file, body);
+    const dir = dirname(file);
+    await mkdir(dir, { recursive: true });
+    if ((await lstat(dir)).isSymbolicLink()) throw new Error('Каталог фотографий не должен быть символической ссылкой');
+    const temp = join(dir, `.upload-${randomUUID()}`);
+    try {
+      await writeFile(temp, body, { flag: 'wx', mode: 0o644 });
+      await rename(temp, file);
+    } finally {
+      await unlink(temp).catch(() => {});
+    }
   }
 }
 
-/** null — загрузка отключена (не заданы ключи S3 и режим не локальный). */
-export const media: MediaStore | null =
-  config.s3.accessKeyId && config.s3.secretAccessKey ? new S3Media() : config.store === 'fs' ? new FsMedia() : null;
+/** auto сохраняет прежний выбор: S3 при наличии ключей, fs только для локальных карточек. */
+export function createMediaStore(options: typeof config = config): MediaStore | null {
+  const hasS3 = Boolean(options.s3.accessKeyId && options.s3.secretAccessKey);
+  switch (options.mediaStore) {
+    case 'off': return null;
+    case 'fs': return new FsMedia(options.mediaRoot);
+    case 's3':
+      if (!hasS3) throw new Error('Для ADMIN_MEDIA_STORE=s3 нужны ключи S3');
+      return new S3Media(options.s3);
+    case 'auto':
+      return hasS3 ? new S3Media(options.s3) : options.store === 'fs' ? new FsMedia(options.mediaRoot) : null;
+    default: throw new Error('ADMIN_MEDIA_STORE: допустимы auto, fs, s3, off');
+  }
+}
+
+export const media = createMediaStore();
 
 export const mediaUrl = (key: string) => `${config.cdnUrl}/${key}`;
 export const sizedKey = (key: string, suffix: string) => key.replace(/\.webp$/, `${suffix}.webp`);

@@ -1,3 +1,4 @@
+import { join } from 'node:path';
 // Настройки берутся только из переменных окружения (на сервере — из .env, не из репозитория).
 function env(name: string, fallback?: string): string {
   const v = process.env[name] ?? fallback;
@@ -25,7 +26,10 @@ export const config = {
     apiUrl: process.env.GITHUB_API_URL ?? 'https://api.github.com',
   },
   siteUrl: process.env.SITE_URL ?? 'https://irk.name',
-  // Фото: загрузка в S3-бакет (ключи — только из окружения), просмотр — через CDN
+  // Фото: хранилище выбирается независимо от GitHub/fs для карточек.
+  mediaStore: process.env.ADMIN_MEDIA_STORE ?? 'auto',
+  mediaRoot: process.env.ADMIN_MEDIA_ROOT ?? join(process.env.ADMIN_FS_ROOT ?? '..', 'media'),
+  // Просмотр — через CDN
   cdnUrl: (process.env.PUBLIC_CDN_URL ?? 'https://cdn.irk.name').replace(/\/+$/, ''),
   s3: {
     endpoint: process.env.S3_ENDPOINT ?? 'https://s3.ru1.storage.beget.cloud',

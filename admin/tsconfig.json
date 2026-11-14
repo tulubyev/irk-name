@@ -21,6 +21,7 @@
     "src",
     "../src/lib/person-schema.ts",
     "../src/lib/taxonomy.ts",
-    "../src/lib/operator.ts"
+    "../src/lib/operator.ts",
+    "tests"
   ]
 }
