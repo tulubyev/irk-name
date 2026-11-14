@@ -1,6 +1,6 @@
 # Деплой на VPS (Docker + Traefik)
 
-Сайт — статика (`dist/`), которую отдаёт nginx в контейнере `web` (и админка `admin`, если включена). Контейнеры подключаются к уже работающему Traefik; порты наружу не публикуются. Картинки лежат в S3-бакете Beget и раздаются через **CDN Beget** на `cdn.irk.name` — на VPS для этого ничего не запускается.
+Сайт — статика (`dist/`), которую отдаёт nginx в контейнере `web` (и админка `admin`, если включена). Контейнеры подключаются к уже работающему Traefik; порты наружу не публикуются. С 14.11.2026 картинки лежат в `media/` на российском VPS и раздаются nginx-сервисом `media` через `cdn.irk.name`. Актуальное состояние и конфигурация — [docs/HOSTING-RU.md](docs/HOSTING-RU.md). Разделы о Beget S3 ниже описывают прежнюю схему и возможности загрузчика админки.
 
 > Секретов в репозитории нет и быть не должно (репозиторий публичный). Ключи S3 нужны только для загрузки картинок и хранятся в переменных окружения / GitHub Secrets.
 
@@ -8,11 +8,11 @@
 
 | Тип | Имя | Значение |
 | --- | --- | --- |
-| A | `irk.name` | `90.156.168.149` |
-| A | `www.irk.name` | `90.156.168.149` |
-| CNAME | `cdn.irk.name` | адрес CDN-ресурса из панели Beget (вида `xxxxxxxx.a.trbcdn.net`) |
+| A | `irk.name` | `141.133.187.90` |
+| A | `www.irk.name` | `141.133.187.90` |
+| A | `cdn.irk.name` | `141.133.187.90` |
 
-`www` автоматически редиректится на `irk.name` (301). Сертификат для `cdn.irk.name` выпускает CDN Beget, Traefik в этом не участвует.
+`www` автоматически редиректится на `irk.name` (301). Сертификаты всех трёх доменов выпускает Traefik через Let’s Encrypt.
 
 ## 2. Настройка
 
@@ -133,7 +133,7 @@ bash deploy.sh
 
 ## CI
 
-`.github/workflows/ci.yml` на каждом PR запускает `npm run check`, `npm run build` и `docker build`. Автодеплой не настроен.
+`.github/workflows/ci.yml` на каждом PR запускает `npm run check`, `npm run build` и `docker build`. Автодеплой настроен и проверен 14.11.2026: после обновления `main` Actions выполняет сборку и запускает `deploy.sh` по ограниченному SSH-ключу.
 
 ## Админка `/admin`
 
@@ -180,11 +180,11 @@ bash deploy.sh
    ```bash
    ssh-keygen -t ed25519 -N '' -C 'github-actions-deploy@irk-name' -f ~/irk-name-deploy
    echo "command=\"cd /var/www/irk-name && bash deploy.sh\",no-pty,no-port-forwarding,no-agent-forwarding,no-X11-forwarding $(cat ~/irk-name-deploy.pub)" >> ~/.ssh/authorized_keys
-   ssh-keyscan -t ed25519 90.156.168.149
+   ssh-keyscan -t ed25519 141.133.187.90
    ```
    Пользователь должен иметь право на `docker compose` (группа `docker`) и на `git` в `/var/www/irk-name`.
 2. В GitHub → репозиторий → Settings → Secrets and variables → Actions добавьте секреты:
-   `DEPLOY_SSH_KEY` (содержимое `~/irk-name-deploy`), `DEPLOY_HOST` (`90.156.168.149`), `DEPLOY_USER` (пользователь на сервере), `DEPLOY_KNOWN_HOSTS` (вывод `ssh-keyscan`).
+   `DEPLOY_SSH_KEY` (содержимое `~/irk-name-deploy`), `DEPLOY_HOST` (`141.133.187.90`), `DEPLOY_USER` (пользователь на сервере), `DEPLOY_KNOWN_HOSTS` (вывод `ssh-keyscan`).
 3. Удалите приватный ключ с сервера: `rm ~/irk-name-deploy`.
 
 Пока секреты не заданы, шаг деплоя в Actions просто пропускается. Отозвать доступ: удалить строку из `authorized_keys` и секрет `DEPLOY_SSH_KEY`.
