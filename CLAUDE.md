@@ -8,7 +8,7 @@
 |---|---|
 | GitHub | https://github.com/tulubyev/irk-name |
 | Локально | `~/Dropbox/DEV/irk-name` |
-| VPS | `/var/www/irk-name` (90.156.168.149) |
+| VPS | `/var/www/irk-name` (141.133.187.90) |
 | Прод | irk.name |
 | Стек | Astro SSG |
 
@@ -28,4 +28,6 @@
 
 ## Команды
 
-<!-- заполнить: установка, запуск, сборка, тесты, деплой -->
+`npm ci`, `npm run check`, `npm test`, `npm run build`.
+
+Прод: [docs/HOSTING-RU.md](docs/HOSTING-RU.md). Сайт, админка, форма и медиа — Docker + Traefik. Автодеплой после обновления `main`. `.env`, `media/` и серверный `compose.media.yaml` сохранять; загрузка фото админкой пока требует прежнего S3.

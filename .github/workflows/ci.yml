@@ -20,7 +20,7 @@ jobs:
         with: { node-version: 24, cache: npm, cache-dependency-path: admin/package-lock.json }
       - run: npm ci
         working-directory: admin
-      - run: npm run typecheck && npm run build
+      - run: npm test && npm run typecheck && npm run build
         working-directory: admin
   docker:
     runs-on: ubuntu-latest

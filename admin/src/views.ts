@@ -163,7 +163,7 @@ ${imgField('Источник (URL)', `img_sourceUrl_${i}`, img.sourceUrl, { type
 </div></div>`)}
 ${media
   ? html`<h3 style="margin:1rem 0 .3rem;font-size:1rem">Добавить фото</h3>${NEW_SLOTS.map(slot)}<p class="muted">Хранилище: ${media.describe()}.</p>`
-  : html`<p class="msg err">Загрузка фото отключена: на сервере не заданы ключи S3 (S3_ACCESS_KEY_ID и S3_SECRET_ACCESS_KEY, см. DEPLOY.md).</p>`}
+  : html`<p class="msg err">Загрузка фото отключена. Обратитесь к администратору сервера.</p>`}
 </fieldset>`;
 }
 

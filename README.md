@@ -15,7 +15,7 @@
 | `npm run check` | проверка типов и схемы контента (`astro check`) |
 | `npm test` | тесты скриптов (`scripts/*.test.mjs`, без сети) |
 
-Нужен Node.js 20+ (проверено на 22).
+Нужен Node.js 24+ (как в Docker и GitHub Actions).
 
 ## Админка
 
@@ -60,7 +60,7 @@ archived: true              # необязательно: скрыть с сай
 
 ## Хостинг
 
-Собственный VPS: Docker + Traefik, домен irk.name, картинки — S3 Beget через CDN Beget на `cdn.irk.name`. Подробности — в [DEPLOY.md](DEPLOY.md); поисковая оптимизация и регистрация в вебмастерских — в [SEO.md](SEO.md).
+Российский VPS `141.133.187.90`: Docker + Traefik, домен irk.name, картинки — локальный каталог `media/` через nginx на `cdn.irk.name`. Админка и автодеплой работают. Актуальное состояние — [docs/HOSTING-RU.md](docs/HOSTING-RU.md). Подробности — в [DEPLOY.md](DEPLOY.md); поисковая оптимизация и регистрация в вебмастерских — в [SEO.md](SEO.md).
 
 ## TODO
 
@@ -68,7 +68,7 @@ archived: true              # необязательно: скрыть с сай
 - [ ] Карта мест (Leaflet + OpenStreetMap) — поля `places[].lat/lon` уже в схеме.
 - [ ] Фото с Wikimedia Commons (с атрибуцией): манифест `data/commons-photos.json`, скрипт `scripts/fetch-commons.mjs`, порядок — DEPLOY.md, «Фото и гербы».
 - [ ] Расширение базы: спортсмены, артисты, градоначальники, меценаты.
-- [ ] Выкатить на VPS по DEPLOY.md и подключить DNS.
-- [ ] Автодеплой (GitHub Actions) — обсудить отдельно.
+- [x] Разместить на российском VPS и подключить DNS/HTTPS.
+- [x] Подключить автодеплой GitHub Actions и админку.
 
 Скриншоты: `docs/screenshots/`.

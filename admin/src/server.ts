@@ -168,7 +168,7 @@ app.post('/p/:slug', bodyLimit({ maxSize: 90 * 1024 * 1024, onError: (c) => c.te
 
   // Новые фото: проверка полей, обработка в память; в хранилище уходят только после успешной проверки записи
   const { uploads, errors: uploadErrors } = newUploadsFromForm(f);
-  if (uploads.length && !media) uploadErrors.push('Загрузка фото отключена: на сервере не заданы ключи S3');
+  if (uploads.length && !media) uploadErrors.push('Загрузка фото отключена. Обратитесь к администратору сервера.');
   if (uploadErrors.length) return fail(uploadErrors);
   const processed: ProcessedImage[] = [];
   const newRows: ImgRow[] = [];
